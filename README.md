@@ -37,7 +37,7 @@
 
 
 
-##　shopping_addressテーブル
+## shopping_addressテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|primary_key|
@@ -55,7 +55,7 @@
 ### Association
 - belongs_to :user
 
-##　usersテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|primary_key|
@@ -78,7 +78,7 @@
 - has_many :comments
 
 
-##　credit_cardテーブル
+credit_cardテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, primary_key|
