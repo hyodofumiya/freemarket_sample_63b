@@ -58,7 +58,8 @@ Things you may want to cover:
 - belong_to :user
 - belong_to :item
 
-# フリマサイト　DB設計
+
+
 ##　shopping_addressテーブル
 |Column|Type|Options|
 |------|----|-------|
