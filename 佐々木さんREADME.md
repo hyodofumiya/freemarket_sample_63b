@@ -1,5 +1,4 @@
-# フリマサイト　DB設計
-##　shopping_addressテーブル
+## shopping_addressテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|primaryKey|
@@ -17,7 +16,7 @@
 ### Association
 - belongs_to :user
 
-##　usersテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|primaryKey|
@@ -40,7 +39,7 @@
 - has_many :comments
 
 
-##　credit_cardテーブル
+## credit_cardテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|NotNull, primaryKey|

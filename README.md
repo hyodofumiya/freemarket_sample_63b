@@ -60,7 +60,7 @@ Things you may want to cover:
 
 
 
-##　shopping_addressテーブル
+## shopping_addressテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|primaryKey|
@@ -78,7 +78,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
-##　usersテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|primaryKey|
@@ -101,7 +101,7 @@ Things you may want to cover:
 - has_many :comments
 
 
-##　credit_cardテーブル
+credit_cardテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|NotNull, primaryKey|
