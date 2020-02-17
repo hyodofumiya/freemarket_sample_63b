@@ -78,7 +78,7 @@
 - has_many :comments
 
 
-credit_cardテーブル
+## credit_cardテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, primary_key|
@@ -111,7 +111,7 @@ credit_cardテーブル
 
 
 
-#### Asociation
+### Asociation
 
 - has_one :order(orderキャンセル時はレコードを削除する。)
 - has_many :favorites
@@ -129,7 +129,7 @@ credit_cardテーブル
 
 
 
-#### Association
+### Association
 
 - has_many :categories, through: brand_categories
 - has_many :brand_categories
@@ -146,7 +146,7 @@ credit_cardテーブル
 
 
 
-#### Association
+### Association
 - has_many :items
 - has_many :brands, through: brand_categories
 - has_many :brand_categories
@@ -161,7 +161,7 @@ credit_cardテーブル
 |brand_id|integer|foreign_key|
 |category_id|integer|foreign_key|
 
-#### Association
+### Association
 
 - belongs_to :brand
 - belongs_to :category
@@ -175,7 +175,7 @@ credit_cardテーブル
 |item_id|integer|foreign_key|
 
 
-#### Association
+### Association
 
 - belongs_to :items
 
