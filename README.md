@@ -1,6 +1,9 @@
 # フリマアプリ　データベース仕様
 
 ## orderテーブル
+### index
+- なし
+
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|primary_key|
@@ -15,6 +18,9 @@
 - belong_to :item
 
 ## favoriteテーブル
+### index
+- なし
+
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|primary_key|
@@ -25,6 +31,9 @@
 - belong_to :item
 
 ## commentテーブル
+### index
+- なし
+
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|primary_key|
@@ -38,6 +47,9 @@
 
 
 ## shopping_addressテーブル
+### index
+- なし
+
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|primary_key|
@@ -56,6 +68,9 @@
 - belongs_to :user
 
 ## usersテーブル
+### index
+- なし
+
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|primary_key|
@@ -79,6 +94,9 @@
 
 
 ## credit_cardテーブル
+### index
+- なし
+
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, primary_key|
@@ -92,7 +110,10 @@
 
 
 ## Itemテーブル
-- add_index : name
+
+### index
+- [name, discription, category_id, size, bland_id, condition, delivary_fee, price, status]
+(検索条件で使用しないカラムがある場合は"where カラム=true"などで全検索を行うものとする。)
 
 |Column|Type|Options|
 |------|----|-------|
@@ -122,7 +143,8 @@
 - belongs_to :brand
 
 ## Brandテーブル
-- add_index : name
+### index
+- なし
 
 |Column|Type|Options|
 |------|----|-------|
@@ -137,8 +159,8 @@
 - has_many :brand_categories
 
 ## Categoryテーブル
-- add_index : name
-
+### index
+- なし
 
 |Column|Type|Options|
 |------|----|-------|
@@ -157,6 +179,8 @@
 - belongs_to :parrent(モデルは自身を参照する。)
 
 ## Brand_categoriesテーブル
+### index
+- なし
 
 |Column|Type|Options|
 |------|----|-------|
@@ -170,6 +194,8 @@
 - belongs_to :category
 
 ## Imageテーブル
+### index
+- なし
 
 |Column|Type|Options|
 |------|----|-------|
