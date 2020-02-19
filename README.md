@@ -92,6 +92,7 @@
 
 
 ## Itemテーブル
+- add_index : name
 
 |Column|Type|Options|
 |------|----|-------|
@@ -121,6 +122,7 @@
 - belongs_to :brand
 
 ## Brandテーブル
+- add_index : name
 
 |Column|Type|Options|
 |------|----|-------|
@@ -135,6 +137,7 @@
 - has_many :brand_categories
 
 ## Categoryテーブル
+- add_index : name
 
 
 |Column|Type|Options|
