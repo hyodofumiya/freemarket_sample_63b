@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 # フリマアプリデータベースについて
 
 ## Itemテーブル
@@ -91,4 +89,3 @@
 
 - belongs_to :items
 
->>>>>>> Stashed changes
