@@ -51,6 +51,7 @@
 |address|string|null: false|
 |building_name|string|null: false|
 |phone_number|string||
+|user_id|integer|null: false, foreign_key|
 
 ### Association
 - belongs_to :user
@@ -76,6 +77,7 @@
 - has_many :orders
 - has_many :favotites
 - has_many :comments
+- has_many :items
 
 
 ## credit_cardテーブル
@@ -119,6 +121,7 @@
 - has_many :favorites
 - has_many :comments
 - has_many :images
+- belongs_to :user
 - belongs_to :category
 - belongs_to :brand
 
