@@ -109,6 +109,8 @@
 |category_id|integer|foreign_key|
 |brand_id|integer|foreign_key,optional|
 
+#### AddIndex
+- add_index :name, discription, category_id, size, bland_id, condition, delivary_fee, price, status
 
 
 ### Asociation
