@@ -107,7 +107,7 @@
 |delivary_fee|int|null: false|
 |user_id|integer|foreign_key|
 |category_id|integer|null: false, foreign_key|
-|brand_id|integer|foreign_key|
+|brand_id|integer|foreign_key,dependent:nullify|
 
 #### AddIndex
 - add_index :name, discription, category_id, size, bland_id, condition, delivary_fee, price, status
@@ -144,7 +144,7 @@
 |id|integer|primary_key|
 |name|string|null: false, Unique|
 |size|bool|null: false|
-|parrent_id|integer|foreign_key|
+|parrent_id|integer|foreign_key,dependent:nullify|
 
 
 
