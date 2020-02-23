@@ -1,0 +1,19 @@
+%section.header
+  .inner
+    .upper
+      = link_to root_path, class: "logo" do
+        = image_tag "/material/logo/logo.png",alt:"logo"
+      .search_field
+        %input.search_field__input_area
+        .search_field__submit_btn
+    .lower
+      .left_btns
+        .left_btns__category
+          カテゴリー
+        .left_btns__brand
+          ブランド
+      .right_btns
+        = link_to root_path,class: "right_btns__login" do
+          ログイン
+        = link_to root_path,class: "right_btns__signup" do
+          新規会員登録

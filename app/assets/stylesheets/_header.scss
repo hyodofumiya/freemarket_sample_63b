@@ -1,0 +1,37 @@
+.header{
+  .upper{
+    .logo{
+      width: 140px;
+      display: block;
+      img{
+        width: 100%;
+      }
+    }
+    .search_field{
+      &__input_area{
+
+      }
+      &__submit_btn{
+
+      }
+    }
+  }
+  .lower{
+    .left_btns{
+      &__category{
+
+      }
+      &__brand{
+
+      }
+    }
+    .right_btns{
+      &__login{
+
+      }
+      &__signup{
+
+      }
+    }
+  }
+}

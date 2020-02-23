@@ -1,3 +1,69 @@
+<<<<<<< HEAD
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+=======
+
+.main{
+  .title_image{
+    &__content{
+      &__title{
+
+      }
+      &__sentence{
+
+      }
+      &__btn{
+        &--app_store{}
+        &--google_play{}
+      }
+    }
+  }
+
+  .intruduction{
+    &__title{}
+    &__lists{
+      .left_item{
+        &__image{
+
+        }
+        &__text{
+          &--subtitle{}
+          &--sentence{
+          }
+        }
+      }
+    }
+  }
+
+  .middle_image{
+    &__content{
+      &__title{
+
+      }
+      &__sentence{
+
+      }
+      &__btn{
+        &--app_store{}
+        &--google_play{}
+      }
+    }
+  }
+
+  .feature{
+    &__title{}
+    &__lists{
+      .left_item{
+        &__image{
+
+        }
+        &__text{
+          &--subtitle{}
+          &--sentence{}
+        }
+      }
+    }
+  }
+}
+>>>>>>> fd6da4e... headerとfooterを切り出した
