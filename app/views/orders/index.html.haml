@@ -6,41 +6,52 @@
 
 .main
   .main__showmain
-    .main__showmain__top
+    .main__showmain__main-top
       商品の情報を入力
 
-    .main__showmain__image
+    .main__showmain__main-image
       出品画像
       %span.marker_red 必須
+      .main-text
+      最大10枚までアップロードできます
+      .main-form
 
-    .main__showmain__item__name
-      商品名
-      %span.marker_red 必須
-      %input.main__showmain__item__name__input_area
+
+    .main__showmain__main-item
+      .main__showmain__main-item__upper
+        .item-name
+        商品名
+        %span.marker_red 必須
+        .itemname-form
+          %input.main__showmain__main-item__upper__itemname-form__input_area
         
+      .main__showmain__main-item__bottom
+        .item-discription
+        商品の説明
+        %span.marker_red 必須
+        .discription-form
+          %input.main__showmain__item__discription-form__input_area
 
-    .main__showmain__item__discription
-      商品の説明
-      %span.marker_red 必須
-      %input.main__showmain__item__discription__input_area
+
 
     .main__showmain__detail
-      商品の詳細
+      .main__showmain__detail__detail-top
+        商品の詳細
+      .main__showmain__detail__category_id
+        カテゴリー
+        %span.marker_red 必須
+      .main__showmain__detail__bland_id
+        ブランド
+        %span.marker_gray 任意
+        .main__showmain__detail__bland_id__input-area
+          %input.main__showmain__detail__bland_id__input_area
 
-    .main__showmain__detail__category_id
-      カテゴリー
-      %span.marker_red 必須
-    .main__showmaindetail__bland_id
-      ブランド
-      %span.marker_gray 任意
-      %input.main__showmaindetail__bland_id__input_area
-
-    .main__showmain__datail__size
-      サイズ
-      %span.marker_red 必須
-    .main__showmain__detail__condition
-      商品の状態
-      %span.marker_red 必須
+      .main__showmain__datail__size
+        サイズ
+        %span.marker_red 必須
+      .main__showmain__detail__condition
+        商品の状態
+        %span.marker_red 必須
 
     .main__showmain__delivary
       配送について

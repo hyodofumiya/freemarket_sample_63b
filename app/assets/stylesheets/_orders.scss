@@ -17,7 +17,6 @@
   background-color: #f5f5f5;
   padding: 40px;
   margin: 0 auto;
-  text-align: center;
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
   .marker_red {
     background: linear-gradient(transparent 0%, red 0%);
@@ -27,43 +26,101 @@
       background-color: #fff;
       padding: 24px 40px 40px;
 
-      &__top{
-        padding: 24px 8px;
+      &__main-top{
+        padding: 16px;
         font-size: 18px;
-        line-height: 1.5;
+        line-height: 14px;
         text-align: center;
         font-weight: bold;
         border-bottom: 1px solid #eee;
       }
 
-      &__image{
-        padding: 40px 2.5%;
-      }
-
-      &__item{
-        padding: 40px;
-        border-top: 1px solid #eee;
-        .name{
-          
-          
+      &__main-image{
+        padding: 16px;
+        border-bottom: 1px solid #eee;
+        .main-text{
+          margin-top: 16px;
         }
-        .discription{
+        .main-form{
+          margin-top: 16px;   
         }
       }
 
-      &__detail{
-        padding: 40px;
-        border-top: 1px solid #eee;
+      &__main-item{
+        padding: 16px;
         
-        .category_id{}
-        .bland_id{
-          .marker_gray {
-            background: linear-gradient(transparent 0%, #f5f5f5 0%);
-            color: white;
+        &__upper{
+          margin: 0;
+          .item-name{
+            line-height: 14px;
+          }
+          .itemname-form{
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: inherit;
+            height: 48px;
+            margin-top: 16px;
+            outline: none;
+            padding: 0 16px;
+            width: inherit;
           }
         }
-        .size{}
-        .condition{}
+        &__bottom{
+          .item-discription{
+            margin-top: 32px;
+          }
+          .discription-form{
+            margin-top: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: #222;
+            outline: none;
+            padding: 13px 16px;
+            resize: vertical;
+            vertical-align: middle; 
+          }
+        }
+      }
+
+
+
+
+      &__detail{
+        padding: 16px;
+        border-top: 1px solid #eee;
+        &__detail-top{ 
+          color: rgb(136, 136, 136);
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 1.4em;
+          margin-bottom: 24px;
+        }  
+        &__category_id{
+          margin-top: 16px;
+        }
+        &__bland_id{
+          margin-top: 32px;
+          .marker_gray {
+            background: linear-gradient(transparent 0%, gray 0%);
+            color: white;
+          }
+          .bland_id__input-area{
+            // border: 1px solid #ccc;
+            // border-radius: 4px;
+            // box-sizing: border-box;
+            // font-family: inherit;
+            // font-size: inherit;
+            // height: 48px;
+            // margin-top: 16px;
+            // outline: none;
+            // padding: 0 16px;
+          }
+        }
+          .size{}
+          .condition{}}
       }
       
 
@@ -78,7 +135,7 @@
         padding: 40px;
         border-top: 1px solid #eee;
       }
-    }
+    
 }
 
 .form_footer{
@@ -86,6 +143,7 @@
   margin-top: auto;
   text-align: center;
   padding: 40px 0px 11px;
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
   &__link{
     font-size: 14px;
   }
