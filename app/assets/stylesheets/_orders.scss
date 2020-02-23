@@ -1,0 +1,102 @@
+.form_header {
+  background-color: #f5f5f5;
+  &__logo {
+    height: 50px;
+    text-align: center;
+    padding: 15px 0 0;
+    .logoimage{
+      height: 40px;
+      width: 140px;
+      display: inline-block;
+      margin: 11px 0 12px;
+    }  
+  }
+}
+
+.main{
+  background-color: #f5f5f5;
+  padding: 40px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+  .marker_red {
+    background: linear-gradient(transparent 0%, red 0%);
+    color: white;
+  }
+    .main__showmain{
+      background-color: #fff;
+      padding: 24px 40px 40px;
+
+      &__top{
+        padding: 24px 8px;
+        font-size: 18px;
+        line-height: 1.5;
+        text-align: center;
+        font-weight: bold;
+        border-bottom: 1px solid #eee;
+      }
+
+      &__image{
+        padding: 40px 2.5%;
+      }
+
+      &__item{
+        padding: 40px;
+        border-top: 1px solid #eee;
+        .name{
+          
+          
+        }
+        .discription{
+        }
+      }
+
+      &__detail{
+        padding: 40px;
+        border-top: 1px solid #eee;
+        
+        .category_id{}
+        .bland_id{
+          .marker_gray {
+            background: linear-gradient(transparent 0%, #f5f5f5 0%);
+            color: white;
+          }
+        }
+        .size{}
+        .condition{}
+      }
+      
+
+      &__delivary{
+        padding: 40px;
+        border-top: 1px solid #eee;
+        delivary_fee{}
+        area{}
+        preparation_day{}
+      }
+      &__price{
+        padding: 40px;
+        border-top: 1px solid #eee;
+      }
+    }
+}
+
+.form_footer{
+  background-color: #f5f5f5;
+  margin-top: auto;
+  text-align: center;
+  padding: 40px 0px 11px;
+  &__link{
+    font-size: 14px;
+  }
+  &__logo{
+    .logoimagew{
+    margin: 0 auto;
+    height: 40px;
+    width: 140px;
+    }
+  }
+  &__copy{
+    font-size: 12px;
+  }
+}
