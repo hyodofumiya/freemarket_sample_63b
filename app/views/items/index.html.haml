@@ -1,27 +1,5 @@
-<<<<<<< HEAD
-%h1 Items#index
-%p Find me in app/views/items/index.html.haml
-=======
-%section.header
-  .inner
-    .upper
-      = link_to root_path, class: "logo" do
-        = image_tag "/material/logo/logo.png",alt:"logo"
-      .search_field
-        %input.search_field__input_area
-        .search_field__submit_btn
-    .lower
-      .left_btns
-        .left_btns__category
-          カテゴリー
-        .left_btns__brand
-          ブランド
-      .right_btns
-        = link_to root_path,class: "right_btns__login" do
-          ログイン
-        = link_to root_path,class: "right_btns__signup" do
-          新規会員登録
-
+ 
+= render "share/header"
 %section.main
   %section.title_image
     = image_tag "/material/pict/bg-mainVisual-pict_pc.jpg", alt: "image"
@@ -226,50 +204,5 @@
         = image_tag "/material/icon/svg/app-store.svg", alt: "app-store" 
       = link_to root_path, class: "bottom_image__btn--google-play" do
         = image_tag "/material/icon/svg/google-play.svg", alt: "google-play"
-%section.footer
-  .footer__main
-    .left_items
-      .left_items__title
-        FURIMAについて
-      %ul.left_items__content
-        %li
-          %a{ href: root_path}
-            会社概要（運営会社）
-        %li
-          %a{ href: root_path}
-            プライバシーポリシー
-        %li
-          %a{ href: root_path}
-            FURIMA利用規約
-        %li
-          %a{ href: root_path}
-            ポイントに関する特約
-    .middle_items
-      .middle_items__title
-        FURIMAを見る
-      %ul.left_items__content
-        %li
-          %a{ href: root_path}
-            カテゴリー一覧
-        %li
-          %a{ href: root_path}
-            ブランド一覧
-    .right_items
-      .right_items__title
-        ヘルプ&ガイド
-      %ul.right_items__content
-        %li
-          %a{ href: root_path}
-            FURIMAガイド
-        %li
-          %a{ href: root_path}
-            FURIMAロゴ利用ガイドライン
-        %li
-          %a{ href: root_path}
-            お知らせ
-  .footer__logo
-    = link_to root_path, class: "footer__logo--image" do
-      = image_tag "/material/logo/logo-white.png", alt: "logo"
-    .footer__logo--text
-      ©︎FURIMA
->>>>>>> top画面　haml記入完
+
+= render "share/footer"

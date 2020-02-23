@@ -1,36 +1,3 @@
-.header{
-  .upper{
-    .logo{
-
-    }
-    .search_field{
-      &__input_area{
-
-      }
-      &__submit_btn{
-
-      }
-    }
-  }
-  .lower{
-    .left_btns{
-      &__category{
-
-      }
-      &__brand{
-
-      }
-    }
-    .right_btns{
-      &__login{
-
-      }
-      &__signup{
-
-      }
-    }
-  }
-}
 
 .main{
   .title_image{
@@ -57,7 +24,8 @@
         }
         &__text{
           &--subtitle{}
-          &--sentence
+          &--sentence{
+          }
         }
       }
     }
