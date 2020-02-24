@@ -1,36 +1,67 @@
 .header{
-  .upper{
-    .logo{
-      width: 140px;
-      display: block;
-      img{
+  padding: 0 60px;
+  .inner{
+    max-width: 1040px;
+    width: 100%;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 15px 0 0;
+    .upper{
+      display: flex;
+      align-items: center;
+      .logo{
+        margin: 0 30px 10px 0;
+        width: 140px;
+        display: block;
+        img{
+          width: 100%;
+          vertical-align: bottom;
+        }
+      }
+      .search_field{
+        display: flex;
         width: 100%;
+        margin-bottom: 5px;
+        &__input_area{
+          height: 36px;
+          width: calc(100% - 26px);
+          padding: 0 0 0 5px;
+        }
+        &__submit{
+          width: 36px;
+          height: 36px;
+          padding-bottom: 5px;
+          background-color: #3ccacc;
+          cursor: pointer;
+
+          &--btn{
+            display: none;
+          }
+          label{
+            img{
+            width: 20px;
+            height: auto;
+            }
+          }
+        }
       }
     }
-    .search_field{
-      &__input_area{
+    .lower{
+      .left_btns{
+        &__category{
 
+        }
+        &__brand{
+
+        }
       }
-      &__submit_btn{
+      .right_btns{
+        &__login{
 
-      }
-    }
-  }
-  .lower{
-    .left_btns{
-      &__category{
+        }
+        &__signup{
 
-      }
-      &__brand{
-
-      }
-    }
-    .right_btns{
-      &__login{
-
-      }
-      &__signup{
-
+        }
       }
     }
   }
