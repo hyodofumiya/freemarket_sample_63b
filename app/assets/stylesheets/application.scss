@@ -1,0 +1,11 @@
+$form_header_height: 128px;
+$form_footer_height: 220px;
+
+
+@import "form/form_common";
+@import "form/user_form";
+
+body
+{
+    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+}
