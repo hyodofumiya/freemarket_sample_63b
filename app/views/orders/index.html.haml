@@ -6,9 +6,6 @@
 
 .main
   .main__showmain
-    .main__showmain__main-top
-      商品の情報を入力
-
     .main__showmain__main-image
       出品画像
       %span.marker_red 必須
@@ -40,47 +37,47 @@
       .main__showmain__detail__category_id
         カテゴリー
         %span.marker_red 必須
+      .main__showmain__detail__size
+        サイズ
+        %span.marker_red 必須
       .main__showmain__detail__bland_id
         ブランド
         %span.marker_gray 任意
         .main__showmain__detail__bland_id__input-area
           %input.main__showmain__detail__bland_id__input_area
-
-      .main__showmain__datail__size
-        サイズ
-        %span.marker_red 必須
       .main__showmain__detail__condition
         商品の状態
         %span.marker_red 必須
 
     .main__showmain__delivary
-      配送について
-      %span.marker_red 必須
-    .main__showmain__delivary__delivary_fee
-      配送料の負担
-      %span.marker_red 必須
-    .main__showmain__delivary__area
-      発送元の地域
-      %span.marker_red 必須
-    .main__showmain__delivary__preparation_day
-      発送までの日数
-      %span.marker_red 必須
+      .main__showmain__delivary__delivary-top
+        配送について
+      .main__showmain__delivary__delivary_fee
+        配送料の負担
+        %span.marker_red 必須
+      .main__showmain__delivary__area
+        発送元の地域
+        %span.marker_red 必須
+      .main__showmain__delivary__preparation_day
+        発送までの日数
+        %span.marker_red 必須
 
     .main__showmain__price
-      販売価格（300〜9,999,999）
+      .main__showmain__price__price-top
+        価格（¥300〜9,999,999）
       価格
       %span.marker_red 必須
-      ¥
+      %br ¥
       %input.main__showmain__price__input_area
 
 
 .form_footer
   .form_footer__link
-    プライバシーポリシー
-    FURIMA利用規約
-    特定商取引に関する表記
+    %br プライバシーポリシー
+    %br FURIMA利用規約
+    %br 特定商取引に関する表記
   .form_footer__logo
-    .logoimagew
+    .form_footer__logo__logoimagew
       %img.logoimagew{:alt => "furimalogow", :src => "logo-white.png"}/
   .form_footer__copy
     &copy;FURIMA
