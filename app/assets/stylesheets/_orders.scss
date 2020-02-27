@@ -51,12 +51,13 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
+            color: rgb(136, 136, 136);
             font-family: inherit;
             font-size: inherit;
             height: 48px;
             margin-top: 16px;
             outline: none;
-            padding: 0 16px;
+            padding: 13px 16px;
             width: inherit;
           }
         }
@@ -69,7 +70,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
-            color: #222;
+            color: rgb(136, 136, 136);
             outline: none;
             padding: 13px 16px;
             resize: vertical;
@@ -93,9 +94,37 @@
         }  
         &__category_id{
           margin-top: 16px;
+          &__select-area{
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: #222;
+            font-size: 16px;
+            height: 48px;
+            line-height: 1;
+            margin: 0;
+            outline: none;
+            padding: 0 56px 0 16px;
+            width: 100%;
+          }
         }
         &__size{
           margin-top: 32px;
+          &__select-area{
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: #222;
+            font-size: 16px;
+            height: 48px;
+            line-height: 1;
+            margin: 0;
+            outline: none;
+            padding: 0 56px 0 16px;
+            width: 100%;
+          }
         }
         &__bland_id{
           margin-top: 32px;
@@ -111,12 +140,27 @@
             font-size: inherit;
             height: 48px;
             margin-top: 16px;
+            color: rgb(136, 136, 136);
             outline: none;
-            padding: 0 16px;
+            padding: 13px 16px;
             }
         }
         &__condition{
           margin-top: 32px;
+          &__select-area{
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: #222;
+            font-size: 16px;
+            height: 48px;
+            line-height: 1;
+            margin: 0;
+            outline: none;
+            padding: 0 56px 0 16px;
+            width: 100%;
+          }
         }
       }
       
@@ -133,12 +177,54 @@
         }
         &__delivary_fee{
           margin-top: 32px;
+          &__select-area{
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: #222;
+            font-size: 16px;
+            height: 48px;
+            line-height: 1;
+            margin: 0;
+            outline: none;
+            padding: 0 56px 0 16px;
+            width: 100%;
+          }
         }
         &__area{
           margin-top: 32px;
+          &__select-area{
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: #222;
+            font-size: 16px;
+            height: 48px;
+            line-height: 1;
+            margin: 0;
+            outline: none;
+            padding: 0 56px 0 16px;
+            width: 100%;
+          }
         }
         &__preparation_day{
           margin-top: 32px;
+           &__select-area{
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: #222;
+            font-size: 16px;
+            height: 48px;
+            line-height: 1;
+            margin: 0;
+            outline: none;
+            padding: 0 56px 0 16px;
+            width: 100%;
+          }
         }
       }
 
@@ -153,7 +239,40 @@
           line-height: 1.4em;
           margin-bottom: 24px;
         }
+        &__input_area{
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          font-family: inherit;
+          font-size: inherit;
+          height: 48px;
+          margin-top: 16px;
+          color: rgb(136, 136, 136);
+          outline: none;
+          padding: 13px 16px;
+        }
       }
+    &__btn{
+      margin: 0px auto 24px;
+      &__put-btn{
+        background-color: #ea352d;
+        color: #fff;
+        margin-bottom: 24px;
+        font-size: 17px;
+        min-height: 48px;
+        padding: 0 24px;
+        width: 100%;
+      }
+      &__return-btn{
+        background-color: #ccc;
+        border-color: transparent;
+        color: #222;
+        font-size: 17px;
+        min-height: 48px;
+        padding: 14px 24px;
+        width: 100%;
+      }
+    }
     }
 }
 

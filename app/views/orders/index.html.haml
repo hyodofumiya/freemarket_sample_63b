@@ -20,14 +20,19 @@
         商品名
         %span.marker_red 必須
         .itemname-form
-          %input.main__showmain__main-item__upper__itemname-form__input_area
+          40文字まで
         
       .main__showmain__main-item__bottom
         .item-discription
         商品の説明
         %span.marker_red 必須
         .discription-form
-          %input.main__showmain__item__discription-form__input_area
+          商品の説明（必須1,000文字以内）
+          %br（色、素材、重さ、定価、注意点など）
+          %br
+          %br例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。
+          %br
+ 
 
 
 
@@ -37,17 +42,20 @@
       .main__showmain__detail__category_id
         カテゴリー
         %span.marker_red 必須
+        .main__showmain__detail__category_id__select-area
       .main__showmain__detail__size
         サイズ
         %span.marker_red 必須
+        .main__showmain__detail__size__select-area
       .main__showmain__detail__bland_id
         ブランド
         %span.marker_gray 任意
         .main__showmain__detail__bland_id__input-area
-          %input.main__showmain__detail__bland_id__input_area
+          例）シャネル
       .main__showmain__detail__condition
         商品の状態
         %span.marker_red 必須
+        .main__showmain__detail__condition__select-area
 
     .main__showmain__delivary
       .main__showmain__delivary__delivary-top
@@ -55,12 +63,16 @@
       .main__showmain__delivary__delivary_fee
         配送料の負担
         %span.marker_red 必須
+        .main__showmain__delivary__delivary_fee__select-area
       .main__showmain__delivary__area
         発送元の地域
         %span.marker_red 必須
+        .main__showmain__delivary__area__select-area
       .main__showmain__delivary__preparation_day
         発送までの日数
         %span.marker_red 必須
+        .main__showmain__delivary__preparation_day__select-area
+        
 
     .main__showmain__price
       .main__showmain__price__price-top
@@ -68,7 +80,14 @@
       価格
       %span.marker_red 必須
       %br ¥
-      %input.main__showmain__price__input_area
+      .main__showmain__price__input_area
+
+
+    .main__showmain__btn
+      .main__showmain__btn__put-btn
+        出品する
+      .main__showmain__btn__return-btn
+        もどる
 
 
 .form_footer
