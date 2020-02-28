@@ -1,3 +1,213 @@
  
 = render "share/header"
+%section.main
+  %section.title_image
+    .title_image__content
+      .title_image__content__title
+        人生を変えるフリマアプリ
+      .title_image__content__sentence
+        FURIMAはだれでもかんたんに出品・購入できるフリマアプリです
+      .title_image__content__btn
+        .title_image__content__btn--app_store
+          = image_tag "/material/icon/svg/app-store.svg", alt: "app-store"
+        .title_image__content__btn--google_play
+          = image_tag "/material/icon/svg/google-play.svg", alt: "google-play"
+
+  %section.introduction
+    %h2.introduction__title
+      FURIMAが選ばれる３つの理由
+    %ul.introduction__lists
+      %li.list
+        .list__image
+          %span.list__image--number
+            1
+          = image_tag "/material/pict/pict-reason-01.jpg", alt: "image"
+        %h3.list__text
+          .list__text--subtitle
+            %span 
+              ３分
+            ですぐに出品
+          .list__text--sentence
+            スマホで入力するだけで簡単に出品できる！
+      %li.list
+        .list__image
+          %span.list__image--number
+            2
+          = image_tag "/material/pict/pict-reason-02.jpg", alt: "image"
+        %h3.list__text
+          .list__text--subtitle
+            %span
+              シンプル
+            で使いやすい
+          .list__text--sentence
+            めんどくさい入力は必要なく、検索も購入もスムーズ！
+      %li.list
+        .list__image
+          %span.list__image--number
+            3
+          = image_tag "/material/pict/pict-reason-03.jpg", alt: "image"
+        %h3.list__text
+          .list__text--subtitle
+            手数料
+            %span
+              業界最安
+          .list__text--sentence
+            最大3%でお得に出品&購入！
+  %section.middle_image
+    .middle_image__content
+      %h2.middle_image__content__title
+        会員数日本一位
+      .middle_image__content__sentence
+        FURIMAは、フリマアプリで最も人気
+        出品・購入回数も業界最多です！
+        欲しかったあの商品に出会えるかもしれません。
+      .middle_image__content__btn
+        = link_to root_path do
+          = image_tag "/material/icon/svg/app-store.svg", alt: "app-store" 
+        = link_to root_path do
+          = image_tag "/material/icon/svg/google-play.svg", alt: "google-play"
+  %section.feature
+    .feature__title
+      FURIMAの特徴
+    %ul.feature__lists
+      %li.item
+        .item__image
+          = image_tag "/material/icon/icon-01.png", alt: "image"
+        .item__text
+          %h3.item__text--subtitle
+            簡単に売り買いできる
+          .item__text--sentence
+            スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      %li.item
+        .item__image
+          = image_tag "/material/icon/icon-02.png", alt: "image"
+        .item__text
+          %h3.item__text--subtitle
+            売上金は即日振込みに対応
+          .item__text--sentence
+            午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします！
+      %li.item
+        .item__image
+          = image_tag "/material/icon/icon-03.png", alt: "image"
+        .item__text
+          %h3.item__text--subtitle
+            様々な支払いに対応
+          .item__text--sentence
+            お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+  %section.pickup_products
+    %h2.title
+      ピックアップ全ての商品
+    .products
+      = link_to root_path, class: "products__header" do
+        新規投稿商品      
+      .products__list
+        .product
+          = link_to root_path do
+            .image
+              = image_tag "/material/pict/猫画像１.jpeg", alt: "商品画像"
+            .body
+              .body__name
+                product3
+              .body__detail
+                .body__detail__main
+                  .body__detail__main--price
+                    30000円
+                  .body__detail__main--favorite
+                    ★0
+                .body__detail__sub
+                  (税込)
+        .product
+          = link_to root_path do
+            .image
+              = image_tag "/material/pict/猫画像１.jpeg", alt: "商品画像"
+            .body
+              .body__name
+                product2
+              .body__detail
+                .body__detail__main
+                  .body__detail__main--price
+                    20000円
+                  .body__detail__main--favorite
+                    ★0
+                .body__detail__sub
+                  (税込)
+        .product
+          = link_to root_path do
+            .image
+              = image_tag "/material/pict/猫画像１.jpeg", alt: "商品画像"
+            .body
+              .body__name
+                product1
+              .body__detail
+                .body__detail__main
+                  .body__detail__main--price
+                    10000円
+                  .body__detail__main--favorite
+                    ★0
+                .body__detail__sub
+                  (税込)
+  %section.pickup_products
+    %h2.title
+      ピックアップ新商品
+    .products
+      = link_to root_path, class: "products__header" do
+        アーカイバ     
+      .products__list
+        .product
+          = link_to root_path do
+            .image
+              = image_tag "/material/pict/猫画像１.jpeg", alt: "商品画像"
+            .body
+              .body__name
+                product3
+              .body__detail
+                .body__detail__main
+                  .body__detail__main--price
+                    30000円
+                  .body__detail__main--favorite
+                    ★0
+                .body__detail__sub
+                  (税込)
+        .product
+          = link_to root_path do
+            .image
+              = image_tag "/material/pict/猫画像１.jpeg", alt: "商品画像"
+            .body
+              .body__name
+                product2
+              .body__detail
+                .body__detail__main
+                  .body__detail__main--price
+                    20000円
+                  .body__detail__main--favorite
+                    ★0
+                .body__detail__sub
+                  (税込)
+        .product
+          = link_to root_path do
+            .image
+              = image_tag "/material/pict/猫画像１.jpeg", alt: "商品画像"
+            .body
+              .body__name
+                product1
+              .body__detail
+                .body__detail__main
+                  .body__detail__main--price
+                    10000円
+                  .body__detail__main--favorite
+                    ★0
+                .body__detail__sub
+                  (税込)
+
+  %section.bottom_image
+    .bottom_image__content
+      .bottom_image__content__title
+        だれでも簡単、人生を変えるフリマアプリ
+      .bottom_image__content__sentence
+        今すぐ無料ダウンロード！
+      .bottom_image__btn
+        = link_to root_path, class: "bottom_image__btn--app-store" do
+          = image_tag "/material/icon/svg/app-store.svg", alt: "app-store" 
+        = link_to root_path, class: "bottom_image__btn--google-play" do
+          = image_tag "/material/icon/svg/google-play.svg", alt: "google-play"
 = render "share/footer"
