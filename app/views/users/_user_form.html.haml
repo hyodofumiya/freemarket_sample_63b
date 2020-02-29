@@ -8,15 +8,16 @@
     %br/
     = f.email_field :email, class: "form_field__input", autocomplete: "email", placeholder: "例)freema@freema.com"
 
-.form_field
-    = f.label :password, class: "form_field__label form_field__label--essential"
-    %br/
-    = f.password_field :password, class: "form_field__input", autocomplete: "new-password", placeholder: "#{@minimum_password_length} characters minimum" if @minimum_password_length
+- if isrequest_new
+    .form_field
+        = f.label :password, class: "form_field__label form_field__label--essential"
+        %br/
+        = f.password_field :password, class: "form_field__input", autocomplete: "new-password", placeholder: "#{@minimum_password_length} characters minimum" if @minimum_password_length
 
-.form_field
-    = f.label :password_confirmation, class: "form_field__label form_field__label--essential"
-    %br/
-    = f.password_field :password_confirmation, class: "form_field__input", placeholder: "確認のためもう一度入力してください", autocomplete: "new-password"
+    .form_field
+        = f.label :password_confirmation, class: "form_field__label form_field__label--essential"
+        %br/
+        = f.password_field :password_confirmation, class: "form_field__input", placeholder: "確認のためもう一度入力してください", autocomplete: "new-password"
 
 .form_field
     = f.label :family_name, "お名前", class: "form_field__label form_field__label--essential"

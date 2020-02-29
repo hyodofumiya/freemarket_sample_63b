@@ -16,9 +16,12 @@
 {
     &--birthday
     {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none; 
         box-sizing: content-box;
-        height: 46px;
-        width: calc(10% + #{$form_input_paddingLR} * 2);
+        height: 28px;
+        width: calc(#{$form_input_paddingLR} * 2);
         background-color: white;
     }
     &--name
