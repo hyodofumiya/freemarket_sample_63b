@@ -1,7 +1,6 @@
 .app_banner{
-  background-image: url(/material/pict/bg-appBanner-pict.jpg);
+  @include background_image("/material/pict/bg-appBanner-pict.jpg");
   background-position: top center;
-  background-size: cover;
   padding: 100px 40px;
   position: relative;
   &__content{

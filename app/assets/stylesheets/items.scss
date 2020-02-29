@@ -4,11 +4,10 @@
     height: 560px;
     display: flex;
     position: relative;
-    background-image: url(/material/pict/bg-mainVisual-pict_pc.jpg);
     background-position: top center;
     background-repeat: no-repeat;
-    background-size: cover;
     padding: 0 60px;
+    @include background_image("/material/pict/bg-mainVisual-pict_pc.jpg");
     align-items: center;
     &__content{
       max-width: 1280px;
@@ -106,12 +105,11 @@
   }
 
   .middle_image{
-    background-image: url(/material/pict/bg-topMiddleDl-pict.jpg);
-    background-size: cover;
+    @include background_image("/material/pict/bg-topMiddleDl-pict.jpg");
+    align-items: center;
     background-position: bottom right;
     height: 400px;
     display: flex;
-    align-items: center;
     &__content{
       color: #fff;
       @include text_shadow;
