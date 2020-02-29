@@ -32,6 +32,9 @@
   }
 }
 /* gackground-imageの設定 */
-
+@mixin background_image ($url) {
+  background-image: url($url);
+  background-size: cover;
+}
 /* app_banner.scss */
 
