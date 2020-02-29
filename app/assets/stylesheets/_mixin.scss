@@ -19,6 +19,7 @@
 @mixin text_shadow {
   text-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
+
 /* app-storeとplay-storeのアイコン */
 @mixin app_link {
   &__btn{
@@ -31,10 +32,10 @@
     }
   }
 }
+
 /* gackground-imageの設定 */
 @mixin background_image ($url) {
   background-image: url($url);
   background-size: cover;
 }
-/* app_banner.scss */
 
