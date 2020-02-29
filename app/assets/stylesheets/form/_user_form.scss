@@ -17,10 +17,12 @@
     &--birthday
     {
         box-sizing: content-box;
-        width: auto;
+        height: 46px;
+        width: calc(10% + #{$form_input_paddingLR} * 2);
+        background-color: white;
     }
     &--name
     {
-        width: 35%;
+        width: 39.65%;
     }
 }
