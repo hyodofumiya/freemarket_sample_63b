@@ -6,9 +6,9 @@
       = form_with url: root_path, scope: :post, local: true, class: "search" do |f|
         .search_field
           = f.text_field :keyword, class: "search_field__input_area", placeholder: "キーワードから探す"      
-          %buttin.search_field__submit
+          %button.search_field__submit
             = f.submit "", class: "search_field__submit--btn", id: "submit-btn" 
-            %label(for="submit-btn")
+            .search_field__submit--icon
               = image_tag "/material/icon/icon-search 1.png"
     .lower
       %ul.left_btns
