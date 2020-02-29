@@ -1,0 +1,37 @@
+/* header.scss */
+@mixin lower_left {
+  padding: 0;
+  color: #333;
+  line-height: 32px;
+  padding-right: 30px;
+}
+@mixin lower_right {
+  padding: 0 0 0 16px;
+  line-height: 32px;
+  margin: 0;
+  a{
+    text-decoration: none;
+    color: #333;
+  }
+}
+
+/* top画面のimg内の文字 */
+@mixin text_shadow {
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+/* app-storeとplay-storeのアイコン */
+@mixin app_link {
+  &__btn{
+    display: flex;
+    a{
+      margin-right: 10px;
+      img{
+        width: 180px;
+      }
+    }
+  }
+}
+/* gackground-imageの設定 */
+
+/* app_banner.scss */
+
