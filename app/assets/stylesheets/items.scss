@@ -16,10 +16,17 @@
       margin: 0 auto;
       padding: 35px 0 0 0;
       &__title{
-
+        line-height: 1.2;
+        font-size: 60px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        color: #fff;
       }
       &__sentence{
-
+        font-size: 18px;
+        color: #fff;
+        line-height: 1.77778;
+        margin: 16px 0 0 0;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
       }
       &__btn{
         display: flex;
