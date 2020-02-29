@@ -1,4 +1,9 @@
+*{
+  box-sizing: border-box;
+}
 @import "./reset";
-@import "items";
 @import "./header";
+@import "items";
+@import "./app_banner";
 @import "./footer";
+@import "./exhibit_btn";
