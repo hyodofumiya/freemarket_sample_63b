@@ -1,18 +1,4 @@
-@mixin lower_left {
-  padding: 0;
-  color: #333;
-  line-height: 32px;
-  padding-right: 30px;
-}
-@mixin lower_right {
-  padding: 0 0 0 16px;
-  line-height: 32px;
-  margin: 0;
-  a{
-    text-decoration: none;
-    color: #333;
-  }
-}
+
 
 .header{
   padding: 0 60px;

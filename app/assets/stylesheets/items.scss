@@ -18,7 +18,7 @@
       &__title{
         line-height: 1.2;
         font-size: 60px;
-        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        @include text_shadow;
         color: #fff;
       }
       &__sentence{
@@ -26,17 +26,9 @@
         color: #fff;
         line-height: 1.77778;
         margin: 16px 0 0 0;
-        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        @include text_shadow;
       }
-      &__btn{
-        display: flex;
-        a{
-          margin-right: 10px;
-          img{
-            width: 180px;
-          }
-        }
-      }
+      @include app_link;
     }
   }
 
@@ -122,7 +114,7 @@
     align-items: center;
     &__content{
       color: #fff;
-      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      @include text_shadow;
       text-align: left;
       max-width: 1040px;
       width: 100%;
@@ -137,15 +129,7 @@
         margin: 20px 0 30px;
         line-height: 1.5;
       }
-      &__btn{
-        display: flex;
-        a{
-          margin-right: 10px;
-        }
-        img{
-          width: 180px;
-        }
-      }
+      @include app_link;
     }
   }
 
@@ -211,6 +195,9 @@
     padding: 80px 0 0;
     background-color: #f8f8f8;
     height: 100%;
+    &:last-child{
+      padding-bottom: 80px;
+    }
     .title{
       text-align: center;
       font-size: 28px;
