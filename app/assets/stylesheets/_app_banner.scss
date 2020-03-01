@@ -16,17 +16,11 @@
       font-size: 35px;
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
     }
-  }
-  &__btn{
+    @include mobile_app_links;
+    &--mobile_app_btns{
     width: 100%;
-    display: flex;
     justify-content: center;
     margin: 20px auto 0;
-    a{
-      margin-right: 10px;
-      img{
-        width: 180px;
-      }
     }
   }
 }

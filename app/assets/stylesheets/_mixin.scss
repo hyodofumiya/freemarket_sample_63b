@@ -21,12 +21,12 @@
 }
 
 /* app-storeとplay-storeのアイコン */
-@mixin app_link {
-  &__btn{
+@mixin mobile_app_links {
+  .mobile_app_btns{
     display: flex;
-    a{
+    &--link{
       margin-right: 10px;
-      img{
+      .application_icon{
         width: 180px;
       }
     }

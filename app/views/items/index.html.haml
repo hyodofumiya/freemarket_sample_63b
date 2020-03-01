@@ -10,12 +10,11 @@
         FURIMAはだれでもかんたんに出品・購入できる
         %br
         フリマアプリです
-      .title_image__content__btn
-        = link_to root_path class: "title_image__content__btn--app_store" do
-          = image_tag "/material/icon/svg/app-store.svg", alt: "app-store"
-        = link_to root_path class: "title_image__content__btn--google_play" do
-          = image_tag "/material/icon/svg/google-play.svg", alt: "google-play"
-
+      .mobile_app_btns
+        = link_to root_path, class: "mobile_app_btns--link" do
+          = image_tag "/material/icon/svg/app-store.svg", alt: "apple-store", class: "application_icon"
+        = link_to root_path, class: "mobile_app_btns--link" do
+          = image_tag "/material/icon/svg/google-play.svg", alt: "google-play", class: "application_icon"
   %section.introduction
     %h2.introduction__title
       FURIMAが選ばれる３つの理由
@@ -24,9 +23,9 @@
         .list__image
           %span.list__image--number
             1
-          = image_tag"/material/pict/pict-reason-01.jpg", alt: "image"
+          = image_tag"/material/pict/pict-reason-01.jpg", alt: "image", class: "list__image--pic"
         %h3.list__subtitle
-          %span 3分
+          %span.list__subtitle--color_font 3分
           ですぐに出品
         .list__sentence
           スマホで入力するだけで簡単に出品できる！
@@ -34,9 +33,9 @@
         .list__image
           %span.list__image--number
             2
-          = image_tag"/material/pict/pict-reason-02.jpg", alt: "image"
+          = image_tag"/material/pict/pict-reason-02.jpg", alt: "image", class: "list__image--pic"
         %h3.list__subtitle
-          %span シンプル
+          %span.list__subtitle--color_font シンプル
           で使いやすい
         .list__sentence
           めんどくさい入力は必要なく、検索も購入もスムーズ！
@@ -44,10 +43,10 @@
         .list__image
           %span.list__image--number
             3
-          = image_tag "/material/pict/pict-reason-03.jpg", alt: "image"
+          = image_tag "/material/pict/pict-reason-03.jpg", alt: "image", class: "list__image--pic"
         %h3.list__subtitle
           手数料
-          %span 業界最安
+          %span.list__subtitle--color_font 業界最安
         .list__sentence
           最大3%でお得に出品&購入！
   %section.middle_image
@@ -60,18 +59,18 @@
         出品・購入回数も業界最多です！
         %br
         欲しかったあの商品に出会えるかもしれません。
-      .middle_image__content__btn
-        = link_to root_path do
-          = image_tag "/material/icon/svg/app-store.svg", alt: "app-store" 
-        = link_to root_path do
-          = image_tag "/material/icon/svg/google-play.svg", alt: "google-play"
+      .mobile_app_btns
+        = link_to root_path, class: "mobile_app_btns--link" do
+          = image_tag "/material/icon/svg/app-store.svg", alt: "apple-store", class: "application_icon"
+        = link_to root_path, class: "mobile_app_btns--link" do
+          = image_tag "/material/icon/svg/google-play.svg", alt: "google-play", class: "application_icon"
   %section.feature
     .feature__title
       FURIMAの特徴
     %ul.feature__lists
       %li.item
         .item__image
-          = image_tag "/material/icon/icon-01.png", alt: "image"
+          = image_tag "/material/icon/icon-01.png", alt: "image", class: "item__image--icon"
         .item__text
           %h3.item__text--subtitle
             簡単に売り買いできる
@@ -79,7 +78,7 @@
             スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
       %li.item
         .item__image
-          = image_tag "/material/icon/icon-03.png", alt: "image"
+          = image_tag "/material/icon/icon-03.png", alt: "image", class: "item__image--icon"
         .item__text
           %h3.item__text--subtitle
             売上金は即日振込みに対応
@@ -87,7 +86,7 @@
             午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします！
       %li.item
         .item__image
-          = image_tag "/material/icon/icon-04.png", alt: "image"
+          = image_tag "/material/icon/icon-04.png", alt: "image", class: "item__image--icon"
         .item__text
           %h3.item__text--subtitle
             様々な支払いに対応
@@ -147,10 +146,7 @@
       ピックアップ新商品
     .products
       = link_to root_path, class: "products__header" do
-        アーカイバ     
-      .products__list
-      = link_to root_path, class: "products__header" do
-        新規投稿商品      
+        アーカイバ
       .products__list
         = link_to root_path, class: "product" do
           .product__image_zone

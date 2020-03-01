@@ -27,7 +27,7 @@
         margin: 16px 0 0 0;
         @include text_shadow;
       }
-      @include app_link;
+      @include mobile_app_links;
     }
   }
 
@@ -81,7 +81,7 @@
             background-color: #3CCACE;
             color: #fff;
           }
-          img{
+          &--pic{
             width: 100%;
             vertical-align: bottom;
           }
@@ -91,7 +91,7 @@
           font-size: 24px;
           line-height: 50px;
           margin: 0 0 0 2px;
-          span{
+          &--color_font{
             color: #3CCACE;
           }
         }
@@ -127,7 +127,7 @@
         margin: 20px 0 30px;
         line-height: 1.5;
       }
-      @include app_link;
+      @include mobile_app_links;
     }
   }
 
@@ -168,7 +168,7 @@
           width: 70%;
           margin: 0 auto;
           line-height: 120px;
-          img{
+          &--icon{
             width: 100%;
             vertical-align: bottom;
           }
@@ -213,14 +213,15 @@
         justify-content: center;
         }
       &__list{
-        width: 780px;
+        max-width: 780px;
         margin: 26px auto;
-        justify-content: space-around;
         display: flex;
+        overflow: scroll;
         .product{
           width: 220px;
           background-color: #fff;
           text-decoration: none;
+          margin: 0 20px;
           &__image_zone{
             width: 220px;
             height: 150px;
