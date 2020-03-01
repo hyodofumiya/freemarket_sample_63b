@@ -219,51 +219,47 @@
         display: flex;
         .product{
           width: 220px;
-          display: inline-block;
-          a{
-            background-color: #fff;
-            .image{
-              width: 220px;
-              height: 150px;
-              position: relative;
-              overflow: hidden;
-              margin: 0;
+          background-color: #fff;
+          text-decoration: none;
+          &__image_zone{
+            width: 220px;
+            height: 150px;
+            position: relative;
+            overflow: hidden;
+            margin: 0;
+            z-index: auto;
+            &--image{
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              width: 100%;
               z-index: auto;
-              img{
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                width: 100%;
-                z-index: auto;
-                height: 150px;
-                object-fit: cover;
-              }
+              height: 150px;
+              object-fit: cover;
             }
-            .body{
-              background-color: white;
-              color: #333;
-              padding: 16px;
-              &__name{
-                overflow: hidden;
-                line-height: 1.5;
-                font-size: 16px;
-                text-align: left;
+          }
+          &__body{
+            background-color: white;
+            color: #333;
+            padding: 16px;
+            &--product_name{
+              overflow: hidden;
+              line-height: 1.5;
+              font-size: 16px;
+              text-align: left;
+            }
+            &__detail{
+              font-size: 16px;
+              &__main{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
               }
-              &__detail{
-                font-size: 16px;
-                &__main{
-                  display: flex;
-                  align-items: center;
-                  justify-content: space-between;
-                  &--price{}
-                  &--favorite{}
-                }
-                &__sub{
-                  font-size: 10px;
-                  text-align: left;
-                }
+              &__sub{
+                font-size: 10px;
+                text-align: left;
               }
             }
           }
