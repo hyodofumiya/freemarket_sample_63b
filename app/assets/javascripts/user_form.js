@@ -19,7 +19,8 @@ function user_birthday_selector(event)
     const years = document.getElementById("user_birthday_year");
     const months = document.getElementById("user_birthday_month");
 
-    let last_day = new Date(years.value, months.value + 1, 0);
+    const user_birthday = Number(days.getAttribute('data-birthday'));
+    let last_day = new Date(years.value, months.value, 0);
     while(days.firstChild)
     {
         days.removeChild(days.firstChild);
@@ -29,6 +30,10 @@ function user_birthday_selector(event)
         let option = document.createElement("option");
         option.value = i;
         option.text = i;
+        if(user_birthday == option.value)
+        {
+            option.selected = true;
+        }
         days.append(option);
     }
 }
