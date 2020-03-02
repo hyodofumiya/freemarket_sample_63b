@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'brands/update'
   get 'brands/destroy'
   get 'items/index'
+  get 'items/show'
   get 'items/new'
   get 'items/create'
   get 'items/edit'
