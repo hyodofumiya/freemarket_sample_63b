@@ -1,46 +1,46 @@
 %section.footer
   %ul.footer__main
     %li.left_items.items
-      %h2.left_items__title.title
+      %h2.left_items__title.items--title
         FURIMAについて
-      %ul.left_items__content
-        %li
-          %a{ href: root_path}
+      %ul.left_items__content.items__content
+        %li.footer_list
+          = link_to root_path, class: "footer_list__text" do
             会社概要（運営会社）
         %li
-          %a{ href: root_path}
+          = link_to root_path, class: "footer_list__text" do
             プライバシーポリシー
         %li
-          %a{ href: root_path}
+          = link_to root_path, class: "footer_list__text" do
             FURIMA利用規約
         %li
-          %a{ href: root_path}
+          = link_to root_path, class: "footer_list__text" do
             ポイントに関する特約
     %li.middle_items.items
-      %h2.middle_items__title.title
+      %h2.middle_items__title.items--title
         FURIMAを見る
-      %ul.left_items__content
+      %ul.left_items__content.items__content
         %li
-          %a{ href: root_path}
+          = link_to root_path, class: "footer_list__text" do
             カテゴリー一覧
         %li
-          %a{ href: root_path}
+          = link_to root_path, class: "footer_list__text" do
             ブランド一覧
     %li.right_items.items
-      %h2.right_items__title.title
+      %h2.right_items__title.items--title
         ヘルプ&ガイド
-      %ul.right_items__content
+      %ul.right_items__content.items__content
         %li
-          %a{ href: root_path}
+          = link_to root_path, class: "footer_list__text" do
             FURIMAガイド
         %li
-          %a{ href: root_path}
+          = link_to root_path, class: "footer_list__text" do
             FURIMAロゴ利用ガイドライン
         %li
-          %a{ href: root_path}
+          = link_to root_path, class: "footer_list__text" do
             お知らせ
   .footer__logo
     = link_to root_path, class: "footer__logo--image" do
-      = image_tag "/material/logo/logo-white.png", alt: "logo"
+      = image_tag "/material/logo/logo-white.png", alt: "logo", class: "logo_image"
     .footer__logo--text
       ©︎FURIMA
