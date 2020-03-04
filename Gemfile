@@ -71,3 +71,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "haml-rails", "~> 2.0"
 gem 'rails-i18n'
+gem 'font-awesome-rails'
