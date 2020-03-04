@@ -6,8 +6,28 @@
       .product_zone
         .product_zone__item
           .product_zone__item--head
+            product3
           .product_zone__item__image_zone
-          .product_zone__item--price
+            .dynamic_image_zone
+              = image_tag "/material/pict/猫画像１.jpeg", class: "dynamic_image_zone__selected_image"
+            %ul.static_images
+              %li.static_images__an_image
+                = image_tag "public/material/pict/猫画像１.jpeg", class: "an_item_image"
+              %li.static_images__an_image
+                = image_tag "public/material/pict/猫画像１.jpeg", class: "an_item_image"
+              %li.static_images__an_image
+                = image_tag "public/material/pict/猫画像１.jpeg", class: "an_item_image"
+          .product_zone__item__price_zone
+            .main_price_zone
+              .main_price_zone--yen_mark
+                ¥
+              .main_price_zone--price_numerical
+                30000
+              .sub_price_zone
+                .sub_price_zone__tax_included
+                  (税込)
+                .sub_price_zone__delivary_fee_expression
+                  送料込み
           .product_zone__item__detail
             .product_zone__item__detail--name
             .product_zone__item__deatail--discription
@@ -61,7 +81,20 @@
               相手のことを考え丁寧なコメントを心がけましょう。
               %br
               不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      .item_link_prev_next
-      .same_brand_link
+            = f.submit "", class: "comment_form__submit"
+              = fa_icon "comment", class: "comment_form__submit--icon"
+              コメントする
+      %ul.item_link_prev_next
+        %li.item_link_prev_next__btn
+          = link_to root_path, class: "item_link_prev_next__btn__link" do
+            =fa_icon "angle-left", class: "item_link_prev_next__btn__link--icon"
+            前の商品
+        %li.item_link_prev_next__btn
+          = link_to root_path, class: "item_llnk_prev_next__btn__link" do
+            後ろの商品
+            = fa_icon "angle-right", class: "item_link_prev_next__btn__link--icon"
+      .related_items
+        = link_to root_path, class: "related_items__show_more_link" do
+          ベビー・キッズをもっと見る
 -# = render "share/_app_banner"
 -# = render "share/_footer"
