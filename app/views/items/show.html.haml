@@ -46,9 +46,21 @@
                   %td.table__body__preparation_day--data.table_row--data
             %ul.btns
               %li.btns__favorite
-                = fa_icon "star"
-
+                = link_to root_path, class: "btn__favorite__link" do
+                  = fa_icon "star", class: "btn__favorite__link--icon"
+                  お気に入り
+                  .btn__favorite__link--count_num
+                  0
+              %li.btn__fraud_report
+                = link_to root_path, class: "btn__fraud_report__link" do 
+                  不適切な商品の報告
         .product_zone__comment
+          = form_with url: root_path, scope: :post, local: true, class: "comment_form" do |f|
+            = f.text_area :message, class: "comment_form__input_area"
+            %p.comment_form__notice_area
+              相手のことを考え丁寧なコメントを心がけましょう。
+              %br
+              不快な言葉遣いなどは利用制限や退会処分となることがあります。
       .item_link_prev_next
       .same_brand_link
 -# = render "share/_app_banner"
