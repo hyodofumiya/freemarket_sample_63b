@@ -1,102 +1,118 @@
-.form_header
-  .form_header__logo
-    .form_hender__logo__logoimage
-      %img.logoimage{:alt => "furimalog", :src => "logo.png"}/
+.sell-page
+
+  .form_header
+    .form_header__logo
+      .form_hender__logo__logoimage
+        %img.logoimage{:alt => "furimalog", :src => "logo.png"}/
 
 
-.main
-  .main__showmain
-    .main__showmain__main-image
-      出品画像
-      %span.marker_red 必須
-      .main-text
-      最大10枚までアップロードできます
-      .main-form
-
-
-    .main__showmain__main-item
-      .main__showmain__main-item__upper
-        .item-name
-        商品名
+  .main
+    .main__showmain
+      .main__showmain__main-image
+        <b>出品画像</b>
         %span.marker_red 必須
-        .itemname-form
-          40文字まで
-        
-      .main__showmain__main-item__bottom
-        .item-discription
-        商品の説明
-        %span.marker_red 必須
-        .discription-form
-          商品の説明（必須1,000文字以内）
-          %br（色、素材、重さ、定価、注意点など）
-          %br
-          %br例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。
-          %br
- 
+        .main__showmain__main-image__main-text
+        最大10枚までアップロードできます
+        .main__showmain__main-image__main-form
+          .main__showmain__main-image__main-form__upload
+            ドラックアンドドロップ
+            %br またはクリックしてファイルをアップロード
+
+
+      .main__showmain__main-item
+        .main__showmain__main-item__upper
+          .item-name
+          <b>商品名</b>
+          %span.marker_red 必須
+          .itemname-form
+            40文字まで
+          
+        .main__showmain__main-item__bottom
+          .item-discription
+          <b>商品の説明</b>
+          %span.marker_red 必須
+          .discription-form
+            商品の説明（必須1,000文字以内）
+            %br（色、素材、重さ、定価、注意点など）
+            %br
+            %br例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。
+            %br
+  
 
 
 
-    .main__showmain__detail
-      .main__showmain__detail__detail-top
-        商品の詳細
-      .main__showmain__detail__category_id
-        カテゴリー
-        %span.marker_red 必須
-        .main__showmain__detail__category_id__select-area
-      .main__showmain__detail__size
-        サイズ
-        %span.marker_red 必須
-        .main__showmain__detail__size__select-area
-      .main__showmain__detail__bland_id
-        ブランド
-        %span.marker_gray 任意
-        .main__showmain__detail__bland_id__input-area
-          例）シャネル
-      .main__showmain__detail__condition
-        商品の状態
-        %span.marker_red 必須
-        .main__showmain__detail__condition__select-area
+      .main__showmain__detail
+        .main__showmain__detail__detail-top
+          商品の詳細
+        .main__showmain__detail__category_id
+          <b>カテゴリー</b>
+          %span.marker_red 必須
+          .main__showmain__detail__category_id__select-area
+        .main__showmain__detail__size
+          <b>サイズ</b>
+          %span.marker_red 必須
+          .main__showmain__detail__size__select-area
+        .main__showmain__detail__bland_id
+          <b>ブランド</b>
+          %span.marker_gray 任意
+          .main__showmain__detail__bland_id__input-area
+            例）シャネル
+        .main__showmain__detail__condition
+          <b>商品の状態</b>
+          %span.marker_red 必須
+          .main__showmain__detail__condition__select-area
 
-    .main__showmain__delivary
-      .main__showmain__delivary__delivary-top
-        配送について
-      .main__showmain__delivary__delivary_fee
-        配送料の負担
-        %span.marker_red 必須
-        .main__showmain__delivary__delivary_fee__select-area
-      .main__showmain__delivary__area
-        発送元の地域
-        %span.marker_red 必須
-        .main__showmain__delivary__area__select-area
-      .main__showmain__delivary__preparation_day
-        発送までの日数
-        %span.marker_red 必須
-        .main__showmain__delivary__preparation_day__select-area
-        
-
-    .main__showmain__price
-      .main__showmain__price__price-top
-        価格（¥300〜9,999,999）
-      価格
-      %span.marker_red 必須
-      %br ¥
-      .main__showmain__price__input_area
+      .main__showmain__delivary
+        .main__showmain__delivary__delivary-top
+          配送について
+        .main__showmain__delivary__delivary_fee
+          <b>配送料の負担</b>
+          %span.marker_red 必須
+          .main__showmain__delivary__delivary_fee__select-area
+        .main__showmain__delivary__area
+          <b>発送元の地域</b>
+          %span.marker_red 必須
+          .main__showmain__delivary__area__select-area
+        .main__showmain__delivary__preparation_day
+          <b>発送までの日数</b>
+          %span.marker_red 必須
+          .main__showmain__delivary__preparation_day__select-area
 
 
-    .main__showmain__btn
-      .main__showmain__btn__put-btn
-        出品する
-      .main__showmain__btn__return-btn
-        もどる
 
 
-.form_footer
-  .form_footer__link
-    %br プライバシーポリシー
-    %br FURIMA利用規約
-    %br 特定商取引に関する表記
-  .form_footer__logo
-    .form_footer__logo__logoimagew
-      %img.logoimagew{:alt => "furimalogow", :src => "logo-white.png"}/
-  .form_footer__copy
-    &copy;FURIMA
+
+      .main__showmain__lower    
+        .main__showmain__lower__price-top
+          価格（¥300〜9,999,999）
+          
+        .main__showmain__lower__price-main
+          .main__showmain__lower__price-main__form
+            .main__showmain__lower__price-main__form__price-text
+              .text
+                <b>販売価格</b>
+                %span.marker_red 必須
+              .yen
+                ¥
+            .main__showmain__lower__price-main__form__input-form
+
+        .main__showmain__lower__btn
+          .main__showmain__lower__btn__put-btn
+            出品する
+          .main__showmain__lower__btn__return-btn
+            もどる
+
+        .main__showmain__lower__attention
+          禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+
+
+  .form_footer
+    .form_footer__link
+      %br プライバシーポリシー
+      %br FURIMA利用規約
+      %br 特定商取引に関する表記
+    .form_footer__logo
+      .form_footer__logo__logoimagew
+        %img.logoimagew{:alt => "furimalogow", :src => "logo-white.png"}/
+    .form_footer__copy
+      &copy;FURIMA
