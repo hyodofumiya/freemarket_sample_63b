@@ -1,0 +1,11 @@
+%section.app_banner
+  .app_banner__content
+    .app_banner__content--title
+      だれでも簡単、人生を変えるフリマアプリ
+    .app_banner__content--sentence
+      今すぐ無料ダウンロード！
+    .mobile_app_btns.app_banner__content--mobile_app_btns
+      = link_to root_path, class: "mobile_app_btns--link" do
+        = image_tag "/material/icon/svg/app-store.svg", alt: "apple-store", class: "application_icon"
+      = link_to root_path, class: "mobile_app_btns--link" do
+        = image_tag "/material/icon/svg/google-play.svg", alt: "google-play", class: "application_icon"
