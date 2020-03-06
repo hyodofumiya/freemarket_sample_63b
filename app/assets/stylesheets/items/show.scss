@@ -1,0 +1,40 @@
+.bread_crumb_navigation_bar{
+  width: 100%;
+  border-top: 1px solid #eee;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  position: relative;
+  padding: 0 60px;
+  &__link_list{
+    padding: 17px 0 16px;
+    width: 100%;
+    max-width: 1040px;
+    font-size: 14px;
+    margin: 0 auto;
+    & li{
+      padding: 0 10px 0 0;
+      float: left;
+      display: flex;
+      & i{
+        padding-right: 10px;
+        
+        -webkit-font-smoothing: antialiased
+      }
+      & a{
+        color: black;
+      }
+      &:last-child{
+        font-weight: bold;
+      }
+    }
+    &:after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+}
+
+.main{
+  background-color: #f8f8f8;
+}
+

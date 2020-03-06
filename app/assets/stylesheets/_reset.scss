@@ -19,7 +19,10 @@ html{
   TODO test putting a class on HEAD.
       - Fails on FF.
 */
-body,
+body{
+  margin: 0;
+  padding: 0;
+}
 div,
 a {
   text-decoration: none;

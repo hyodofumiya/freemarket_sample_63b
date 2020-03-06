@@ -1,8 +1,9 @@
--# = render "share/_header"
+= render "share/header"
+
 %nav.bread_crumb_navigation_bar
   %ul.bread_crumb_navigation_bar__link_list
     %li.bread_crumb_navigation_bar__link_list__first.bread_crumb_content
-      .bread_crumb_content__link_text
+      = link_to root_path, class: "bread_crumb_content__link_text" do
         FURIMA
     %li.bread_crumb_navigation_bar__link_list__second.bread_crumb_content
       = fa_icon "angle-right", class: "bread_crumb_content__fa_icon"
@@ -10,15 +11,15 @@
         ベビー・キッズ
     %li.bread_crumb_navigation_bar__link_list__third.bread_crumb_content
       = fa_icon "angle-right", class: "bread_crumb_content__fa_icon"
-      .bread_crumb_content__link_text
+      = link_to root_path, class: "bread_crumb_content__link_text" do
         ベビー服（男女兼用）~95cm
     %li.bread_crumb_navigation_bar__link_list__fourth.bread_crumb_content
       = fa_icon "angle-right", class: "bread_crumb_content__fa_icon"
-      .bread_crumb_content__link_text
+      = link_to root_path, class: "bread_crumb_content__link_text" do
         アウター
     %li.bread_crumb_navigation_bar__link_list__fifth.bread_crumb_content
       = fa_icon "angle-right", class: "bread_crumb_content__fa_icon"
-      .bread_crumb_content__link_text
+      %p.bread_crumb_content__link_text
         product3
 .main
   .main__body
@@ -142,5 +143,6 @@
       .related_items
         = link_to root_path, class: "related_items__show_more_link" do
           ベビー・キッズをもっと見る
--# = render "share/_app_banner"
--# = render "share/_footer"
+
+= render "share/app_banner"
+= render "share/footer"
