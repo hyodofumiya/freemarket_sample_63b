@@ -1,3 +1,269 @@
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.main{
+  background-color: #f8f8f8;
+  .title_image{
+    height: 560px;
+    display: flex;
+    position: relative;
+    background-position: top center;
+    background-repeat: no-repeat;
+    padding: 0 60px;
+    @include background_image("/material/pict/bg-mainVisual-pict_pc.jpg");
+    align-items: center;
+    &__content{
+      max-width: 1280px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 35px 0 0 0;
+      &__title{
+        line-height: 1.2;
+        font-size: 60px;
+        @include text_shadow;
+        color: #fff;
+      }
+      &__sentence{
+        font-size: 18px;
+        color: #fff;
+        line-height: 1.77778;
+        margin: 16px 0 0 0;
+        @include text_shadow;
+      }
+      @include mobile_app_links;
+    }
+  }
+
+  .introduction{
+    padding: 60px 20px;
+    &__title{
+      text-align: center;
+      font-size: 26px;
+      line-height: 1.4;
+      font-weight: bold;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      position: relative;
+      &::after{
+        content: "";
+        width: 70px;
+        height: 4px;
+        background-color: #3CCACE;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    &__lists{
+      display: flex;
+      text-align: center;
+      max-width: 1020px;
+      width: 100%;
+      margin: 0 auto;
+      .list{
+        width: 30%;
+        margin: 16px 5% 0 0;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__image{
+          position: relative;
+          margin-bottom: 20px;
+          &--number{
+            position: absolute;
+            display: inline-block;
+            top: 0;
+            left: 0;
+            border-radius: 4%;
+            font-size: 30px; 
+            text-align: center;
+            margin: 0 5px 0 0;
+            padding: 10px 20px;
+            background-color: #3CCACE;
+            color: #fff;
+          }
+          &--pic{
+            width: 100%;
+            vertical-align: bottom;
+          }
+        }
+        &__subtitle{
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 50px;
+          margin: 0 0 0 2px;
+          &--color_font{
+            color: #3CCACE;
+          }
+        }
+        &__sentence{
+          font-size: 18px;
+          line-height: 1.5;
+          margin: 16px 0 0;
+        }
+      }
+    }
+  }
+
+  .middle_image{
+    @include background_image("/material/pict/bg-topMiddleDl-pict.jpg");
+    align-items: center;
+    background-position: bottom right;
+    height: 400px;
+    display: flex;
+    &__content{
+      color: #fff;
+      @include text_shadow;
+      text-align: left;
+      max-width: 1040px;
+      width: 100%;
+      margin: 0 auto;
+      &__title{
+        font-size: 27px;
+        font-weight: bold;
+        line-height: 1.4;
+      }
+      &__sentence{
+        font-size: 18px;
+        margin: 20px 0 30px;
+        line-height: 1.5;
+      }
+      @include mobile_app_links;
+    }
+  }
+
+  .feature{
+    padding: 60px 100px;
+    background-color: #fff;
+    &__title{
+      font-size: 27px;
+      text-align: center;
+      margin: 0 0 40px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      position: relative;
+      &::after{
+        content: "";
+        width: 70px;
+        height: 4px;
+        background-color: #3CCACE;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    &__lists{
+      display: flex;
+      max-width: 1040px;
+      width: 100%;
+      margin: 0 auto;
+      .item{
+        display: flex;
+        flex-direction: column;
+        width: calc(1/3*100%);
+        text-align: center;
+        padding: 0 20px;
+        &__image{
+          width: 70%;
+          margin: 0 auto;
+          line-height: 120px;
+          &--icon{
+            width: 100%;
+            vertical-align: bottom;
+          }
+        }
+        &__text{
+          &--subtitle{
+            margin: 38px 0 10px;
+            font-size: 19px;
+            font-weight: bold;
+          }
+          &--sentence{
+            margin: 0 0 40px;
+            font-size: 17px;
+            font-weight: 200;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+  .pickup_products{
+    padding: 80px 0 0;
+    background-color: #f8f8f8;
+    height: 100%;
+    &:last-child{
+      padding-bottom: 80px;
+    }
+    .title{
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.4;
+      font-weight: bold;
+    }
+    .products{
+      &__header{
+        text-align: center;
+        font-size: 24px;
+        color: #3CCACE;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        }
+      &__list{
+        max-width: 780px;
+        margin: 26px auto;
+        display: flex;
+        overflow: scroll;
+        .product{
+          width: 220px;
+          background-color: #fff;
+          margin: 0 20px;
+          &__image_zone{
+            width: 220px;
+            height: 150px;
+            position: relative;
+            overflow: hidden;
+            margin: 0;
+            z-index: auto;
+            &--image{
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              width: 100%;
+              z-index: auto;
+              height: 150px;
+              object-fit: cover;
+            }
+          }
+          &__body{
+            background-color: white;
+            color: #333;
+            padding: 16px;
+            &--product_name{
+              overflow: hidden;
+              line-height: 1.5;
+              font-size: 16px;
+              text-align: left;
+            }
+            &__detail{
+              font-size: 16px;
+              &__main{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+              }
+              &__sub{
+                font-size: 10px;
+                text-align: left;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
