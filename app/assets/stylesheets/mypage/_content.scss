@@ -1,0 +1,77 @@
+.user_content_area
+{
+    width: $mypage_content_width;
+    margin-top: $mypage_margin_top;
+}
+
+.mypage_profile_area
+{
+    height: $mypage_user_profile_height;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mypage_user_profile
+{
+    text-align: center;
+    font-size: 16px;
+    &__image
+    {
+        border-radius: 50%;
+        height: $mypage_user_profile_image_length;
+        width: $mypage_user_profile_image_length;
+    }
+    &__name
+    {
+        margin: 0;
+        margin-top: 10px;
+        font-size: 1.2em;
+    }
+    &__small_content
+    {
+        margin-left: 10px;
+        font-size: 0.8em;
+    }
+}
+
+.mypage_users_item__exhibited_item_photo
+{
+    height: $mypage_list_height;
+    width: $mypage_list_height;
+}
+
+.mypage_tabs
+{
+    list-style-type: none;
+    display: flex;
+    &__tab
+    {
+        &__button
+        {
+            display: block;
+            height: $mypage_tab_height;
+            width: $mypage_tab_width;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #EEEEEE;
+            &:focus
+            {
+                outline: none;
+                background-color: white;
+            }
+        }
+    }
+}
+
+.mypage_users_items
+{
+    width: $mypage_tab_width * 2;
+}
+
+.mypage_item
+{
+    width: $mypage_tab_width * 2;
+}

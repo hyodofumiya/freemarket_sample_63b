@@ -1,0 +1,40 @@
+.user_content_area
+    .mypage_profile_area
+        .mypage_user_profile
+            -# %img.mypage_user_profile__image{src: user.photo-filepass, alt: "あなたのプロフィール画像です"}
+            %img.mypage_user_profile__image{src: "/material/icon/member_photo_noimage_thumb.png", alt: "あなたのプロフィール画像です"}
+            %p.mypage_user_profile__name #{user.nickname}
+            -# %span.mypage_user_profile__review 評価　#{user.evaluation}
+            %span.mypage_user_profile__small_content 評価　2
+            -# %span.mypage_user_profile__item_count 出品数　#{user.items}
+            %span.mypage_user_profile__small_content 出品数　2
+
+    .users_item_area
+        %ul.mypage_tabs
+            %li.mypage_tabs__tab.mypage_tabs__tab--exhibition.mypage_tabs__tab--current
+                %h3.mypage_tabs__tab__title
+                    %button.mypage_tabs__tab__button{type: "button"}
+                        出品した商品
+            %li.mypage_tabs__tab.mypage_tabs__tab--purchase
+                %h3.mypage_tabs__tab__title
+                    %button.mypage_tabs__tab__button{type: "button"}
+                        購入した商品
+
+
+    .mypage_users_items
+      .mypage_item
+        %img.mypage_users_item__exhibited_item_photo{src: "/material/icon/member_photo_noimage_thumb.png", alt: "出品した商品のイメージ画像です"}
+        = link_to "ItemName", "#", class: "mypage_users_item__name"
+        = fa_icon "heart", class: "mypage_users_item__mypage__items_button mypage_users_item__favorite_button"
+        %span.mypage_users_item__buttons_count 3
+        = fa_icon "comment", class: "mypage__items_button favorite_button"
+        %span.mypage_users_item__buttons_count 2
+
+      -# - user.items do |item|
+      -#   .mypage_item
+      -#     %img.mypage_users_item__exhibited_item_photo{src: item.images.first, alt: "出品した商品の写真"}
+      -#     = link_to item.name, user_item_path(item.id), class: "mypage_users_item__name"
+      -#     = fa_icon "heart", class: "mypage_users_item__mypage__items_button mypage_users_item__favorite_button"
+      -#     %span.mypage_users_item__buttons_count #{item.favorites.length}
+      -#     = fa_icon "comment", class: "mypage__items_button favorite_button"
+      -#     %span.mypage_users_item__buttons_count #{item.comments.length}

@@ -1,9 +1,10 @@
 $form_header_height: 128px;
 $form_footer_height: 220px;
-
+@import "font-awesome";
 @import "./mixin";
 @import "form/form_common";
 @import "form/user_form";
+@import "mypage/mypage";
 
 body
 {

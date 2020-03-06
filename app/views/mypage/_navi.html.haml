@@ -1,0 +1,44 @@
+%nav.mypage_navigation
+    %ul.mypage_navigation__lists.mypage_navigation__lists--action
+        %li.mypage_navigation__list{class: ("mypage_navigation__list--current" if request.path_info == user_path(@user))}
+            =link_to user_path(@user), class: "mypage_navigation__list__link" do
+                プロフィール
+                = fa_icon "chevron-right", class: "mypage_icon mypage_icon--right_arrow"
+        %li.mypage_navigation__list{class: ("mypage_navigation__list--current" if request.path_info == user_favorites_path(@user))}
+            =link_to user_favorites_path(@user), class: "mypage_navigation__list__link" do
+                いいね！一覧
+                = fa_icon "chevron-right", class: "mypage_icon mypage_icon--right_arrow"
+        %li.mypage_navigation__list{class: ("mypage_navigation__list--current" if request.path_info == new_user_item_path(@user))}
+            =link_to new_user_item_path(@user), class: "mypage_navigation__list__link" do
+                出品する
+                = fa_icon "chevron-right", class: "mypage_icon mypage_icon--right_arrow"
+        %li.mypage_navigation__list{class: ("mypage_navigation__list--current" if request.path_info == user_items_path(@user))}
+            =link_to user_items_path(@user, on_sale: true), class: "mypage_navigation__list__link" do
+                出品中の商品
+                = fa_icon "chevron-right", class: "mypage_icon mypage_icon--right_arrow"
+        %li.mypage_navigation__list{class: ("mypage_navigation__list--current" if request.path_info == user_items_path(@user))}
+            =link_to user_items_path(@user, on_sale: false), class: "mypage_navigation__list__link" do
+                出品した商品
+                = fa_icon "chevron-right", class: "mypage_icon mypage_icon--right_arrow"
+        %li.mypage_navigation__list{class: ("mypage_navigation__list--current" if request.path_info == user_orders_path(@user))}
+            =link_to user_orders_path(@user), class: "mypage_navigation__list__link" do
+                購入した商品
+                = fa_icon "chevron-right", class: "mypage_icon mypage_icon--right_arrow"
+
+    %ul.mypage_navigation__lists.mypage_navigation__lists--option
+        %li.mypage_navigation__list
+            =link_to edit_user_path(@user), class: "mypage_navigation__list__link" do
+                プロフィール編集
+                = fa_icon "chevron-right", class: "mypage_icon mypage_icon--right_arrow"
+        %li.mypage_navigation__list
+            =link_to user_credit_cards_path(@user), class: "mypage_navigation__list__link" do
+                クレジットカード
+                = fa_icon "chevron-right", class: "mypage_icon mypage_icon--right_arrow"
+        %li.mypage_navigation__list
+            =link_to user_shopping_addresses_path(@user), class: "mypage_navigation__list__link" do
+                発送先住所
+                = fa_icon "chevron-right", class: "mypage_icon mypage_icon--right_arrow"
+        %li.mypage_navigation__list
+            =link_to destroy_user_session_path, class: "mypage_navigation__list__link" do
+                ログアウト
+                = fa_icon "chevron-right", class: "mypage_icon mypage_icon--right_arrow"
