@@ -36,16 +36,12 @@
     }
 }
 
-.mypage_users_item__exhibited_item_photo
-{
-    height: $mypage_list_height;
-    width: $mypage_list_height;
-}
-
 .mypage_tabs
 {
     list-style-type: none;
     display: flex;
+    width: $mypage_tab_width * 2;
+    padding: 0;
     &__tab
     {
         &__button
@@ -56,11 +52,14 @@
             border: none;
             font-size: 16px;
             font-weight: bold;
-            background-color: #EEEEEE;
+            background-color: white;
+            &--inactive
+            {
+                background-color: #EEEEEE;                
+            }
             &:focus
             {
                 outline: none;
-                background-color: white;
             }
         }
     }
@@ -69,9 +68,46 @@
 .mypage_users_items
 {
     width: $mypage_tab_width * 2;
+    &--inactive
+    {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+        margin: 0;
+        padding: 0;
+    }
 }
 
 .mypage_item
 {
     width: $mypage_tab_width * 2;
+    display: flex;
+    &__photo
+    {
+        height: $mypage_list_height;
+        width: $mypage_list_height;
+        margin-right: 5px;
+    }
+    &__info
+    {
+        height: $mypage_list_height;
+        width: calc(100% - #{$mypage_list_height});
+    }
+    &__name
+    {
+        margin: 2px 0;
+        display: block;
+        width: 100%;
+    }
+
+    &__button
+    {
+        &--clicked
+        {
+            color: red;
+        }
+    }
+
 }
+
+

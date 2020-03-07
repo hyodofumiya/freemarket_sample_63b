@@ -1,4 +1,4 @@
-window.onload = addEventBirthday;
+window.addEventListener('load', addEventBirthday);
 
 function addEventBirthday()
 {

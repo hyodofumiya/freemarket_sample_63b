@@ -10,31 +10,42 @@
             %span.mypage_user_profile__small_content 出品数　2
 
     .users_item_area
-        %ul.mypage_tabs
-            %li.mypage_tabs__tab.mypage_tabs__tab--exhibition.mypage_tabs__tab--current
+        %ul.mypage_tabs#mypage_tabs_for_js
+            %li.mypage_tabs__tab.mypage_tabs__tab--exhibition
                 %h3.mypage_tabs__tab__title
                     %button.mypage_tabs__tab__button{type: "button"}
                         出品した商品
             %li.mypage_tabs__tab.mypage_tabs__tab--purchase
                 %h3.mypage_tabs__tab__title
-                    %button.mypage_tabs__tab__button{type: "button"}
+                    %button.mypage_tabs__tab__button.mypage_tabs__tab__button--inactive{type: "button"}
                         購入した商品
 
 
     .mypage_users_items
-      .mypage_item
-        %img.mypage_users_item__exhibited_item_photo{src: "/material/icon/member_photo_noimage_thumb.png", alt: "出品した商品のイメージ画像です"}
-        = link_to "ItemName", "#", class: "mypage_users_item__name"
-        = fa_icon "heart", class: "mypage_users_item__mypage__items_button mypage_users_item__favorite_button"
-        %span.mypage_users_item__buttons_count 3
-        = fa_icon "comment", class: "mypage__items_button favorite_button"
-        %span.mypage_users_item__buttons_count 2
+        .mypage_item
+            %img.mypage_item__photo{src: "/material/icon/member_photo_noimage_thumb.png", alt: "出品した商品のイメージ画像です"}
+            .mypage_item__info
+                = link_to "出品", "#", class: "mypage_item__name"
+                = icon "far", "heart", class: "mypage_item__button mypage_item__button--favorite"
+                %span.mypage_item__buttons_count 3
+                = icon "far", "comment", class: "mypage_item__button mypage_item__button--comment"
+                %span.mypage_item__buttons_count 2
 
-      -# - user.items do |item|
-      -#   .mypage_item
-      -#     %img.mypage_users_item__exhibited_item_photo{src: item.images.first, alt: "出品した商品の写真"}
-      -#     = link_to item.name, user_item_path(item.id), class: "mypage_users_item__name"
-      -#     = fa_icon "heart", class: "mypage_users_item__mypage__items_button mypage_users_item__favorite_button"
-      -#     %span.mypage_users_item__buttons_count #{item.favorites.length}
-      -#     = fa_icon "comment", class: "mypage__items_button favorite_button"
-      -#     %span.mypage_users_item__buttons_count #{item.comments.length}
+    .mypage_users_items.mypage_users_items--inactive
+        .mypage_item
+            %img.mypage_item__photo{src: "/material/icon/member_photo_noimage_thumb.png", alt: "出品した商品のイメージ画像です"}
+            .mypage_item__info
+                = link_to "購入", "#", class: "mypage_item__name"
+                = icon "far", "heart", class: "mypage_item__button mypage_item__button--favorite"
+                %span.mypage_item__buttons_count 3
+                = icon "far", "comment", class: "mypage_item__button mypage_item__button--comment"
+                %span.mypage_item__buttons_count 2
+
+        -# - user.items do |item|
+        -#   .mypage_item
+        -#     %img.mypage_users_item__exhibited_item_photo{src: item.images.first, alt: "出品した商品の写真"}
+            -#     = link_to item.name, user_item_path(item.id), class: "mypage_users_item__name"
+            -#     = fa_icon "heart", class: "mypage_users_item__mypage__items_button mypage_users_item__favorite_button"
+            -#     %span.mypage_users_item__buttons_count #{item.favorites.length}
+            -#     = fa_icon "comment", class: "mypage__items_button favorite_button"
+            -#     %span.mypage_users_item__buttons_count #{item.comments.length}
