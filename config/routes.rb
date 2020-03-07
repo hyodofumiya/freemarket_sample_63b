@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :users, only: [:edit, :update]
   get 'categories/index'
   get 'categories/new'
   get 'categories/create'
@@ -24,13 +26,6 @@ Rails.application.routes.draw do
   get 'orders/edit'
   get 'orders/update'
   get 'orders/destroy'
-  get 'users/index'
-  get 'users/new'
-  get 'users/create'
-  get 'users/edit'
-  get 'users/update'
-  get 'users/destroy'
-  get 'users/resouces'
   root 'items#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

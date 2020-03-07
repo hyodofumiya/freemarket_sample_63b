@@ -4,6 +4,11 @@
 body{
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
 }
+
+
+$form_header_height: 128px;
+$form_footer_height: 220px;
+
 @import "./reset";
 @import "./mixin";
 @import "./font-awesome";
@@ -12,4 +17,5 @@ body{
 @import "./app_banner";
 @import "./footer";
 @import "./exhibit_btn";
-
+@import "form/form_common";
+@import "form/user_form";
