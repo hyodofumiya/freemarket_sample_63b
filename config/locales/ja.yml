@@ -18,16 +18,17 @@ ja:
       user:
         nickname: ニックネーム
         family_name: 苗字
-        family_name_kana: 苗字(カナ)
+        family_name_kana: 苗字（カナ）
         first_name: 名前
-        first_name_kana: 名前(カナ)
+        first_name_kana: 名前（カナ）
         email: メールアドレス
         password: パスワード
+        password_confirmation: パスワード（確認）
         birthday: 誕生日
-        birthday_year: 誕生日(年)
-        birthday_month: 誕生日(月)
-        birthday_day: 誕生日(日)
-        phone_number: 電話番号(ハイフンなし)
+        birthday_year: 年
+        birthday_month: 月
+        birthday_day: 日
+        phone_number: 電話番号（ハイフンなし）
   date:
     abbr_day_names:
     - 日

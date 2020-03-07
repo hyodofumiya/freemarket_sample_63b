@@ -1,0 +1,31 @@
+.form_field__label
+{
+    &--birthday
+    {
+        margin-left: 5px;
+        margin-right: 20px;
+        font-weight: normal;
+        &:last-child
+        {
+            margin-right: 0;
+        }
+    }
+}
+
+.form_field__input
+{
+    &--birthday
+    {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none; 
+        box-sizing: content-box;
+        height: 28px;
+        width: calc(#{$form_input_paddingLR} * 2);
+        background-color: white;
+    }
+    &--name
+    {
+        width: 39.65%;
+    }
+}
