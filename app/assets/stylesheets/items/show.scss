@@ -39,7 +39,8 @@
     padding: 40px;
     margin: 0 auto;
     &__content{
-      width: 700px;
+      width: 100%;
+      max-width: 700px;
       margin: 0 auto;
       .product_zone{
         &__item{
@@ -51,18 +52,19 @@
             font-size: 24px;
           }
           &__image_zone{
-            margin: 16px 0 0;
+            margin: 16px auto;
             display: flex;
             flex-direction: column;
-            width: 560px;
+            width: 100%;
+            max-width: 560px;
             align-items: center;
-            margin: 0 auto;
             & img{
               object-fit: cover;
             }
             .dynamic_image_zone{
               &--selected_image{
                 height: 346px;
+                max-width: 100%;
               }
             }
             .static_images{
@@ -70,11 +72,15 @@
               justify-content: center;
               margin-top: 10px;
               width: 100%;
+              overflow: scroll;
               &__an_item_image_zone{
                 width: 25%;
+                height: 87px;
                 margin: 0 10px 0 0;
                 & img{
-                  height: 87px;
+                  height: 100%;
+                  width: auto;
+                  max-width: 100%;
                 }
               }
             }
@@ -140,8 +146,28 @@
               }
             }
             .btns{
+              display: flex;
+              justify-content: space-between;
               &__favorite{
-                &__link{}
+                margin: 10px 0 0;
+                display: flex;
+                &__link{
+                  margin-right: auto;
+                  padding: 6px 10px;
+                  border-radius: 40px;
+                  color: #3CCACE;
+                  border: 1px solid #ffb340;
+                  & i{
+                    display: inline-block;
+                    font: normal normal normal 14px/1 FontAwesome;
+                    font-size: inherit;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                    &::before{
+                      content: "\f005";
+                    }
+                  }
+                }
               }
               &__fraud_report{}
             }
