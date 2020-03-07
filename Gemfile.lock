@@ -270,8 +270,8 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
-  font-awesome-rails
   devise
+  font-awesome-rails
   haml-rails (~> 2.0)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
