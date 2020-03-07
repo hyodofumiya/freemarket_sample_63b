@@ -45,3 +45,7 @@
   border: 1px solid #deddde;
 }
 
+/*borderの設定*/
+@mixin border_setting ($color) {
+  border: 1px solid $color;
+}

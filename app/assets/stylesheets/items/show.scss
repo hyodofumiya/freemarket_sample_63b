@@ -157,19 +157,26 @@
                   border-radius: 40px;
                   color: #3CCACE;
                   border: 1px solid #ffb340;
-                  & i{
-                    display: inline-block;
-                    font: normal normal normal 14px/1 FontAwesome;
-                    font-size: inherit;
-                    text-rendering: auto;
-                    -webkit-font-smoothing: antialiased;
-                    &::before{
-                      content: "\f005";
-                    }
+                  display: flex;
+                  align-items: center;
+                  & i{}
+                  &--count_num{
+                    margin-left: 5px;
                   }
                 }
               }
-              &__fraud_report{}
+              &__fraud_report{
+                margin: 10px 0 0;
+                display: flex;
+                font-size: 14px;
+                &__link{
+                  padding: 6px 10px;
+                  display: inline-block;
+                  border-radius: 4px;
+                  color: #333;
+                  @include border_setting(#333)
+                }
+              }
             }
           }
         }

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'brands/destroy'
   get 'items/index'
   get 'items/show'
+  get 'items/show'
   get 'items/new'
   get 'items/create'
   get 'items/edit'
@@ -26,6 +27,14 @@ Rails.application.routes.draw do
   get 'orders/edit'
   get 'orders/update'
   get 'orders/destroy'
+  get 'users/index'
+  get 'users/new'
+  get 'users/create'
+  get 'users/edit'
+  get 'users/update'
+  get 'users/destroy'
+  get 'users/resouces'
   root 'items#index'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
