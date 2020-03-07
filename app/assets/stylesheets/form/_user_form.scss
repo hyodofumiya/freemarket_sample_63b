@@ -1,3 +1,10 @@
+.form_field__label--birthday,
+.form_field__input--birthday,
+.form_field__input--name
+{
+    box-sizing: content-box;
+}
+
 .form_field__label
 {
     &--birthday
