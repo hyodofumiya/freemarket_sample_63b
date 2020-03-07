@@ -1,6 +1,19 @@
 $content_area_form_backcolor: #F5F5F5;
 $form_input_paddingLR: 16px;
 
+.content_area--form,
+.form_area,
+.form_area__title,
+.form_fields,
+.form_field,
+.form_field__label,
+.form_field__label--essential,
+.form_field__input,
+.form_button
+{
+    box-sizing: content-box;
+}
+
 .content_area--form
 {
     background-color: $content_area_form_backcolor;
@@ -16,6 +29,7 @@ $form_input_paddingLR: 16px;
     &__title
     {
         font-size: 137.5%;
+        font-weight: bold;
         height: 33px;
         line-height: 33px;
         margin: 0;
@@ -53,6 +67,7 @@ $form_input_paddingLR: 16px;
                 display: inline;
                 color: white;
                 background-color: red;
+                box-sizing: content-box;
                 margin: 0 8px;
                 padding: 2px 4px;
                 border-radius: 2px;

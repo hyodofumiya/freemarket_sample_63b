@@ -1,63 +1,179 @@
-
 .main{
+  background-color: #f8f8f8;
   .title_image{
+    height: 560px;
+    display: flex;
+    position: relative;
+    background-position: top center;
+    background-repeat: no-repeat;
+    padding: 0 60px;
+    @include background_image("/material/pict/bg-mainVisual-pict_pc.jpg");
+    align-items: center;
     &__content{
+      max-width: 1280px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 35px 0 0 0;
       &__title{
-
+        line-height: 1.2;
+        font-size: 60px;
+        @include text_shadow;
+        color: #fff;
       }
       &__sentence{
-
+        font-size: 18px;
+        color: #fff;
+        line-height: 1.77778;
+        margin: 16px 0 0 0;
+        @include text_shadow;
       }
-      &__btn{
-        &--app_store{}
-        &--google_play{}
-      }
+      @include mobile_app_links;
     }
   }
 
-  .intruduction{
-    &__title{}
+  .introduction{
+    padding: 60px 20px;
+    &__title{
+      text-align: center;
+      font-size: 26px;
+      line-height: 1.4;
+      font-weight: bold;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      position: relative;
+      &::after{
+        content: "";
+        width: 70px;
+        height: 4px;
+        background-color: #3CCACE;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
     &__lists{
-      .left_item{
+      display: flex;
+      text-align: center;
+      max-width: 1020px;
+      width: 100%;
+      margin: 0 auto;
+      .list{
+        width: 30%;
+        margin: 16px 5% 0 0;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         &__image{
-
-        }
-        &__text{
-          &--subtitle{}
-          &--sentence{
+          position: relative;
+          margin-bottom: 20px;
+          &--number{
+            position: absolute;
+            display: inline-block;
+            top: 0;
+            left: 0;
+            border-radius: 4%;
+            font-size: 30px; 
+            text-align: center;
+            margin: 0 5px 0 0;
+            padding: 10px 20px;
+            background-color: #3CCACE;
+            color: #fff;
           }
+          &--pic{
+            width: 100%;
+            vertical-align: bottom;
+          }
+        }
+        &__subtitle{
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 50px;
+          margin: 0 0 0 2px;
+          &--color_font{
+            color: #3CCACE;
+          }
+        }
+        &__sentence{
+          font-size: 18px;
+          line-height: 1.5;
+          margin: 16px 0 0;
         }
       }
     }
   }
 
   .middle_image{
+    @include background_image("/material/pict/bg-topMiddleDl-pict.jpg");
+    align-items: center;
+    background-position: bottom right;
+    height: 400px;
+    display: flex;
     &__content{
+      color: #fff;
+      @include text_shadow;
+      text-align: left;
+      max-width: 1040px;
+      width: 100%;
+      margin: 0 auto;
       &__title{
-
+        font-size: 27px;
+        font-weight: bold;
+        line-height: 1.4;
       }
       &__sentence{
-
+        font-size: 18px;
+        margin: 20px 0 30px;
+        line-height: 1.5;
       }
-      &__btn{
-        &--app_store{}
-        &--google_play{}
-      }
+      @include mobile_app_links;
     }
   }
 
   .feature{
-    &__title{}
+    padding: 60px 100px;
+    background-color: #fff;
+    &__title{
+      font-size: 27px;
+      text-align: center;
+      margin: 0 0 40px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      position: relative;
+      &::after{
+        content: "";
+        width: 70px;
+        height: 4px;
+        background-color: #3CCACE;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
     &__lists{
-      .left_item{
+      display: flex;
+      max-width: 1040px;
+      width: 100%;
+      margin: 0 auto;
+      .item{
+        display: flex;
+        flex-direction: column;
+        width: calc(1/3*100%);
+        text-align: center;
+        padding: 0 20px;
         &__image{
-
+          width: 70%;
+          margin: 0 auto;
+          line-height: 120px;
+          &--icon{
+            width: 100%;
+            vertical-align: bottom;
+          }
         }
         &__text{
-<<<<<<< HEAD
-          &--subtitle{}
-          &--sentence{}
-=======
           &--subtitle{
             margin: 38px 0 10px;
             font-size: 19px;
@@ -146,7 +262,6 @@
               }
             }
           }
->>>>>>> 9395f34... aタグの設定をreset.scssに追加しました
         }
       }
     }
