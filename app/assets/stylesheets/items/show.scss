@@ -180,20 +180,69 @@
             }
           }
         }
-        &__commtent{
+        &__comment{
           padding: 24px;
           background-color: #fff;
           margin: 10px 0;
           text-align: center;
+          .comment_form{
+            &__input_area{
+              width: 100%;
+              min-height: 104px;
+              padding: 10px;
+            }
+            &__notice_area{
+              padding: 8px;
+              font-size: 14px;
+              margin: 10px 0 18px;
+              text-align: left;
+              background-color: #f8f8f8;
+            }
+            &__submit_form{
+              display: none;
+            }
+            &__submit_label{
+              font-size: 18px;
+              line-height: 48px;
+              background-color: #3CCACE;
+              @include border_setting(#3CCACE);
+              color: #fff;
+              width: 60%;
+              font-size: 18px;
+              border-radius: 100px;
+              display: block;
+              margin-top: 18px;
+              margin: auto;
+              .submit_icon{
+
+              }
+            }
+          }
         }
       }
 
       .item_link_prev_next{
+        display: flex;
+        justify-content: space-between;
         &__btn{
+          &__link{
+            color: #3CCACE;
+            & i{
+
+            }
+          }
         }
       }
       
-      .related_items{}
+      .related_items{
+        &__show_more_link{
+          display: block;
+          margin: 24px 0 8px;
+          color: #3CCACE;
+          font-weight: bold;
+          font-size: 22px;
+        }
+      }
     }
   }
 }

@@ -50,7 +50,7 @@
               .sub_price_zone__delivary_fee_expression
                 送料込み
           .product_zone__item__detail
-            %pre.product_zone__item__detail--discription
+            .product_zone__item__detail--discription
               商品の説明文がここに入る予定です。
             %table.table
               %tbody.table__body
@@ -127,8 +127,10 @@
               相手のことを考え丁寧なコメントを心がけましょう。
               %br
               不快な言葉遣いなどは利用制限や退会処分となることがあります。
-            = f.submit "", class: "comment_form__submit" do
-              = fa_icon "comment", class: "comment_form__submit--icon"
+              %br
+            = f.submit id: "post_submit_btn", class: "comment_form__submit_form"
+            = f.label :submit_btn, class: "comment_form__submit_label" do
+              = fa_icon "comment", class: "submit_icon"
               コメントする
       %ul.item_link_prev_next
         %li.item_link_prev_next__btn
@@ -136,12 +138,14 @@
             =fa_icon "angle-left", class: "item_link_prev_next__btn__link--icon"
             前の商品
         %li.item_link_prev_next__btn
-          = link_to root_path, class: "item_llnk_prev_next__btn__link" do
+          = link_to root_path, class: "item_link_prev_next__btn__link" do
             後ろの商品
             = fa_icon "angle-right", class: "item_link_prev_next__btn__link--icon"
       .related_items
         = link_to root_path, class: "related_items__show_more_link" do
           ベビー・キッズをもっと見る
+        .related_items__products_list
 
 = render "share/app_banner"
 = render "share/footer"
+= render "share/exhibit_btn"
