@@ -22,30 +22,60 @@
 
 
     .mypage_users_items
-        .mypage_item
+        = link_to "#", class: "mypage_link mypage_item" do
             %img.mypage_item__photo{src: "/material/icon/member_photo_noimage_thumb.png", alt: "出品した商品のイメージ画像です"}
             .mypage_item__info
-                = link_to "出品", "#", class: "mypage_item__name"
+                %span.mypage_item__name 出品
                 = icon "far", "heart", class: "mypage_item__button mypage_item__button--favorite"
                 %span.mypage_item__buttons_count 3
                 = icon "far", "comment", class: "mypage_item__button mypage_item__button--comment"
                 %span.mypage_item__buttons_count 2
+            = icon "fa", "chevron-right", class: "mypage_icon mypage_icon--item mypage_icon--right_arrow"
 
     .mypage_users_items.mypage_users_items--inactive
-        .mypage_item
+        = link_to "#", class: "mypage_link mypage_item" do
             %img.mypage_item__photo{src: "/material/icon/member_photo_noimage_thumb.png", alt: "出品した商品のイメージ画像です"}
             .mypage_item__info
-                = link_to "購入", "#", class: "mypage_item__name"
+                %span.mypage_item__name 購入
                 = icon "far", "heart", class: "mypage_item__button mypage_item__button--favorite"
                 %span.mypage_item__buttons_count 3
                 = icon "far", "comment", class: "mypage_item__button mypage_item__button--comment"
                 %span.mypage_item__buttons_count 2
+            = icon "fa", "chevron-right", class: "mypage_icon mypage_icon--item mypage_icon--right_arrow"
 
-        -# - user.items do |item|
-        -#   .mypage_item
-        -#     %img.mypage_users_item__exhibited_item_photo{src: item.images.first, alt: "出品した商品の写真"}
-            -#     = link_to item.name, user_item_path(item.id), class: "mypage_users_item__name"
-            -#     = fa_icon "heart", class: "mypage_users_item__mypage__items_button mypage_users_item__favorite_button"
-            -#     %span.mypage_users_item__buttons_count #{item.favorites.length}
-            -#     = fa_icon "comment", class: "mypage__items_button favorite_button"
-            -#     %span.mypage_users_item__buttons_count #{item.comments.length}
+
+    -# .mypage_users_items
+        - user.items do |item|
+            = link_to user_item_path(user, item.id), class: "mypage_link mypage_item" do
+                %img.mypage_item__photo{src: item.images.first, alt: "出品した商品のイメージ画像です"}
+                .mypage_item__info
+                    %span.mypage_item__name #{item.name}
+                    - if user.has_favorite(item)
+                        = icon "fa", "heart", class: "mypage_item__button mypage_item__button--favorite mypage_item__button--favorite--favorited"
+                    - else
+                        = icon "far", "heart", class: "mypage_item__button mypage_item__button--favorite"
+                    %span.mypage_item__buttons_count #{item.favorites.length}
+                    - if user.has_favorite(item)
+                        = icon "fa", "comment", class: "mypage_item__button mypage_item__button--comment mypage_item__button--comment--commented"
+                    -else
+                        = icon "far", "comment", class: "mypage_item__button mypage_item__button--comment"
+                    %span.mypage_item__buttons_count #{item.comments.length}
+                = icon "fa", "chevron-right", class: "mypage_icon mypage_icon--item mypage_icon--right_arrow"
+
+    -# .mypage_users_items.mypage_users_items--inactive        
+        - user.order_items do |item|
+            = link_to user_item_path(user, item.id), class: "mypage_link mypage_item" do
+                %img.mypage_item__photo{src: item.images.first, alt: "購入した商品のイメージ画像です"}
+                .mypage_item__info
+                    %span.mypage_item__name #{item.name}
+                    - if user.has_favorite(item)
+                        = icon "fa", "heart", class: "mypage_item__button mypage_item__button--favorite mypage_item__button--favorite--favorited"
+                    - else
+                        = icon "far", "heart", class: "mypage_item__button mypage_item__button--favorite"
+                    %span.mypage_item__buttons_count #{item.favorites.length}
+                    - if user.has_favorite(item)
+                        = icon "fa", "comment", class: "mypage_item__button mypage_item__button--comment mypage_item__button--comment--commented"
+                    -else
+                        = icon "far", "comment", class: "mypage_item__button mypage_item__button--comment"
+                    %span.mypage_item__buttons_count #{item.comments.length}
+                = icon "fa", "chevron-right", class: "mypage_icon mypage_icon--item mypage_icon--right_arrow"

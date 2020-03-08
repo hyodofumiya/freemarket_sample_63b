@@ -1,4 +1,5 @@
 $mypage_margin_top: 40px;
+$mypage_margin_bottom: $mypage_margin_top;
 $mypage_navi_width: 250px;
 $mypage_user_profile_height: 200px;
 $mypage_content_width: 700px;
@@ -11,6 +12,19 @@ $mypage_tab_width: 350px;
 {
     background-color: #F5F5F5;
     display: flex;
+}
+
+
+.mypage_link
+{    
+    &:hover
+    {
+        background-color: #FAFAFA;
+        & .mypage_icon--right_arrow
+        {
+            color: #333333;
+        }
+    }
 }
 
 @import "mypage/navi";

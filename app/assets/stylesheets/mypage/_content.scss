@@ -1,7 +1,8 @@
 .user_content_area
 {
     width: $mypage_content_width;
-    margin-top: $mypage_margin_top;
+    margin: $mypage_margin_top 0 $mypage_margin_bottom;
+
 }
 
 .mypage_profile_area
@@ -11,6 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url("paper_00108.jpg");
 }
 
 .mypage_user_profile
@@ -50,11 +52,13 @@
             height: $mypage_tab_height;
             width: $mypage_tab_width;
             border: none;
+            border-top: solid 2px #3CCACC;
             font-size: 16px;
             font-weight: bold;
             background-color: white;
             &--inactive
             {
+                border-top: none;
                 background-color: #EEEEEE;                
             }
             &:focus
@@ -67,14 +71,12 @@
 
 .mypage_users_items
 {
+    height: $mypage_list_height * 6;
     width: $mypage_tab_width * 2;
+    background-color: #EEEEEE;
     &--inactive
     {
-        visibility: hidden;
-        height: 0;
-        width: 0;
-        margin: 0;
-        padding: 0;
+        display: none;
     }
 }
 
@@ -82,6 +84,9 @@
 {
     width: $mypage_tab_width * 2;
     display: flex;
+    padding: 5px;
+    background-color: white;
+    border-top: solid 1px #EEEEEE;
     &__photo
     {
         height: $mypage_list_height;
@@ -92,6 +97,7 @@
     {
         height: $mypage_list_height;
         width: calc(100% - #{$mypage_list_height});
+        padding-left: 10px;
     }
     &__name
     {
@@ -102,12 +108,33 @@
 
     &__button
     {
-        &--clicked
+        &--favorite
         {
-            color: red;
+            &--clicked
+            {
+                color: red;
+            }
+        }
+
+        &--comment
+        {
+            margin-left: 5px;
+            &--commented
+            {
+                color: aqua;
+            }
         }
     }
 
+}
+
+.mypage_icon
+{
+    &--item
+    {
+        display: block;
+        line-height: $mypage_list_height;
+    }
 }
 
 
