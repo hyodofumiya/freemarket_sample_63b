@@ -155,8 +155,8 @@
                   margin-right: auto;
                   padding: 6px 10px;
                   border-radius: 40px;
-                  color: #3CCACE;
-                  border: 1px solid #ffb340;
+                  @include link_text_color;
+                  @include border_setting(#ffb340);
                   display: flex;
                   align-items: center;
                   & i{}
@@ -226,7 +226,7 @@
         justify-content: space-between;
         &__btn{
           &__link{
-            color: #3CCACE;
+            @include link_text_color;
             & i{
 
             }
@@ -238,7 +238,7 @@
         &__show_more_link{
           display: block;
           margin: 24px 0 8px;
-          color: #3CCACE;
+          @include link_text_color;
           font-weight: bold;
           font-size: 22px;
         }
