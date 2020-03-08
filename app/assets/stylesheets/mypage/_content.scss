@@ -82,9 +82,11 @@
 
 .mypage_item
 {
+    height: $mypage_list_height + $mypage_item_padding * 2;
     width: $mypage_tab_width * 2;
     display: flex;
-    padding: 5px;
+    padding: $mypage_item_padding;
+    padding-top: $mypage_item_padding - 1;
     background-color: white;
     border-top: solid 1px #EEEEEE;
     &__photo

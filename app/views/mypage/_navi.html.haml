@@ -39,6 +39,6 @@
                 発送先住所
                 = icon "fa", "chevron-right", class: "mypage_icon mypage_icon--right_arrow"
         %li.mypage_navigation__list
-            =link_to destroy_user_session_path, class: "mypage_link mypage_navigation__list__link" do
+            =link_to destroy_user_session_path, method: :delete, class: "mypage_link mypage_navigation__list__link" do
                 ログアウト
                 = icon "fa", "chevron-right", class: "mypage_icon mypage_icon--right_arrow"
