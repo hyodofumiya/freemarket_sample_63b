@@ -4,8 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  
-  before_validation :create_birthday if @year && @month && @day
+  has_many :shopping_addresses
+  accepts_nested_attributes_for :shopping_addresses
+  before_validation :create_birthday, if: :birthday_year && :birthday_month && :birthday_day
   
   def birthday_year=(year)
     @year = year
