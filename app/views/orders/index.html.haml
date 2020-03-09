@@ -2,8 +2,8 @@
 
   .form_header
     .form_header__logo
-      .form_hender__logo__logoimage
-        %img.logoimage{:alt => "furimalog", :src => "logo.png"}/
+      = link_to root_path do
+        = image_tag "/material/logo/logo.png",alt:"logoimage", class:"logo"
 
 
   .main
@@ -21,22 +21,34 @@
 
       .main__showmain__main-item
         .main__showmain__main-item__upper
-          .item-name
+          .itemname
           <b>商品名</b>
           %span.marker_red 必須
-          .itemname-form
-            40文字まで
+          = form_with model: @order, class: :form, local: true do |form|
+            .form_area
+              = form.text_field :itemname, class: "form_area__input", placeholder: '40文字まで'
+
           
         .main__showmain__main-item__bottom
           .item-discription
           <b>商品の説明</b>
           %span.marker_red 必須
-          .discription-form
-            商品の説明（必須1,000文字以内）
-            %br（色、素材、重さ、定価、注意点など）
-            %br
-            %br例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。
-            %br
+          = form_with model: @order, class: :form, local: true do |form|
+            .form_area
+              = form.text_area :discription, class: "form_area__input", placeholder: 商品の説明（必須1,000文字以内）
+              %br
+              （色、素材、重さ、定価、注意点など）
+              %br
+              %br
+              例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。
+              %br
+
+          -# .discription-form
+          -#   商品の説明（必須1,000文字以内）
+          -#   %br（色、素材、重さ、定価、注意点など）
+          -#   %br
+          -#   %br例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。
+          -#   %br
   
 
 
@@ -55,8 +67,10 @@
         .main__showmain__detail__bland_id
           <b>ブランド</b>
           %span.marker_gray 任意
-          .main__showmain__detail__bland_id__input-area
-            例）シャネル
+          = form_with model: @order, class: :form, local: true do |form|
+            .form_area
+              = form.text_field :brandname, class: "form_area__input", placeholder: '例）シャネル'
+
         .main__showmain__detail__condition
           <b>商品の状態</b>
           %span.marker_red 必須
@@ -112,7 +126,6 @@
       %br FURIMA利用規約
       %br 特定商取引に関する表記
     .form_footer__logo
-      .form_footer__logo__logoimagew
-        %img.logoimagew{:alt => "furimalogow", :src => "logo-white.png"}/
+      = image_tag "/material/logo/logo-white.png",alt:"logoimage", class:"logo"
     .form_footer__copy
       &copy;FURIMA
