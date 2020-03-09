@@ -9,11 +9,23 @@
       .item_info__item_name_and_price--item_name
       .item_info__item_name_and_price--item_price
         .price_zone
+          ¥
         .tax_include
+          (税込)
         .postage_info
-  .payment_zone
+          送料込み
+
+  .buy_info
+    = form_with(model: @order, class: "payment_zont", local: true)  do
     %h2.payment_amount_info
+      = = f.select method, choices, {} do
+        
       .payment_amount_info__pay_amount_label
         支払い金額
       .payment_amount_info__pay_amount_data
+        ¥
+    .payment_zone__credit_card_select
+      
+    .payment_zone__shopping_address
+  
 .footer
