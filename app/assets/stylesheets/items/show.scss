@@ -108,7 +108,26 @@
             }
           }
 
+          &__order_btn{
+            font-size: 24px;
+            line-height: 60px;
+            margin-top: 16px;
+            background-color: #ea352d;
+            color: #fff;
+            text-align: center;
+            font-weight: 600;
+            display: block;
+            border-radius: 40px;
+            &:hover{
+              background-color: #e20e03;
+            }
+            &:active{
+              background-color: #dd6552;
+            }
+          }
+
           &__detail{
+            margin-top: 40px;
             &--discription{
               line-height: 1.5;
               font-size: 18px;
