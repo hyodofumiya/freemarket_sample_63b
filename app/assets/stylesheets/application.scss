@@ -11,6 +11,8 @@ $form_footer_height: 220px;
 
 @import "./reset";
 @import "./mixin";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "./font-awesome";
 @import "./header";
 @import "items";
@@ -19,3 +21,5 @@ $form_footer_height: 220px;
 @import "./exhibit_btn";
 @import "form/form_common";
 @import "form/user_form";
+@import "items/index";
+@import "items/show";
