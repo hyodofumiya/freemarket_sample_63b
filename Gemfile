@@ -76,4 +76,3 @@ gem "haml-rails", "~> 2.0"
 gem 'rails-i18n'
 gem 'font-awesome-rails'
 gem 'devise'
-gem 'font-awesome-sass'
