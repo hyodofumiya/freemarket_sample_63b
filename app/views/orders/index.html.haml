@@ -38,15 +38,15 @@
       .main__showmain__detail
         .main__showmain__detail__detail-top
           商品の詳細
+
+
         .main__showmain__detail__category_id
           <b>カテゴリー</b>
           %span.marker_red 必須
-          .main__showmain__detail__category_id__select-area
+          .main__showmain__detail__category_id__selectarea
+            = select_tag 'select[area]', options_for_select(["選択してください", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"]) 
+
             
-        .main__showmain__detail__size
-          <b>サイズ</b>
-          %span.marker_red 必須
-          .main__showmain__detail__size__select-area
         .main__showmain__detail__bland_id
           <b>ブランド</b>
           %span.marker_gray 任意
