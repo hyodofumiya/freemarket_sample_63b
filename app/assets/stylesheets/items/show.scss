@@ -1,3 +1,5 @@
+$link_text_color: #3CCACE;
+
 .bread_crumb_navigation_bar{
   width: 100%;
   border-top: 1px solid #eee;
@@ -158,7 +160,7 @@
                     padding: 15px 15px;
                     @include table_setting(61%);
                     & a{
-                      color: #3CCACE;
+                      color: $link_text_color;
                     }
                   }
                 }
@@ -174,7 +176,7 @@
                   margin-right: auto;
                   padding: 6px 10px;
                   border-radius: 40px;
-                  color: #3CCACE;
+                  color: $link_text_color;
                   border: 1px solid #ffb340;
                   display: flex;
                   align-items: center;
@@ -223,8 +225,8 @@
             &__submit_label{
               font-size: 18px;
               line-height: 48px;
-              background-color: #3CCACE;
-              @include border_setting(#3CCACE);
+              background-color: $link_text_color;
+              @include border_setting($link_text_color);
               color: #fff;
               width: 60%;
               font-size: 18px;
@@ -246,7 +248,7 @@
         justify-content: space-between;
         &__btn{
           &__link{
-            color: #3CCACE;
+            color: $link_text_color;
             & i{
 
             }
@@ -258,7 +260,7 @@
         &__show_more_link{
           display: block;
           margin: 24px 0 8px;
-          color: #3CCACE;
+          color: $link_text_color;
           font-weight: bold;
           font-size: 22px;
         }
