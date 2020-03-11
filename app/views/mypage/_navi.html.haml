@@ -12,11 +12,11 @@
             =link_to new_user_item_path(@user), class: "mypage_link mypage_navigation__list__link" do
                 出品する
                 = icon "fa", "chevron-right", class: "mypage_icon mypage_icon--right_arrow"
-        %li.mypage_navigation__list{class: ("mypage_navigation__list--current" if request.path_info == user_items_path(@user))}
+        %li.mypage_navigation__list{class: ("mypage_navigation__list--current" if request.path_info == user_items_path(@user, on_sale: true))}
             =link_to user_items_path(@user, on_sale: true), class: "mypage_link mypage_navigation__list__link" do
                 出品中の商品
                 = icon "fa", "chevron-right", class: "mypage_icon mypage_icon--right_arrow"
-        %li.mypage_navigation__list{class: ("mypage_navigation__list--current" if request.path_info == user_items_path(@user))}
+        %li.mypage_navigation__list{class: ("mypage_navigation__list--current" if request.path_info == user_items_path(@user, on_sale: false))}
             =link_to user_items_path(@user, on_sale: false), class: "mypage_link mypage_navigation__list__link" do
                 出品した商品
                 = icon "fa", "chevron-right", class: "mypage_icon mypage_icon--right_arrow"
