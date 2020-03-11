@@ -118,35 +118,21 @@
               align-items: center;
               display: inline-flex;
               width: 100%;
-              .form_area{
-                display: inline-block;
-                position: relative;
-                width: inherit;
                 &__input{
+                  margin-top: 16px;
                   border: 1px solid #ccc;
                   border-radius: 4px;
                   box-sizing: border-box;
-                  font-family: inherit;
-                  font-size: inherit;
-                  height: 48px;
+                  color: #222;
                   margin: 0;
                   outline: none;
-                  padding: 0 16px;
-                  width: inherit;
+                  padding: 13px 16px;
+                  resize: vertical;
+                  vertical-align: middle;
+                  width: 100%;
+                  height: 137px;
                 }
-              }
             }
-            // .discription-form{
-            //   margin-top: 16px;
-            //   border: 1px solid #ccc;
-            //   border-radius: 4px;
-            //   box-sizing: border-box;
-            //   color: rgb(136, 136, 136);
-            //   outline: none;
-            //   padding: 13px 16px;
-            //   resize: vertical;
-            //   vertical-align: middle; 
-            // }
           }
         }
 
@@ -226,8 +212,11 @@
           }
           &__condition{
             margin-top: 32px;
-            &__select-area{
-              background-color: #fff;
+          }
+          &__selectarea{
+            margin-top: 16px;
+            #select_area{
+              margin-top: 16px;
               border: 1px solid #ccc;
               border-radius: 4px;
               box-sizing: border-box;
@@ -241,6 +230,7 @@
               width: 100%;
             }
           }
+          
         }
         
 
@@ -254,10 +244,10 @@
             line-height: 1.4em;
             margin-bottom: 24px;
           }
-          &__delivary_fee{
-            margin-top: 32px;
-            &__select-area{
-              background-color: #fff;
+          &__selectarea{
+            margin-top: 16px;
+            #select_area{
+              margin-top: 16px;
               border: 1px solid #ccc;
               border-radius: 4px;
               box-sizing: border-box;
@@ -271,10 +261,11 @@
               width: 100%;
             }
           }
-          &__area{
+    
+          &__delivary-area{
             margin-top: 32px;
-            &__select-area{
-              background-color: #fff;
+            #select_area{
+              margin-top: 16px;
               border: 1px solid #ccc;
               border-radius: 4px;
               box-sizing: border-box;
@@ -288,21 +279,25 @@
               width: 100%;
             }
           }
+        
           &__preparation_day{
             margin-top: 32px;
-            &__select-area{
-              background-color: #fff;
-              border: 1px solid #ccc;
-              border-radius: 4px;
-              box-sizing: border-box;
-              color: #222;
-              font-size: 16px;
-              height: 48px;
-              line-height: 1;
-              margin: 0;
-              outline: none;
-              padding: 0 56px 0 16px;
-              width: 100%;
+            &__selectarea{
+              margin-top: 16px;
+              #select_area{
+                margin-top: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                color: #222;
+                font-size: 16px;
+                height: 48px;
+                line-height: 1;
+                margin: 0;
+                outline: none;
+                padding: 0 56px 0 16px;
+                width: 100%;
+              }
             }
           }
         }
@@ -345,18 +340,6 @@
                 align-items: center;
                 display: inline-flex;
                 width: 100%;
-                // border: 1px solid #ccc;
-                // border-radius: 4px;
-                // box-sizing: border-box;
-                // font-family: inherit;
-                // font-size: inherit;
-                // height: 48px;
-                // margin-top: 16px;
-                // color: rgb(136, 136, 136);
-                // outline: none;
-                // padding: 13px 16px;
-                // align-items: center;
-                // display: inline-flex;
               }
             }
           }
