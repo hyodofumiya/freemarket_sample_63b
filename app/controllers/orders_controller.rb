@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
   end
 
   def new
+    @price = 1300
   end
 
   def create

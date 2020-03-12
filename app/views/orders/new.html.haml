@@ -16,14 +16,23 @@
           送料込み
 
   .buy_info
-    = form_with(model: @order, class: "payment_zont", local: true)  do
-      %h2.payment_amount_info        
-        .payment_amount_info__pay_amount_label
+    = form_with(model: @order, class: "payment_zone", local: true)  do
+      %h2.payment_zone__payment_amount       
+        .payment_zone__payment_amount--head
           支払い金額
-        .payment_amount_info__pay_amount_data
-          ¥
+        .payment_zone__payment_amount--data
+          = "¥ #{@price}"
       .payment_zone__credit_card_select
-      
+        .payment_zone__credit_card_select--head
+          支払い方法
+        .payment_zone__credit_card_select--btn_to_select
+          = if @credit_card.nil?
+            = link_to new_credit_card_path, class: "create_credit_card_link" do
+              = fa_icon "plus-circle" 
+              登録してください
       .payment_zone__shopping_address
+        .payment_zone__shopping_address--head
+          配送先
+        .payment_zone__shopping_address--btn_to_select
   
 .footer

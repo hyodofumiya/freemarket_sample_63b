@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:edit, :update]
+  resources :credit_cards, only: [:new, :create, :index, :show]
   get 'categories/index'
   get 'categories/new'
   get 'categories/create'
