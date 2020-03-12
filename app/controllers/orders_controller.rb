@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
 
   def new
     @price = 1300
+    @credit_card
   end
 
   def create
