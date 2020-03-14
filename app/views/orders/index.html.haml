@@ -100,6 +100,27 @@
               .yen
                 ¥
             .main__showmain__lower__price-main__form__input-form
+              = form_with model: @order, class: :form, local: true do |form|
+                .form_area
+                  = form.text_field :inputform, class: "form_area__input", placeholder: '0'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         .main__showmain__lower__btn
           .main__showmain__lower__btn__put-btn

@@ -293,7 +293,6 @@
         &__lower{
           padding: 16px 16px 48px;
           border-top: 1px solid #eee;
-          padding: 16px;
           &__price-top{   
             margin-bottom: 24px;
             color: rgb(136, 136, 136);
@@ -303,21 +302,32 @@
           }
         
           &__price-main{
-            margin-bottom: 24px;
+            margin-bottom: 48px;
+            -webkit-box-align: center;
+            align-items: center;
+            box-sizing: content-box;
+            display: flex;
+            height: 46px;
+           
             &__form{
               padding: 4px 0px;
               -webkit-box-align: center;
               align-items: center;
               box-sizing: content-box;
               display: flex;
+              justify-content: space-between;
               height: 46px;
+              width: 100%;
+  
+         
               &__price-text{
-                margin-right: auto;
-                white-space: nowrap;
-                
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
                 .text{
                   align-items: center;
-                  display: flex;
+                  margin-right: auto;
+                  white-space: nowrap;
                 }
                 .yen{
                   font-size: 14px;
@@ -328,6 +338,28 @@
                 align-items: center;
                 display: inline-flex;
                 width: 100%;
+                max-width: 153px;
+                
+                .form_area{
+                  display: inline-block;
+                  width: inherit;
+                  margin-right: auto;
+                  
+                  &__input{
+                    text-align: right;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                    font-family: inherit;
+                    font-size: inherit;
+                    height: 48px;
+                    margin: 0;
+                    outline: none;
+                    padding: 0 16px;
+                    width: inherit;
+                    width: 100%;
+                  }
+                }
               }
             }
           }
