@@ -1,54 +1,55 @@
 /ヘッダー部分/
 .header
-.order_main
-  %h2.header
-    購入内容の確認
-  %secton.item_info
-    .item_info__inner
-      .item_info__inner__item_image
-        = image_tag "/material/pict/猫画像１.jpeg"
-      .item_info__inner__item_name_and_price
-        .item_info__inner__item_name_and_price--item_name
-          ここに商品名が入ります
-        .item_info__inner__item_name_and_price--item_price
-          .price_zone
-            ¥#{@price}
-          .tax_include_and_postage_info
-            .tax_include_and_postage_info__tax_include
-              (税込)
-            .tax_include_and_postage_info__postage_info
-              送料込み
+.main
+  .order_main
+    %h2.header
+      購入内容の確認
+    %secton.item_info
+      .item_info__inner
+        .item_info__inner__item_image
+          = image_tag "/material/pict/猫画像１.jpeg"
+        .item_info__inner__item_name_and_price
+          .item_info__inner__item_name_and_price--item_name
+            ここに商品名が入ります
+          .item_info__inner__item_name_and_price--item_price
+            .price_zone
+              ¥#{@price}
+            .tax_include_and_postage_info
+              .tax_include_and_postage_info__tax_include
+                (税込)
+              .tax_include_and_postage_info__postage_info
+                送料込み
 
-  %secton.buy_info
-    = form_with(model: @order, class: "payment_zone", local: true)  do |f|
-      %h2.payment_zone__payment_amount       
-        .payment_zone__payment_amount--head
-          支払い金額
-        .payment_zone__payment_amount--data
-          = "¥ #{@price}"
-      .payment_zone__credit_card_select
-        .payment_zone__credit_card_select--head
-          支払い方法
-        .payment_zone__credit_card_select--btn_to_select
-          - if @credit_card.nil?  
-            = link_to new_credit_card_path, class: "create_credit_card_link" do
-              = fa_icon "plus-circle"
-              登録してください
-          - else 
-            %p.select_credit_card_link
-              クレジットカードを選択してください。
+    %secton.buy_info
+      = form_with(model: @order, class: "payment_zone", local: true)  do |f|
+        %h2.payment_zone__payment_amount       
+          .payment_zone__payment_amount--head
+            支払い金額
+          .payment_zone__payment_amount--data
+            = "¥ #{@price}"
+        .payment_zone__credit_card_select
+          .payment_zone__credit_card_select--head
+            支払い方法
+          .payment_zone__credit_card_select--btn_to_select
+            - if @credit_card.nil?  
+              = link_to new_credit_card_path, class: "create_credit_card_link" do
+                = fa_icon "plus-circle"
+                登録してください
+            - else 
+              %p.select_credit_card_link
+                クレジットカードを選択してください。
 
-      .payment_zone__shopping_address
-        .payment_zone__shopping_address--head
-          配送先
-        .payment_zone__shopping_address--btn_to_select
-          - if @shoppping_address.nil?
-            = link_to new_shoppling_address_path, class: "create_shopping_address_link" do
-              = fa_icon "plus-circle"
-              登録してください
-          - else
-            %p.select_shopping_address_link
-              配送先を選択してください
-      = f.submit "購入する", class: "payment_zone__submit_btn"
+        .payment_zone__shopping_address
+          .payment_zone__shopping_address--head
+            配送先
+          .payment_zone__shopping_address--btn_to_select
+            - if @shoppping_address.nil?
+              = link_to new_shoppling_address_path, class: "create_shopping_address_link" do
+                = fa_icon "plus-circle"
+                登録してください
+            - else
+              %p.select_shopping_address_link
+                配送先を選択してください
+          = f.submit "購入する", class: "payment_zone__submit_btn"
 
 .footer
