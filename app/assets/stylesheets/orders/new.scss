@@ -1,3 +1,5 @@
+$font_weight: 600;
+
 .header{
   height: 56px;
 }
@@ -9,26 +11,74 @@
     line-height: 1.5;
     font-size: 18px;
     text-align: center;
+    font-weight: bolder;
   }
   .item_info{
     padding: 16px;
     border-top: 1px solid #f5f5f5;
-    min-width: 343px;
     margin: 0 auto;
-    &__item_image{
-      
-    }
-    &__item_name_and_price{
-      &--item_name{}
-      &--item_price{
-        .price_zone{}
-        .tax_include{}
-        .postage_info{}
+    display: flex;
+    &__inner{
+      display: flex;
+      max-width: 343px;
+      width: 100%;
+      margin: 0 auto;
+      &__item_image{
+        height: 80px;
+        width: 80px;
+        min-width: 80px;
+        justify-content: center;
+        align-items: center;
+        & img{
+          width: 80px;
+          height: auto;
+        }
+      }
+      &__item_name_and_price{
+        margin-left: 16px;
+        width: 100%;
+        line-height: 1.5;
+        &--item_name{
+          font-size: 14px;
+          margin: 0;
+          padding: 0 0 8px;
+          line-height: 1.5;
+          text-align: left;
+        }
+        &--item_price{
+          text-align: left;
+          font-style: 15px;
+          display: flex;
+          width: 100%;
+
+          .price_zone{
+            font-weight: $font_weight;
+            margin-right: 5px;
+          }
+          .tax_include_and_postage_info{
+            display: flex;
+            &__tax_include{
+              font-size: 13px;
+              font-weight: $font_weight;
+              margin-right: 15px;
+              display: flex;
+              align-items: center;
+
+            }
+            &__postage_info{
+              font-weight: $font_weight;
+              margin-right: 0;
+            }
+          }
+        }
       }
     }
   }
-  buy_info{
+  .buy_info{
+    margin: 0 auto;
     .payment_zone{
+      max-width: 343px;
+      margin: 0 auto;
       &__payment_amount{
         &--head{}
         &--data{}
