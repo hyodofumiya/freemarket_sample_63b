@@ -31,25 +31,17 @@
           .payment_zone__credit_card_select--head
             支払い方法
           .payment_zone__credit_card_select--btn_to_select
-            - if @credit_card.nil?  
-              = link_to new_credit_card_path, class: "create_credit_card_link" do
-                = fa_icon "plus-circle"
-                登録してください
-            - else 
-              %p.select_credit_card_link
-                クレジットカードを選択してください。
+            = icon "fa", "plus-circle"
+            %p.select_credit_card_link
+              クレジットカードを選択してください。
 
         .payment_zone__shopping_address
           .payment_zone__shopping_address--head
             配送先
           .payment_zone__shopping_address--btn_to_select
-            - if @shoppping_address.nil?
-              = link_to new_shoppling_address_path, class: "create_shopping_address_link" do
-                = fa_icon "plus-circle"
-                登録してください
-            - else
-              %p.select_shopping_address_link
-                配送先を選択してください
+            = icon "fa", "plus-circle"
+            %p.select_shopping_address_link
+              配送先を選択してください
         = f.submit "購入する", class: "payment_zone__submit_btn"
 
 .footer

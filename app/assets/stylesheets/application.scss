@@ -10,7 +10,8 @@ $form_header_height: 128px;
 $form_footer_height: 220px;
 
 @import "./reset";
-@import 'font-awesome';
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "./mixin";
 @import "./header";
 @import "items";
