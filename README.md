@@ -51,6 +51,7 @@
 |address|string|null: false|
 |building_name|string|null: false|
 |phone_number|string||
+|user_id|integer|null: false, foreign_key|
 
 ### Association
 - belongs_to :user
@@ -76,14 +77,15 @@
 - has_many :orders
 - has_many :favotites
 - has_many :comments
+- has_many :items
 
 
-credit_cardテーブル
+## credit_cardテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, primary_key|
 |user_id|integer|null: false|
-|customer_id|string|null: false|
+|customer_id|string|null: false, foreign_key|
 |card_id|string|null: false|
 
 ### Association
@@ -106,18 +108,21 @@ credit_cardテーブル
 |area|int|null: false|
 |delivary_fee|int|null: false|
 |user_id|integer|foreign_key|
-|category_id|integer|foreign_key|
-|brand_id|integer|foreign_key,optional|
+|category_id|integer|null: false, foreign_key|
+|brand_id|integer|foreign_key,dependent:nullify|
+
+#### AddIndex
+- add_index :name, discription, category_id, size, bland_id, condition, delivary_fee, price, status
 
 
-
-#### Asociation
+### Asociation
 
 - has_one :order(orderキャンセル時はレコードを削除する。)
 - has_many :favorites
 - has_many :comments
 - has_many :images
-- belongs_to :categories
+- belongs_to :user
+- belongs_to :category
 - belongs_to :brand
 
 ## Brandテーブル
@@ -129,7 +134,7 @@ credit_cardテーブル
 
 
 
-#### Association
+### Association
 
 - has_many :categories, through: brand_categories
 - has_many :brand_categories
@@ -142,11 +147,11 @@ credit_cardテーブル
 |id|integer|primary_key|
 |name|string|null: false, Unique|
 |size|bool|null: false|
-|parrent_id|integer|foreign_key, optional|
+|parrent_id|integer|foreign_key,dependent:nullify|
 
 
 
-#### Association
+### Association
 - has_many :items
 - has_many :brands, through: brand_categories
 - has_many :brand_categories
@@ -158,10 +163,10 @@ credit_cardテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|primary_key|
-|brand_id|integer|foreign_key|
-|category_id|integer|foreign_key|
+|brand_id|integer|null: false, foreign_key|
+|category_id|integer|null: false, foreign_key|
 
-#### Association
+### Association
 
 - belongs_to :brand
 - belongs_to :category
@@ -172,10 +177,10 @@ credit_cardテーブル
 |------|----|-------|
 |id|integer|primary_key|
 |path|text|null: false|
-|item_id|integer|foreign_key|
+|item_id|integer|null: false, foreign_key|
 
 
-#### Association
+### Association
 
-- belongs_to :items
+- belongs_to :item
 
