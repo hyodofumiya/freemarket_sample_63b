@@ -1,5 +1,5 @@
 $font_weight: 600;
-
+$border_top: 1px solid #f5f5f5;
 .header{
   height: 56px;
 }
@@ -12,6 +12,7 @@ $font_weight: 600;
     font-size: 18px;
     text-align: center;
     font-weight: bolder;
+    border-top: $border_top;
   }
   .item_info{
     padding: 16px;
@@ -75,23 +76,47 @@ $font_weight: 600;
     }
   }
   .buy_info{
-    margin: 0 auto;
+    padding-bottom: 48px;
+    border-top: $border_top;
     .payment_zone{
       max-width: 343px;
       margin: 0 auto;
       &__payment_amount{
-        &--head{}
+        border-top: $border_top;
+        display: flex;
+        font-size: 18px;
+        font-weight: bold;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+        &--head{
+        }
         &--data{}
       }
       &__credit_card_select{
-        &--head{}
+        border-top: $border_top;
+        padding: 20px 0;
+
+        &--head{
+          font-size: 14px;
+          font-weight: bold;
+        }
         &--btn_to_select{
-          .create_credit_card_link{}
+          .create_credit_card_link{
+            color: ;
+          }
           .select_credit_card_link{}
         }
       }
       &__shopping_address{
-        &--head{}
+        border-top: $border_top;
+        border-bottom: $border_top;
+        padding: 20px 0;
+
+        &--head{
+          font-size: 14px;
+          font-weight: bold;
+        }
         &--btn_to_select{
           .create_shopping_address_link{}
           .select_shopping_address_link{}
