@@ -9,7 +9,7 @@ class CreateShoppingAddresses < ActiveRecord::Migration[5.2]
       t.string :prefecture, null:false
       t.string :cities, null:false
       t.string :address, null:false
-      t.string :building_name, null:false
+      t.string :building_name, null:false,  default: ""
       t.string :phone_number
       t.references :user, foreign_key: true
 

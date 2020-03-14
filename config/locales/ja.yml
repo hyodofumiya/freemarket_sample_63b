@@ -29,6 +29,12 @@ ja:
         birthday_month: 月
         birthday_day: 日
         phone_number: 電話番号（ハイフンなし）
+      shopping_address:
+        post_cord: 郵便番号
+        prefecture: 都道府県
+        cities: 市町村区
+        address: 番地
+        building_name: 建物名
   date:
     abbr_day_names:
     - 日

@@ -14,7 +14,24 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    super
+    build_resource(sign_up_params)
+    configure_resource_include_address.save
+    yield resource if block_given?
+    if resource.persisted?
+      if resource.active_for_authentication?
+        set_flash_message! :notice, :signed_up
+        sign_up(resource_name, resource)
+        respond_with resource, location: after_sign_up_path_for(resource)
+      else
+        set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
+        expire_data_after_sign_in!
+        respond_with resource, location: after_inactive_sign_up_path_for(resource)
+      end
+    else
+      clean_up_passwords resource
+      set_minimum_password_length
+      respond_with resource
+    end
   end
 
   # GET /resource/edit
@@ -44,7 +61,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :family_name, :first_name, :family_name_kana, :first_name_kana, :birthday_year, :birthday_month, :birthday_day, :phone_number])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :family_name, :first_name, :family_name_kana, :first_name_kana, :birthday_year, :birthday_month, :birthday_day, :phone_number, shopping_addresses_attributes: [:post_cord, :prefecture, :cities, :address, :building_name]])
+  end
+
+  def configure_resource_include_address
+    resource.shopping_addresses.first.update(family_name: resource.family_name, first_name: resource.first_name, family_name_kana: resource.family_name_kana, first_name_kana: resource.first_name_kana)
+    return resource
   end
 
   # If you have extra params to permit, append them to the sanitizer.

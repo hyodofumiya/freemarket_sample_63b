@@ -1,0 +1,45 @@
+-# 引数
+    ・resource
+        発送先住所モデルのインスタンス
+    ・is_add
+        新規登録か追加登録か。追加登録の場合はtrueに設定すること
+
+
+= if is_add
+    .form_field
+        = resource.label :family_name, "お名前", class: "form_field__label form_field__label--essential"
+        %br/
+        = resource.text_field :family_name, class: "form_field__input form_field__input--name", placeholder: "例)前田", autocomplete: "family-name"
+        = resource.text_field :first_name, class: "form_field__input form_field__input--name", placeholder: "例)康太", autocomplete: "given-name"
+
+    .form_field
+        = resource.label :family_name_kana, "お名前（カナ）", class: "form_field__label form_field__label--essential"
+        %br/
+        = resource.text_field :family_name_kana, placeholder: "例)マエダ", class: "form_field__input form_field__input--name"
+        = resource.text_field :first_name_kana, placeholder: "例)コウタ", class: "form_field__input form_field__input--name"
+
+.form_field
+    = resource.label :post_cord, class: "form_field__label form_field__label--essential"
+    %br/
+    = resource.text_field :post_cord, class: "form_field__input form_field__input--post", placeholder: "ハイフンなし"
+    -# %span -
+    -# = address.text_field :post_cord, class: "form_field__input form_field__input--post"
+
+    
+.form_field
+    = resource.label :prefecture, class: "form_field__label form_field__label--essential"
+    %br/
+    = resource.text_field :prefecture, class: "form_field__input form_field__input--prefecture", placeholder: "都道府県", autocomplete: "street-address"
+    
+.form_field
+    = resource.label :cities, class: "form_field__label form_field__label--essential"
+    %br/
+    = resource.text_field :cities, class: "form_field__input form_field__input--cities", placeholder: "市町村区", autocomplete: "address-line1"
+.form_field
+    = resource.label :cities, class: "form_field__label form_field__label--essential"
+    %br/
+    = resource.text_field :address, class: "form_field__input form_field__input--cities", placeholder: "番地", autocomplete: "address-line2"
+.form_field
+    = resource.label :building_name, class: "form_field__label"
+    %br/
+    = resource.text_field :building_name, class: "form_field__input form_field__input--cities", placeholder: "建物名", autocomplete: "address-line3"

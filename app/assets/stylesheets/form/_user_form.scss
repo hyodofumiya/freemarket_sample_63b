@@ -1,8 +1,66 @@
+$user_form_height: 950px;
+$user_form_upper_height: $user_form_height - $form_button_height - $form_margin_top_height * 2;
+
 .form_field__label--birthday,
 .form_field__input--birthday,
-.form_field__input--name
+.form_field__input--name,
+.form_fields--user,
+.form_upper,
+.form_lower
 {
     box-sizing: content-box;
+}
+
+.form_fields--user
+{
+    height: $user_form_height;
+    overflow: hidden;
+}
+
+.scroll_form_area
+{ 
+    &--up,
+    &--down
+    {
+        transition-property: transform;
+        transition-duration: 0.5s;
+    }
+    &--up
+    {
+        transform: translate(0, 0);
+    }
+    &--down
+    {
+        transform: translate(0, -$user_form_upper_height - $form_field_area_padding_vertical * 2);
+    }    
+}
+
+.form_upper,
+.form_lower
+{
+    margin-bottom: $form_field_area_padding_vertical;
+}
+
+.form_upper
+{
+    height: $user_form_upper_height;
+    position: relative;
+    &__error_message
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: red;
+        background-color: #FFFFFF;
+        white-space: nowrap;
+    }
+}
+
+.form_lower
+{
+    height: $user_form_upper_height - $form_button_height - $form_margin_top_height;
 }
 
 .form_field__label
@@ -28,11 +86,16 @@
         appearance: none; 
         box-sizing: content-box;
         height: 28px;
-        width: calc(#{$form_input_paddingLR} * 2);
+        width: 40px;
         background-color: white;
     }
     &--name
     {
         width: 39.65%;
     }
+}
+
+.form_button--user
+{
+    margin-bottom: $form_margin_top_height;
 }
