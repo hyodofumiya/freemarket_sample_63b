@@ -31,16 +31,16 @@
           .payment_zone__credit_card_select--head
             支払い方法
           .payment_zone__credit_card_select--btn_to_select
-            = icon "fa", "plus-circle"
             %p.select_credit_card_link
+              = icon "fa", "plus-circle"
               クレジットカードを選択してください。
 
         .payment_zone__shopping_address
           .payment_zone__shopping_address--head
             配送先
           .payment_zone__shopping_address--btn_to_select
-            = icon "fa", "plus-circle"
             %p.select_shopping_address_link
+              = icon "fa", "plus-circle"
               配送先を選択してください
         = f.submit "購入する", class: "payment_zone__submit_btn"
 
