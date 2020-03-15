@@ -2,7 +2,7 @@
     .mypage_profile_area
         .mypage_user_profile
             -# = image_tag , user.photo-filepass, {class: mypage_user_profile__image, alt: "あなたのプロフィール画像です"}
-            = img_tag "/material/icon/member_photo_noimage_thumb.png", {class: mypage_user_profile__image, alt: "あなたのプロフィール画像です"}
+            = image_tag "/material/icon/member_photo_noimage_thumb.png", {class: "mypage_user_profile__image", alt: "あなたのプロフィール画像です"}
             %p.mypage_user_profile__name #{user.nickname}
             -# %span.mypage_user_profile__review 評価　#{user.evaluation}
             %span.mypage_user_profile__small_content 評価　2
@@ -23,7 +23,7 @@
     -#　サーバーサイド作成時　以下から次のコメントアウトまでは仮の為削除すること
     .mypage_users_items
         = link_to "#", class: "mypage_link mypage_item" do
-            = image_tag "/material/icon/member_photo_noimage_thumb.png", {class: mypage_item__photo, alt: "出品した商品のイメージ画像です"}
+            = image_tag "/material/icon/member_photo_noimage_thumb.png", {class: "mypage_item__photo", alt: "出品した商品のイメージ画像です"}
             .mypage_item__info
                 %span.mypage_item__name 出品
                 = icon "far", "heart", class: "mypage_item__button mypage_item__button--favorite"
@@ -34,7 +34,7 @@
 
     .mypage_users_items.mypage_users_items--inactive
         = link_to "#", class: "mypage_link mypage_item" do
-            = image_tag "/material/icon/member_photo_noimage_thumb.png", {class: mypage_item__photo, alt: "出品した商品のイメージ画像です"}
+            = image_tag "/material/icon/member_photo_noimage_thumb.png", {class: "mypage_item__photo", alt: "出品した商品のイメージ画像です"}
             .mypage_item__info
                 %span.mypage_item__name 購入1
                 = icon "far", "heart", class: "mypage_item__button mypage_item__button--favorite"
@@ -43,7 +43,7 @@
                 %span.mypage_item__buttons_count 2
             = icon "fa", "chevron-right", class: "mypage_icon mypage_icon--item mypage_icon--right_arrow"
         = link_to "#", class: "mypage_link mypage_item" do
-            = image_tag "/material/icon/member_photo_noimage_thumb.png", {class: mypage_item__photo, alt: "出品した商品のイメージ画像です"}
+            = image_tag "/material/icon/member_photo_noimage_thumb.png", {class: "mypage_item__photo", alt: "出品した商品のイメージ画像です"}
             .mypage_item__info
                 %span.mypage_item__name 購入2
                 = icon "far", "heart", class: "mypage_item__button mypage_item__button--favorite"
@@ -57,7 +57,7 @@
     -# .mypage_users_items
         - user.items.first(5) do |item|
             = link_to user_item_path(user, item.id), class: "mypage_link mypage_item" do
-                = image_tag item.images.first, {class: mypage_item__photo, alt: "出品した商品のイメージ画像です"}
+                = image_tag item.images.first, {class: "mypage_item__photo", alt: "出品した商品のイメージ画像です"}
                 .mypage_item__info
                     %span.mypage_item__name #{item.name}
                     - if user.has_favorite(item)
@@ -75,7 +75,7 @@
     -# .mypage_users_items.mypage_users_items--inactive        
         - user.order_items.first(5) do |item|
             = link_to user_item_path(user, item.id), class: "mypage_link mypage_item" do
-                = image_tag item.images.first, {class: mypage_item__photo, alt: "購入した商品のイメージ画像です"}
+                = image_tag item.images.first, {class: "mypage_item__photo", alt: "購入した商品のイメージ画像です"}
                 .mypage_item__info
                     %span.mypage_item__name #{item.name}
                     - if user.has_favorite(item)

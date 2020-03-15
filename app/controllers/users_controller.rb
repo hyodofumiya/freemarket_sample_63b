@@ -1,12 +1,9 @@
 class UsersController < ApplicationController
-  def index
-  end
+  before_action(only: [:show, :edit]){@user = User.find(params[:id])}
 
   def show
-    @user = User.find(params[:id])
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 end
