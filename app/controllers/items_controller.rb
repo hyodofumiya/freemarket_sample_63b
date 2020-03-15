@@ -1,7 +1,5 @@
 class ItemsController < ApplicationController
   def index
-    p "=========="
-    p params[:onsale]
   end
 
   def new
