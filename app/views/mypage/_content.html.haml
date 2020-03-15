@@ -20,7 +20,7 @@
                     %button.mypage_tabs__tab__button.mypage_tabs__tab__button--inactive{type: "button"}
                         購入した商品
 
-
+    -#　サーバーサイド作成時　以下から次のコメントアウトまでは仮の為削除すること
     .mypage_users_items
         = link_to "#", class: "mypage_link mypage_item" do
             = image_tag "/material/icon/member_photo_noimage_thumb.png", {class: mypage_item__photo, alt: "出品した商品のイメージ画像です"}
@@ -52,7 +52,8 @@
                 %span.mypage_item__buttons_count 10
             = icon "fa", "chevron-right", class: "mypage_icon mypage_icon--item mypage_icon--right_arrow"
 
-
+-# 以下から実際の運用を想定したソースコード
+-# 内容はテストしていないのでコメントアウトを外して、適時修正すること
     -# .mypage_users_items
         - user.items.first(5) do |item|
             = link_to user_item_path(user, item.id), class: "mypage_link mypage_item" do
