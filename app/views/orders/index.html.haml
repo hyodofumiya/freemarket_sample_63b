@@ -1,10 +1,5 @@
 .sell-page
-
-  .form_header
-    .form_header__logo
-      = link_to root_path do
-        = image_tag "/material/logo/logo.png",alt:"logoimage", class:"logo"
-
+  = render "share/form_header"
 
   .main
     .main__showmain
@@ -83,10 +78,6 @@
         .main__showmain__delivary__selectarea
           = select_tag 'select[area]', options_for_select(["選択してください", "1~2日で発送", "2~3日で発送", "4~7日で発送"]) 
 
-
-
-
-
       .main__showmain__lower    
         .main__showmain__lower__price-top
           価格（¥300〜9,999,999）
@@ -104,24 +95,6 @@
                 .form_area
                   = form.text_field :inputform, class: "form_area__input", placeholder: '0'
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         .main__showmain__lower__btn
           .main__showmain__lower__btn__put-btn
             出品する
@@ -132,12 +105,4 @@
           禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
 
 
-  .form_footer
-    .form_footer__link
-      %br  プライバシーポリシー
-      %br  FURIMA利用規約
-      %br  特定商取引に関する表記
-    .form_footer__logo
-      = image_tag "/material/logo/logo-white.png",alt:"logoimage", class:"logo"
-    .form_footer__copy
-      &copy;FURIMA
+  = render "share/form_footer"
