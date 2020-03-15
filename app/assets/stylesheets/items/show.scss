@@ -57,13 +57,14 @@ $link_text_color: #3CCACE;
             margin: 16px auto;
             display: flex;
             flex-direction: column;
-            width: 100%;
             max-width: 560px;
             align-items: center;
             & img{
               object-fit: cover;
+              width: 100%;
             }
             .dynamic_image_zone{
+              width: 100%;
               &--selected_image{
                 height: 346px;
                 max-width: 100%;
@@ -71,12 +72,13 @@ $link_text_color: #3CCACE;
             }
             .static_images{
               display: flex;
-              justify-content: center;
+              justify-content: left;
               margin-top: 10px;
               width: 100%;
               overflow: scroll;
               &__an_item_image_zone{
                 width: 25%;
+                min-width: 25%;
                 height: 87px;
                 margin: 0 10px 0 0;
                 & img{
