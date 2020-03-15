@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users, only: [:edit, :update]
+  resources :users, only: [:show, :edit, :update] do
+    resources :items, only: [:index, :show, :new]
+    resources :favorites, only: [:index]
+    resources :credit_cards, only: [:index]
+    resources :shopping_addresses, only: [:index]
+    resources :orders, only: [:index]
+  end
   get 'categories/index'
   get 'categories/new'
   get 'categories/create'
@@ -14,12 +20,10 @@ Rails.application.routes.draw do
   get 'brands/update'
   get 'brands/destroy'
   get 'items/index'
-  get 'items/new'
   get 'items/create'
   get 'items/edit'
   get 'items/update'
   get 'items/destroy'
-  get 'orders/index'
   get 'orders/new'
   get 'orders/create'
   get 'orders/edit'
