@@ -81,6 +81,9 @@ $link_text_color: #3CCACE;
                 min-width: 25%;
                 height: 87px;
                 margin: 0 10px 0 0;
+                .selected_image{
+                  opacity: 0.4;
+                }
                 & img{
                   height: 100%;
                   width: auto;
