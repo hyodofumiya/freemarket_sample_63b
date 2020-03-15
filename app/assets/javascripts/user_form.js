@@ -14,7 +14,7 @@ const ID_JUDGE_FOR_DO_APPLAY = "user_form";//このファイルに記載のあ�
     //------------文字詳細変更用ID--------------------
     const ID_FORM_AREA_TITLE = "form_area_title";
 
-window.addEventListener('load', addEventUserForm);
+window.addEventListener('turbolinks:load', addEventUserForm);
 
 function addEventUserForm()
 {
