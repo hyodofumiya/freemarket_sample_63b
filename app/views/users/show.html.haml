@@ -1,8 +1,5 @@
 = render "share/header"
-%main.content_area
-  %nav.navigation_bar
-    %ol
-      %li
-  .user_content_area
-    
+%main.content_area--mypage
+  =render partial: "/mypage/navi"
+  =render partial: "/mypage/content", locals: {user: @user}
 = render "share/footer"
