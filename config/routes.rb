@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show, :edit, :update] do
-    resources :items, only: [:index, :show, :new, :create]
     resources :favorites, only: [:index]
     resources :credit_cards, only: [:index]
     resources :shopping_addresses, only: [:index]
-    resources :orders, only: [:index, :new, :create]
+
   end
+  resources :orders, only: [:index, :new, :create]
+  resources :items, only: [:index, :show, :new, :create]
   get 'categories/index'
   get 'categories/new'
   get 'categories/create'
