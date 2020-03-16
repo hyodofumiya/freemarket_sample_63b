@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
   resources :credit_cards, only: [:new, :create, :index, :show]
   resources :shoppling_addresses, only:[:new, :create, :index]
+  resources :orders, only: [:index, :new, :create, :edit, :update, :destroy]
   get 'categories/index'
   get 'categories/new'
   get 'categories/create'
@@ -21,12 +22,7 @@ Rails.application.routes.draw do
   get 'items/edit'
   get 'items/update'
   get 'items/destroy'
-  get 'orders/index'
-  get 'orders/new'
-  get 'orders/create'
-  get 'orders/edit'
-  get 'orders/update'
-  get 'orders/destroy'
+
   root 'items#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
