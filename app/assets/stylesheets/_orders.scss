@@ -4,19 +4,12 @@
   background-color: rgb(245, 245, 245);
   font-size: 14px;
 
-  
-
   .form_header {
-    // -webkit-box-align: center;
-    // align-items: center;
     display: flex;
     height: 56px;
-    // -webkit-box-pack: center;
     justify-content: center;
     .logo{
       height: 50px;
-      // margin-top: auto;
-      // text-align: center;    
       padding: 15px 0 0;
       .image_tag{
         height: 40px;
@@ -27,10 +20,8 @@
   }
 
   .main{
-    // background-color: #f5f5f5;
     margin: 0 auto;
     max-width: 700px;
-    // width: 100%;
     .marker_red {
       background: linear-gradient(transparent 0%, red 0%);
       color: white;
@@ -40,9 +31,7 @@
     }
       .main__showmain{
         background-color: #fff;
-        padding: 24px 40px 40px;
-    
-
+        padding: 24px 40px 40px;  
         &__main-image{
           padding: 16px;
           border-bottom: 1px solid #eee;
@@ -51,15 +40,11 @@
           }
           &__main-form{
             height: 150px;
-            // display: flex;
-            // flex-wrap: wrap;
             margin: -8px -4px 0px;
             margin-top: 8px;
-            // flex: 1 1 0%;
             padding: 0px 4px;
             &__upload{
               align-content: center;
-              // align-items: center;
               text-align: center;
               background-color: rgb(245, 245, 245);
               cursor: pointer;
@@ -67,21 +52,14 @@
               height: 100%;
               flex-wrap: wrap;
               justify-content: center;
-              // position: relative;
               border-width: 1px;
               border-style: dashed;
               border-color: rgb(204, 204, 204);
-              // border-image: initial;
-              // transition: all 0.5s ease-out 0s;
-              // width: 100%;
             }
           }
         }
-
         &__main-item{
-          padding: 16px;
-          
-          
+          padding: 16px; 
           &__upper{
             margin: 0;
             .item-name{
@@ -89,12 +67,8 @@
             }
             .form{
               margin-top: 16px;
-              // align-items: center;
-              // display: inline-flex;
               width: 100%;
               .form_area{
-                // display: inline-block;
-                // position: relative;
                 width: inherit;
                 &__input{
                   border: 1px solid #ccc;
@@ -117,59 +91,38 @@
             }
             .form{
               margin-top: 16px;
-              // align-items: center;
-              // display: inline-flex;
-              // width: 100%;
-                &__input{
-                  // margin-top: 16px;
-                  border: 1px solid #ccc;
-                  border-radius: 4px;
-                  // box-sizing: border-box;
-                  // color: #222;
-                  // margin: 0;
-                  outline: none;
-                  padding: 13px 16px;
-                  // resize: vertical;
-                  vertical-align: middle;
-                  width: 100%;
-                  height: 137px;
-                }
+              &__input{
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                outline: none;
+                padding: 13px 16px;
+                vertical-align: middle;
+                width: 100%;
+                height: 137px;
+              }
             }
           }
         }
-
         &__detail{
           padding: 16px;
           border-top: 1px solid #eee;
           &__detail-top{ 
             color: rgb(136, 136, 136);
-            // font-size: 14px;
             font-weight: 600;
             line-height: 1.4em;
             margin-bottom: 24px;
           }  
           &__category_id{
-            // margin-top: 16px;
             &__selectarea{
               margin-top: 16px;
               #select_area{
-                // margin-top: 16px;
                 border: 1px solid #ccc;
-                // border-radius: 4px;
-                // box-sizing: border-box;
-                // color: #222;
-                // font-size: 16px;
                 height: 48px;
-                // line-height: 1;
-                // margin: 0;
                 outline: none;
-                // padding: 0 56px 0 16px;
                 width: 100%;
               }
             }
           }
-          
-
           &__bland_id{
             margin-top: 32px;
             .marker_gray {
@@ -181,21 +134,13 @@
             }
             .form{
               margin-top: 16px;
-              // align-items: center;
-              // display: inline-flex;
               width: 100%;
               .form_area{
-                // display: inline-block;
-                // position: relative;
                 width: inherit;
                 &__input{
                   border: 1px solid #ccc;
                   border-radius: 4px;
-                  // box-sizing: border-box;
-                  // font-family: inherit;
-                  // font-size: inherit;
                   height: 48px;
-                  // margin: 0;
                   outline: none;
                   padding: 0 16px;
                   width: inherit;
@@ -209,30 +154,18 @@
           &__selectarea{
             margin-top: 16px;
             #select_area{
-              // margin-top: 16px;
               border: 1px solid #ccc;
-              // border-radius: 4px;
-              // box-sizing: border-box;
-              // color: #222;
-              // font-size: 16px;
               height: 48px;
-              // line-height: 1;
-              // margin: 0;
               outline: none;
-              // padding: 0 56px 0 16px;
               width: 100%;
             }
-          }
-          
+          }          
         }
-        
-
         &__delivary{
           padding: 16px;
           border-top: 1px solid #eee;
           &__delivary-top{
             color: rgb(136, 136, 136);
-            // font-size: 14px;
             font-weight: 600;
             line-height: 1.4em;
             margin-bottom: 24px;
@@ -240,21 +173,12 @@
           &__selectarea{
             margin-top: 16px;
             #select_area{
-              // margin-top: 16px;
               border: 1px solid #ccc;
-              // border-radius: 4px;
-              // box-sizing: border-box;
-              // color: #222;
-              // font-size: 16px;
               height: 48px;
-              // line-height: 1;
-              // margin: 0;
               outline: none;
-              // padding: 0 56px 0 16px;
               width: 100%;
             }
-          }
-    
+          } 
           &__delivary-area{
             margin-top: 32px;
             #select_area{
@@ -271,8 +195,7 @@
               padding: 0 56px 0 16px;
               width: 100%;
             }
-          }
-        
+          }   
           &__preparation_day{
             margin-top: 32px;
             &__selectarea{
@@ -294,82 +217,53 @@
             }
           }
         }
-
         &__lower{
           padding: 16px 16px 48px;
           border-top: 1px solid #eee;
           &__price-top{   
             margin-bottom: 24px;
             color: rgb(136, 136, 136);
-            // font-size: 14px;
             font-weight: 600;
             line-height: 1.4em;
-          }
-        
+          }       
           &__price-main{
             margin-bottom: 48px;
-            // -webkit-box-align: center;
-            // align-items: center;
-            // box-sizing: content-box;
-            // display: flex;
-            // height: 46px;
-           
             &__form{
               padding: 4px 0px;
-              // -webkit-box-align: center;
               align-items: center;
               box-sizing: content-box;
               display: flex;
               justify-content: space-between;
-              // height: 46px;
-              width: 100%;
-  
-         
+              width: 100%;        
               &__price-text{
                 display: flex;
                 justify-content: space-between;
                 width: 100%;
                 .text{
-                  // align-items: center;
                   margin-right: auto;
-                  // white-space: nowrap;
                 }
                 .yen{
-                  // font-size: 14px;
                   margin-right: 8px;
                 }
               }
               &__input-form{
-                // align-items: center;
-                // display: inline-flex;
                 width: 100%;
-                max-width: 153px;
-                
+                max-width: 153px;     
                 .form_area{
-                  // display: inline-block;
                   width: inherit;
-                  // margin-right: auto;
-                  
                   &__input{
                     text-align: right;
                     border: 1px solid #ccc;
                     border-radius: 4px;
-                    // box-sizing: border-box;
-                    // font-family: inherit;
-                    // font-size: inherit;
                     height: 48px;
-                    // margin: 0;
                     outline: none;
                     padding: 0 16px;
-                    // width: inherit;
                     width: 100%;
                   }
                 }
               }
             }
-          }
-        
-        
+          }       
         &__btn{
           margin: 0px auto 24px;
           margin-bottom: 32px;
@@ -378,8 +272,6 @@
           font-weight: bold;
           min-height: 48px;
           text-align: center;
-          // box-sizing: border-box;
-
           &__put-btn{
             background-color: #ea352d;
             color: #fff;
@@ -400,13 +292,10 @@
           font-size: 12px;
           line-height: 1.4em;
         }
-       }
+      }
+     }
   }
-  }
-
   .form_footer{
-    // background-color: #f5f5f5;
-    // margin-top: auto;
     text-align: center;
     padding: 40px 0px 11px;
     &__link{
