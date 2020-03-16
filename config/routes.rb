@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   end
   resources :orders, only: [:index, :new, :create]
-  resources :items, only: [:index, :show, :new, :create]
+  resources :items, only: [:index, :show]
   get 'categories/index'
   get 'categories/new'
   get 'categories/create'
