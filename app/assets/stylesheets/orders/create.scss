@@ -1,0 +1,66 @@
+.main{
+  .order_finish_info{
+    &__message{
+      &--main{}
+      &--sub{}
+    }
+    &__item_info{
+      &__image_and_name{
+        &__item_image{
+          max-width: 100px;
+          min-width: 70px;
+          width: 100px;
+          min-width: 80px;
+          justify-content: center;
+          align-items: center;
+          & img{
+            width: 80px;
+            height: auto;
+          }
+        }
+        &__item_name{
+          margin-left: 16px;
+          width: 100%;
+          line-height: 1.5;
+          font-size: 14px;
+          margin: 0;
+          padding: 0 0 8px;
+          text-align: left;
+        }
+      }
+      &--item_price{
+          text-align: left;
+          font-size: 15px;
+          display: flex;
+          width: 100%;
+      }
+        .price_zone{
+          font-weight: $font_weight;
+          margin-right: 5px;
+        }
+        .tax_include_and_postage_info{
+          display: flex;
+          &__tax_include{
+            font-size: 13px;
+            font-weight: $font_weight;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+          }
+          &__postage_info{
+            font-weight: $font_weight;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    &__pay_info{
+      &__pay_amount{
+        
+      }
+    }
+  }
+  .back_items_top_link{
+
+  }
+}
