@@ -28,20 +28,40 @@
           .payment_zone__payment_amount--data
             = "¥ #{@price}"
         .payment_zone__credit_card_select
-          .payment_zone__credit_card_select--head
-            支払い方法
-          .payment_zone__credit_card_select--btn_to_select
-            %p.select_credit_card_link
-              = icon "fa", "plus-circle"
-              クレジットカードを選択してください。
+          - if @credit_card.nil?
+            .payment_zone__credit_card_select__head
+              .payment_zone__credit_card_select__head--title
+                支払い方法
+            .payment_zone__credit_card_select--btn_to_select
+              = link_to user_credit_cards_path, class: "select_credit_card_link" do
+                = icon "fa", "plus-circle"
+                クレジットカードを選択してください。
+          - else
+            .payment_zone__credit_card_select__head
+              .payment_zone__credit_card_select__head--title
+                支払い方法
+              = link_to user_credit_cards_path, class:"payment_zone__credit_card_select__head--change_link" do
+                変更する
+            %p.payment_zone__credit_card_select__credit_card_info
+              クレジットカード
+              %br
+              ********0000
+              %br
+              有効期限22/31
+            .payment_zone__credit_card_select__credit_card_logo
 
         .payment_zone__shopping_address
-          .payment_zone__shopping_address--head
-            配送先
-          .payment_zone__shopping_address--btn_to_select
-            %p.select_shopping_address_link
-              = icon "fa", "plus-circle"
-              配送先を選択してください
+          .payment_zone__shopping_address__head
+            .payment_zone__shopping_address__head--title
+              配送先
+            = link_to user_shopping_addresses_path, class: "payment_zone__shopping_address__head--change_link" do
+              変更する
+          %p.payment_zone__shopping_address__shopping_address_info
+            〒446-0000
+            %br
+            愛知県安城市福釜町〇〇
+            %br
+            姓 名
         = f.submit "購入する", class: "order_submit_btn"
 
 .footer

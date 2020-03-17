@@ -50,3 +50,19 @@
 @mixin border_setting ($color) {
   border: 1px solid $color;
 }
+
+/*商品購入ページのクレジットカードと配送先表示の設定*/
+@mixin orders_new_table_setting{
+  &__head{
+    padding-bottom: 10px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    &--title{
+      font-weight: bold;
+    }
+    &--change_link{
+      color: $link_text_color;
+    }
+  }
+}
