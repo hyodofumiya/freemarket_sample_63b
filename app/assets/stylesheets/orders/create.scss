@@ -33,7 +33,6 @@
           font-size: 15px;
           display: flex;
           width: 100%;
-      }
         .price_zone{
           font-weight: $font_weight;
           margin-right: 5px;
@@ -56,11 +55,14 @@
     }
     &__pay_info{
       &__pay_amount{
-        
+      }
+      &__payment_method{ 
+      }
+      &__order_date{
+
       }
     }
   }
   .back_items_top_link{
-
   }
 }
