@@ -1,10 +1,22 @@
+$border_top: 2px solid #f5f5f5b9;
+
 .main{
   .order_finish_info{
+    background-color: #fff;
+    width: 700px;
+    margin: 0 auto;
+    font-size: 14px;
     &__message{
+      font-weight: bold;
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+      border-top: $border_top;
       &--main{}
       &--sub{}
     }
     &__item_info{
+      border-top: $border_top;
       &__image_and_name{
         &__item_image{
           max-width: 100px;
@@ -28,11 +40,12 @@
           text-align: left;
         }
       }
-      &--item_price{
+      &__item_price{
           text-align: left;
           font-size: 15px;
           display: flex;
           width: 100%;
+          border-top: $border_top;
         .price_zone{
           font-weight: $font_weight;
           margin-right: 5px;
@@ -55,10 +68,13 @@
     }
     &__pay_info{
       &__pay_amount{
+        border-top: $border_top;
       }
-      &__payment_method{ 
+      &__payment_method{
+        border-top: $border_top; 
       }
       &__order_date{
+        border-top: $border_top;
 
       }
     }
