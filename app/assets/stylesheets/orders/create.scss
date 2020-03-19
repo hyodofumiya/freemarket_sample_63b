@@ -15,9 +15,8 @@ $border_top: 2px solid #f5f5f5b9;
       justify-content: center;
       border-top: $border_top;
       padding: 30px 0 20px 0;
-      background-color: #8bc34a96;
       &--main{
-        font-size: 20px;
+        font-size: 24px;
         font-weight: bold;
       }
       &--sub{}
@@ -43,7 +42,7 @@ $border_top: 2px solid #f5f5f5b9;
           font-size: 20px;
           font-weight: bold;
           margin: 0 auto;
-          padding: 0 0 8px;
+          padding: 10px 0 30px;
           line-height: 1.5;
           text-align: center;
         }
