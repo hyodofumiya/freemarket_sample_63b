@@ -66,3 +66,17 @@
     }
   }
 }
+//商品購入完了画面の支払い欄
+@mixin orders_create_info_table{
+  display: flex;
+  width: 100%;
+  border-top: $border_top;
+  justify-content: space-between;
+  line-height: 1.5;
+  padding: 10px 20px;
+  &--head{
+    vertical-align: middle;
+  }
+  &--data{
+  }
+}
