@@ -2,7 +2,8 @@ $border_top: 2px solid #f5f5f5b9;
 .header{
   height: 80px;
 }
-.main{
+.order_create_main{
+  padding-bottom: 30px;
   .order_finish_info{
     background-color: #fff;
     max-width: 800px;
@@ -13,8 +14,7 @@ $border_top: 2px solid #f5f5f5b9;
       width: 100%;
       text-align: center;
       justify-content: center;
-      border-top: $border_top;
-      padding: 30px 0 20px 0;
+      padding: 10px 0;
       &--main{
         font-size: 24px;
         font-weight: bold;
@@ -22,7 +22,6 @@ $border_top: 2px solid #f5f5f5b9;
       &--sub{}
     }
     &__item_info{
-      border-top: $border_top;
       &__image_and_name{
         width: 500px;
         margin: 0 auto;
@@ -54,6 +53,9 @@ $border_top: 2px solid #f5f5f5b9;
       margin: 0 auto;
       text-align: right;
       font-size: 16px;
+      & :last-child{
+        margin-bottom: 30px;
+      }
       &__item_price{
         @include orders_create_info_table;
       }
@@ -62,6 +64,10 @@ $border_top: 2px solid #f5f5f5b9;
       }
       &__payment_method{
         @include orders_create_info_table;
+        &--head{
+          display: flex;
+          align-items: center;
+        }
       }
       &__order_date{
         @include orders_create_info_table;
@@ -69,5 +75,21 @@ $border_top: 2px solid #f5f5f5b9;
     }
   }
   .back_items_top_link{
+    width: 100%;
+    max-width: 300px;
+    line-height: 48px;
+    background-color: #EA352D;
+    border: none;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 30px;
+    &--link{
+      text-align: center;
+      color: #fff;
+    }
   }
+}
+
+.footer{
+  height: 60px;
 }
