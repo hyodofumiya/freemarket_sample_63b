@@ -27,7 +27,7 @@
             .form_field
                 = form.label :password, class: "form_field__label form_field__label--essential"
                 %br/
-                = form.password_field :password, class: "form_field__input", autocomplete: "new-password", placeholder: "#{@minimum_password_length} characters minimum" if @minimum_password_length
+                = form.password_field :password, class: "form_field__input", autocomplete: "new-password", placeholder: "英数字#{@minimum_password_length}文字以上" if @minimum_password_length
 
             .form_field
                 = form.label :password_confirmation, class: "form_field__label form_field__label--essential"

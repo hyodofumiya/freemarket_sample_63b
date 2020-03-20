@@ -12,9 +12,10 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
   validates :email, presence: true, uniqueness: true, format: {with: /\w+@\w+/, message: I18n.t('errors.messages.invalid')}
-  validates :password, presence: true, confirmation: true
+  validates :password, presence: true, confirmation: true, on: :create
+  validates :password_confirmation, presence: true, on: :create
   validates :birthday, presence: true
-
+  @minimum_password_length = User.password_length.min
   
   def birthday_year=(year)
     @year = year

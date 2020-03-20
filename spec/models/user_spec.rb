@@ -93,6 +93,12 @@ RSpec.describe User, type: :model do
                 user.valid?
                 expect(user.errors[:password]).to include(I18n.t('errors.messages.too_short', count: 7))
             end
+
+            it "is failure registration with different passwords" do
+                user = build(:user, password: "aaaaaaa", password_confirmation: "bbbbbbb")
+                user.valid?
+                expect(user.errors[:password_confirmation]).to include(I18n.t('errors.messages.confirmation', attribute: "パスワード"))
+            end
         end
     end
 end

@@ -9,3 +9,5 @@
   -#       %li= message
   %p.form_upper__error_message
     = resource.errors.full_messages.first
+%p.form_upper__error_message
+  =flash[:alert]

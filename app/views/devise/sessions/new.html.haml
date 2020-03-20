@@ -2,7 +2,8 @@
 %main.content_area.content_area--form
   .form_area.form_area--login
     %h2.form_area__title#form_area_title ログイン
-    = form_with(model: resource, as: resource_name, url: session_path(resource_name), class: "form_fields") do |form|
+    = form_with(model: resource, as: resource_name, url: session_path(resource_name), class: "form_fields", local: true) do |form|
+      = render "devise/shared/error_messages", resource: @user
       .form_field
         = form.label :email, class: "form_field__label"
         %br/
