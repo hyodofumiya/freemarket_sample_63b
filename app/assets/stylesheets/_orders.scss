@@ -4,26 +4,13 @@
   background-color: rgb(245, 245, 245);
   font-size: 14px;
 
-  .form_header {
-    display: flex;
-    height: 56px;
-    justify-content: center;
-    .logo{
-      height: 50px;
-      padding: 15px 0 0;
-      .image_tag{
-        height: 40px;
-        width: 140px;
-        margin-bottom: 8px;
-      }  
-    }
-  }
+@import "form_header";
 
   .main{
     margin: 0 auto;
     max-width: 700px;
     .marker_red {
-      background: linear-gradient(transparent 0%, red 0%);
+      background-color: red;
       color: white;
       font-size:12px;
       border-radius: 2px;
@@ -35,6 +22,9 @@
         &__main-image{
           padding: 16px;
           border-bottom: 1px solid #eee;
+          &__title{
+          font-weight: bold;
+          }
           &__main-text{
             margin-top: 16px;
           }
@@ -62,10 +52,10 @@
           padding: 16px; 
           &__upper{
             margin: 0;
-            .item-name{
-              line-height: 14px;
-            }
-            .form{
+            &__title{
+              font-weight: bold;
+              }
+            .itemform{
               margin-top: 16px;
               width: 100%;
               .form_area{
@@ -86,10 +76,11 @@
             }
           }
           &__bottom{
-            .item-discription{
+            &__title{
               margin-top: 32px;
-            }
-            .form{
+              font-weight: bold;
+              }
+            .itemform{
               margin-top: 16px;
               &__input{
                 border: 1px solid #ccc;
@@ -113,26 +104,31 @@
             margin-bottom: 24px;
           }  
           &__category_id{
-            &__selectarea{
-              margin-top: 16px;
-              #select_area{
-                border: 1px solid #ccc;
-                height: 48px;
-                outline: none;
-                width: 100%;
-              }
+            font-weight: bold;
+          }
+          &__categoryarea{
+            margin-top: 16px;
+            #category_area{
+              border: 1px solid #ccc;
+              height: 48px;
+              outline: none;
+              width: 100%;
             }
           }
+          
           &__bland_id{
+            &__title{
             margin-top: 32px;
+            font-weight: bold;
+            }
             .marker_gray {
-              background: linear-gradient(transparent 0%, gray 0%);
+              background-color: gray;
               color: white;
               font-size:12px;
               border-radius: 2px;
               line-height: 1.4em;
             }
-            .form{
+            .itemform{
               margin-top: 16px;
               width: 100%;
               .form_area{
@@ -150,10 +146,11 @@
           }
           &__condition{
             margin-top: 32px;
+            font-weight: bold;
           }
-          &__selectarea{
+          &__conditionarea{
             margin-top: 16px;
-            #select_area{
+            #condition_area{
               border: 1px solid #ccc;
               height: 48px;
               outline: none;
@@ -161,27 +158,34 @@
             }
           }          
         }
-        &__delivary{
+        &__delivery{
           padding: 16px;
           border-top: 1px solid #eee;
-          &__delivary-top{
+          &__delivery-top{
             color: rgb(136, 136, 136);
             font-weight: 600;
             line-height: 1.4em;
             margin-bottom: 24px;
           }
-          &__selectarea{
+          &__delivery_fee{
+            font-weight: bold;
+          }
+          &__feearea{
             margin-top: 16px;
-            #select_area{
+            #fee_area{
               border: 1px solid #ccc;
               height: 48px;
               outline: none;
               width: 100%;
             }
           } 
-          &__delivary-area{
+          &__delivery-area{
             margin-top: 32px;
-            #select_area{
+            font-weight: bold;
+          }
+          &__prefecturesarea{
+            margin-top: 16px;
+            #prefectures_area{
               margin-top: 16px;
               border: 1px solid #ccc;
               border-radius: 4px;
@@ -194,26 +198,27 @@
               outline: none;
               padding: 0 56px 0 16px;
               width: 100%;
-            }
-          }   
+            }  
+          }
           &__preparation_day{
             margin-top: 32px;
-            &__selectarea{
+            font-weight: bold;
+          }
+          &__preparationarea{
+            margin-top: 16px;
+            #preparation_area{
               margin-top: 16px;
-              #select_area{
-                margin-top: 16px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                box-sizing: border-box;
-                color: #222;
-                font-size: 16px;
-                height: 48px;
-                line-height: 1;
-                margin: 0;
-                outline: none;
-                padding: 0 56px 0 16px;
-                width: 100%;
-              }
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              color: #222;
+              font-size: 16px;
+              height: 48px;
+              line-height: 1;
+              margin: 0;
+              outline: none;
+              padding: 0 56px 0 16px;
+              width: 100%;
             }
           }
         }
@@ -241,6 +246,7 @@
                 width: 100%;
                 .text{
                   margin-right: auto;
+                  font-weight: bold;
                 }
                 .yen{
                   margin-right: 8px;
@@ -295,22 +301,5 @@
       }
      }
   }
-  .form_footer{
-    text-align: center;
-    padding: 40px 0px 11px;
-    &__link{
-      font-size: 12px;
-      margin: -16px 0px 40px -16px;
-    }
-    &__logo{ 
-      .logo{
-        height: 40px;
-        width: 140px;
-        margin-bottom: 8px;
-      }
-    }
-    &__copy{
-      font-size: 12px;
-    }
-  }
+@import "form_footer";
 }
