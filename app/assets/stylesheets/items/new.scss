@@ -9,6 +9,8 @@
   .main{
     margin: 0 auto;
     max-width: 700px;
+    background-color: #fff;
+    padding: 24px 40px 40px;  
     .marker_red {
       background-color: red;
       color: white;
@@ -17,8 +19,6 @@
       line-height: 1.4em;
     }
       .main__showmain{
-        background-color: #fff;
-        padding: 24px 40px 40px;  
         &__main-image{
           padding: 16px;
           border-bottom: 1px solid #eee;
@@ -55,7 +55,7 @@
             &__title{
               font-weight: bold;
               }
-            .itemform{
+            &__input-form{
               margin-top: 16px;
               width: 100%;
               .form_area{
@@ -125,7 +125,7 @@
               border-radius: 2px;
               line-height: 1.4em;
             }
-            .itemform{
+            &__input-form{
               margin-top: 16px;
               width: 100%;
               .form_area{
@@ -194,27 +194,27 @@
               width: 100%;
             }  
           }
-          &__preparation_day{
-            margin-top: 32px;
-            font-weight: bold;
-          }
-          &__preparationarea{
-            margin-top: 16px;
-            #preparation_area{
-              margin-top: 16px;
-              border: 1px solid #ccc;
-              border-radius: 4px;
-              box-sizing: border-box;
-              color: #222;
-              font-size: 16px;
-              height: 48px;
-              line-height: 1;
-              margin: 0;
-              outline: none;
-              padding: 0 56px 0 16px;
-              width: 100%;
-            }
-          }
+          // &__preparation_day{
+          //   margin-top: 32px;
+          //   font-weight: bold;
+          // }
+          // &__preparationarea{
+          //   margin-top: 16px;
+          //   #preparation_area{
+          //     margin-top: 16px;
+          //     border: 1px solid #ccc;
+          //     border-radius: 4px;
+          //     box-sizing: border-box;
+          //     color: #222;
+          //     font-size: 16px;
+          //     height: 48px;
+          //     line-height: 1;
+          //     margin: 0;
+          //     outline: none;
+          //     padding: 0 56px 0 16px;
+          //     width: 100%;
+          //   }
+          // }
         }
         &__lower{
           padding: 16px 16px 48px;

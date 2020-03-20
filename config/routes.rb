@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   get 'items/edit'
   get 'items/update'
   get 'items/destroy'
-  get 'orders/index'
+  get 'items/new'
   get 'orders/edit'
   get 'orders/update'
   get 'orders/destroy'
