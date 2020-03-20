@@ -17,9 +17,17 @@
         %li.left_btns__brand
           ブランド
       %ul.right_btns
-        %li.right_btns__login
-          = link_to root_path, class: "right_btns__login--btn, header_right_btn" do
-            ログイン
-        %li.right_btns__signup
-          = link_to root_path, class: "right_btns__signup--btn, header_right_btn" do
-            新規会員登録
+        - if user_signed_in?
+          %li.right_btns__btn
+            = link_to user_path(current_user), class: "header_right_btn" do
+              マイページ
+          %li.right_btns__btn
+            =link_to destroy_user_session_path, method: :delete, class: "header_right_btn" do
+              ログアウト
+        - else
+          %li.right_btns__btn.right_btns__btn--login
+            = link_to new_user_session_path, class: "right_btns__login--btn, header_right_btn" do
+              ログイン
+          %li.right_btns__btn.right_btns__btn--signup
+            = link_to new_user_registration_path, class: "right_btns__signup--btn, header_right_btn" do
+              新規会員登録
