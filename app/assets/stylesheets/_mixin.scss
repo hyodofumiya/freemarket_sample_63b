@@ -39,3 +39,14 @@
   background-size: cover;
 }
 
+/* items/showのtable設定*/
+@mixin table_setting ($width) {
+  width: $width;
+  font-size: 14px;
+  border: 1px solid #deddde;
+}
+
+/*borderの設定*/
+@mixin border_setting ($color) {
+  border: 1px solid $color;
+}

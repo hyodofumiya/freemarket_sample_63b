@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "users/registrations"}
   resources :users, only: [:show, :edit, :update] do
-    resources :items, only: [:index, :show, :new]
     resources :favorites, only: [:index]
     resources :credit_cards, only: [:index]
     resources :shopping_addresses, only: [:index]
-    resources :orders, only: [:index]
+    resources :items, only: [:index, :show]
+    resources :orders, only: [:index, :new, :create]
+
   end
+  resources :items, only: [:index, :show]
+  resources :orders, only: [:new]
   get 'categories/index'
   get 'categories/new'
   get 'categories/create'
@@ -19,13 +22,9 @@ Rails.application.routes.draw do
   get 'brands/edit'
   get 'brands/update'
   get 'brands/destroy'
-  get 'items/index'
-  get 'items/create'
   get 'items/edit'
   get 'items/update'
   get 'items/destroy'
-  get 'orders/new'
-  get 'orders/create'
   get 'orders/edit'
   get 'orders/update'
   get 'orders/destroy'
