@@ -3,6 +3,7 @@
 
   .main
     .main__showmain
+    = form_with model: @order, class: :itemform, local: true do |form|
       .main__showmain__main-image
         .main__showmain__main-image__title
           出品画像
@@ -17,16 +18,14 @@
         .main__showmain__main-item__upper
           .main__showmain__main-item__upper__title
             商品名
-            %span.marker_red 必須
-          = form_with model: @order, class: :itemform, local: true do |form|
-            .form_area
-              = form.text_field :itemname, class: "form_area__input", placeholder: '40文字まで'          
+            %span.marker_red 必須        
+          -# .form_area
+          = form.text_field :itemname, class: "form_area__input", placeholder: '40文字まで'          
         .main__showmain__main-item__bottom
           .main__showmain__main-item__bottom__title
             商品の説明
             %span.marker_red 必須
-          = form_with model: @order, class: :itemform, local: true do |form|
-            = form.text_area :discription, placeholder: '商品の説明（必須 1,000文字以内）&#13;&#10;（色、素材、重さ、定価、注意点など）&#13;&#10;&#13;&#10;例）2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'.html_safe, class: "itemform__input"
+          = form.text_area :discription, placeholder: '商品の説明（必須 1,000文字以内）&#13;&#10;（色、素材、重さ、定価、注意点など）&#13;&#10;&#13;&#10;例）2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'.html_safe, class: "itemform__input"
       .main__showmain__detail
         .main__showmain__detail__detail-top
           商品の詳細
@@ -39,9 +38,8 @@
           .main__showmain__detail__bland_id__title
             ブランド
             %span.marker_gray 任意
-          = form_with model: @order, class: :itemform, local: true do |form|
-            .form_area
-              = form.text_field :brandname, class: "form_area__input", placeholder: '例）シャネル'
+          .form_area
+            = form.text_field :brandname, class: "form_area__input", placeholder: '例）シャネル'
         .main__showmain__detail__condition
           商品の状態
           %span.marker_red 必須
@@ -77,9 +75,8 @@
               .yen
                 ¥
             .main__showmain__lower__price-main__form__input-form
-              = form_with model: @order, class: :itemform, local: true do |form|
-                .form_area
-                  = form.text_field :inputform, class: "form_area__input", placeholder: '0'
+              .form_area
+                = form.text_field :inputform, class: "form_area__input", placeholder: '0'
         .main__showmain__lower__btn
           .main__showmain__lower__btn__put-btn
             出品する

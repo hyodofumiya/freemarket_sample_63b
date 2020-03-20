@@ -50,3 +50,11 @@
 @mixin border_setting ($color) {
   border: 1px solid $color;
 }
+
+/*商品出品　タイトル装飾*/
+@mixin title_decoration {
+  margin-bottom: 24px;
+  color: rgb(136, 136, 136);
+  font-weight: 600;
+  line-height: 1.4em;
+}

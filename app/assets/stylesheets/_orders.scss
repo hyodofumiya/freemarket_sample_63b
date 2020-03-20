@@ -98,10 +98,7 @@
           padding: 16px;
           border-top: 1px solid #eee;
           &__detail-top{ 
-            color: rgb(136, 136, 136);
-            font-weight: 600;
-            line-height: 1.4em;
-            margin-bottom: 24px;
+            @include title_decoration;
           }  
           &__category_id{
             font-weight: bold;
@@ -162,10 +159,7 @@
           padding: 16px;
           border-top: 1px solid #eee;
           &__delivery-top{
-            color: rgb(136, 136, 136);
-            font-weight: 600;
-            line-height: 1.4em;
-            margin-bottom: 24px;
+            @include title_decoration;
           }
           &__delivery_fee{
             font-weight: bold;
@@ -225,11 +219,8 @@
         &__lower{
           padding: 16px 16px 48px;
           border-top: 1px solid #eee;
-          &__price-top{   
-            margin-bottom: 24px;
-            color: rgb(136, 136, 136);
-            font-weight: 600;
-            line-height: 1.4em;
+          &__price-top{
+            @include title_decoration;
           }       
           &__price-main{
             margin-bottom: 48px;
