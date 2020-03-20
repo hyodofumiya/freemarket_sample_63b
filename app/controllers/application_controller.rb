@@ -13,4 +13,8 @@ class ApplicationController < ActionController::Base
             username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
         end
     end
+
+    def must_logined
+        redirect_to user_session_path unless user_signed_in?
+    end
 end

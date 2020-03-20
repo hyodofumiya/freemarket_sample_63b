@@ -11,8 +11,8 @@ class User < ApplicationRecord
   before_validation :create_birthday, if: :birthday_year && :birthday_month && :birthday_day
 
   validates :nickname, presence: true
-  validates :email, presence: true
-  validates :password, presence: true
+  validates :email, presence: true, uniqueness: true, format: {with: /\w+@\w+/, message: I18n.t('errors.messages.invalid')}
+  validates :password, presence: true, confirmation: true
   validates :birthday, presence: true
 
   

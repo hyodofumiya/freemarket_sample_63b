@@ -12,8 +12,4 @@ class UsersController < ApplicationController
   def set_current_user
     @user = current_user
   end
-
-  def must_logined
-    redirect_to user_session_path unless user_signed_in?
-  end
 end

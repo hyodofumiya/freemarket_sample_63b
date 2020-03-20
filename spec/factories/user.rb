@@ -7,7 +7,7 @@ FactoryBot.define do
         family_name_kana {gimei.last.katakana}
         first_name_kana {gimei.first.katakana}
 
-        password_temp = Faker::Internet.password(min_length: 6)
+        password_temp = Faker::Internet.password(min_length: 7)
         password {password_temp}
         password_confirmation {password_temp}
 

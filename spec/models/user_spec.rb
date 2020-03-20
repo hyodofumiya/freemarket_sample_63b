@@ -23,9 +23,14 @@ RSpec.describe User, type: :model do
                 user = build(:user, phone_number: "０１２０-８２８-８２８")
                 expect(user).to be_valid
             end
+            
+            it "is success registration with birthday date" do
+                user = build(:user, birthday: nil, birthday_year: 2000, birthday_month: 1, birthday_day: 1)
+                expect(user).to be_valid
+            end
         end
 
-        context "failure" do
+        context "failure by nil" do
             it "is failure registration without nickname" do
                 user = build(:user, nickname: nil)
                 user.valid?
@@ -61,11 +66,32 @@ RSpec.describe User, type: :model do
                 user.valid?
                 expect(user.errors[:first_name_kana]).to include(I18n.t('errors.messages.blank'))
             end
+        end
 
+        context "failure by validation spec" do
             it "is failure registration with phone_number included except number" do
                 user = build(:user, phone_number: "tokyo2020")
                 user.valid?
                 expect(user.errors[:phone_number]).to include(I18n.t('errors.messages.not_a_number'))
+            end
+
+            it "is failure registration with wrong email address" do
+                user = build(:user, email: "email")
+                user.valid?
+                expect(user.errors[:email]).to include(I18n.t('errors.messages.invalid'))
+            end
+
+            it "is failure registration with same email address" do
+                create(:user, email: "a@a")
+                user = build(:user, email: "a@a")
+                user.valid?
+                expect(user.errors[:email]).to include(I18n.t('errors.messages.taken'))
+            end
+
+            it "is failure registration with six charas password" do
+                user = build(:user, password: "aaa", password_confirmation: "aaa")
+                user.valid?
+                expect(user.errors[:password]).to include(I18n.t('errors.messages.too_short', count: 7))
             end
         end
     end

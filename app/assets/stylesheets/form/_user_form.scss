@@ -1,5 +1,7 @@
 $user_form_height: 950px;
 $user_form_upper_height: $user_form_height - $form_button_height - $form_margin_top_height * 2;
+$form_header_height: 128px;
+$form_footer_height: 220px;
 
 .form_field__label--birthday,
 .form_field__input--birthday,
@@ -15,6 +17,18 @@ $user_form_upper_height: $user_form_height - $form_button_height - $form_margin_
 {
     height: $user_form_height;
     overflow: hidden;
+}
+
+.form_area--login
+{
+    min-height: calc(100vh - #{$form_header_height} - #{$form_footer_height});
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar
+    {
+        display:none;
+    }
 }
 
 .scroll_form_area
