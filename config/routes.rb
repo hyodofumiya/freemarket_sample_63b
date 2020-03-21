@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   end
   resources :items, only: [:index, :show]
   resources :orders, only: [:new]
-  resource :item, only: [:show] #スプリントレビュー用。スプリントレビュー後削除すること。
   get 'categories/index'
   get 'categories/new'
   get 'categories/create'
