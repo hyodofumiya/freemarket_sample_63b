@@ -6,9 +6,7 @@ $form_footer_height: 10px;
 
 
 body{
-  position: relative;
-  height: 100vh;
-  .header{
+  .orders_new_header{
     height: $form_header_height;
     max-width: 1040px;
   }
@@ -17,7 +15,8 @@ body{
     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
     font-size: 14px;
     padding-top: 20px;
-    min-height: calc(100% - #{$form_header_height + $form_footer_height});
+    min-height: calc(100vh - #{$form_header_height + $form_footer_height} - 20px);
+    height: 100%;
     .order_main{
       background-color: #ffffff;
       width: 700px;
@@ -157,10 +156,7 @@ body{
     }  
   }
 
-  .footer{
+  .orders_new_footer{
     height: $form_footer_height;
-    position: absolute;
-    bottom: 0;
-    z-index: 1;
   }
 }
