@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:index, :new, :create]
 
   end
+  get 'items/new'
   resources :items, only: [:index, :show]
   resources :orders, only: [:new]
   get 'categories/index'
@@ -25,7 +26,6 @@ Rails.application.routes.draw do
   get 'items/edit'
   get 'items/update'
   get 'items/destroy'
-  get 'items/new'
   get 'orders/edit'
   get 'orders/update'
   get 'orders/destroy'
