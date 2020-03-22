@@ -13,12 +13,6 @@ $form_footer_height: 220px;
     box-sizing: content-box;
 }
 
-.form_fields--user
-{
-    height: $user_form_height;
-    overflow: hidden;
-}
-
 .form_area--login
 {
     min-height: calc(100vh - #{$form_header_height} - #{$form_footer_height});
@@ -47,34 +41,6 @@ $form_footer_height: 220px;
     {
         transform: translate(0, -$user_form_upper_height - $form_field_area_padding_vertical * 2);
     }    
-}
-
-.form_upper,
-.form_lower
-{
-    margin-bottom: $form_field_area_padding_vertical;
-}
-
-.form_upper
-{
-    height: $user_form_upper_height;
-    position: relative;
-    &__error_message
-    {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        text-align: center;
-        color: red;
-        background-color: #FFFFFF;
-        white-space: nowrap;
-    }
-}
-
-.form_lower
-{
-    height: $user_form_upper_height - $form_button_height - $form_margin_top_height;
 }
 
 .form_field__label

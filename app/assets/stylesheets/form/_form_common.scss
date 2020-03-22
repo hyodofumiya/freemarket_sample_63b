@@ -54,6 +54,17 @@ $form_field_area_padding_vertical: 40px;
     margin: 0 auto;
     padding: $form_field_area_padding_vertical 100px;
     position: relative;
+    &__error_message
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: red;
+        background-color: #FFFFFF;
+        white-space: nowrap;
+    }
 }
 
 .form_field

@@ -7,7 +7,6 @@ class User < ApplicationRecord
   include FullnameAndPhoneAction
 
   has_many :shopping_addresses
-  accepts_nested_attributes_for :shopping_addresses
   before_validation :create_birthday, if: :birthday_year && :birthday_month && :birthday_day
 
   validates :nickname, presence: true
@@ -15,7 +14,6 @@ class User < ApplicationRecord
   validates :password, presence: true, confirmation: true, on: :create
   validates :password_confirmation, presence: true, on: :create
   validates :birthday, presence: true
-  @minimum_password_length = User.password_length.min
   
   def birthday_year=(year)
     @year = year
