@@ -26,6 +26,14 @@ body{
 div,
 a {
   text-decoration: none;
+  &:link
+  {
+    color: initial;
+  }
+  &:visited
+  {
+    color: initial;
+  }
 }
 dl,
 dt,
