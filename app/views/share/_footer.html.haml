@@ -1,0 +1,46 @@
+%section.footer
+  %ul.footer__main
+    %li.footer_left_items.footer_items
+      %h2.footer_left_items__title.footer_items--title
+        FURIMAについて
+      %ul.footer_left_items__content.footer_items__content
+        %li.footer_list
+          = link_to root_path, class: "footer_list__text" do
+            会社概要（運営会社）
+        %li
+          = link_to root_path, class: "footer_list__text" do
+            プライバシーポリシー
+        %li
+          = link_to root_path, class: "footer_list__text" do
+            FURIMA利用規約
+        %li
+          = link_to root_path, class: "footer_list__text" do
+            ポイントに関する特約
+    %li.footer_middle_items.footer_items
+      %h2.footer_middle_items__title.footer_items--title
+        FURIMAを見る
+      %ul.footer_middle_items__content.footer_items__content
+        %li
+          = link_to root_path, class: "footer_list__text" do
+            カテゴリー一覧
+        %li
+          = link_to root_path, class: "footer_list__text" do
+            ブランド一覧
+    %li.footer_right_items.footer_items
+      %h2.footer_right_items__title.footer_items--title
+        ヘルプ&ガイド
+      %ul.footer_right_items__content.footer_items__content
+        %li
+          = link_to root_path, class: "footer_list__text" do
+            FURIMAガイド
+        %li
+          = link_to root_path, class: "footer_list__text" do
+            FURIMAロゴ利用ガイドライン
+        %li
+          = link_to root_path, class: "footer_list__text" do
+            お知らせ
+  .footer__logo
+    = link_to root_path, class: "footer__logo--image" do
+      = image_tag "/material/logo/logo-white.png", alt: "logo", class: "footer_logo_image"
+    .footer__logo--text
+      ©︎FURIMA

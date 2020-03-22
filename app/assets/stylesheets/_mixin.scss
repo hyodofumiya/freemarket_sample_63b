@@ -1,0 +1,52 @@
+
+/* header.scss */
+@mixin lower_left {
+  padding: 0;
+  color: #333;
+  line-height: 32px;
+  padding-right: 30px;
+}
+@mixin lower_right {
+  padding: 0 0 0 16px;
+  line-height: 32px;
+  margin: 0;
+  .header_right_btn{
+    color: #333;
+  }
+}
+
+/* top画面のimg内の文字 */
+@mixin text_shadow {
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+
+/* app-storeとplay-storeのアイコン */
+@mixin mobile_app_links {
+  .mobile_app_btns{
+    display: flex;
+    &--link{
+      margin-right: 10px;
+      .application_icon{
+        width: 180px;
+      }
+    }
+  }
+}
+
+/* gackground-imageの設定 */
+@mixin background_image ($url) {
+  background-image: url($url);
+  background-size: cover;
+}
+
+/* items/showのtable設定*/
+@mixin table_setting ($width) {
+  width: $width;
+  font-size: 14px;
+  border: 1px solid #deddde;
+}
+
+/*borderの設定*/
+@mixin border_setting ($color) {
+  border: 1px solid $color;
+}

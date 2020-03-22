@@ -1,0 +1,26 @@
+.app_banner{
+  @include background_image("/material/pict/bg-appBanner-pict.jpg");
+  background-position: top center;
+  padding: 100px 40px;
+  position: relative;
+  &__content{
+    color: #fff;
+    text-align: center;
+    &--title{
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+    &--sentence{
+      font-size: 35px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    }
+    @include mobile_app_links;
+    &--mobile_app_btns{
+    width: 100%;
+    justify-content: center;
+    margin: 20px auto 0;
+    }
+  }
+}

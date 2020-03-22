@@ -1,0 +1,25 @@
+%section.header
+  .header__inner
+    .header__inner__upper
+      = link_to root_path, class: "header_zone_logo" do
+        = image_tag "/material/logo/logo.png",alt:"logo"
+      = form_with url: root_path, scope: :post, local: true, class: "header_zone_search" do |f|
+        .header_zone_search_field
+          = f.text_field :keyword, class: "header_zone_search_field__input_area", placeholder: "キーワードから探す"      
+          %button.header_zone_search_field__submit
+            = f.submit "", class: "header_zone_search_field__submit--btn", id: "submit-btn" 
+            .header_zone_search_field__submit--icon
+              = image_tag "/material/icon/icon-search 1.png"
+    .header__inner__lower
+      %ul.header_zone_left_btns
+        %li.header_zone_left_btns__category
+          カテゴリー
+        %li.header_zone_left_btns__brand
+          ブランド
+      %ul.header_zone_right_btns
+        %li.header_zone_right_btns__login
+          = link_to root_path, class: "header_zone_right_btns__login--btn, header_right_btn" do
+            ログイン
+        %li.header_zone_right_btns__signup
+          = link_to root_path, class: "header_zone_right_btns__signup--btn, header_right_btn" do
+            新規会員登録
