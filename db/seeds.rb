@@ -276,22 +276,22 @@ cosme_perfume_beauty_grandchild_make_up_size_array = []
 cosme_perfume_beauty_grandchild_nail_care_size_array = []
 cosme_perfume_beauty_grandchild_perfume_size_array = []
 cosme_perfume_beauty_grandchild_skincare_size_array = []
-cosme_perfume_beauty_grandchild_haircare_array = []
+cosme_perfume_beauty_grandchild_haircare_size_array = []
 cosme_perfume_beauty_grandchild_bodycare_size_array = []
-cosme_perfume_beauty_grandchild_oralcare_array = []
+cosme_perfume_beauty_grandchild_oralcare_size_array = []
 cosme_perfume_beauty_grandchild_relaxation_size_array = []
-cosme_perfume_beauty_grandchild_diet_array = []
+cosme_perfume_beauty_grandchild_diet_size_array = []
 cosme_perfume_beauty_grandchild_others_size_array = []
 
-electric_smartphone_camera_grandchild_smartphone_array = []
+electric_smartphone_camera_grandchild_smartphone_size_array = []
 electric_smartphone_camera_grandchild_smartphone_accessory_size_array = []
-electric_smartphone_camera_grandchild_pctab_array = []
+electric_smartphone_camera_grandchild_pctab_size_array = []
 electric_smartphone_camera_grandchild_camera_size_array = []
-electric_smartphone_camera_grandchild_TV_array = []
+electric_smartphone_camera_grandchild_TV_size_array = []
 electric_smartphone_camera_grandchild_AV_size_array = []
-electric_smartphone_camera_grandchild_beauty_health_array = []
+electric_smartphone_camera_grandchild_beauty_health_size_array = []
 electric_smartphone_camera_grandchild_aircontroller_size_array = []
-electric_smartphone_camera_grandchild_consumer_electric_array = []
+electric_smartphone_camera_grandchild_consumer_electric_size_array = []
 electric_smartphone_camera_grandchild_others_size_array = []
 
 sports_leisure_grandchild_golf_size_array = []
@@ -334,7 +334,7 @@ automobile_grandchild_bike_body_size_array = []
 automobile_grandchild_bike_parts_size_array = []
 automobile_grandchild_bike_accessory_size_array = []
 
-others_grandchild_bulk_salesize__array =[]
+others_grandchild_bulk_sale_size_array =[]
 others_grandchild_pet_size_array = []
 others_grandchild_food_size_array = []
 others_grandchild_drink_size_array = []
@@ -345,609 +345,613 @@ others_grandchild_office_supplies_size_array = []
 others_grandchild_others_size_array = []
 
 # size用の配列に中カテゴリーの要素数分だけsize情報を入力する
-def set_size_as_array
-  for i in ladys_grandchild_tops_name_array
-    ladys_grandchild_tops_size_array << [1]
-  end
-  for i in ladys_grandchild_jakets_outer_name_array
-    ladys_grandchild_jakets_outer_size_array << [1]
-  end
-  for i in ladys_grandchild_pants_name_array
-    ladys_grandchild_pants_size_array << [1]
-  end
-  for i in ladys_grandchild_skirts_name_array
-    ladys_grandchild_skirts_size_array << [1]
-  end
-  for i in ladys_grandchild_one_piece_name_array
-    ladys_grandchild_one_piece_size_array << [1]
-  end
-  for i in ladys_grandchild_shoes_name_array
-    ladys_grandchild_shoes_size_array << [1]
-  end
-  for i in ladys_grandchild_room_wear_name_array
-    ladys_grandchild_room_wear_size_array << [1]
-  end
-  for i in ladys_grandchild_leg_wear_name_array
-    ladys_grandchild_leg_wear_size_array << [1]
-  end
-  for i in ladys_grandchild_hat_name_array
-    ladys_grandchild_hat_size_array << [0]
-  end
-  for i in ladys_grandchild_bag_name_array
-    ladys_grandchild_bag_size_array << [0]
-  end
-  for i in ladys_grandchild_accessory_name_array
-    ladys_grandchild_accessory_size_array << [0]
-  end
-  for i in ladys_grandchild_hair_accessory_name_array
-    ladys_grandchild_hair_accessory_size_array << [0]
-  end
-  for i in ladys_grandchild_small_article_name_array
-    ladys_grandchild_small_article_size_array << [0]
-  end
-  for i in ladys_grandchild_watch_name_array
-    ladys_grandchild_watch_size_array << [0]
-  end
-  for i in ladys_grandchild_wig_name_array
-    ladys_grandchild_wig_size_array << [0]
-  end
-  for i in ladys_grandchild_yukata_swimwear_name_array
-    ladys_grandchild_yukata_swimwear_size_array << [1]
-  end
-  for i in ladys_grandchild_suit_dress_name_array
-    ladys_grandchild_suit_dress_size_array << [1]
-  end
-  for i in ladys_grandchild_maternity_name_array
-    ladys_grandchild_maternity_size_array << [1]
-  end
-  for i in ladys_grandchild_others_name_array
-    ladys_grandchild_others_size_array << [0]
-  end
-  
-  for i in mens_grandchild_tops_name_array
-    mens_grandchild_tops_size_array << [1]
-  end
-  for i in mens_grandchild_jakets_name_array
-    mens_grandchild_jakets_size_array << [1]
-  end
-  for i in mens_grandchild_pants_name_array
-    mens_grandchild_pants_size_array << [1]
-  end
-  for i in mens_grandchild_shoes_name_array
-    mens_grandchild_shoes_size_array << [1]
-  end
-  for i in mens_grandchild_bag_name_array
-    mens_grandchild_bag_size_array << [0]
-  end
-  for i in mens_grandchild_suit_name_array
-    mens_grandchild_suit_size_array << [1]
-  end
-  for i in mens_grandchild_hat_name_array
-    mens_grandchild_hat_size_array << [0]
-  end
-  for i in mens_grandchild_accessory_name_array
-    mens_grandchild_accessory_size_array << [0]
-  end
-  for i in mens_grandchild_small_article_aname_rray 
-    mens_grandchild_small_article_size_array << [0]
-  end
-  for i in mens_grandchild_watch_name_array
-    mens_grandchild_watch_size_array << [0]
-  end
-  for i in mens_grandchild_swimwear_aname_rray 
-    mens_grandchild_swimwear_size_array << [1]
-  end
-  for i in mens_grandchild_legwear_name_array
-    mens_grandchild_legwear_size_array << [1]
-  end
-  for i in mens_grandchild_underwear_aname_rray 
-    mens_grandchild_underwear_size_array << [1]
-  end
-  for i in mens_grandchild_others_name_array
-    mens_grandchild_others_size_array << [0]
-  end
-  
-  for i in baby_kids_grandchild_baby_girl_name_array
-    baby_kids_grandchild_baby_girl_size_array << [1]
-  end
-  for i in baby_kids_grandchild_baby_boy_name_array
-    baby_kids_grandchild_baby_boy_size_array << [1]
-  end
-  for i in baby_kids_grandchild_baby_unisex_name_array
-    baby_kids_grandchild_baby_unisex_size_array << [1]
-  end
-  for i in baby_kids_grandchild_kids_girl_name_array
-    baby_kids_grandchild_kids_girl_size_array << [1]
-  end
-  for i in baby_kids_grandchild_kids_boy_name_array
-    baby_kids_grandchild_kids_boy_size_array << [1]
-  end
-  for i in baby_kids_grandchild_kids_unisex_name_array
-    baby_kids_grandchild_kids_unisex_size_array << [1]
-  end
-  for i in baby_kids_grandchild_kids_shoes_name_array
-    baby_kids_grandchild_kids_shoes_size_array << [1]
-  end
-  for i in baby_kids_grandchild_kids_fashion_small_article_name_array
-    baby_kids_grandchild_kids_fashion_small_article_size_array << [0]
-  end
-  for i in baby_kids_grandchild_excretion_name_array
-    baby_kids_grandchild_excretion_size_array << [0]
-  end
-  for i in baby_kids_grandchild_outing_name_array
-    baby_kids_grandchild_outing_size_array << [0]
-  end
-  for i in baby_kids_grandchild_meal_goods_name_array
-    baby_kids_grandchild_meal_goods_size_array << [0]
-  end
-  for i in baby_kids_grandchild_bedding_name_array
-    baby_kids_grandchild_bedding_size_array << [0]
-  end
-  for i in baby_kids_grandchild_toy_name_array
-    baby_kids_grandchild_toy_size_array << [0]
-  end
-  for i in baby_kids_grandchild_event_name_array
-    baby_kids_grandchild_event_size_array << [0]
-  end
-  for i in baby_kids_grandchild_others_name_array
-    baby_kids_grandchild_others_size_array << [0]
-  end
-  
-  for i in interior_grandchild_kitchen_name_array
-    interior_grandchild_kitchen_size_array << [0]
-  end
-  for i in interior_grandchild_bed_name_array
-    interior_grandchild_bed_size_array << [0]
-  end
-  for i in interior_grandchild_sofa_name_array
-    interior_grandchild_sofa_size_array << [0]
-  end
-  for i in interior_grandchild_char_name_array
-    interior_grandchild_char_size_array << [0]
-  end
-  for i in interior_grandchild_desk_name_array
-    interior_grandchild_desk_size_array << [0]
-  end
-  for i in interior_grandchild_strage_name_array
-    interior_grandchild_strage_size_array << [0]
-  end
-  for i in interior_grandchild_carpet_name_array
-    interior_grandchild_carpet_size_array << [0]
-  end
-  for i in interior_grandchild_curtain_name_array
-    interior_grandchild_curtain_size_array << [0]
-  end
-  for i in interior_grandchild_light_name_array
-    interior_grandchild_light_size_array << [0]
-  end
-  for i in interior_grandchild_bedding_name_array
-    interior_grandchild_bedding_size_array << [0]
-  end
-  for i in interior_grandchild_small_artilcle_name_array
-    interior_grandchild_small_artilcle_size_array << [0]
-  end
-  for i in interior_grandchild_season_name_array
-    interior_grandchild_season_size_array << [0]
-  end
-  for i in interior_grandchild_others_name_array
-    interior_grandchild_others_size_array << [0]
-  end
-  
-  for i in book_music_game_grandchild_book_name_array
-    book_music_game_grandchild_book_size_array << [0]
-  end
-  for i in book_music_game_grandchild_manga_name_array
-    book_music_game_grandchild_manga_size_array << [0]
-  end
-  for i in book_music_game_grandchild_magazine_name_array
-    book_music_game_grandchild_magazine_size_array << [0]
-  end
-  for i in book_music_game_grandchild_cd_name_array
-    book_music_game_grandchild_cd_size_array << [0]
-  end
-  for i in book_music_game_grandchild_dvd_blueray_name_array
-    book_music_game_grandchild_dvd_blueray_size_array << [0]
-  end
-  for i in book_music_game_grandchild_records_name_array
-    book_music_game_grandchild_records_size_array << [0]
-  end
-  for i in book_music_game_grandchild_tvgame_name_array
-    book_music_game_grandchild_tvgame_size_array << [0]
-  end
-  
-  for i in toy_hobby_goods_grandchild_toy_name_array
-    toy_hobby_goods_grandchild_toy_size_array << [0]
-  end
-  for i in toy_hobby_goods_grandchild_talen_goods_name_array
-    toy_hobby_goods_grandchild_talen_goods_size_array << [0]
-  end
-  for i in toy_hobby_goods_grandchild_comic_anime_goods_name_array
-    toy_hobby_goods_grandchild_comic_anime_goods_size_array << [0]
-  end
-  for i in toy_hobby_goods_grandchild__trading_card_name_array
-    toy_hobby_goods_grandchild__trading_card_size_array << [0]
-  end
-  for i in toy_hobby_goods_grandchild_figure_name_array
-    toy_hobby_goods_grandchild_figure_size_array << [0]
-  end
-  for i in toy_hobby_goods_grandchild_misical_instrument_name_array
-    toy_hobby_goods_grandchild_misical_instrument_size_array << [0]
-  end
-  for i in toy_hobby_goods_grandchild_collection_name_array
-    toy_hobby_goods_grandchild_collection_size_array << [0]
-  end
-  for i in toy_hobby_goods_grandchild_military_name_array
-    toy_hobby_goods_grandchild_military_size_array << [0]
-  end
-  for i in toy_hobby_goods_grandchild_art_name_array
-    toy_hobby_goods_grandchild_art_size_array << [0]
-  end
-  for i in toy_hobby_goods_grandchild_art_goods_name_array
-    toy_hobby_goods_grandchild_art_goods_size_array << [0]
-  end
-  for i in toy_hobby_goods_grandchild_others_name_array
-    toy_hobby_goods_grandchild_others_size_array << [0]
-  end
-  
-  for i in cosme_perfume_beauty_grandchild_basemake_name_array
-    cosme_perfume_beauty_grandchild_basemake_size_array << [0]
-  end
-  for i in cosme_perfume_beauty_grandchild_make_up_name_array
-    cosme_perfume_beauty_grandchild_make_up_size_array << [0]
-  end
-  for i in cosme_perfume_beauty_grandchild_nail_care_name_array
-    cosme_perfume_beauty_grandchild_nail_care_size_array << [0]
-  end
-  for i in cosme_perfume_beauty_grandchild_perfume_name_array
-    cosme_perfume_beauty_grandchild_perfume_size_array << [0]
-  end
-  for i in cosme_perfume_beauty_grandchild_skincare_name_array
-    cosme_perfume_beauty_grandchild_skincare_size_array << [0]
-  end
-  for i in cosme_perfume_beauty_grandchild_hairname_array
-    cosme_perfume_beauty_grandchild_haircare_array << [0]
-  end
-  for i in cosme_perfume_beauty_grandchild_bodycare_name_array
-    cosme_perfume_beauty_grandchild_bodycare_size_array << [0]
-  end
-  for i in cosme_perfume_beauty_grandchild_oralname_array
-    cosme_perfume_beauty_grandchild_oralcare_array << [0]
-  end
-  for i in cosme_perfume_beauty_grandchild_relaxation_name_array
-    cosme_perfume_beauty_grandchild_relaxation_size_array << [0]
-  end
-  for i in cosme_perfume_beauty_grandchild_name_array
-    cosme_perfume_beauty_grandchild_diet_array << [0]
-  end
-  for i in cosme_perfume_beauty_grandchild_others_name_array
-    cosme_perfume_beauty_grandchild_others_size_array << [0]
-  end
-  
-  for i in electric_smartphone_camera_grandchild_smartpname_array
-    electric_smartphone_camera_grandchild_smartphone_array << [0]
-  end
-  for i in electric_smartphone_camera_grandchild_smartphone_accessory_name_array
-    electric_smartphone_camera_grandchild_smartphone_accessory_size_array << [0]
-  end
-  for i in electric_smartphone_camera_grandchild_pname_array
-    electric_smartphone_camera_grandchild_pctab_array << [0]
-  end
-  for i in electric_smartphone_camera_grandchild_camera_name_array
-    electric_smartphone_camera_grandchild_camera_size_array << [0]
-  end
-  for i in electric_smartphone_camera_grandchilname_array
-    electric_smartphone_camera_grandchild_TV_array << [0]
-  end
-  for i in electric_smartphone_camera_grandchild_AV_name_array
-    electric_smartphone_camera_grandchild_AV_size_array << [0]
-  end
-  for i in electric_smartphone_camera_grandchild_beauty_hename_array
-    electric_smartphone_camera_grandchild_beauty_health_array << [0]
-  end
-  for i in electric_smartphone_camera_grandchild_aircontroller_name_array
-    electric_smartphone_camera_grandchild_aircontroller_size_array << [0]
-  end
-  for i in electric_smartphone_camera_grandchild_consumer_elecname_array
-    electric_smartphone_camera_grandchild_consumer_electric_array << [0]
-  end
-  for i in electric_smartphone_camera_grandchild_others_name_array
-    electric_smartphone_camera_grandchild_others_size_array << [0]
-  end
-  
-  for i in sports_leisure_grandchild_golf_name_array
-    sports_leisure_grandchild_golf_size_array << [0]
-  end
-  for i in sports_leisure_grandchild_fishing_name_array
-    sports_leisure_grandchild_fishing_size_array << [0]
-  end
-  for i in sports_leisure_grandchild_bicycle_name_array
-    sports_leisure_grandchild_bicycle_size_array << [0]
-  end
-  for i in sports_leisure_grandchild_training_name_array
-    sports_leisure_grandchild_training_size_array << [0]
-  end
-  for i in sports_leisure_grandchild_baseball_name_array
-    sports_leisure_grandchild_baseball_size_array << [0]
-  end
-  for i in sports_leisure_grandchild_football_name_array
-    sports_leisure_grandchild_football_size_array << [0]
-  end
-  for i in sports_leisure_grandchild_tennis_name_array
-    sports_leisure_grandchild_tennis_size_array << [0]
-  end
-  for i in sports_leisure_grandchild_snowbord_name_array
-    sports_leisure_grandchild_snowbord_size_array << [0]
-  end
-  for i in sports_leisure_grandchild_ski_name_array
-    sports_leisure_grandchild_ski_size_array << [0]
-  end
-  for i in sports_leisure_grandchild_other_sports_name_array
-    sports_leisure_grandchild_other_sports_size_array << [0]
-  end
-  for i in sports_leisure_grandchild_outdoor_name_array
-    sports_leisure_grandchild_outdoor_size_array << [0]
-  end
-  for i in sports_leisure_grandchild_others_name_array
-    sports_leisure_grandchild_others_size_array << [0]
-  end
-  
-  for i in handmade_grandchild_womens_accessory_name_array
-    handmade_grandchild_womens_accessory_size_array << [0]
-  end
-  for i in handmade_grandchild_fashion_item_name_array
-    handmade_grandchild_fashion_item_size_array << [0]
-  end
-  for i in handmade_grandchild_accessory_watch_name_array
-    handmade_grandchild_accessory_watch_size_array << [0]
-  end
-  for i in handmade_grandchild_daily_necessities_interior_name_array
-    handmade_grandchild_daily_necessities_interior_size_array << [0]
-  end
-  for i in handmade_grandchild_hobby_toy_name_array
-    handmade_grandchild_hobby_toy_size_array << [0]
-  end
-  for i in handmade_grandchild_kits_baby_name_array
-    handmade_grandchild_kits_baby_size_array << [0]
-  end
-  for i in handmade_grandchild_material_item_name_array
-    handmade_grandchild_material_item_size_array << [0]
-  end
-  for i in handmade_grandchild_secondary_crop_name_array
-    handmade_grandchild_secondary_crop_size_array << [0]
-  end
-  for i in handmade_grandchild_others_name_array
-    handmade_grandchild_others_size_array << [0]
-  end
-  
-  for i in ticket_grandchild_music_name_array
-    ticket_grandchild_music_size_array << [0]
-  end
-  for i in ticket_grandchild_sports_name_array
-    ticket_grandchild_sports_size_array << [0]
-  end
-  for i in ticket_grandchild_theater_name_array
-    ticket_grandchild_theater_size_array << [0]
-  end
-  for i in ticket_grandchild_event_name_array
-    ticket_grandchild_event_size_array << [0]
-  end
-  for i in ticket_grandchild_movies_name_array
-    ticket_grandchild_movies_size_array << [0]
-  end
-  for i in ticket_grandchild_facility_use_tikets_name_array
-    ticket_grandchild_facility_use_tikets_size_array << [0]
-  end
-  for i in ticket_grandchild_complimentary_tickets_name_array
-    ticket_grandchild_complimentary_tickets_size_array << [0]
-  end
-  for i in ticket_grandchild_others_name_array
-    ticket_grandchild_others_size_array << [0]
-  end
-  
-  for i in automobile_grandchild_car_body_name_array
-    automobile_grandchild_car_body_size_array << [0]
-  end
-  for i in automobile_grandchild_car_tire_whoile_name_array
-    automobile_grandchild_car_tire_whoile_size_array << [0]
-  end
-  for i in automobile_grandchild_car_parts_name_array
-    automobile_grandchild_car_parts_size_array << [0]
-  end
-  for i in automobile_grandchild_car_accessory_name_array
-    automobile_grandchild_car_accessory_size_array << [0]
-  end
-  for i in automobile_grandchild_bike_body_name_array
-    automobile_grandchild_bike_body_size_array << [0]
-  end
-  for i in automobile_grandchild_bike_parts_name_array
-    automobile_grandchild_bike_parts_size_array << [0]
-  end
-  for i in automobile_grandchild_bike_accessory_name_array
-    automobile_grandchild_bike_accessory_size_array << [0]
-  end
-  
-  others_grandchild_bulk_salesize__arra
-  for i in others_grandchild_pet_name_array
-    others_grandchild_pet_size_array << [0]
-  end
-  for i in others_grandchild_food_name_array
-    others_grandchild_food_size_array << [0]
-  end
-  for i in others_grandchild_drink_name_array
-    others_grandchild_drink_size_array << [0]
-  end
-  for i in others_grandchild_daily_necessities_name_array
-    others_grandchild_daily_necessities_size_array << [0]
-  end
-  for i in others_grandchild_antique_name_array
-    others_grandchild_antique_size_array << [0]
-  end
-  for i in others_grandchild_stationery_name_array
-    others_grandchild_stationery_size_array << [0]
-  end
-  for i in others_grandchild_office_supplies_name_array
-    others_grandchild_office_supplies_size_array << [0]
-  end
-  for i in others_grandchild_others_name_array
-    others_grandchild_others_size_array << [0]
-  end
+for i in ladys_grandchild_tops_name_array
+  ladys_grandchild_tops_size_array << [1]
+end
+for i in ladys_grandchild_jakets_outer_name_array
+  ladys_grandchild_jakets_outer_size_array << [1]
+end
+for i in ladys_grandchild_pants_name_array
+  ladys_grandchild_pants_size_array << [1]
+end
+for i in ladys_grandchild_skirts_name_array
+  ladys_grandchild_skirts_size_array << [1]
+end
+for i in ladys_grandchild_one_piece_name_array
+  ladys_grandchild_one_piece_size_array << [1]
+end
+for i in ladys_grandchild_shoes_name_array
+  ladys_grandchild_shoes_size_array << [1]
+end
+for i in ladys_grandchild_room_wear_name_array
+  ladys_grandchild_room_wear_size_array << [1]
+end
+for i in ladys_grandchild_leg_wear_name_array
+  ladys_grandchild_leg_wear_size_array << [1]
+end
+for i in ladys_grandchild_hat_name_array
+  ladys_grandchild_hat_size_array << [0]
+end
+for i in ladys_grandchild_bag_name_array
+  ladys_grandchild_bag_size_array << [0]
+end
+for i in ladys_grandchild_accessory_name_array
+  ladys_grandchild_accessory_size_array << [0]
+end
+for i in ladys_grandchild_hair_accessory_name_array
+  ladys_grandchild_hair_accessory_size_array << [0]
+end
+for i in ladys_grandchild_small_article_name_array
+  ladys_grandchild_small_article_size_array << [0]
+end
+for i in ladys_grandchild_watch_name_array
+  ladys_grandchild_watch_size_array << [0]
+end
+for i in ladys_grandchild_wig_name_array
+  ladys_grandchild_wig_size_array << [0]
+end
+for i in ladys_grandchild_yukata_swimwear_name_array
+  ladys_grandchild_yukata_swimwear_size_array << [1]
+end
+for i in ladys_grandchild_suit_dress_name_array
+  ladys_grandchild_suit_dress_size_array << [1]
+end
+for i in ladys_grandchild_maternity_name_array
+  ladys_grandchild_maternity_size_array << [1]
+end
+for i in ladys_grandchild_others_name_array
+  ladys_grandchild_others_size_array << [0]
+end
+
+for i in mens_grandchild_tops_name_array
+  mens_grandchild_tops_size_array << [1]
+end
+for i in mens_grandchild_jakets_name_array
+  mens_grandchild_jakets_size_array << [1]
+end
+for i in mens_grandchild_pants_name_array
+  mens_grandchild_pants_size_array << [1]
+end
+for i in mens_grandchild_shoes_name_array
+  mens_grandchild_shoes_size_array << [1]
+end
+for i in mens_grandchild_bag_name_array
+  mens_grandchild_bag_size_array << [0]
+end
+for i in mens_grandchild_suit_name_array
+  mens_grandchild_suit_size_array << [1]
+end
+for i in mens_grandchild_hat_name_array
+  mens_grandchild_hat_size_array << [0]
+end
+for i in mens_grandchild_accessory_name_array
+  mens_grandchild_accessory_size_array << [0]
+end
+for i in mens_grandchild_small_article_name_array 
+  mens_grandchild_small_article_size_array << [0]
+end
+for i in mens_grandchild_watch_name_array
+  mens_grandchild_watch_size_array << [0]
+end
+for i in mens_grandchild_swimwear_name_array 
+  mens_grandchild_swimwear_size_array << [1]
+end
+for i in mens_grandchild_legwear_name_array
+  mens_grandchild_legwear_size_array << [1]
+end
+for i in mens_grandchild_underwear_name_array 
+  mens_grandchild_underwear_size_array << [1]
+end
+for i in mens_grandchild_others_name_array
+  mens_grandchild_others_size_array << [0]
+end
+
+for i in baby_kids_grandchild_baby_girl_name_array
+  baby_kids_grandchild_baby_girl_size_array << [1]
+end
+for i in baby_kids_grandchild_baby_boy_name_array
+  baby_kids_grandchild_baby_boy_size_array << [1]
+end
+for i in baby_kids_grandchild_baby_unisex_name_array
+  baby_kids_grandchild_baby_unisex_size_array << [1]
+end
+for i in baby_kids_grandchild_kids_girl_name_array
+  baby_kids_grandchild_kids_girl_size_array << [1]
+end
+for i in baby_kids_grandchild_kids_boy_name_array
+  baby_kids_grandchild_kids_boy_size_array << [1]
+end
+for i in baby_kids_grandchild_kids_unisex_name_array
+  baby_kids_grandchild_kids_unisex_size_array << [1]
+end
+for i in baby_kids_grandchild_kids_shoes_name_array
+  baby_kids_grandchild_kids_shoes_size_array << [1]
+end
+for i in baby_kids_grandchild_kids_fashion_small_article_name_array
+  baby_kids_grandchild_kids_fashion_small_article_size_array << [0]
+end
+for i in baby_kids_grandchild_excretion_name_array
+  baby_kids_grandchild_excretion_size_array << [0]
+end
+for i in baby_kids_grandchild_outing_name_array
+  baby_kids_grandchild_outing_size_array << [0]
+end
+for i in baby_kids_grandchild_meal_goods_name_array
+  baby_kids_grandchild_meal_goods_size_array << [0]
+end
+for i in baby_kids_grandchild_bedding_name_array
+  baby_kids_grandchild_bedding_size_array << [0]
+end
+for i in baby_kids_grandchild_toy_name_array
+  baby_kids_grandchild_toy_size_array << [0]
+end
+for i in baby_kids_grandchild_event_name_array
+  baby_kids_grandchild_event_size_array << [0]
+end
+for i in baby_kids_grandchild_others_name_array
+  baby_kids_grandchild_others_size_array << [0]
+end
+
+for i in interior_grandchild_kitchen_name_array
+  interior_grandchild_kitchen_size_array << [0]
+end
+for i in interior_grandchild_bed_name_array
+  interior_grandchild_bed_size_array << [0]
+end
+for i in interior_grandchild_sofa_name_array
+  interior_grandchild_sofa_size_array << [0]
+end
+for i in interior_grandchild_char_name_array
+  interior_grandchild_char_size_array << [0]
+end
+for i in interior_grandchild_desk_name_array
+  interior_grandchild_desk_size_array << [0]
+end
+for i in interior_grandchild_strage_name_array
+  interior_grandchild_strage_size_array << [0]
+end
+for i in interior_grandchild_carpet_name_array
+  interior_grandchild_carpet_size_array << [0]
+end
+for i in interior_grandchild_curtain_name_array
+  interior_grandchild_curtain_size_array << [0]
+end
+for i in interior_grandchild_light_name_array
+  interior_grandchild_light_size_array << [0]
+end
+for i in interior_grandchild_bedding_name_array
+  interior_grandchild_bedding_size_array << [0]
+end
+for i in interior_grandchild_small_artilcle_name_array
+  interior_grandchild_small_artilcle_size_array << [0]
+end
+for i in interior_grandchild_season_name_array
+  interior_grandchild_season_size_array << [0]
+end
+for i in interior_grandchild_others_name_array
+  interior_grandchild_others_size_array << [0]
+end
+
+for i in book_music_game_grandchild_book_name_array
+  book_music_game_grandchild_book_size_array << [0]
+end
+for i in book_music_game_grandchild_manga_name_array
+  book_music_game_grandchild_manga_size_array << [0]
+end
+for i in book_music_game_grandchild_magazine_name_array
+  book_music_game_grandchild_magazine_size_array << [0]
+end
+for i in book_music_game_grandchild_cd_name_array
+  book_music_game_grandchild_cd_size_array << [0]
+end
+for i in book_music_game_grandchild_dvd_blueray_name_array
+  book_music_game_grandchild_dvd_blueray_size_array << [0]
+end
+for i in book_music_game_grandchild_records_name_array
+  book_music_game_grandchild_records_size_array << [0]
+end
+for i in book_music_game_grandchild_tvgame_name_array
+  book_music_game_grandchild_tvgame_size_array << [0]
+end
+
+for i in toy_hobby_goods_grandchild_toy_name_array
+  toy_hobby_goods_grandchild_toy_size_array << [0]
+end
+for i in toy_hobby_goods_grandchild_talen_goods_name_array
+  toy_hobby_goods_grandchild_talen_goods_size_array << [0]
+end
+for i in toy_hobby_goods_grandchild_comic_anime_goods_name_array
+  toy_hobby_goods_grandchild_comic_anime_goods_size_array << [0]
+end
+for i in toy_hobby_goods_grandchild__trading_card_name_array
+  toy_hobby_goods_grandchild__trading_card_size_array << [0]
+end
+for i in toy_hobby_goods_grandchild_figure_name_array
+  toy_hobby_goods_grandchild_figure_size_array << [0]
+end
+for i in toy_hobby_goods_grandchild_misical_instrument_name_array
+  toy_hobby_goods_grandchild_misical_instrument_size_array << [0]
+end
+for i in toy_hobby_goods_grandchild_collection_name_array
+  toy_hobby_goods_grandchild_collection_size_array << [0]
+end
+for i in toy_hobby_goods_grandchild_military_name_array
+  toy_hobby_goods_grandchild_military_size_array << [0]
+end
+for i in toy_hobby_goods_grandchild_art_name_array
+  toy_hobby_goods_grandchild_art_size_array << [0]
+end
+for i in toy_hobby_goods_grandchild_art_goods_name_array
+  toy_hobby_goods_grandchild_art_goods_size_array << [0]
+end
+for i in toy_hobby_goods_grandchild_others_name_array
+  toy_hobby_goods_grandchild_others_size_array << [0]
+end
+
+for i in cosme_perfume_beauty_grandchild_basemake_name_array
+  cosme_perfume_beauty_grandchild_basemake_size_array << [0]
+end
+for i in cosme_perfume_beauty_grandchild_make_up_name_array
+  cosme_perfume_beauty_grandchild_make_up_size_array << [0]
+end
+for i in cosme_perfume_beauty_grandchild_nail_care_name_array
+  cosme_perfume_beauty_grandchild_nail_care_size_array << [0]
+end
+for i in cosme_perfume_beauty_grandchild_perfume_name_array
+  cosme_perfume_beauty_grandchild_perfume_size_array << [0]
+end
+for i in cosme_perfume_beauty_grandchild_skincare_name_array
+  cosme_perfume_beauty_grandchild_skincare_size_array << [0]
+end
+for i in cosme_perfume_beauty_grandchild_haircare_name_array
+  cosme_perfume_beauty_grandchild_haircare_size_array << [0]
+end
+for i in cosme_perfume_beauty_grandchild_bodycare_name_array
+  cosme_perfume_beauty_grandchild_bodycare_size_array << [0]
+end
+for i in cosme_perfume_beauty_grandchild_oralcare_name_array
+  cosme_perfume_beauty_grandchild_oralcare_size_array << [0]
+end
+for i in cosme_perfume_beauty_grandchild_relaxation_name_array
+  cosme_perfume_beauty_grandchild_relaxation_size_array << [0]
+end
+for i in cosme_perfume_beauty_grandchild_diet_name_array
+  cosme_perfume_beauty_grandchild_diet_size_array << [0]
+end
+for i in cosme_perfume_beauty_grandchild_others_name_array
+  cosme_perfume_beauty_grandchild_others_size_array << [0]
+end
+
+for i in electric_smartphone_camera_grandchild_smartphone_name_array
+  electric_smartphone_camera_grandchild_smartphone_size_array << [0]
+end
+for i in electric_smartphone_camera_grandchild_smartphone_accessory_name_array
+  electric_smartphone_camera_grandchild_smartphone_accessory_size_array << [0]
+end
+for i in electric_smartphone_camera_grandchild_pctab_name_array
+  electric_smartphone_camera_grandchild_pctab_size_array << [0]
+end
+for i in electric_smartphone_camera_grandchild_camera_name_array
+  electric_smartphone_camera_grandchild_camera_size_array << [0]
+end
+for i in electric_smartphone_camera_grandchild_TV_name_array
+  electric_smartphone_camera_grandchild_TV_size_array << [0]
+end
+for i in electric_smartphone_camera_grandchild_AV_name_array
+  electric_smartphone_camera_grandchild_AV_size_array << [0]
+end
+for i in electric_smartphone_camera_grandchild_beauty_health_name_array
+  electric_smartphone_camera_grandchild_beauty_health_size_array << [0]
+end
+for i in electric_smartphone_camera_grandchild_aircontroller_name_array
+  electric_smartphone_camera_grandchild_aircontroller_size_array << [0]
+end
+for i in electric_smartphone_camera_grandchild_consumer_electric_name_array
+  electric_smartphone_camera_grandchild_consumer_electric_size_array << [0]
+end
+for i in electric_smartphone_camera_grandchild_others_name_array
+  electric_smartphone_camera_grandchild_others_size_array << [0]
+end
+
+for i in sports_leisure_grandchild_golf_name_array
+  sports_leisure_grandchild_golf_size_array << [0]
+end
+for i in sports_leisure_grandchild_fishing_name_array
+  sports_leisure_grandchild_fishing_size_array << [0]
+end
+for i in sports_leisure_grandchild_bicycle_name_array
+  sports_leisure_grandchild_bicycle_size_array << [0]
+end
+for i in sports_leisure_grandchild_training_name_array
+  sports_leisure_grandchild_training_size_array << [0]
+end
+for i in sports_leisure_grandchild_baseball_name_array
+  sports_leisure_grandchild_baseball_size_array << [0]
+end
+for i in sports_leisure_grandchild_football_name_array
+  sports_leisure_grandchild_football_size_array << [0]
+end
+for i in sports_leisure_grandchild_tennis_name_array
+  sports_leisure_grandchild_tennis_size_array << [0]
+end
+for i in sports_leisure_grandchild_snowbord_name_array
+  sports_leisure_grandchild_snowbord_size_array << [0]
+end
+for i in sports_leisure_grandchild_ski_name_array
+  sports_leisure_grandchild_ski_size_array << [0]
+end
+for i in sports_leisure_grandchild_other_sports_name_array
+  sports_leisure_grandchild_other_sports_size_array << [0]
+end
+for i in sports_leisure_grandchild_outdoor_name_array
+  sports_leisure_grandchild_outdoor_size_array << [0]
+end
+for i in sports_leisure_grandchild_others_name_array
+  sports_leisure_grandchild_others_size_array << [0]
+end
+
+for i in handmade_grandchild_womens_accessory_name_array
+  handmade_grandchild_womens_accessory_size_array << [0]
+end
+for i in handmade_grandchild_fashion_item_name_array
+  handmade_grandchild_fashion_item_size_array << [0]
+end
+for i in handmade_grandchild_accessory_watch_name_array
+  handmade_grandchild_accessory_watch_size_array << [0]
+end
+for i in handmade_grandchild_daily_necessities_interior_name_array
+  handmade_grandchild_daily_necessities_interior_size_array << [0]
+end
+for i in handmade_grandchild_hobby_toy_name_array
+  handmade_grandchild_hobby_toy_size_array << [0]
+end
+for i in handmade_grandchild_kits_baby_name_array
+  handmade_grandchild_kits_baby_size_array << [0]
+end
+for i in handmade_grandchild_material_item_name_array
+  handmade_grandchild_material_item_size_array << [0]
+end
+for i in handmade_grandchild_secondary_crop_name_array
+  handmade_grandchild_secondary_crop_size_array << [0]
+end
+for i in handmade_grandchild_others_name_array
+  handmade_grandchild_others_size_array << [0]
+end
+
+for i in ticket_grandchild_music_name_array
+  ticket_grandchild_music_size_array << [0]
+end
+for i in ticket_grandchild_sports_name_array
+  ticket_grandchild_sports_size_array << [0]
+end
+for i in ticket_grandchild_theater_name_array
+  ticket_grandchild_theater_size_array << [0]
+end
+for i in ticket_grandchild_event_name_array
+  ticket_grandchild_event_size_array << [0]
+end
+for i in ticket_grandchild_movies_name_array
+  ticket_grandchild_movies_size_array << [0]
+end
+for i in ticket_grandchild_facility_use_tikets_name_array
+  ticket_grandchild_facility_use_tikets_size_array << [0]
+end
+for i in ticket_grandchild_complimentary_tickets_name_array
+  ticket_grandchild_complimentary_tickets_size_array << [0]
+end
+for i in ticket_grandchild_others_name_array
+  ticket_grandchild_others_size_array << [0]
+end
+
+for i in automobile_grandchild_car_body_name_array
+  automobile_grandchild_car_body_size_array << [0]
+end
+for i in automobile_grandchild_car_tire_whoile_name_array
+  automobile_grandchild_car_tire_whoile_size_array << [0]
+end
+for i in automobile_grandchild_car_parts_name_array
+  automobile_grandchild_car_parts_size_array << [0]
+end
+for i in automobile_grandchild_car_accessory_name_array
+  automobile_grandchild_car_accessory_size_array << [0]
+end
+for i in automobile_grandchild_bike_body_name_array
+  automobile_grandchild_bike_body_size_array << [0]
+end
+for i in automobile_grandchild_bike_parts_name_array
+  automobile_grandchild_bike_parts_size_array << [0]
+end
+for i in automobile_grandchild_bike_accessory_name_array
+  automobile_grandchild_bike_accessory_size_array << [0]
+end
+for i in others_grandchild_bulk_sale_name_array
+  others_grandchild_bulk_sale_size_array << [0]
+end
+for i in others_grandchild_pet_name_array
+  others_grandchild_pet_size_array << [0]
+end
+for i in others_grandchild_food_name_array
+  others_grandchild_food_size_array << [0]
+end
+for i in others_grandchild_drink_name_array
+  others_grandchild_drink_size_array << [0]
+end
+for i in others_grandchild_daily_necessities_name_array
+  others_grandchild_daily_necessities_size_array << [0]
+end
+for i in others_grandchild_antique_name_array
+  others_grandchild_antique_size_array << [0]
+end
+for i in others_grandchild_stationery_name_array
+  others_grandchild_stationery_size_array << [0]
+end
+for i in others_grandchild_office_supplies_name_array
+  others_grandchild_office_supplies_size_array << [0]
+end
+for i in others_grandchild_others_name_array
+  others_grandchild_others_size_array << [0]
 end
 
 # 小カテゴリーのnameカラムとsizeカラムの情報をまとめる
-ladys_grandchild_tops_array = [ladys_grandchild_tops_name_array, ladys_grandchild_tops_size_array].transponse
-ladys_grandchild_jakets_outer_array = [ladys_grandchild_jakets_outer_name_array, ladys_grandchild_jakets_outer_size_array].transponse
-ladys_grandchild_pants_array = [ladys_grandchild_pants_name_array, ladys_grandchild_pants_size_array].transponse
-ladys_grandchild_skirts_array = [ladys_grandchild_skirts_name_array, ladys_grandchild_skirts_size_array].transponse
-ladys_grandchild_one_piece_array = [ladys_grandchild_one_piece_name_array, ladys_grandchild_one_piece_size_array].transponse
-ladys_grandchild_shoes_array = [ladys_grandchild_shoes_name_array, ladys_grandchild_shoes_size_array].transponse
-ladys_grandchild_room_wear_array = [ladys_grandchild_room_wear_name_array, ladys_grandchild_room_wear_size_array].transponse
-ladys_grandchild_leg_wear_array = [ladys_grandchild_leg_wear_name_array, ladys_grandchild_leg_wear_size_array].transponse
-ladys_grandchild_hat_array = [ladys_grandchild_hat_name_array, ladys_grandchild_hat_size_array].transponse
-ladys_grandchild_bag_array = [ladys_grandchild_bag_name_array, ladys_grandchild_bag_size_array].transponse
-ladys_grandchild_accessory_array = [ladys_grandchild_accessory_name_array, ladys_grandchild_accessory_size_array].transponse
-ladys_grandchild_hair_accessory_array = [ladys_grandchild_hair_accessory_name_array, ladys_grandchild_hair_accessory_size_array].transponse
-ladys_grandchild_small_article_array = [ladys_grandchild_small_article_name_array, ladys_grandchild_small_article_size_array].transponse
-ladys_grandchild_watch_array = [ladys_grandchild_watch_name_array, ladys_grandchild_watch_size_array].transponse
-ladys_grandchild_wig_array = [ladys_grandchild_wig_name_array, ladys_grandchild_wig_size_array].transponse
-ladys_grandchild_yukata_swimwear_array = [ladys_grandchild_yukata_swimwear_name_array, ladys_grandchild_yukata_swimwear_size_array].transponse
-ladys_grandchild_suit_dress_array = [ladys_grandchild_suit_dress_name_array, ladys_grandchild_suit_dress_size_array].transponse
-ladys_grandchild_maternity_array = [ladys_grandchild_maternity_name_array, ladys_grandchild_maternity_size_array].transponse
-ladys_grandchild_others_array = [ladys_grandchild_others_name_array, ladys_grandchild_others_size_array].transponse
+ladys_grandchild_tops_array = [ladys_grandchild_tops_name_array, ladys_grandchild_tops_size_array].transpose
+ladys_grandchild_jakets_outer_array = [ladys_grandchild_jakets_outer_name_array, ladys_grandchild_jakets_outer_size_array].transpose
+ladys_grandchild_pants_array = [ladys_grandchild_pants_name_array, ladys_grandchild_pants_size_array].transpose
+ladys_grandchild_skirts_array = [ladys_grandchild_skirts_name_array, ladys_grandchild_skirts_size_array].transpose
+ladys_grandchild_one_piece_array = [ladys_grandchild_one_piece_name_array, ladys_grandchild_one_piece_size_array].transpose
+ladys_grandchild_shoes_array = [ladys_grandchild_shoes_name_array, ladys_grandchild_shoes_size_array].transpose
+ladys_grandchild_room_wear_array = [ladys_grandchild_room_wear_name_array, ladys_grandchild_room_wear_size_array].transpose
+ladys_grandchild_leg_wear_array = [ladys_grandchild_leg_wear_name_array, ladys_grandchild_leg_wear_size_array].transpose
+ladys_grandchild_hat_array = [ladys_grandchild_hat_name_array, ladys_grandchild_hat_size_array].transpose
+ladys_grandchild_bag_array = [ladys_grandchild_bag_name_array, ladys_grandchild_bag_size_array].transpose
+ladys_grandchild_accessory_array = [ladys_grandchild_accessory_name_array, ladys_grandchild_accessory_size_array].transpose
+ladys_grandchild_hair_accessory_array = [ladys_grandchild_hair_accessory_name_array, ladys_grandchild_hair_accessory_size_array].transpose
+ladys_grandchild_small_article_array = [ladys_grandchild_small_article_name_array, ladys_grandchild_small_article_size_array].transpose
+ladys_grandchild_watch_array = [ladys_grandchild_watch_name_array, ladys_grandchild_watch_size_array].transpose
+ladys_grandchild_wig_array = [ladys_grandchild_wig_name_array, ladys_grandchild_wig_size_array].transpose
+ladys_grandchild_yukata_swimwear_array = [ladys_grandchild_yukata_swimwear_name_array, ladys_grandchild_yukata_swimwear_size_array].transpose
+ladys_grandchild_suit_dress_array = [ladys_grandchild_suit_dress_name_array, ladys_grandchild_suit_dress_size_array].transpose
+ladys_grandchild_maternity_array = [ladys_grandchild_maternity_name_array, ladys_grandchild_maternity_size_array].transpose
+ladys_grandchild_others_array = [ladys_grandchild_others_name_array, ladys_grandchild_others_size_array].transpose
 
-mens_grandchild_tops_array = [mens_grandchild_tops_name_array, mens_grandchild_tops_size_array].transponse
-mens_grandchild_jakets_array = [mens_grandchild_jakets_name_array, mens_grandchild_jakets_size_array].transponse
-mens_grandchild_pants_array = [mens_grandchild_pants_name_array, mens_grandchild_pants_size_array].transponse
-mens_grandchild_shoes_array = [mens_grandchild_shoes_name_array, mens_grandchild_shoes_size_array].transponse
-mens_grandchild_bag_array = [mens_grandchild_bag_name_array, mens_grandchild_bag_size_array].transponse
-mens_grandchild_suit_array = [mens_grandchild_suit_name_array, mens_grandchild_suit_size_array].transponse
-mens_grandchild_hat_array = [mens_grandchild_hat_name_array, mens_grandchild_hat_size_array].transponse
-mens_grandchild_accessory_array = [mens_grandchild_accessory_name_array, mens_grandchild_accessory_size_array].transponse
-mens_grandchild_small_article_array = [mens_grandchild_small_article_name_array, mens_grandchild_small_article_size_array].transponse
-mens_grandchild_watch_array = [mens_grandchild_watch_name_array, mens_grandchild_watch_size_array].transponse
-mens_grandchild_swimwear_array = [mens_grandchild_swimwear_name_array, mens_grandchild_swimwear_size_array].transponse
-mens_grandchild_legwear_array = [mens_grandchild_legwear_name_array, mens_grandchild_legwear_size_array].transponse
-mens_grandchild_underwear_array = [mens_grandchild_underwear_name_array, mens_grandchild_underwear_size_array].transponse
-mens_grandchild_others_array = [mens_grandchild_others_name_array, mens_grandchild_others_size_array].transponse
+mens_grandchild_tops_array = [mens_grandchild_tops_name_array, mens_grandchild_tops_size_array].transpose
+mens_grandchild_jakets_array = [mens_grandchild_jakets_name_array, mens_grandchild_jakets_size_array].transpose
+mens_grandchild_pants_array = [mens_grandchild_pants_name_array, mens_grandchild_pants_size_array].transpose
+mens_grandchild_shoes_array = [mens_grandchild_shoes_name_array, mens_grandchild_shoes_size_array].transpose
+mens_grandchild_bag_array = [mens_grandchild_bag_name_array, mens_grandchild_bag_size_array].transpose
+mens_grandchild_suit_array = [mens_grandchild_suit_name_array, mens_grandchild_suit_size_array].transpose
+mens_grandchild_hat_array = [mens_grandchild_hat_name_array, mens_grandchild_hat_size_array].transpose
+mens_grandchild_accessory_array = [mens_grandchild_accessory_name_array, mens_grandchild_accessory_size_array].transpose
+mens_grandchild_small_article_array = [mens_grandchild_small_article_name_array, mens_grandchild_small_article_size_array].transpose
+mens_grandchild_watch_array = [mens_grandchild_watch_name_array, mens_grandchild_watch_size_array].transpose
+mens_grandchild_swimwear_array = [mens_grandchild_swimwear_name_array, mens_grandchild_swimwear_size_array].transpose
+mens_grandchild_legwear_array = [mens_grandchild_legwear_name_array, mens_grandchild_legwear_size_array].transpose
+mens_grandchild_underwear_array = [mens_grandchild_underwear_name_array, mens_grandchild_underwear_size_array].transpose
+mens_grandchild_others_array = [mens_grandchild_others_name_array, mens_grandchild_others_size_array].transpose
 
-baby_kids_grandchild_baby_girl_array = [baby_kids_grandchild_baby_girl_name_array, baby_kids_grandchild_baby_girl_size_array].transponse
-baby_kids_grandchild_baby_boy_array = [baby_kids_grandchild_baby_boy_name_array, baby_kids_grandchild_baby_boy_size_array].transponse
-baby_kids_grandchild_baby_unisex_array = [baby_kids_grandchild_baby_unisex_name_array, baby_kids_grandchild_baby_unisex_size_array].transponse
-baby_kids_grandchild_kids_girl_array = [baby_kids_grandchild_kids_girl_name_array, baby_kids_grandchild_kids_girl_size_array].transponse
-baby_kids_grandchild_kids_boy_array = [baby_kids_grandchild_kids_boy_name_array, baby_kids_grandchild_kids_boy_size_array].transponse
-baby_kids_grandchild_kids_unisex_array = [baby_kids_grandchild_kids_unisex_name_array, baby_kids_grandchild_kids_unisex_size_array].transponse
-baby_kids_grandchild_kids_shoes_array = [baby_kids_grandchild_kids_shoes_name_array, baby_kids_grandchild_kids_shoes_size_array].transponse
-baby_kids_grandchild_kids_fashion_small_article_array = [baby_kids_grandchild_kids_fashion_small_article_name_array, baby_kids_grandchild_kids_fashion_small_article_size_array].transponse
-baby_kids_grandchild_excretion_array = [baby_kids_grandchild_excretion_name_array, baby_kids_grandchild_excretion_size_array].transponse
-baby_kids_grandchild_outing_array = [baby_kids_grandchild_outing_name_array, baby_kids_grandchild_outing_size_array].transponse
-baby_kids_grandchild_meal_goods_array = [baby_kids_grandchild_meal_goods_name_array, baby_kids_grandchild_meal_goods_size_array].transponse
-baby_kids_grandchild_bedding_array = [baby_kids_grandchild_bedding_name_array, baby_kids_grandchild_bedding_size_array].transponse
-baby_kids_grandchild_toy_array = [baby_kids_grandchild_toy_name_array, baby_kids_grandchild_toy_size_array].transponse
-baby_kids_grandchild_event_array = [baby_kids_grandchild_event_name_array, baby_kids_grandchild_event_size_array].transponse
-baby_kids_grandchild_others_array = [baby_kids_grandchild_others_name_array, baby_kids_grandchild_others_size_array].transponse
+baby_kids_grandchild_baby_girl_array = [baby_kids_grandchild_baby_girl_name_array, baby_kids_grandchild_baby_girl_size_array].transpose
+baby_kids_grandchild_baby_boy_array = [baby_kids_grandchild_baby_boy_name_array, baby_kids_grandchild_baby_boy_size_array].transpose
+baby_kids_grandchild_baby_unisex_array = [baby_kids_grandchild_baby_unisex_name_array, baby_kids_grandchild_baby_unisex_size_array].transpose
+baby_kids_grandchild_kids_girl_array = [baby_kids_grandchild_kids_girl_name_array, baby_kids_grandchild_kids_girl_size_array].transpose
+baby_kids_grandchild_kids_boy_array = [baby_kids_grandchild_kids_boy_name_array, baby_kids_grandchild_kids_boy_size_array].transpose
+baby_kids_grandchild_kids_unisex_array = [baby_kids_grandchild_kids_unisex_name_array, baby_kids_grandchild_kids_unisex_size_array].transpose
+baby_kids_grandchild_kids_shoes_array = [baby_kids_grandchild_kids_shoes_name_array, baby_kids_grandchild_kids_shoes_size_array].transpose
+baby_kids_grandchild_kids_fashion_small_article_array = [baby_kids_grandchild_kids_fashion_small_article_name_array, baby_kids_grandchild_kids_fashion_small_article_size_array].transpose
+baby_kids_grandchild_excretion_array = [baby_kids_grandchild_excretion_name_array, baby_kids_grandchild_excretion_size_array].transpose
+baby_kids_grandchild_outing_array = [baby_kids_grandchild_outing_name_array, baby_kids_grandchild_outing_size_array].transpose
+baby_kids_grandchild_meal_goods_array = [baby_kids_grandchild_meal_goods_name_array, baby_kids_grandchild_meal_goods_size_array].transpose
+baby_kids_grandchild_bedding_array = [baby_kids_grandchild_bedding_name_array, baby_kids_grandchild_bedding_size_array].transpose
+baby_kids_grandchild_toy_array = [baby_kids_grandchild_toy_name_array, baby_kids_grandchild_toy_size_array].transpose
+baby_kids_grandchild_event_array = [baby_kids_grandchild_event_name_array, baby_kids_grandchild_event_size_array].transpose
+baby_kids_grandchild_others_array = [baby_kids_grandchild_others_name_array, baby_kids_grandchild_others_size_array].transpose
 
-interior_grandchild_kitchen_array = [interior_grandchild_kitchen_name_array, interior_grandchild_kitchen_size_array].transponse
-interior_grandchild_bed_array = [interior_grandchild_bed_name_array, interior_grandchild_bed_size_array].transponse
-interior_grandchild_sofa_array = [interior_grandchild_sofa_name_array, interior_grandchild_sofa_size_array].transponse
-interior_grandchild_char_array = [interior_grandchild_char_name_array, interior_grandchild_char_size_array].transponse
-interior_grandchild_desk_array = [interior_grandchild_desk_name_array, interior_grandchild_desk_size_array].transponse
-interior_grandchild_strage_array = [interior_grandchild_strage_name_array, interior_grandchild_strage_size_array].transponse
-interior_grandchild_carpet_array = [interior_grandchild_carpet_name_array, interior_grandchild_carpet_size_array].transponse
-interior_grandchild_curtain_array = [interior_grandchild_curtain_name_array, interior_grandchild_curtain_size_array].transponse
-interior_grandchild_light_array = [interior_grandchild_light_name_array, interior_grandchild_light_size_array].transponse
-interior_grandchild_bedding_array = [interior_grandchild_bedding_name_array, interior_grandchild_bedding_size_array].transponse
-interior_grandchild_small_artilcle_array = [interior_grandchild_small_artilcle_name_array, interior_grandchild_small_artilcle_size_array].transponse
-interior_grandchild_season_array = [interior_grandchild_season_name_array, interior_grandchild_season_size_array].transponse
-interior_grandchild_others_array = [interior_grandchild_others_name_array, interior_grandchild_others_size_array].transponse
+interior_grandchild_kitchen_array = [interior_grandchild_kitchen_name_array, interior_grandchild_kitchen_size_array].transpose
+interior_grandchild_bed_array = [interior_grandchild_bed_name_array, interior_grandchild_bed_size_array].transpose
+interior_grandchild_sofa_array = [interior_grandchild_sofa_name_array, interior_grandchild_sofa_size_array].transpose
+interior_grandchild_char_array = [interior_grandchild_char_name_array, interior_grandchild_char_size_array].transpose
+interior_grandchild_desk_array = [interior_grandchild_desk_name_array, interior_grandchild_desk_size_array].transpose
+interior_grandchild_strage_array = [interior_grandchild_strage_name_array, interior_grandchild_strage_size_array].transpose
+interior_grandchild_carpet_array = [interior_grandchild_carpet_name_array, interior_grandchild_carpet_size_array].transpose
+interior_grandchild_curtain_array = [interior_grandchild_curtain_name_array, interior_grandchild_curtain_size_array].transpose
+interior_grandchild_light_array = [interior_grandchild_light_name_array, interior_grandchild_light_size_array].transpose
+interior_grandchild_bedding_array = [interior_grandchild_bedding_name_array, interior_grandchild_bedding_size_array].transpose
+interior_grandchild_small_artilcle_array = [interior_grandchild_small_artilcle_name_array, interior_grandchild_small_artilcle_size_array].transpose
+interior_grandchild_season_array = [interior_grandchild_season_name_array, interior_grandchild_season_size_array].transpose
+interior_grandchild_others_array = [interior_grandchild_others_name_array, interior_grandchild_others_size_array].transpose
 
-book_music_game_grandchild_book_array = [book_music_game_grandchild_book_name_array, book_music_game_grandchild_book_size_array].transponse
-book_music_game_grandchild_manga_array = [book_music_game_grandchild_manga_name_array, book_music_game_grandchild_manga_size_array].transponse
-book_music_game_grandchild_magazine_array = [book_music_game_grandchild_magazine_name_array, book_music_game_grandchild_magazine_size_array].transponse
-book_music_game_grandchild_cd_array = [book_music_game_grandchild_cd_name_array, book_music_game_grandchild_cd_size_array].transponse
-book_music_game_grandchild_dvd_blueray_array = [book_music_game_grandchild_dvd_blueray_name_array, book_music_game_grandchild_dvd_blueray_size_array].transponse
-book_music_game_grandchild_records_array = [book_music_game_grandchild_records_name_array, book_music_game_grandchild_records_size_array].transponse
-book_music_game_grandchild_tvgame_array = [book_music_game_grandchild_tvgame_name_array, book_music_game_grandchild_tvgame_size_array].transponse
+book_music_game_grandchild_book_array = [book_music_game_grandchild_book_name_array, book_music_game_grandchild_book_size_array].transpose
+book_music_game_grandchild_manga_array = [book_music_game_grandchild_manga_name_array, book_music_game_grandchild_manga_size_array].transpose
+book_music_game_grandchild_magazine_array = [book_music_game_grandchild_magazine_name_array, book_music_game_grandchild_magazine_size_array].transpose
+book_music_game_grandchild_cd_array = [book_music_game_grandchild_cd_name_array, book_music_game_grandchild_cd_size_array].transpose
+book_music_game_grandchild_dvd_blueray_array = [book_music_game_grandchild_dvd_blueray_name_array, book_music_game_grandchild_dvd_blueray_size_array].transpose
+book_music_game_grandchild_records_array = [book_music_game_grandchild_records_name_array, book_music_game_grandchild_records_size_array].transpose
+book_music_game_grandchild_tvgame_array = [book_music_game_grandchild_tvgame_name_array, book_music_game_grandchild_tvgame_size_array].transpose
 
-toy_hobby_goods_grandchild_toy_array = [toy_hobby_goods_grandchild_toy_name_array, toy_hobby_goods_grandchild_toy_size_array].transponse
-toy_hobby_goods_grandchild_talen_goods_array = [toy_hobby_goods_grandchild_talen_goods_name_array, toy_hobby_goods_grandchild_talen_goods_size_array].transponse
-toy_hobby_goods_grandchild_comic_anime_goods_array = [toy_hobby_goods_grandchild_comic_anime_goods_name_array, toy_hobby_goods_grandchild_comic_anime_goods_size_array].transponse
-toy_hobby_goods_grandchild__trading_card_array = [toy_hobby_goods_grandchild__trading_card_name_array, toy_hobby_goods_grandchild__trading_card_size_array].transponse
-toy_hobby_goods_grandchild_figure_array = [toy_hobby_goods_grandchild_figure_name_array, toy_hobby_goods_grandchild_figure_size_array].transponse
-toy_hobby_goods_grandchild_misical_instrument_array = [toy_hobby_goods_grandchild_misical_instrument_name_array, toy_hobby_goods_grandchild_misical_instrument_size_array].transponse
-toy_hobby_goods_grandchild_collection_array = [toy_hobby_goods_grandchild_collection_name_array, toy_hobby_goods_grandchild_collection_size_array].transponse
-toy_hobby_goods_grandchild_military_array = [toy_hobby_goods_grandchild_military_name_array, toy_hobby_goods_grandchild_military_size_array].transponse
-toy_hobby_goods_grandchild_art_array = [toy_hobby_goods_grandchild_art_name_array, toy_hobby_goods_grandchild_art_size_array].transponse
-toy_hobby_goods_grandchild_art_goods_array = [toy_hobby_goods_grandchild_art_goods_name_array, toy_hobby_goods_grandchild_art_goods_size_array].transponse
-toy_hobby_goods_grandchild_others_array = [toy_hobby_goods_grandchild_others_name_array, toy_hobby_goods_grandchild_others_size_array].transponse
+toy_hobby_goods_grandchild_toy_array = [toy_hobby_goods_grandchild_toy_name_array, toy_hobby_goods_grandchild_toy_size_array].transpose
+toy_hobby_goods_grandchild_talen_goods_array = [toy_hobby_goods_grandchild_talen_goods_name_array, toy_hobby_goods_grandchild_talen_goods_size_array].transpose
+toy_hobby_goods_grandchild_comic_anime_goods_array = [toy_hobby_goods_grandchild_comic_anime_goods_name_array, toy_hobby_goods_grandchild_comic_anime_goods_size_array].transpose
+toy_hobby_goods_grandchild__trading_card_array = [toy_hobby_goods_grandchild__trading_card_name_array, toy_hobby_goods_grandchild__trading_card_size_array].transpose
+toy_hobby_goods_grandchild_figure_array = [toy_hobby_goods_grandchild_figure_name_array, toy_hobby_goods_grandchild_figure_size_array].transpose
+toy_hobby_goods_grandchild_misical_instrument_array = [toy_hobby_goods_grandchild_misical_instrument_name_array, toy_hobby_goods_grandchild_misical_instrument_size_array].transpose
+toy_hobby_goods_grandchild_collection_array = [toy_hobby_goods_grandchild_collection_name_array, toy_hobby_goods_grandchild_collection_size_array].transpose
+toy_hobby_goods_grandchild_military_array = [toy_hobby_goods_grandchild_military_name_array, toy_hobby_goods_grandchild_military_size_array].transpose
+toy_hobby_goods_grandchild_art_array = [toy_hobby_goods_grandchild_art_name_array, toy_hobby_goods_grandchild_art_size_array].transpose
+toy_hobby_goods_grandchild_art_goods_array = [toy_hobby_goods_grandchild_art_goods_name_array, toy_hobby_goods_grandchild_art_goods_size_array].transpose
+toy_hobby_goods_grandchild_others_array = [toy_hobby_goods_grandchild_others_name_array, toy_hobby_goods_grandchild_others_size_array].transpose
 
-cosme_perfume_beauty_grandchild_basemake_array = [cosme_perfume_beauty_grandchild_basemake_name_array, cosme_perfume_beauty_grandchild_basemake_size_array].transponse
-cosme_perfume_beauty_grandchild_make_up_array = [cosme_perfume_beauty_grandchild_make_up_name_array, cosme_perfume_beauty_grandchild_make_up_size_array].transponse
-cosme_perfume_beauty_grandchild_nail_care_array = [cosme_perfume_beauty_grandchild_nail_care_name_array, cosme_perfume_beauty_grandchild_nail_care_size_array].transponse
-cosme_perfume_beauty_grandchild_perfume_array = [cosme_perfume_beauty_grandchild_perfume_name_array, cosme_perfume_beauty_grandchild_perfume_size_array].transponse
-cosme_perfume_beauty_grandchild_skincare_array = [cosme_perfume_beauty_grandchild_skincare_name_array, cosme_perfume_beauty_grandchild_skincare_size_array].transponse
-cosme_perfume_beauty_grandchild_hai_array = [cosme_perfume_beauty_grandchild_hairname_array, cosme_perfume_beauty_grandchild_haircare_array].transponse
-cosme_perfume_beauty_grandchild_bodycare_array = [cosme_perfume_beauty_grandchild_bodycare_name_array, cosme_perfume_beauty_grandchild_bodycare_size_array].transponse
-cosme_perfume_beauty_grandchild_ora_array = [cosme_perfume_beauty_grandchild_oralname_array, cosme_perfume_beauty_grandchild_oralcare_array].transponse
-cosme_perfume_beauty_grandchild_relaxation_array = [cosme_perfume_beauty_grandchild_relaxation_name_array, cosme_perfume_beauty_grandchild_relaxation_size_array].transponse
-cosme_perfume_beauty_grandchild_array = [cosme_perfume_beauty_grandchild_name_array, cosme_perfume_beauty_grandchild_diet_array].transponse
-cosme_perfume_beauty_grandchild_others_array = [cosme_perfume_beauty_grandchild_others_name_array, cosme_perfume_beauty_grandchild_others_size_array].transponse
+cosme_perfume_beauty_grandchild_basemake_array = [cosme_perfume_beauty_grandchild_basemake_name_array, cosme_perfume_beauty_grandchild_basemake_size_array].transpose
+cosme_perfume_beauty_grandchild_make_up_array = [cosme_perfume_beauty_grandchild_make_up_name_array, cosme_perfume_beauty_grandchild_make_up_size_array].transpose
+cosme_perfume_beauty_grandchild_nail_care_array = [cosme_perfume_beauty_grandchild_nail_care_name_array, cosme_perfume_beauty_grandchild_nail_care_size_array].transpose
+cosme_perfume_beauty_grandchild_perfume_array = [cosme_perfume_beauty_grandchild_perfume_name_array, cosme_perfume_beauty_grandchild_perfume_size_array].transpose
+cosme_perfume_beauty_grandchild_skincare_array = [cosme_perfume_beauty_grandchild_skincare_name_array, cosme_perfume_beauty_grandchild_skincare_size_array].transpose
+cosme_perfume_beauty_grandchild_haircare_array = [cosme_perfume_beauty_grandchild_haircare_name_array, cosme_perfume_beauty_grandchild_haircare_size_array].transpose
+cosme_perfume_beauty_grandchild_bodycare_array = [cosme_perfume_beauty_grandchild_bodycare_name_array, cosme_perfume_beauty_grandchild_bodycare_size_array].transpose
+cosme_perfume_beauty_grandchild_oralcare_array = [cosme_perfume_beauty_grandchild_oralcare_name_array, cosme_perfume_beauty_grandchild_oralcare_size_array].transpose
+cosme_perfume_beauty_grandchild_relaxation_array = [cosme_perfume_beauty_grandchild_relaxation_name_array, cosme_perfume_beauty_grandchild_relaxation_size_array].transpose
+cosme_perfume_beauty_grandchild_diet_array = [cosme_perfume_beauty_grandchild_diet_name_array, cosme_perfume_beauty_grandchild_diet_size_array].transpose
+cosme_perfume_beauty_grandchild_others_array = [cosme_perfume_beauty_grandchild_others_name_array, cosme_perfume_beauty_grandchild_others_size_array].transpose
 
-electric_smartphone_camera_grandchild_smart_array = [electric_smartphone_camera_grandchild_smartpname_array, electric_smartphone_camera_grandchild_smartphone_array].transponse
-electric_smartphone_camera_grandchild_smartphone_accessory_array = [electric_smartphone_camera_grandchild_smartphone_accessory_name_array, electric_smartphone_camera_grandchild_smartphone_accessory_size_array].transponse
-electric_smartphone_camera_grandchild__array = [electric_smartphone_camera_grandchild_pname_array, electric_smartphone_camera_grandchild_pctab_array].transponse
-electric_smartphone_camera_grandchild_camera_array = [electric_smartphone_camera_grandchild_camera_name_array, electric_smartphone_camera_grandchild_camera_size_array].transponse
-electric_smartphone_camera_grandchi_array = [electric_smartphone_camera_grandchilname_array, electric_smartphone_camera_grandchild_TV_array].transponse
-electric_smartphone_camera_grandchild_AV_array = [electric_smartphone_camera_grandchild_AV_name_array, electric_smartphone_camera_grandchild_AV_size_array].transponse
-electric_smartphone_camera_grandchild_beauty_h_array = [electric_smartphone_camera_grandchild_beauty_hename_array, electric_smartphone_camera_grandchild_beauty_health_array].transponse
-electric_smartphone_camera_grandchild_aircontroller_array = [electric_smartphone_camera_grandchild_aircontroller_name_array, electric_smartphone_camera_grandchild_aircontroller_size_array].transponse
-electric_smartphone_camera_grandchild_consumer_ele_array = [electric_smartphone_camera_grandchild_consumer_elecname_array, electric_smartphone_camera_grandchild_consumer_electric_array].transponse
-electric_smartphone_camera_grandchild_others_array = [electric_smartphone_camera_grandchild_others_name_array, electric_smartphone_camera_grandchild_others_size_array].transponse
+electric_smartphone_camera_grandchild_smartphone_array = [electric_smartphone_camera_grandchild_smartphone_name_array, electric_smartphone_camera_grandchild_smartphone_size_array].transpose
+electric_smartphone_camera_grandchild_smartphone_accessory_array = [electric_smartphone_camera_grandchild_smartphone_accessory_name_array, electric_smartphone_camera_grandchild_smartphone_accessory_size_array].transpose
+electric_smartphone_camera_grandchild_pctab_array = [electric_smartphone_camera_grandchild_pctab_name_array, electric_smartphone_camera_grandchild_pctab_size_array].transpose
+electric_smartphone_camera_grandchild_camera_array = [electric_smartphone_camera_grandchild_camera_name_array, electric_smartphone_camera_grandchild_camera_size_array].transpose
+electric_smartphone_camera_grandchild_TV_array = [electric_smartphone_camera_grandchild_TV_name_array, electric_smartphone_camera_grandchild_TV_size_array].transpose
+electric_smartphone_camera_grandchild_AV_array = [electric_smartphone_camera_grandchild_AV_name_array, electric_smartphone_camera_grandchild_AV_size_array].transpose
+electric_smartphone_camera_grandchild_beauty_health_array = [electric_smartphone_camera_grandchild_beauty_health_name_array, electric_smartphone_camera_grandchild_beauty_health_size_array].transpose
+electric_smartphone_camera_grandchild_aircontroller_array = [electric_smartphone_camera_grandchild_aircontroller_name_array, electric_smartphone_camera_grandchild_aircontroller_size_array].transpose
+electric_smartphone_camera_grandchild_consumer_electric_array = [electric_smartphone_camera_grandchild_consumer_electric_name_array, electric_smartphone_camera_grandchild_consumer_electric_size_array].transpose
+electric_smartphone_camera_grandchild_others_array = [electric_smartphone_camera_grandchild_others_name_array, electric_smartphone_camera_grandchild_others_size_array].transpose
 
-sports_leisure_grandchild_golf_array = [sports_leisure_grandchild_golf_name_array, sports_leisure_grandchild_golf_size_array].transponse
-sports_leisure_grandchild_fishing_array = [sports_leisure_grandchild_fishing_name_array, sports_leisure_grandchild_fishing_size_array].transponse
-sports_leisure_grandchild_bicycle_array = [sports_leisure_grandchild_bicycle_name_array, sports_leisure_grandchild_bicycle_size_array].transponse
-sports_leisure_grandchild_training_array = [sports_leisure_grandchild_training_name_array, sports_leisure_grandchild_training_size_array].transponse
-sports_leisure_grandchild_baseball_array = [sports_leisure_grandchild_baseball_name_array, sports_leisure_grandchild_baseball_size_array].transponse
-sports_leisure_grandchild_football_array = [sports_leisure_grandchild_football_name_array, sports_leisure_grandchild_football_size_array].transponse
-sports_leisure_grandchild_tennis_array = [sports_leisure_grandchild_tennis_name_array, sports_leisure_grandchild_tennis_size_array].transponse
-sports_leisure_grandchild_snowbord_array = [sports_leisure_grandchild_snowbord_name_array, sports_leisure_grandchild_snowbord_size_array].transponse
-sports_leisure_grandchild_ski_array = [sports_leisure_grandchild_ski_name_array, sports_leisure_grandchild_ski_size_array].transponse
-sports_leisure_grandchild_other_sports_array = [sports_leisure_grandchild_other_sports_name_array, sports_leisure_grandchild_other_sports_size_array].transponse
-sports_leisure_grandchild_outdoor_array = [sports_leisure_grandchild_outdoor_name_array, sports_leisure_grandchild_outdoor_size_array].transponse
-sports_leisure_grandchild_others_array = [sports_leisure_grandchild_others_name_array, sports_leisure_grandchild_others_size_array].transponse
+sports_leisure_grandchild_golf_array = [sports_leisure_grandchild_golf_name_array, sports_leisure_grandchild_golf_size_array].transpose
+sports_leisure_grandchild_fishing_array = [sports_leisure_grandchild_fishing_name_array, sports_leisure_grandchild_fishing_size_array].transpose
+sports_leisure_grandchild_bicycle_array = [sports_leisure_grandchild_bicycle_name_array, sports_leisure_grandchild_bicycle_size_array].transpose
+sports_leisure_grandchild_training_array = [sports_leisure_grandchild_training_name_array, sports_leisure_grandchild_training_size_array].transpose
+sports_leisure_grandchild_baseball_array = [sports_leisure_grandchild_baseball_name_array, sports_leisure_grandchild_baseball_size_array].transpose
+sports_leisure_grandchild_football_array = [sports_leisure_grandchild_football_name_array, sports_leisure_grandchild_football_size_array].transpose
+sports_leisure_grandchild_tennis_array = [sports_leisure_grandchild_tennis_name_array, sports_leisure_grandchild_tennis_size_array].transpose
+sports_leisure_grandchild_snowbord_array = [sports_leisure_grandchild_snowbord_name_array, sports_leisure_grandchild_snowbord_size_array].transpose
+sports_leisure_grandchild_ski_array = [sports_leisure_grandchild_ski_name_array, sports_leisure_grandchild_ski_size_array].transpose
+sports_leisure_grandchild_other_sports_array = [sports_leisure_grandchild_other_sports_name_array, sports_leisure_grandchild_other_sports_size_array].transpose
+sports_leisure_grandchild_outdoor_array = [sports_leisure_grandchild_outdoor_name_array, sports_leisure_grandchild_outdoor_size_array].transpose
+sports_leisure_grandchild_others_array = [sports_leisure_grandchild_others_name_array, sports_leisure_grandchild_others_size_array].transpose
 
-handmade_grandchild_womens_accessory_array = [handmade_grandchild_womens_accessory_name_array, handmade_grandchild_womens_accessory_size_array].transponse
-handmade_grandchild_fashion_item_array = [handmade_grandchild_fashion_item_name_array, handmade_grandchild_fashion_item_size_array].transponse
-handmade_grandchild_accessory_watch_array = [handmade_grandchild_accessory_watch_name_array, handmade_grandchild_accessory_watch_size_array].transponse
-handmade_grandchild_daily_necessities_interior_array = [handmade_grandchild_daily_necessities_interior_name_array, handmade_grandchild_daily_necessities_interior_size_array].transponse
-handmade_grandchild_hobby_toy_array = [handmade_grandchild_hobby_toy_name_array, handmade_grandchild_hobby_toy_size_array].transponse
-handmade_grandchild_kits_baby_array = [handmade_grandchild_kits_baby_name_array, handmade_grandchild_kits_baby_size_array].transponse
-handmade_grandchild_material_item_array = [handmade_grandchild_material_item_name_array, handmade_grandchild_material_item_size_array].transponse
-handmade_grandchild_secondary_crop_array = [handmade_grandchild_secondary_crop_name_array, handmade_grandchild_secondary_crop_size_array].transponse
-handmade_grandchild_others_array = [handmade_grandchild_others_name_array, handmade_grandchild_others_size_array].transponse
+handmade_grandchild_womens_accessory_array = [handmade_grandchild_womens_accessory_name_array, handmade_grandchild_womens_accessory_size_array].transpose
+handmade_grandchild_fashion_item_array = [handmade_grandchild_fashion_item_name_array, handmade_grandchild_fashion_item_size_array].transpose
+handmade_grandchild_accessory_watch_array = [handmade_grandchild_accessory_watch_name_array, handmade_grandchild_accessory_watch_size_array].transpose
+handmade_grandchild_daily_necessities_interior_array = [handmade_grandchild_daily_necessities_interior_name_array, handmade_grandchild_daily_necessities_interior_size_array].transpose
+handmade_grandchild_hobby_toy_array = [handmade_grandchild_hobby_toy_name_array, handmade_grandchild_hobby_toy_size_array].transpose
+handmade_grandchild_kits_baby_array = [handmade_grandchild_kits_baby_name_array, handmade_grandchild_kits_baby_size_array].transpose
+handmade_grandchild_material_item_array = [handmade_grandchild_material_item_name_array, handmade_grandchild_material_item_size_array].transpose
+handmade_grandchild_secondary_crop_array = [handmade_grandchild_secondary_crop_name_array, handmade_grandchild_secondary_crop_size_array].transpose
+handmade_grandchild_others_array = [handmade_grandchild_others_name_array, handmade_grandchild_others_size_array].transpose
 
-ticket_grandchild_music_array = [ticket_grandchild_music_name_array, ticket_grandchild_music_size_array].transponse
-ticket_grandchild_sports_array = [ticket_grandchild_sports_name_array, ticket_grandchild_sports_size_array].transponse
-ticket_grandchild_theater_array = [ticket_grandchild_theater_name_array, ticket_grandchild_theater_size_array].transponse
-ticket_grandchild_event_array = [ticket_grandchild_event_name_array, ticket_grandchild_event_size_array].transponse
-ticket_grandchild_movies_array = [ticket_grandchild_movies_name_array, ticket_grandchild_movies_size_array].transponse
-ticket_grandchild_facility_use_tikets_array = [ticket_grandchild_facility_use_tikets_name_array, ticket_grandchild_facility_use_tikets_size_array].transponse
-ticket_grandchild_complimentary_tickets_array = [ticket_grandchild_complimentary_tickets_name_array, ticket_grandchild_complimentary_tickets_size_array].transponse
-ticket_grandchild_others_array = [ticket_grandchild_others_name_array, ticket_grandchild_others_size_array].transponse
+ticket_grandchild_music_array = [ticket_grandchild_music_name_array, ticket_grandchild_music_size_array].transpose
+ticket_grandchild_sports_array = [ticket_grandchild_sports_name_array, ticket_grandchild_sports_size_array].transpose
+ticket_grandchild_theater_array = [ticket_grandchild_theater_name_array, ticket_grandchild_theater_size_array].transpose
+ticket_grandchild_event_array = [ticket_grandchild_event_name_array, ticket_grandchild_event_size_array].transpose
+ticket_grandchild_movies_array = [ticket_grandchild_movies_name_array, ticket_grandchild_movies_size_array].transpose
+ticket_grandchild_facility_use_tikets_array = [ticket_grandchild_facility_use_tikets_name_array, ticket_grandchild_facility_use_tikets_size_array].transpose
+ticket_grandchild_complimentary_tickets_array = [ticket_grandchild_complimentary_tickets_name_array, ticket_grandchild_complimentary_tickets_size_array].transpose
+ticket_grandchild_others_array = [ticket_grandchild_others_name_array, ticket_grandchild_others_size_array].transpose
 
-automobile_grandchild_car_body_array = [automobile_grandchild_car_body_name_array, automobile_grandchild_car_body_size_array].transponse
-automobile_grandchild_car_tire_whoile_array = [automobile_grandchild_car_tire_whoile_name_array, automobile_grandchild_car_tire_whoile_size_array].transponse
-automobile_grandchild_car_parts_array = [automobile_grandchild_car_parts_name_array, automobile_grandchild_car_parts_size_array].transponse
-automobile_grandchild_car_accessory_array = [automobile_grandchild_car_accessory_name_array, automobile_grandchild_car_accessory_size_array].transponse
-automobile_grandchild_bike_body_array = [automobile_grandchild_bike_body_name_array, automobile_grandchild_bike_body_size_array].transponse
-automobile_grandchild_bike_parts_array = [automobile_grandchild_bike_parts_name_array, automobile_grandchild_bike_parts_size_array].transponse
-automobile_grandchild_bike_accessory_array = [automobile_grandchild_bike_accessory_name_array, automobile_grandchild_bike_accessory_size_array].transponse
+automobile_grandchild_car_body_array = [automobile_grandchild_car_body_name_array, automobile_grandchild_car_body_size_array].transpose
+automobile_grandchild_car_tire_whoile_array = [automobile_grandchild_car_tire_whoile_name_array, automobile_grandchild_car_tire_whoile_size_array].transpose
+automobile_grandchild_car_parts_array = [automobile_grandchild_car_parts_name_array, automobile_grandchild_car_parts_size_array].transpose
+automobile_grandchild_car_accessory_array = [automobile_grandchild_car_accessory_name_array, automobile_grandchild_car_accessory_size_array].transpose
+automobile_grandchild_bike_body_array = [automobile_grandchild_bike_body_name_array, automobile_grandchild_bike_body_size_array].transpose
+automobile_grandchild_bike_parts_array = [automobile_grandchild_bike_parts_name_array, automobile_grandchild_bike_parts_size_array].transpose
+automobile_grandchild_bike_accessory_array = [automobile_grandchild_bike_accessory_name_array, automobile_grandchild_bike_accessory_size_array].transpose
 
-others_grandchild_bulk_sal__arra = [others_grandchild_bulk_salename__arra, others_grandchild_bulk_salesize__arra].transponse
-others_grandchild_pet_array = [others_grandchild_pet_name_array, others_grandchild_pet_size_array].transponse
-others_grandchild_food_array = [others_grandchild_food_name_array, others_grandchild_food_size_array].transponse
-others_grandchild_drink_array = [others_grandchild_drink_name_array, others_grandchild_drink_size_array].transponse
-others_grandchild_daily_necessities_array = [others_grandchild_daily_necessities_name_array, others_grandchild_daily_necessities_size_array].transponse
-others_grandchild_antique_array = [others_grandchild_antique_name_array, others_grandchild_antique_size_array].transponse
-others_grandchild_stationery_array = [others_grandchild_stationery_name_array, others_grandchild_stationery_size_array].transponse
-others_grandchild_office_supplies_array = [others_grandchild_office_supplies_name_array, others_grandchild_office_supplies_size_array].transponse
-others_grandchild_others_array = [others_grandchild_others_name_array, others_grandchild_others_size_array].transponse
+others_grandchild_bulk_sale_array = [others_grandchild_bulk_sale_name_array, others_grandchild_bulk_sale_size_array].transpose
+others_grandchild_pet_array = [others_grandchild_pet_name_array, others_grandchild_pet_size_array].transpose
+others_grandchild_food_array = [others_grandchild_food_name_array, others_grandchild_food_size_array].transpose
+others_grandchild_drink_array = [others_grandchild_drink_name_array, others_grandchild_drink_size_array].transpose
+others_grandchild_daily_necessities_array = [others_grandchild_daily_necessities_name_array, others_grandchild_daily_necessities_size_array].transpose
+others_grandchild_antique_array = [others_grandchild_antique_name_array, others_grandchild_antique_size_array].transpose
+others_grandchild_stationery_array = [others_grandchild_stationery_name_array, others_grandchild_stationery_size_array].transpose
+others_grandchild_office_supplies_array = [others_grandchild_office_supplies_name_array, others_grandchild_office_supplies_size_array].transpose
+others_grandchild_others_array = [others_grandchild_others_name_array, others_grandchild_others_size_array].transpose
+
+
+puts ladys_grandchild_tops_name_array
+puts ladys_grandchild_tops_size_array
+puts ladys_grandchild_tops_array
