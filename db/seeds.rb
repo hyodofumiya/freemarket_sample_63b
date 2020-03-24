@@ -1,13 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 # カテゴリーデータをDBに登録する
-
 #nameとsizeの情報をそれぞれ配列にしてカテゴリーごとにハッシュの形にする
 parent_array = ['レディース','メンズ','ベビー・キッズ','インテリア・住まい・小物','本・音楽・ゲーム','おもちゃ・ホビー・グッズ','コスメ・香水・美容','家電・スマホ・カメラ','スポーツ・レジャー','ハンドメイド','チケット','自動車・オートバイ','その他']
 
@@ -88,7 +79,6 @@ book_music_game_grandchild_cd_name_array = ['邦楽','洋楽','アニメ','ク�
 book_music_game_grandchild_dvd_blueray_name_array = ['外国映画','日本映画','アニメ','TVドラマ','ミュージック','お笑い/バラエティ','スポーツ/フィットネス','キッズ/ファミリー','その他']
 book_music_game_grandchild_records_name_array = ['邦楽','洋楽','その他']
 book_music_game_grandchild_tvgame_name_array = ['家庭用ゲーム本体','家庭用ゲームソフト','携帯用ゲーム本体','携帯用ゲームソフト','PCゲーム','その他']
-
 
 toy_hobby_goods_child_array = ['おもちゃ','タレントグッズ','コミック/アニメグッズ','トレーディングカード','フィギュア','楽器/器材','コレクション','ミリタリー','美術品','アート用品','その他']
 toy_hobby_goods_grandchild_toy_name_array = ['キャラクターグッズ','ぬいぐるみ','小物/アクセサリー','模型/プラモデル','ミニカー','トイラジコン','プラモデル','ホビーラジコン','鉄道模型','その他']
@@ -182,7 +172,6 @@ others_grandchild_antique_name_array = ['雑貨','工芸品','家具','印刷物
 others_grandchild_stationery_name_array = ['筆記具','ノート/マスキングテープ','カレンダー/スケジュール','アルバム/スクラップ','ファイル/バインダー','はさみ/カッター','カードホルダー/名刺管理','のり/ホッチキス','その他']
 others_grandchild_office_supplies_name_array = ['オフィス用品一般','オフィス家具','店舗用品','OA機器','ラッピング/包装','その他']
 others_grandchild_others_name_array = ['その他']
-
 
 # 各中カテゴリーに対応するサイズ情報を格納する用の配列
 ladys_grandchild_tops_size_array = []
@@ -345,450 +334,450 @@ others_grandchild_others_size_array = []
 
 # size用の配列に中カテゴリーの要素数分だけsize情報を入力する
 for i in ladys_grandchild_tops_name_array
-  ladys_grandchild_tops_size_array << [1]
+  ladys_grandchild_tops_size_array << 1
 end
 for i in ladys_grandchild_jakets_outer_name_array
-  ladys_grandchild_jakets_outer_size_array << [1]
+  ladys_grandchild_jakets_outer_size_array << 1
 end
 for i in ladys_grandchild_pants_name_array
-  ladys_grandchild_pants_size_array << [1]
+  ladys_grandchild_pants_size_array << 1
 end
 for i in ladys_grandchild_skirts_name_array
-  ladys_grandchild_skirts_size_array << [1]
+  ladys_grandchild_skirts_size_array << 1
 end
 for i in ladys_grandchild_one_piece_name_array
-  ladys_grandchild_one_piece_size_array << [1]
+  ladys_grandchild_one_piece_size_array << 1
 end
 for i in ladys_grandchild_shoes_name_array
-  ladys_grandchild_shoes_size_array << [1]
+  ladys_grandchild_shoes_size_array << 1
 end
 for i in ladys_grandchild_room_wear_name_array
-  ladys_grandchild_room_wear_size_array << [1]
+  ladys_grandchild_room_wear_size_array << 1
 end
 for i in ladys_grandchild_leg_wear_name_array
-  ladys_grandchild_leg_wear_size_array << [1]
+  ladys_grandchild_leg_wear_size_array << 1
 end
 for i in ladys_grandchild_hat_name_array
-  ladys_grandchild_hat_size_array << [0]
+  ladys_grandchild_hat_size_array << "0"
 end
 for i in ladys_grandchild_bag_name_array
-  ladys_grandchild_bag_size_array << [0]
+  ladys_grandchild_bag_size_array << "0"
 end
 for i in ladys_grandchild_accessory_name_array
-  ladys_grandchild_accessory_size_array << [0]
+  ladys_grandchild_accessory_size_array << "0"
 end
 for i in ladys_grandchild_hair_accessory_name_array
-  ladys_grandchild_hair_accessory_size_array << [0]
+  ladys_grandchild_hair_accessory_size_array << "0"
 end
 for i in ladys_grandchild_small_article_name_array
-  ladys_grandchild_small_article_size_array << [0]
+  ladys_grandchild_small_article_size_array << "0"
 end
 for i in ladys_grandchild_watch_name_array
-  ladys_grandchild_watch_size_array << [0]
+  ladys_grandchild_watch_size_array << "0"
 end
 for i in ladys_grandchild_wig_name_array
-  ladys_grandchild_wig_size_array << [0]
+  ladys_grandchild_wig_size_array << "0"
 end
 for i in ladys_grandchild_yukata_swimwear_name_array
-  ladys_grandchild_yukata_swimwear_size_array << [1]
+  ladys_grandchild_yukata_swimwear_size_array << 1
 end
 for i in ladys_grandchild_suit_dress_name_array
-  ladys_grandchild_suit_dress_size_array << [1]
+  ladys_grandchild_suit_dress_size_array << 1
 end
 for i in ladys_grandchild_maternity_name_array
-  ladys_grandchild_maternity_size_array << [1]
+  ladys_grandchild_maternity_size_array << 1
 end
 for i in ladys_grandchild_others_name_array
-  ladys_grandchild_others_size_array << [0]
+  ladys_grandchild_others_size_array << "0"
 end
 
 for i in mens_grandchild_tops_name_array
-  mens_grandchild_tops_size_array << [1]
+  mens_grandchild_tops_size_array << 1
 end
 for i in mens_grandchild_jakets_name_array
-  mens_grandchild_jakets_size_array << [1]
+  mens_grandchild_jakets_size_array << 1
 end
 for i in mens_grandchild_pants_name_array
-  mens_grandchild_pants_size_array << [1]
+  mens_grandchild_pants_size_array << 1
 end
 for i in mens_grandchild_shoes_name_array
-  mens_grandchild_shoes_size_array << [1]
+  mens_grandchild_shoes_size_array << 1
 end
 for i in mens_grandchild_bag_name_array
-  mens_grandchild_bag_size_array << [0]
+  mens_grandchild_bag_size_array << "0"
 end
 for i in mens_grandchild_suit_name_array
-  mens_grandchild_suit_size_array << [1]
+  mens_grandchild_suit_size_array << 1
 end
 for i in mens_grandchild_hat_name_array
-  mens_grandchild_hat_size_array << [0]
+  mens_grandchild_hat_size_array << "0"
 end
 for i in mens_grandchild_accessory_name_array
-  mens_grandchild_accessory_size_array << [0]
+  mens_grandchild_accessory_size_array << "0"
 end
 for i in mens_grandchild_small_article_name_array 
-  mens_grandchild_small_article_size_array << [0]
+  mens_grandchild_small_article_size_array << "0"
 end
 for i in mens_grandchild_watch_name_array
-  mens_grandchild_watch_size_array << [0]
+  mens_grandchild_watch_size_array << "0"
 end
 for i in mens_grandchild_swimwear_name_array 
-  mens_grandchild_swimwear_size_array << [1]
+  mens_grandchild_swimwear_size_array << 1
 end
 for i in mens_grandchild_legwear_name_array
-  mens_grandchild_legwear_size_array << [1]
+  mens_grandchild_legwear_size_array << 1
 end
 for i in mens_grandchild_underwear_name_array 
-  mens_grandchild_underwear_size_array << [1]
+  mens_grandchild_underwear_size_array << 1
 end
 for i in mens_grandchild_others_name_array
-  mens_grandchild_others_size_array << [0]
+  mens_grandchild_others_size_array << "0"
 end
 
 for i in baby_kids_grandchild_baby_girl_name_array
-  baby_kids_grandchild_baby_girl_size_array << [1]
+  baby_kids_grandchild_baby_girl_size_array << 1
 end
 for i in baby_kids_grandchild_baby_boy_name_array
-  baby_kids_grandchild_baby_boy_size_array << [1]
+  baby_kids_grandchild_baby_boy_size_array << 1
 end
 for i in baby_kids_grandchild_baby_unisex_name_array
-  baby_kids_grandchild_baby_unisex_size_array << [1]
+  baby_kids_grandchild_baby_unisex_size_array << 1
 end
 for i in baby_kids_grandchild_kids_girl_name_array
-  baby_kids_grandchild_kids_girl_size_array << [1]
+  baby_kids_grandchild_kids_girl_size_array << 1
 end
 for i in baby_kids_grandchild_kids_boy_name_array
-  baby_kids_grandchild_kids_boy_size_array << [1]
+  baby_kids_grandchild_kids_boy_size_array << 1
 end
 for i in baby_kids_grandchild_kids_unisex_name_array
-  baby_kids_grandchild_kids_unisex_size_array << [1]
+  baby_kids_grandchild_kids_unisex_size_array << 1
 end
 for i in baby_kids_grandchild_kids_shoes_name_array
-  baby_kids_grandchild_kids_shoes_size_array << [1]
+  baby_kids_grandchild_kids_shoes_size_array << 1
 end
 for i in baby_kids_grandchild_kids_fashion_small_article_name_array
-  baby_kids_grandchild_kids_fashion_small_article_size_array << [0]
+  baby_kids_grandchild_kids_fashion_small_article_size_array << "0"
 end
 for i in baby_kids_grandchild_excretion_name_array
-  baby_kids_grandchild_excretion_size_array << [0]
+  baby_kids_grandchild_excretion_size_array << "0"
 end
 for i in baby_kids_grandchild_outing_name_array
-  baby_kids_grandchild_outing_size_array << [0]
+  baby_kids_grandchild_outing_size_array << "0"
 end
 for i in baby_kids_grandchild_meal_goods_name_array
-  baby_kids_grandchild_meal_goods_size_array << [0]
+  baby_kids_grandchild_meal_goods_size_array << "0"
 end
 for i in baby_kids_grandchild_bedding_name_array
-  baby_kids_grandchild_bedding_size_array << [0]
+  baby_kids_grandchild_bedding_size_array << "0"
 end
 for i in baby_kids_grandchild_toy_name_array
-  baby_kids_grandchild_toy_size_array << [0]
+  baby_kids_grandchild_toy_size_array << "0"
 end
 for i in baby_kids_grandchild_event_name_array
-  baby_kids_grandchild_event_size_array << [0]
+  baby_kids_grandchild_event_size_array << "0"
 end
 for i in baby_kids_grandchild_others_name_array
-  baby_kids_grandchild_others_size_array << [0]
+  baby_kids_grandchild_others_size_array << "0"
 end
 
 for i in interior_grandchild_kitchen_name_array
-  interior_grandchild_kitchen_size_array << [0]
+  interior_grandchild_kitchen_size_array << "0"
 end
 for i in interior_grandchild_bed_name_array
-  interior_grandchild_bed_size_array << [0]
+  interior_grandchild_bed_size_array << "0"
 end
 for i in interior_grandchild_sofa_name_array
-  interior_grandchild_sofa_size_array << [0]
+  interior_grandchild_sofa_size_array << "0"
 end
 for i in interior_grandchild_char_name_array
-  interior_grandchild_char_size_array << [0]
+  interior_grandchild_char_size_array << "0"
 end
 for i in interior_grandchild_desk_name_array
-  interior_grandchild_desk_size_array << [0]
+  interior_grandchild_desk_size_array << "0"
 end
 for i in interior_grandchild_strage_name_array
-  interior_grandchild_strage_size_array << [0]
+  interior_grandchild_strage_size_array << "0"
 end
 for i in interior_grandchild_carpet_name_array
-  interior_grandchild_carpet_size_array << [0]
+  interior_grandchild_carpet_size_array << "0"
 end
 for i in interior_grandchild_curtain_name_array
-  interior_grandchild_curtain_size_array << [0]
+  interior_grandchild_curtain_size_array << "0"
 end
 for i in interior_grandchild_light_name_array
-  interior_grandchild_light_size_array << [0]
+  interior_grandchild_light_size_array << "0"
 end
 for i in interior_grandchild_bedding_name_array
-  interior_grandchild_bedding_size_array << [0]
+  interior_grandchild_bedding_size_array << "0"
 end
 for i in interior_grandchild_small_artilcle_name_array
-  interior_grandchild_small_artilcle_size_array << [0]
+  interior_grandchild_small_artilcle_size_array << "0"
 end
 for i in interior_grandchild_season_name_array
-  interior_grandchild_season_size_array << [0]
+  interior_grandchild_season_size_array << "0"
 end
 for i in interior_grandchild_others_name_array
-  interior_grandchild_others_size_array << [0]
+  interior_grandchild_others_size_array << "0"
 end
 
 for i in book_music_game_grandchild_book_name_array
-  book_music_game_grandchild_book_size_array << [0]
+  book_music_game_grandchild_book_size_array << "0"
 end
 for i in book_music_game_grandchild_manga_name_array
-  book_music_game_grandchild_manga_size_array << [0]
+  book_music_game_grandchild_manga_size_array << "0"
 end
 for i in book_music_game_grandchild_magazine_name_array
-  book_music_game_grandchild_magazine_size_array << [0]
+  book_music_game_grandchild_magazine_size_array << "0"
 end
 for i in book_music_game_grandchild_cd_name_array
-  book_music_game_grandchild_cd_size_array << [0]
+  book_music_game_grandchild_cd_size_array << "0"
 end
 for i in book_music_game_grandchild_dvd_blueray_name_array
-  book_music_game_grandchild_dvd_blueray_size_array << [0]
+  book_music_game_grandchild_dvd_blueray_size_array << "0"
 end
 for i in book_music_game_grandchild_records_name_array
-  book_music_game_grandchild_records_size_array << [0]
+  book_music_game_grandchild_records_size_array << "0"
 end
 for i in book_music_game_grandchild_tvgame_name_array
-  book_music_game_grandchild_tvgame_size_array << [0]
+  book_music_game_grandchild_tvgame_size_array << "0"
 end
 
 for i in toy_hobby_goods_grandchild_toy_name_array
-  toy_hobby_goods_grandchild_toy_size_array << [0]
+  toy_hobby_goods_grandchild_toy_size_array << "0"
 end
 for i in toy_hobby_goods_grandchild_talent_goods_name_array
-  toy_hobby_goods_grandchild_talent_goods_size_array << [0]
+  toy_hobby_goods_grandchild_talent_goods_size_array << "0"
 end
 for i in toy_hobby_goods_grandchild_comic_anime_goods_name_array
-  toy_hobby_goods_grandchild_comic_anime_goods_size_array << [0]
+  toy_hobby_goods_grandchild_comic_anime_goods_size_array << "0"
 end
 for i in toy_hobby_goods_grandchild__trading_card_name_array
-  toy_hobby_goods_grandchild__trading_card_size_array << [0]
+  toy_hobby_goods_grandchild__trading_card_size_array << "0"
 end
 for i in toy_hobby_goods_grandchild_figure_name_array
-  toy_hobby_goods_grandchild_figure_size_array << [0]
+  toy_hobby_goods_grandchild_figure_size_array << "0"
 end
 for i in toy_hobby_goods_grandchild_misical_instrument_name_array
-  toy_hobby_goods_grandchild_misical_instrument_size_array << [0]
+  toy_hobby_goods_grandchild_misical_instrument_size_array << "0"
 end
 for i in toy_hobby_goods_grandchild_collection_name_array
-  toy_hobby_goods_grandchild_collection_size_array << [0]
+  toy_hobby_goods_grandchild_collection_size_array << "0"
 end
 for i in toy_hobby_goods_grandchild_military_name_array
-  toy_hobby_goods_grandchild_military_size_array << [0]
+  toy_hobby_goods_grandchild_military_size_array << "0"
 end
 for i in toy_hobby_goods_grandchild_art_name_array
-  toy_hobby_goods_grandchild_art_size_array << [0]
+  toy_hobby_goods_grandchild_art_size_array << "0"
 end
 for i in toy_hobby_goods_grandchild_art_goods_name_array
-  toy_hobby_goods_grandchild_art_goods_size_array << [0]
+  toy_hobby_goods_grandchild_art_goods_size_array << "0"
 end
 for i in toy_hobby_goods_grandchild_others_name_array
-  toy_hobby_goods_grandchild_others_size_array << [0]
+  toy_hobby_goods_grandchild_others_size_array << "0"
 end
 
 for i in cosme_perfume_beauty_grandchild_basemake_name_array
-  cosme_perfume_beauty_grandchild_basemake_size_array << [0]
+  cosme_perfume_beauty_grandchild_basemake_size_array << "0"
 end
 for i in cosme_perfume_beauty_grandchild_make_up_name_array
-  cosme_perfume_beauty_grandchild_make_up_size_array << [0]
+  cosme_perfume_beauty_grandchild_make_up_size_array << "0"
 end
 for i in cosme_perfume_beauty_grandchild_nail_care_name_array
-  cosme_perfume_beauty_grandchild_nail_care_size_array << [0]
+  cosme_perfume_beauty_grandchild_nail_care_size_array << "0"
 end
 for i in cosme_perfume_beauty_grandchild_perfume_name_array
-  cosme_perfume_beauty_grandchild_perfume_size_array << [0]
+  cosme_perfume_beauty_grandchild_perfume_size_array << "0"
 end
 for i in cosme_perfume_beauty_grandchild_skincare_name_array
-  cosme_perfume_beauty_grandchild_skincare_size_array << [0]
+  cosme_perfume_beauty_grandchild_skincare_size_array << "0"
 end
 for i in cosme_perfume_beauty_grandchild_haircare_name_array
-  cosme_perfume_beauty_grandchild_haircare_size_array << [0]
+  cosme_perfume_beauty_grandchild_haircare_size_array << "0"
 end
 for i in cosme_perfume_beauty_grandchild_bodycare_name_array
-  cosme_perfume_beauty_grandchild_bodycare_size_array << [0]
+  cosme_perfume_beauty_grandchild_bodycare_size_array << "0"
 end
 for i in cosme_perfume_beauty_grandchild_oralcare_name_array
-  cosme_perfume_beauty_grandchild_oralcare_size_array << [0]
+  cosme_perfume_beauty_grandchild_oralcare_size_array << "0"
 end
 for i in cosme_perfume_beauty_grandchild_relaxation_name_array
-  cosme_perfume_beauty_grandchild_relaxation_size_array << [0]
+  cosme_perfume_beauty_grandchild_relaxation_size_array << "0"
 end
 for i in cosme_perfume_beauty_grandchild_diet_name_array
-  cosme_perfume_beauty_grandchild_diet_size_array << [0]
+  cosme_perfume_beauty_grandchild_diet_size_array << "0"
 end
 for i in cosme_perfume_beauty_grandchild_others_name_array
-  cosme_perfume_beauty_grandchild_others_size_array << [0]
+  cosme_perfume_beauty_grandchild_others_size_array << "0"
 end
 
 for i in electric_smartphone_camera_grandchild_smartphone_name_array
-  electric_smartphone_camera_grandchild_smartphone_size_array << [0]
+  electric_smartphone_camera_grandchild_smartphone_size_array << "0"
 end
 for i in electric_smartphone_camera_grandchild_smartphone_accessory_name_array
-  electric_smartphone_camera_grandchild_smartphone_accessory_size_array << [0]
+  electric_smartphone_camera_grandchild_smartphone_accessory_size_array << "0"
 end
 for i in electric_smartphone_camera_grandchild_pctab_name_array
-  electric_smartphone_camera_grandchild_pctab_size_array << [0]
+  electric_smartphone_camera_grandchild_pctab_size_array << "0"
 end
 for i in electric_smartphone_camera_grandchild_camera_name_array
-  electric_smartphone_camera_grandchild_camera_size_array << [0]
+  electric_smartphone_camera_grandchild_camera_size_array << "0"
 end
 for i in electric_smartphone_camera_grandchild_TV_name_array
-  electric_smartphone_camera_grandchild_TV_size_array << [0]
+  electric_smartphone_camera_grandchild_TV_size_array << "0"
 end
 for i in electric_smartphone_camera_grandchild_AV_name_array
-  electric_smartphone_camera_grandchild_AV_size_array << [0]
+  electric_smartphone_camera_grandchild_AV_size_array << "0"
 end
 for i in electric_smartphone_camera_grandchild_beauty_health_name_array
-  electric_smartphone_camera_grandchild_beauty_health_size_array << [0]
+  electric_smartphone_camera_grandchild_beauty_health_size_array << "0"
 end
 for i in electric_smartphone_camera_grandchild_aircontroller_name_array
-  electric_smartphone_camera_grandchild_aircontroller_size_array << [0]
+  electric_smartphone_camera_grandchild_aircontroller_size_array << "0"
 end
 for i in electric_smartphone_camera_grandchild_consumer_electric_name_array
-  electric_smartphone_camera_grandchild_consumer_electric_size_array << [0]
+  electric_smartphone_camera_grandchild_consumer_electric_size_array << "0"
 end
 for i in electric_smartphone_camera_grandchild_others_name_array
-  electric_smartphone_camera_grandchild_others_size_array << [0]
+  electric_smartphone_camera_grandchild_others_size_array << "0"
 end
 
 for i in sports_leisure_grandchild_golf_name_array
-  sports_leisure_grandchild_golf_size_array << [0]
+  sports_leisure_grandchild_golf_size_array << "0"
 end
 for i in sports_leisure_grandchild_fishing_name_array
-  sports_leisure_grandchild_fishing_size_array << [0]
+  sports_leisure_grandchild_fishing_size_array << "0"
 end
 for i in sports_leisure_grandchild_bicycle_name_array
-  sports_leisure_grandchild_bicycle_size_array << [0]
+  sports_leisure_grandchild_bicycle_size_array << "0"
 end
 for i in sports_leisure_grandchild_training_name_array
-  sports_leisure_grandchild_training_size_array << [0]
+  sports_leisure_grandchild_training_size_array << "0"
 end
 for i in sports_leisure_grandchild_baseball_name_array
-  sports_leisure_grandchild_baseball_size_array << [0]
+  sports_leisure_grandchild_baseball_size_array << "0"
 end
 for i in sports_leisure_grandchild_football_name_array
-  sports_leisure_grandchild_football_size_array << [0]
+  sports_leisure_grandchild_football_size_array << "0"
 end
 for i in sports_leisure_grandchild_tennis_name_array
-  sports_leisure_grandchild_tennis_size_array << [0]
+  sports_leisure_grandchild_tennis_size_array << "0"
 end
 for i in sports_leisure_grandchild_snowbord_name_array
-  sports_leisure_grandchild_snowbord_size_array << [0]
+  sports_leisure_grandchild_snowbord_size_array << "0"
 end
 for i in sports_leisure_grandchild_ski_name_array
-  sports_leisure_grandchild_ski_size_array << [0]
+  sports_leisure_grandchild_ski_size_array << "0"
 end
 for i in sports_leisure_grandchild_other_sports_name_array
-  sports_leisure_grandchild_other_sports_size_array << [0]
+  sports_leisure_grandchild_other_sports_size_array << "0"
 end
 for i in sports_leisure_grandchild_outdoor_name_array
-  sports_leisure_grandchild_outdoor_size_array << [0]
+  sports_leisure_grandchild_outdoor_size_array << "0"
 end
 for i in sports_leisure_grandchild_others_name_array
-  sports_leisure_grandchild_others_size_array << [0]
+  sports_leisure_grandchild_others_size_array << "0"
 end
 
 for i in handmade_grandchild_womens_accessory_name_array
-  handmade_grandchild_womens_accessory_size_array << [0]
+  handmade_grandchild_womens_accessory_size_array << "0"
 end
 for i in handmade_grandchild_fashion_item_name_array
-  handmade_grandchild_fashion_item_size_array << [0]
+  handmade_grandchild_fashion_item_size_array << "0"
 end
 for i in handmade_grandchild_accessory_watch_name_array
-  handmade_grandchild_accessory_watch_size_array << [0]
+  handmade_grandchild_accessory_watch_size_array << "0"
 end
 for i in handmade_grandchild_daily_necessities_interior_name_array
-  handmade_grandchild_daily_necessities_interior_size_array << [0]
+  handmade_grandchild_daily_necessities_interior_size_array << "0"
 end
 for i in handmade_grandchild_hobby_toy_name_array
-  handmade_grandchild_hobby_toy_size_array << [0]
+  handmade_grandchild_hobby_toy_size_array << "0"
 end
 for i in handmade_grandchild_kits_baby_name_array
-  handmade_grandchild_kits_baby_size_array << [0]
+  handmade_grandchild_kits_baby_size_array << "0"
 end
 for i in handmade_grandchild_material_item_name_array
-  handmade_grandchild_material_item_size_array << [0]
+  handmade_grandchild_material_item_size_array << "0"
 end
 for i in handmade_grandchild_secondary_crop_name_array
-  handmade_grandchild_secondary_crop_size_array << [0]
+  handmade_grandchild_secondary_crop_size_array << "0"
 end
 for i in handmade_grandchild_others_name_array
-  handmade_grandchild_others_size_array << [0]
+  handmade_grandchild_others_size_array << "0"
 end
 
 for i in ticket_grandchild_music_name_array
-  ticket_grandchild_music_size_array << [0]
+  ticket_grandchild_music_size_array << "0"
 end
 for i in ticket_grandchild_sports_name_array
-  ticket_grandchild_sports_size_array << [0]
+  ticket_grandchild_sports_size_array << "0"
 end
 for i in ticket_grandchild_theater_name_array
-  ticket_grandchild_theater_size_array << [0]
+  ticket_grandchild_theater_size_array << "0"
 end
 for i in ticket_grandchild_event_name_array
-  ticket_grandchild_event_size_array << [0]
+  ticket_grandchild_event_size_array << "0"
 end
 for i in ticket_grandchild_movies_name_array
-  ticket_grandchild_movies_size_array << [0]
+  ticket_grandchild_movies_size_array << "0"
 end
 for i in ticket_grandchild_facility_use_tikets_name_array
-  ticket_grandchild_facility_use_tikets_size_array << [0]
+  ticket_grandchild_facility_use_tikets_size_array << "0"
 end
 for i in ticket_grandchild_complimentary_tickets_name_array
-  ticket_grandchild_complimentary_tickets_size_array << [0]
+  ticket_grandchild_complimentary_tickets_size_array << "0"
 end
 for i in ticket_grandchild_others_name_array
-  ticket_grandchild_others_size_array << [0]
+  ticket_grandchild_others_size_array << "0"
 end
 
 for i in automobile_grandchild_car_body_name_array
-  automobile_grandchild_car_body_size_array << [0]
+  automobile_grandchild_car_body_size_array << "0"
 end
 for i in automobile_grandchild_car_tire_whoile_name_array
-  automobile_grandchild_car_tire_whoile_size_array << [0]
+  automobile_grandchild_car_tire_whoile_size_array << "0"
 end
 for i in automobile_grandchild_car_parts_name_array
-  automobile_grandchild_car_parts_size_array << [0]
+  automobile_grandchild_car_parts_size_array << "0"
 end
 for i in automobile_grandchild_car_accessory_name_array
-  automobile_grandchild_car_accessory_size_array << [0]
+  automobile_grandchild_car_accessory_size_array << "0"
 end
 for i in automobile_grandchild_bike_body_name_array
-  automobile_grandchild_bike_body_size_array << [0]
+  automobile_grandchild_bike_body_size_array << "0"
 end
 for i in automobile_grandchild_bike_parts_name_array
-  automobile_grandchild_bike_parts_size_array << [0]
+  automobile_grandchild_bike_parts_size_array << "0"
 end
 for i in automobile_grandchild_bike_accessory_name_array
-  automobile_grandchild_bike_accessory_size_array << [0]
+  automobile_grandchild_bike_accessory_size_array << "0"
 end
 for i in others_grandchild_bulk_sale_name_array
-  others_grandchild_bulk_sale_size_array << [0]
+  others_grandchild_bulk_sale_size_array << "0"
 end
 for i in others_grandchild_pet_name_array
-  others_grandchild_pet_size_array << [0]
+  others_grandchild_pet_size_array << "0"
 end
 for i in others_grandchild_food_name_array
-  others_grandchild_food_size_array << [0]
+  others_grandchild_food_size_array << "0"
 end
 for i in others_grandchild_drink_name_array
-  others_grandchild_drink_size_array << [0]
+  others_grandchild_drink_size_array << "0"
 end
 for i in others_grandchild_daily_necessities_name_array
-  others_grandchild_daily_necessities_size_array << [0]
+  others_grandchild_daily_necessities_size_array << "0"
 end
 for i in others_grandchild_antique_name_array
-  others_grandchild_antique_size_array << [0]
+  others_grandchild_antique_size_array << "0"
 end
 for i in others_grandchild_stationery_name_array
-  others_grandchild_stationery_size_array << [0]
+  others_grandchild_stationery_size_array << "0"
 end
 for i in others_grandchild_office_supplies_name_array
-  others_grandchild_office_supplies_size_array << [0]
+  others_grandchild_office_supplies_size_array << "0"
 end
 for i in others_grandchild_others_name_array
-  others_grandchild_others_size_array << [0]
+  others_grandchild_others_size_array << "0"
 end
 
 # 小カテゴリーのnameカラムとsizeカラムの情報をまとめる
@@ -977,3 +966,20 @@ handmade_grandchild_array.push(handmade_grandchild_womens_accessory_array,handma
 ticket_grandchild_array.push(ticket_grandchild_music_array,ticket_grandchild_sports_array,ticket_grandchild_theater_array,ticket_grandchild_event_array,ticket_grandchild_movies_array,ticket_grandchild_facility_use_tikets_array,ticket_grandchild_complimentary_tickets_array,ticket_grandchild_others_array)
 automobile_grandchild_array.push(automobile_grandchild_car_body_array,automobile_grandchild_car_tire_whoile_array,automobile_grandchild_car_accessory_array,automobile_grandchild_bike_body_array,automobile_grandchild_bike_parts_array,automobile_grandchild_bike_accessory_array)
 others_grandchild_array.push(others_grandchild_bulk_sale_array,others_grandchild_pet_array,others_grandchild_food_array,others_grandchild_drink_array,others_grandchild_daily_necessities_array,others_grandchild_antique_array,others_grandchild_stationery_array,others_grandchild_office_supplies_array,others_grandchild_others_array)
+
+# 全ての子,孫カテゴリーを１つの配列にまとめる
+child_array = []
+child_array.push(ladys_child_array,mens_child_array,baby_kids_child_array,interior_child_array,book_music_game_child_array,toy_hobby_goods_child_array,cosme_perfume_beauty_child_array,electric_smartphone_camera_child_array,sports_leisure_child_array,handmade_child_array,ticket_child_array,automobile_child_array,others_child_array)
+grandchild_array = []
+grandchild_array.push(ladys_grandchild_array,mens_grandchild_array,baby_kids_grandchild_array,interior_grandchild_array,book_music_game_grandchild_array,toy_hobby_goods_grandchild_array,cosme_perfume_beauty_grandchild_array,electric_smartphone_camera_grandchild_array,sports_leisure_grandchild_array,handmade_grandchild_array,ticket_grandchild_array,automobile_grandchild_array,others_grandchild_array)
+
+# DBに登録
+parent_array.each_with_index do |parent, i_p|
+  parent = Category.create(name: parent)
+  child_array[i_p].each_with_index do |child, i_c|
+    child = parent.children.create(name: child)
+    grandchild_array[i_p][i_c].each_with_index do |grandchild|
+      grandchild = child.children.create(name: grandchild[0], size: grandchild[1])
+    end
+  end
+end
