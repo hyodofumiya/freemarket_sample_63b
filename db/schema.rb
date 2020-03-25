@@ -14,12 +14,12 @@ ActiveRecord::Schema.define(version: 2020_03_19_235659) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.boolean "size", null: false
+    t.boolean "size", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ancestry"
     t.index ["ancestry"], name: "index_categories_on_ancestry"
-    t.index ["name"], name: "index_categories_on_name", unique: true
+    t.index ["name"], name: "index_categories_on_name"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
