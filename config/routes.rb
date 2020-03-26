@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
   resources :items, only: [:index, :show]
   resources :orders, only: [:new]
+  resources :categories, only: [:index, :show]
   get 'categories/index'
   get 'categories/new'
   get 'categories/create'

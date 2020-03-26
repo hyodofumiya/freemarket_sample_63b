@@ -14,7 +14,7 @@ $form_footer_height: 220px;
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "./font-awesome";
-@import "./header";
+@import "share/header";
 @import "items";
 @import "./app_banner";
 @import "./footer";
@@ -24,3 +24,4 @@ $form_footer_height: 220px;
 @import "items/index";
 @import "items/show";
 @import "mypage/mypage";
+@import "share/category_hover"
