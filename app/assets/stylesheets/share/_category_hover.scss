@@ -1,38 +1,47 @@
 .header_category_list{
   position: relative;
-  &__parent{
+  background-color: #fff;
+  .parent_category_list{
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
-    .parent_category_list{
-      .parent_category_name{
-        .child_category_list{
-          display: none;
+    width: 200px;
+    height: 550px;
+    background-color: #fff;
+    line-height: 2;
+    border-right: rgb(251, 205, 205),solid;
+    .parent_category_name{
+      border-collapse: collapse;
+      border-top: rgb(251, 205, 205);
+      .child_category_list{
+        position: absolute;
+        left: 200px;
+        top: 0px;
+        width: 200px;
+        z-index: 1;
+        display: none;
+        height: 550px;
+        background-color: #fff;
+        line-height: 2;
+        border-right: rgb(251, 205, 205),solid;
+        .child_category_name{
+          border-top: rgb(251, 205, 205);
+          .grandchild_category_list{
+            position: absolute;
+            left: 200px;
+            top: 0px;
+            width: 200px;
+            z-index: 1;
+            display: none;
+            min-height: 550px;
+            background-color: #fff;
+            line-height: 2;
+          }
         }
       }
     }
-  }
-  &__child{
-    position: absolute;
-    left: 200px;
-    top: 0px;
-    width: 200px;
-    z-index: 1;
-    .child_category_list{
-      .child_category_name{
-        .grandchild_category_list{
-          display: none;
-        }
-      }
-    }
-  }
-  &__grandchild{
-    position: absolute;
-    width: 200px;
-    top: 0px;
-    left: 400px;
-    z-index: 1;
   }
 }
 .category_list_standbyzone{

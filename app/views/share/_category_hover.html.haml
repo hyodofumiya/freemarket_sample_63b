@@ -1,8 +1,4 @@
 .header_category_list
-  .header_category_list__parent
-  .header_category_list__child
-  .header_category_list__grandchild
-.category_list_standbyzone
   %ul.parent_category_list
     - @category.roots.each do |parent|
       %li.parent_category_name{id: "parent_category_#{parent.id}"}
