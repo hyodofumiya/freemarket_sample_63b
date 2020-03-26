@@ -13,12 +13,11 @@
             .main__showmain__main-image__main-text
             最大10枚までアップロードできます
             .main__showmain__main-image__main-form
-              .main__showmain__main-image__main-form__upload
-                .form_upload
-                  = form.label :image, class: 'form-upload__image' do
-                    クリックしてファイルをアップロード
-                    = form.file_field :image, class: 'hidden'
-                
+              .form_upload
+                = form.label :image, class: 'form-upload__image' do
+                  クリックしてファイルをアップロード
+                  = form.file_field :image, class: 'hidden'
+              
                 
           .main__showmain__main-item
             .main__showmain__main-item__upper
