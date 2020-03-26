@@ -12,7 +12,6 @@ body{
   }
   .main{
     background: #f5f5f5;
-    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
     font-size: 14px;
     padding-top: 20px;
     min-height: calc(100vh - #{$form_header_height + $form_footer_height} - 20px);
