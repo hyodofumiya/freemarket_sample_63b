@@ -13,7 +13,7 @@ class DeviseCreateItems < ActiveRecord::Migration[5.2]
       t.integer  :preparation_day,       null: false
       t.integer  :price,       null: false
       t.boolean  :status,       null: false
-      t.integer  :price,       null: false
+  
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
