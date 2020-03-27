@@ -3,10 +3,10 @@ module FullnameAndPhoneAction
   included do
     before_validation :correct_phone_number
 
-    validates :family_name, presence: true
-    validates :family_name_kana, presence: true
-    validates :first_name, presence: true
-    validates :first_name_kana, presence: true
+    validates :family_name, presence: true, format: {with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/, message: I18n.t('errors.messages.not_a_zenkaku')}
+    validates :family_name_kana, presence: true, format: {with: /\A[ァ-ヶー－]+\z/, message: I18n.t('errors.messages.not_a_katakana')}
+    validates :first_name, presence: true, format: {with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/, message: I18n.t('errors.messages.not_a_zenkaku')}
+    validates :first_name_kana, presence: true, format: {with: /\A[ァ-ヶー－]+\z/, message: I18n.t('errors.messages.not_a_katakana')}
     validates :phone_number, format: {with: /\A\d*\z/, message: I18n.t('errors.messages.not_a_number')}
   end
 

@@ -38,7 +38,7 @@
         %br/        
         = form.select :birthday_year, nil, {}, {class: "form_field__input form_field__input--birthday"} do
             - option_birthday_years do |year|
-                %option{value: year, selected: ("selected" if user.birthday_year == year)} #{year}
+                %option{value: year, selected: birthday_selector_of_year(user, year)} #{year}
         = form.label :birthday_year, class: "form_field__label form_field__label--birthday"
         = form.select :birthday_month, nil, {}, {class: "form_field__input form_field__input--birthday"} do
             - 12.times do |month|

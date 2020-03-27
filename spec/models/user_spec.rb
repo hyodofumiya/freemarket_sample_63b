@@ -99,6 +99,54 @@ RSpec.describe User, type: :model do
                 user.valid?
                 expect(user.errors[:password_confirmation]).to include(I18n.t('errors.messages.confirmation', attribute: "パスワード"))
             end
+
+            it "is failure registration with a byte chara family_name" do
+                user = build(:user, family_name: "namae")
+                user.valid?
+                expect(user.errors[:family_name]).to include(I18n.t('errors.messages.not_a_zenkaku'))
+            end
+
+            it "is failure registration with a byte chara first_name" do
+                user = build(:user, first_name: "namae")
+                user.valid?
+                expect(user.errors[:first_name]).to include(I18n.t('errors.messages.not_a_zenkaku'))
+            end
+
+            it "is failure registration with family_name_kana of kanji" do
+                user = build(:user, family_name_kana: "名前")
+                user.valid?
+                expect(user.errors[:family_name_kana]).to include(I18n.t('errors.messages.not_a_katakana'))
+            end
+
+            it "is failure registration with first_name_kana of kanji" do
+                user = build(:user, first_name_kana: "名前")
+                user.valid?
+                expect(user.errors[:first_name_kana]).to include(I18n.t('errors.messages.not_a_katakana'))
+            end
+
+            it "is failure registration with family_name_kana of hiragana" do
+                user = build(:user, family_name_kana: "ひらがな")
+                user.valid?
+                expect(user.errors[:family_name_kana]).to include(I18n.t('errors.messages.not_a_katakana'))
+            end
+
+            it "is failure registration with first_name_kana of hiragana" do
+                user = build(:user, first_name_kana: "ひらがな")
+                user.valid?
+                expect(user.errors[:first_name_kana]).to include(I18n.t('errors.messages.not_a_katakana'))
+            end
+
+            it "is failure registration with family_name_kana of alphabet" do
+                user = build(:user, family_name_kana: "name")
+                user.valid?
+                expect(user.errors[:family_name_kana]).to include(I18n.t('errors.messages.not_a_katakana'))
+            end
+
+            it "is failure registration with first_name_kana of alphabet" do
+                user = build(:user, first_name_kana: "name")
+                user.valid?
+                expect(user.errors[:first_name_kana]).to include(I18n.t('errors.messages.not_a_katakana'))
+            end
         end
     end
 end
