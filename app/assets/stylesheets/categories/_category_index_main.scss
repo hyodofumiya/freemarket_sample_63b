@@ -1,0 +1,47 @@
+.category_index_main{
+  &__parent_index_zone{
+    width: 10%;
+    height: 100%;
+    margin: 50px 20px 20px auto;
+    &__title{
+      height: 46px;
+      padding: 8px 0;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    &__parent_name_list{
+      .category_parentname_index{
+        text-align: center;
+        display: flex;
+        flex-flow: row nowrap;
+        &__list{
+          width: 100%;
+          & a{
+            width: 100%;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+  &__child_and_grandchild_index_zone{
+    .parentcategory_index_zone{
+      &__a_parentcategory{
+        &--name{}
+        .childcategory_index_zone{}
+          &__link_all{
+            & a{}
+            &__a_childcategory_zone{
+              &--childcategory_name{
+              .grandchildcategory_index_zone{
+                &__a_grandchildcategory_zone{
+                  & a{}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

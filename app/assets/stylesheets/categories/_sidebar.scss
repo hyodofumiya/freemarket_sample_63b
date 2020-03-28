@@ -1,12 +1,10 @@
 .categories_index_sidebar{
-  width: 270px;
+  width: 360px;
   height: 100%;
   position: sticky;
   top: 50px;
-  margin-top: 50px;
-  margin-bottom: 20px;
+  margin: 50px 20px 20px;
   &__inner{
-    margin: 20px;
     &__title_zone{
       font-weight: bold;
       padding: 5px;
