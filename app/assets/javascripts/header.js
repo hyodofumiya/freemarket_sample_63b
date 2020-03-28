@@ -15,11 +15,11 @@ $(function(){
 $(function(){
   $(".parent_category_name").hover(function(){
     child = $(this).children("ul");
-    $(this).children("a").css("color", "#fff").css("font-weight", "bold");
+    $(this).children("a").css("color", "#2483ff").css("font-weight", "bold");
     child.show();
   },function(){
     $(this).css("background-color", "");
-    $(this).children("a").css("color", "");
+    $(this).children("a").css("color", "").css("font-weight", "");
     child.hide();
   });
 });
@@ -30,7 +30,7 @@ $(function(){
     $(this).children("a").css("color","#66ccff").css("font-weight", "bold");    
     child.show();
   },function(){
-    $(this).children("a").css("color", "");
+    $(this).children("a").css("color", "").css("font-weight", "");
     child.hide();
   });
 });
