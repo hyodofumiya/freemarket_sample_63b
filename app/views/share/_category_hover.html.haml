@@ -1,8 +1,8 @@
 .header_category_list
   %ul.parent_category_list
     - @category.roots.each do |parent|
-      %li.parent_category_name{id: "parent_category_#{parent.id}"}
-        = link_to "/categories/#{parent.id}" do
+      %li.parent_category_name{id: "parent_category_name#{parent.id}"}
+        = link_to "/categories/#{parent.id}", id: "parent_category_#{parent.id}", class: "parent_category_name__label" do
           = parent.name
         %ul.child_category_list
           - parent.children.each do |child| 
@@ -14,4 +14,4 @@
                   %li.grandchild_category_name
                     = link_to "/categories/#{grandchild.id}" do
                       = grandchild.name
-                        
+                          
