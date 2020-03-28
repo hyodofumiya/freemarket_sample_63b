@@ -1,0 +1,35 @@
+
+.category_index_main
+  .category_index_main__parent_index_zone
+    .category_index_main__parent_index_zone__title
+      カテゴリー一覧
+    .category_index_main__parent_index_zone__parent_name_list
+      %ul.category_parentname_index
+        - @parent.each do |parent|
+          %li.category_parentname_index__list
+            = link_to "#{parent.name}", { anchor: "parentcategory_index_zone_#{parent.id}" }
+  .category_index_main__child_and_grandchild_index_zone
+    %ul.parentcategory_index_zone
+      - @category.roots.each do |parent|
+        %li.parentcategory_index_zone__a_parentcategory{id: "parentcategory_index_zone_#{parent.id}"}
+          %h2.parentcategory_index_zone__a_parentcategory--name
+            = parent.name
+          %ul.childcategory_index_zone
+            %li.childcategory_index_zone__link_all
+              = link_to category_path(parent.id) do
+                すべて
+            - parent.children.each do |child|
+              %li.childcategory_index_zone__a_childcategory_zone
+                %h3.childcategory_index_zone__a_childcategory_zone--childcategory_name
+                  = child.name
+                %ul.grandchildcategory_index_zone
+                  %li.grandchildcategory_index_zone__a_grandchildcategory_zone
+                    = link_to category_path(child.id) do
+                      すべて
+                  - child.children.each do |grandchild|
+                    %li.grandchildcategory_index_zone__a_grandchildcategory_zone
+                      = link_to category_path(grandchild.id) do
+                        = grandchild.name
+
+
+

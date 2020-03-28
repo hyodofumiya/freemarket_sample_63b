@@ -24,4 +24,7 @@ $form_footer_height: 220px;
 @import "items/index";
 @import "items/show";
 @import "mypage/mypage";
-@import "share/category_hover"
+@import "share/category_hover";
+@import "categories/index";
+@import "categories/_sidebar";
+@import "categories/category_index_main"

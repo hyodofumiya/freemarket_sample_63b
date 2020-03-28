@@ -28,12 +28,10 @@ $(function(){
 $(function(){
   $(".child_category_name").hover(function(){
     child = ($(this).children("ul"));
-    $(this).css("background-color", "#cceeff");
-    //$(this).children("a").css("color","#fff").css("font-weight", "bold");    
+    $(this).css("background-color", "#cceeff"); 
     child.show();
   },function(){
     $(this).css("background-color", "");
-    //$(this).children("a").css("color", "").css("font-weight", "");
     child.hide();
   });
 });
@@ -41,9 +39,7 @@ $(function(){
 $(function(){
   $(".grandchild_category_name").hover(function(){
     $(this).css("background-color", "#cceeff");
-    //$(this).children("a").css("color", "#fff").css("font-weight", "bold");
   },function(){
     $(this).css("background-color", "");
-    //$(this).children("a").css("color","").css("font-weight","");
   })
 })
