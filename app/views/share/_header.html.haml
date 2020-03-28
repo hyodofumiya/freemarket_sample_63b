@@ -13,7 +13,8 @@
     .header__inner__lower
       %ul.header_zone_left_btns
         %li.header_zone_left_btns__category
-          %p カテゴリー
+          = link_to categories_path,class: "header_categories_link" do
+            カテゴリー
           = render 'share/category_hover'
         %li.header_zone_left_btns__brand
           %p ブランド

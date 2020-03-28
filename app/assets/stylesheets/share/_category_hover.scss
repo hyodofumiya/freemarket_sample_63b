@@ -15,25 +15,24 @@
     border-collapse: collapse;
     .parent_category_name{
       & a{
-        padding-left: 12px;
+        padding-left: 5px;
         color: rgb(0, 0, 0);
       }
       .child_category_list{
         position: absolute;
         left: 199px;
         top: -1px;
-        width: 200px;
+        width: 220px;
         z-index: 1;
         display: none;
         height: 550px;
         background-color: #fff;
         line-height: 2;
         border: #76bbdb outset 1px;
-
         .child_category_name{
           .grandchild_category_list{
             position: absolute;
-            left: 199px;
+            left: 219px;
             top: -1px;
             width: 230px;
             z-index: 1;
