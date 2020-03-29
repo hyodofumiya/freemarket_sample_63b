@@ -1,17 +1,20 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+-# =render partial: "/form_header"
+%main.content_area.content_area--form
+  .form_area.form_area--login
+    %h2.form_area__title#form_area_title ログイン
+    = form_with(model: resource, as: resource_name, url: session_path(resource_name), class: "form_fields", local: true) do |form|
+      = render "devise/shared/error_messages", resource: @user
+      .form_field
+        = form.label :email, class: "form_field__label"
+        %br/
+        = form.email_field :email, class: "form_field__input", autocomplete: "email", placeholder: "例)freema@freema.com"
+      .form_field
+        = form.label :password, class: "form_field__label"
+        %br/
+        = form.password_field :password, class: "form_field__input", autocomplete: "current-password"
+
+      = form.submit "ログイン", class: "form_button", data: {disable: {with: "お待ちください"}}
+
+      %span.promote_login<> アカウントをお持ちでない方は
+      =link_to "こちら", new_user_registration_path, class: "promote_registration"
+-# =render partial: "/form_footer"
