@@ -23,15 +23,14 @@
     = form.label :post_cord, class: "form_field__label form_field__label--essential"
     %br/
     = form.text_field :post_cord, class: "form_field__input form_field__input--post", placeholder: "ハイフンなし"
-    -# %span -
-    -# = address.text_field :post_cord, class: "form_field__input form_field__input--post"
-
     
 .form_field
     = form.label :prefecture, class: "form_field__label form_field__label--essential"
     %br/
-    = form.text_field :prefecture, class: "form_field__input form_field__input--prefecture", placeholder: "都道府県", autocomplete: "street-address"
-    
+    = form.select :prefecture, nil, {}, {class: "form_field__input form_field__input--selector"} do
+        - Prefectures.each_prefectures_with_index do |prefecture, i|
+            %option{value: i, selected: ("selected" if resource.prefecture == prefecture)} #{prefecture}
+
 .form_field
     = form.label :cities, class: "form_field__label form_field__label--essential"
     %br/

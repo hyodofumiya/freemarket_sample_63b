@@ -6,7 +6,7 @@ class CreateShoppingAddresses < ActiveRecord::Migration[5.2]
       t.string :family_name_kana, null:false
       t.string :first_name_kana, null:false
       t.string :post_cord, null:false
-      t.string :prefecture, null:false
+      t.integer :prefecture, null:false
       t.string :cities, null:false
       t.string :address, null:false
       t.string :building_name, null:false,  default: ""

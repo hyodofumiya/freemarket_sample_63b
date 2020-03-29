@@ -8,6 +8,13 @@ class ShoppingAddress < ApplicationRecord
   validates :cities, presence: true
   validates :address, presence: true
 
+  def prefecture
+    if super
+      return Prefectures.find(super)
+    else
+      nil
+    end
+  end
 
   private
   def correct_post_cord_number

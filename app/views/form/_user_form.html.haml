@@ -36,15 +36,15 @@
     .form_field
         = form.label :birthday, class: "form_field__label form_field__label--essential"
         %br/        
-        = form.select :birthday_year, nil, {}, {class: "form_field__input form_field__input--birthday"} do
+        = form.select :birthday_year, nil, {}, {class: "form_field__input form_field__input--selector form_field__input--birthday"} do
             - option_birthday_years do |year|
                 %option{value: year, selected: birthday_selector_of_year(user, year)} #{year}
         = form.label :birthday_year, class: "form_field__label form_field__label--birthday"
-        = form.select :birthday_month, nil, {}, {class: "form_field__input form_field__input--birthday"} do
+        = form.select :birthday_month, nil, {}, {class: "form_field__input form_field__input--selector form_field__input--birthday"} do
             - 12.times do |month|
                 %option{value: month + 1, selected: ("selected" if user.birthday_month == month+1)} #{month + 1}
         = form.label :birthday_month, class: "form_field__label form_field__label--birthday"
-        = form.select :birthday_day, [], {}, {class: "form_field__input form_field__input--birthday", data:{birthday:user&.birthday_day}}
+        = form.select :birthday_day, [], {}, {class: "form_field__input form_field__input--selector form_field__input--birthday", data:{birthday:user&.birthday_day}}
         = form.label :birthday_day, class: "form_field__label form_field__label--birthday"
 
     .form_field
