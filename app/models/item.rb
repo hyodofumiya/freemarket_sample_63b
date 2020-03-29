@@ -37,6 +37,7 @@ class Item < ApplicationRecord
 
     private
     def get_selector(selector, value)
+        return nil unless value
         selector.each do |selector_num, text|
             if(selector_num.to_i == value)
                 return text
