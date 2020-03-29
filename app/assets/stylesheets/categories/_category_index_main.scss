@@ -1,33 +1,47 @@
 .category_index_main{
   &__parent_index_zone{
-    width: 10%;
-    height: 100%;
-    margin: 50px 20px 20px auto;
+    width: calc(100vw - 260px);
+    margin-top: 50px;
+    margin-bottom: 20px;
+    margin: 20px auto;
+    padding: 8px;
     &__title{
       height: 46px;
       padding: 8px 0;
-      font-size: 22px;
+      font-size: 25px;
       font-weight: bold;
+      text-align: center;
+      margin-right: 260px;
     }
     &__parent_name_list{
+      margin-top: 20px;
       .category_parentname_index{
         text-align: center;
         display: flex;
-        flex-flow: row nowrap;
+        flex-flow: row wrap;
         &__list{
-          width: 100%;
-          & a{
-            width: 100%;
-            line-height: 1.5;
-          }
+          line-height: 2.3;
+          min-width: 80px;
+          box-shadow: 1px 1px 1px 1px rgba(14,14,14,0.0580392);
+          background-color: #fff;
+          border-radius: 4px;
+          padding: 0 30px;
+          font-size: 18px;
+          display: block;
+          margin: 5px;
+          color: black;
         }
       }
     }
   }
   &__child_and_grandchild_index_zone{
+    max-width: calc(100vw - 260px - 200px);
     .parentcategory_index_zone{
       &__a_parentcategory{
-        &--name{}
+        margin: 30px auto;
+        &--name{
+          background-color: blue;
+        }
         .childcategory_index_zone{}
           &__link_all{
             & a{}
