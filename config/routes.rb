@@ -8,7 +8,10 @@ Rails.application.routes.draw do
     resources :orders, only: [:index, :new, :create]
 
   end
-  resources :items, only: [:index, :show]
+  resources :items, only: [:index, :edit, :show, :destroy] do
+    resources :favorites, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy]
+  end
   resources :orders, only: [:new]
   get 'categories/index'
   get 'categories/new'

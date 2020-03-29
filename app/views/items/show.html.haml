@@ -46,8 +46,14 @@
                 (税込)
               .sub_price_zone__delivary_fee_expression
                 送料込み
-          = link_to new_order_path, class: "product_zone__item__order_btn" do
-            購入画面に進む
+          - if @item.user == current_user
+            = link_to edit_item_path(@item), class: "product_zone__item__order_btn" do
+              商品の編集
+            = link_to item_path(@item), method: :delete, class: "product_zone__item__order_btn product_zone__item__order_btn--delete" do
+              商品の削除
+          - else
+            = link_to new_order_path, class: "product_zone__item__order_btn" do
+              購入画面に進む
           .product_zone__item__detail
             .product_zone__item__detail--discription
               =@item.discription
@@ -110,17 +116,17 @@
                     ="約#{@item.preparation_day}日で発送"
             %ul.btns
               %li.btns__favorite
-                = link_to root_path, class: "btns__favorite__link" do
+                = link_to item_favorites_path(@item), method: :post, class: "btns__favorite__link" do
                   = icon "fa", "star", class: "btns__favorite__link--icon"
                   お気に入り 
                   .btns__favorite__link--count_num
-                    0
+                    =@item.favorites.length
               %li.btns__fraud_report
                 = link_to root_path, class: "btns__fraud_report__link" do 
                   = icon "fa", "flag", class: "btns__fraud_report__link--icon"
                   不適切な商品の報告
         .product_zone__comment
-          = form_with url: root_path, scope: :post, local: true, class: "comment_form" do |f|
+          = form_with url: item_comments_path(@item), scope: :post, local: true, class: "comment_form" do |f|
             = f.text_area :message, class: "comment_form__input_area"
             %p.comment_form__notice_area
               相手のことを考え丁寧なコメントを心がけましょう。
@@ -147,4 +153,4 @@
 
 = render "share/app_banner"
 = render "share/footer"
-= render "share/exhibit_btn"
+-# = render "share/exhibit_btn"

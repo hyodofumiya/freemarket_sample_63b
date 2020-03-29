@@ -131,6 +131,18 @@ $link_text_color: #3CCACE;
             &:active{
               background-color: #dd6552;
             }
+            &--delete
+            {
+              background-color: #808080;
+              &:hover
+              {
+                background-color: #666666;
+              }
+              &:active
+              {
+                background-color: #A0A0A0;
+              }
+            }
           }
 
           &__detail{
