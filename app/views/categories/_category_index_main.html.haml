@@ -22,14 +22,14 @@
               %li.childcategory_index_zone__a_childcategory_zone
                 %h3.childcategory_index_zone__a_childcategory_zone--childcategory_name
                   = child.name
-                  %ul.grandchildcategory_index_zone
+                %ul.grandchildcategory_index_zone
+                  %li.grandchildcategory_index_zone__a_grandchildcategory_zone
+                    = link_to category_path(child.id) do
+                      すべて
+                  - child.children.each do |grandchild|
                     %li.grandchildcategory_index_zone__a_grandchildcategory_zone
-                      = link_to category_path(child.id) do
-                        すべて
-                    - child.children.each do |grandchild|
-                      %li.grandchildcategory_index_zone__a_grandchildcategory_zone
-                        = link_to category_path(grandchild.id) do
-                          = grandchild.name
+                      = link_to category_path(grandchild.id) do
+                        = grandchild.name
 
 
 
