@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_29_062540) do
+ActiveRecord::Schema.define(version: 2020_03_28_030133) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -57,8 +57,6 @@ ActiveRecord::Schema.define(version: 2020_03_29_062540) do
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
-<<<<<<< HEAD
-=======
   create_table "shopping_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "family_name", null: false
     t.string "first_name", null: false
@@ -76,7 +74,6 @@ ActiveRecord::Schema.define(version: 2020_03_29_062540) do
     t.index ["user_id"], name: "index_shopping_addresses_on_user_id"
   end
 
->>>>>>> 9c4416b278dfdae85dd4f743c2f586e28d21e24a
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "family_name", null: false
@@ -98,8 +95,5 @@ ActiveRecord::Schema.define(version: 2020_03_29_062540) do
   end
 
   add_foreign_key "images", "items"
-<<<<<<< HEAD
-=======
   add_foreign_key "shopping_addresses", "users"
->>>>>>> 9c4416b278dfdae85dd4f743c2f586e28d21e24a
 end
