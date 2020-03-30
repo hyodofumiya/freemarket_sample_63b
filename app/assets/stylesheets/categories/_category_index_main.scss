@@ -1,7 +1,8 @@
 $category_link_color: #0099e8;
 .category_index_main{
+  width: 700px;
+  margin-right: 260px;
   &__parent_index_zone{
-    width: calc(100vw - 260px);
     margin-top: 50px;
     margin-bottom: 20px;
     margin: 20px auto;
@@ -11,8 +12,7 @@ $category_link_color: #0099e8;
       padding: 8px 0;
       font-size: 25px;
       font-weight: bold;
-      text-align: center;
-      margin-right: 260px;
+      padding-left: 30px;
     }
     &__parent_name_list{
       margin-top: 20px;
@@ -36,7 +36,6 @@ $category_link_color: #0099e8;
     }
   }
   &__child_and_grandchild_index_zone{
-    max-width: calc(100vw - 260px - 200px);
     margin: 30px auto;
     .parentcategory_index_zone{
       border-radius: 4px;
@@ -81,7 +80,7 @@ $category_link_color: #0099e8;
               flex-flow: row wrap;
               &__a_grandchildcategory_zone{
                 padding: 0 20px 0 0;
-                width: calc(50% - 20px);
+                width: calc(50%);
                 font-weight: normal;
                 font-size: 16px;
                 margin-top: 8px;
