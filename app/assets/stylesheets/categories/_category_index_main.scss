@@ -37,18 +37,34 @@
   &__child_and_grandchild_index_zone{
     max-width: calc(100vw - 260px - 200px);
     .parentcategory_index_zone{
+      padding-left: 20px;
       &__a_parentcategory{
         margin: 30px auto;
+        line-height: 2.3;
         &--name{
-          background-color: blue;
+          background-color: rgb(149, 149, 207);
+          font-weight: bold;
         }
-        .childcategory_index_zone{}
+        .childcategory_index_zone{
+          width: 100%;
           &__link_all{
-            & a{}
-            &__a_childcategory_zone{
-              &--childcategory_name{
+            margin-top: 20px;
+            & a{
+              font-weight: bold;
+            }
+          }
+          &__a_childcategory_zone{
+            margin-top: 20px;
+            &--childcategory_name{
+              font-weight: bold;
               .grandchildcategory_index_zone{
+                display: flex;
+                flex-flow: row wrap;
+                font-size: 16px;
+                padding-left: 20px;
                 &__a_grandchildcategory_zone{
+                  margin: 8px 0;
+                  width: calc(50% - 20px);
                   & a{}
                 }
               }
