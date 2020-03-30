@@ -4,6 +4,10 @@ class CategoriesController < ApplicationController
     @parent = @category.roots
   end
 
+  def show
+    @category = Category.all
+  end
+
   def new
   end
 
