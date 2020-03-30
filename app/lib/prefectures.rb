@@ -1,5 +1,4 @@
 class Prefectures
-    require "prefecture"
     require "csv"
     @@list = []
 
