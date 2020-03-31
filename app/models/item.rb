@@ -1,5 +1,7 @@
 class Item < ApplicationRecord
   has_many :images
+  paginates_per 2
+
   validates :image, presence: true
   validates :discription, presence: true
   validates :category_id, presence: true

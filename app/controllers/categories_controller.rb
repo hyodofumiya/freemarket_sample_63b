@@ -7,7 +7,8 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.all
     @select_category = Category.find(params[:id])
-    @items = Item.where(category_id: params[:id])
+    @subtree_category = @select_category.subtree
+    @items = Item.where(category_id: @subtree_category.ids).page(params[:page])
     @image = Image.where(item_id: @items.ids)
     binding.pry
   end
