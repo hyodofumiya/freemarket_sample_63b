@@ -2,12 +2,36 @@
 
 .category_show_body
   .category_show_body__children_links
+    %ul.category_show_body__children_links__lists
+      - @select_category.children.each do |children|
+        %li.category_show_body__children_links__lists__a_child
+          = link_to category_path(children.id) do
+            = children.name
   .category_show_body__main
-  .category_show_body__main__title
-  .category_show_body__main__items_list
-  .category_show_body__main__pagenation
-  .category_show_body__main__category_explanation
-  
+    .category_show_body__main__title
+      = @select_category.name + "の商品一覧"
+    %ul.category_show_body__main__items_lists
+      - @items.each_with_index do |item, i|
+        %li.category_show_body__main__items_lists__list
+          = link_to item_path(item.id), class: "an_item" do
+            .an_item__image_zone
+              = image_tag "#{@image[i].path}", alt: "商品画像", class: "an_item__image_zone--image" 
+            .an_item__body
+              .an_item__body--item_name
+                = item.name
+              .an_item__body__detail
+                .an_item__body__detail__main
+                  .an_item__body__detail__main--price
+                    = item.price
+                  .an_item__body__detail__main--favorite
+                    ★0
+                .an_item__body__detail__sub
+                  (税込)
+
+
+    .category_show_body__main__pagenation
+    .category_show_body__main__category_explanation
+
 = render 'share/app_banner'
 = render 'share/footer'
 = render 'share/exhibit_btn'
