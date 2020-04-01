@@ -10,7 +10,6 @@ class CategoriesController < ApplicationController
     @subtree_category = @select_category.subtree
     @items = Item.where(category_id: @subtree_category.ids).page(params[:page])
     @image = Image.where(item_id: @items.ids)
-    binding.pry
   end
 
   def new
