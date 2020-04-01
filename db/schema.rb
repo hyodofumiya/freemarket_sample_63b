@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_03_31_085536) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
     t.index ["email"], name: "index_items_on_email", unique: true
   end
 
