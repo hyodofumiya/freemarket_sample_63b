@@ -12,27 +12,30 @@
 
 ActiveRecord::Schema.define(version: 2020_03_25_105320) do
 
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "item_id"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_images_on_item_id"
+  end
+
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "image", null: false
-    t.text "discription", null: false
-    t.integer "category_id", null: false
+    t.string "name", null: false
+    t.text "discription"
+    t.integer "size"
     t.integer "condition", null: false
-    t.integer "delivary_fee", null: false
+    t.integer "delivary", null: false
     t.integer "area", null: false
     t.integer "preparation_day", null: false
     t.integer "price", null: false
     t.boolean "status", null: false
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.integer "size"
-    t.integer "bland_id"
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
+    t.bigint "user_id"
+    t.bigint "brand_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_items_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_items_on_reset_password_token", unique: true
+    t.index ["brand_id"], name: "index_items_on_brand_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "shopping_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -72,5 +75,6 @@ ActiveRecord::Schema.define(version: 2020_03_25_105320) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "images", "items"
   add_foreign_key "shopping_addresses", "users"
 end

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :items
-  devise_for :users
+  # devise_for :users
+
   resources :users, only: [:show, :edit, :update] do
     resources :favorites, only: [:index]
     resources :credit_cards, only: [:index]
