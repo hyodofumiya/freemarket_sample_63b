@@ -29,7 +29,6 @@ def item
         condition: 0,
         size: 0,
         preparation_day: 0,
-        email: "#{i}@#{i}",
         status: 0,
         area: "#{i%46}",
         delivary_fee: 0,

@@ -5,11 +5,12 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.text :discription
       t.integer :size
       t.integer :condition, null: false
-      t.integer :delivary, null: false
+      t.integer :delivary_fee, null: false
       t.integer :area, null: false
       t.integer :preparation_day, null: false
       t.integer :price, null: false
       t.boolean :status, null: false
+      t.integer :category_id
       t.references :user
       t.references :brand
 
