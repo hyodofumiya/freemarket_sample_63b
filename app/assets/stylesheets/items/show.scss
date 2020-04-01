@@ -197,6 +197,11 @@ $link_text_color: #3CCACE;
                   border: 1px solid #ffb340;
                   display: flex;
                   align-items: center;
+                  &--favorited
+                  {
+                    color: white;
+                    background-color: $link_text_color;
+                  }
                   & i{}
                   &--count_num{
                     margin-left: 5px;

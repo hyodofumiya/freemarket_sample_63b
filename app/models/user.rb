@@ -7,6 +7,7 @@ class User < ApplicationRecord
   include FullnameAndPhoneAction
 
   has_many :shopping_addresses
+  has_many :favorites
   before_validation :create_birthday, if: :birthday_year && :birthday_month && :birthday_day
 
   validates :nickname, presence: true
@@ -15,6 +16,12 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, on: :create
   validates :birthday, presence: true
   
+
+  def favorited?(item)
+    self.favorites.find_by(item_id: item.id) ? true : false
+  end
+
+  #======birthdayアクセサ=========
   def birthday_year=(year)
     @year = year
   end
@@ -41,7 +48,7 @@ class User < ApplicationRecord
     return @day if @day
     self.birthday&.day
   end
-
+#==============================
 
   private
 
