@@ -1,5 +1,4 @@
-//カーソルがカテゴリーボタンに乗った時親カテゴリーを表示
-
+//カーソルがカテゴリーボタンに乗った時大カテゴリーを表示
 $(document).ready(function(){
   $(".header_zone_left_btns__category").hover(
     function(){
@@ -12,7 +11,8 @@ $(document).ready(function(){
     }
   );
 });
-//カーソルが親カテゴリーに乗った時子カテゴリーを表示
+
+//カーソルが大カテゴリーに乗った時中カテゴリーを表示
 $(function(){
   $(".parent_category_name").hover(function(){
     child = $(this).children("ul");
@@ -25,7 +25,8 @@ $(function(){
     child.hide();
   });
 });
-//カーソルが小カテゴリーにのった時に孫カテゴリーを表示
+
+//カーソルが中カテゴリーにのった時に小カテゴリーを表示
 $(function(){
   $(".child_category_name").hover(function(){
     child = ($(this).children("ul"));
@@ -36,7 +37,8 @@ $(function(){
     child.hide();
   });
 });
-//カーソルが孫カテゴリーにのった時の表示切り替え
+
+//カーソルが小カテゴリーにのった時の表示切り替え
 $(function(){
   $(".grandchild_category_name").hover(function(){
     $(this).css("background-color", "#cceeff");
