@@ -9,7 +9,7 @@ class CategoriesController < ApplicationController
     @select_category = Category.find(params[:id])
     @subtree_category = @select_category.subtree
     @items = Item.where(category_id: @subtree_category.ids).page(params[:page])
-    @image = Image.where(item_id: @items.ids)
+    @images = Image.where(item_id: @items.ids)
   end
 
   def new
