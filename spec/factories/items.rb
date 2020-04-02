@@ -1,13 +1,14 @@
 FactoryBot.define do
   factory :item do
-    name { "MyString" }
-    discription { "MyText" }
-    size { "" }
-    condition { "" }
-    delivary { "" }
-    area { "" }
-    preparation_day { "" }
-    price { "" }
-    status { "" }
+    association :user
+    name { "testItem" }
+    discription { "created for test" }
+    size {0}
+    condition {0}
+    delivary {0}
+    area { "東海" }
+    preparation_day {6}
+    price { 5000 }
+    status { true }
   end
 end

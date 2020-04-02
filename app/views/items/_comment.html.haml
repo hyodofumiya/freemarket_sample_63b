@@ -1,0 +1,9 @@
+.item_comment
+    .item_comment__profile
+        = image_tag comment.user.photo_filepath, class: "item_comment__profile__photo"
+        %p.item_comment__profile__name
+            =comment.user.nickname
+    %p.item_comment__comment
+        = comment.comment
+        %span.item_comment__comment__time
+            = comment.created_at

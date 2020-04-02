@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_many :shopping_addresses
   has_many :favorites
+  has_many :comments
   before_validation :create_birthday, if: :birthday_year && :birthday_month && :birthday_day
 
   validates :nickname, presence: true

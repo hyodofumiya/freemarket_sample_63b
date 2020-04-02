@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :image do
-    item { nil }
-    photo { "MyString" }
+    association :item
+    
+    photo {open("#{Rails.root}/public/material/icon/icon-search 1.png")}
   end
 end

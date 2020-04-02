@@ -122,6 +122,7 @@
                   = icon "fa", "flag", class: "btns__fraud_report__link--icon"
                   不適切な商品の報告
         .product_zone__comment
+          = render partial: "comment", locals: {comment: Comment.find(1)}
           = form_with url: item_comments_path(@item), scope: :post, local: true, class: "comment_form" do |f|
             = f.text_area :message, class: "comment_form__input_area"
             %p.comment_form__notice_area
