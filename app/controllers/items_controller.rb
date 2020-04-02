@@ -4,6 +4,8 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @category = Category.all
+    
   end
 
   def new

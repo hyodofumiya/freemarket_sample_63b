@@ -1,5 +1,6 @@
 //カーソルがカテゴリーボタンに乗った時親カテゴリーを表示
-$(function(){
+
+$(document).ready(function(){
   $(".header_zone_left_btns__category").hover(
     function(){
       $(this).children("a").css("color", "#2483ff").css("font-weight", "bolder");

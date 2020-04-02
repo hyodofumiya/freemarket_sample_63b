@@ -1,11 +1,11 @@
 class CategoriesController < ApplicationController
+before_action :set_category ,only: [:index, :show]
+
   def index
-    @category = Category.all
     @parent = @category.roots
   end
 
   def show
-    @category = Category.all
     @select_category = Category.find(params[:id])
     @subtree_category = @select_category.subtree
     @items = Item.where(category_id: @subtree_category.ids).page(params[:page])
@@ -15,7 +15,7 @@ class CategoriesController < ApplicationController
   def new
   end
 
-  def create
+  def creat
   end
 
   def edit
@@ -26,4 +26,12 @@ class CategoriesController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def set_category
+    @category = Category.all
+  end
 end
+
+
