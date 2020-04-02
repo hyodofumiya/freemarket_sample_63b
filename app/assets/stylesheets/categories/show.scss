@@ -1,59 +1,69 @@
 .category_show_body{
+  background-color: #F4F5F7;
+  padding: 40px;
+  margin: 0 auto;
   &__childcategory_index{
+    max-width: 1100px;
+    margin: 0 auto;
     &__title{}
     &__main{
       &__lists{}
     }
   }
   &__main{
-    &__items_list{
-      max-width: 780px;
-      margin: 26px auto;
+    margin: 30px auto;
+    max-width: 1100px;
+    &__items{
       display: flex;
       flex-flow: row wrap;
-      .an_item{
-        width: 220px;
-        background-color: #fff;
-        margin: 0 20px;
-        &__image_zone{
-          width: 220px;
-          height: 150px;
-          position: relative;
-          overflow: hidden;
-          motion: 0;
-          z-index: auto;
-          & img{
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            width: 100%;
-            z-index: auto;
+      &__list{
+        max-width: 188px;
+        margin: 10px auto;
+        display: flex;
+        flex-flow: row wrap;
+        .an_item{
+          width: 188px;
+          background-color: #fff;
+          &__image_zone{
+            width: 188px;
             height: 150px;
-            object-fit: cover;
-          }
-        }
-        &__body{
-          background-color: white;
-          color: #333;
-          padding: 16px;
-          &--item_name{
+            position: relative;
             overflow: hidden;
-            line-height: 1.5;
-            font-size: 16px;
-            text-align: left;
-          }
-          &__detail{
-            font-size: 16px;
-            &__main{
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
+            motion: 0;
+            z-index: auto;
+            & img{
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              width: 100%;
+              z-index: auto;
+              height: 150px;
+              object-fit: cover;
             }
-            &__sub{
-              font-size: 10px;
+          }
+          &__body{
+            background-color: white;
+            color: #333;
+            padding: 5px 16px 10px;
+            &--item_name{
+              overflow: hidden;
+              line-height: 1.5;
+              font-size: 16px;
               text-align: left;
+            }
+            &__detail{
+              font-size: 16px;
+              &__main{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+              }
+              &__sub{
+                font-size: 10px;
+                text-align: left;
+              }
             }
           }
         }
