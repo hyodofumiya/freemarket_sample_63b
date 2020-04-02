@@ -1,26 +1,26 @@
-    *{
-        box-sizing: border-box;
-    }
-    body{
-        font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
-    }
-    
-    
-    $form_header_height: 128px;
-    $form_footer_height: 220px;
-    $main_color: #3CCACC;
-    
-    @import "./reset";
-    @import "font-awesome-sprockets";
-    @import "font-awesome";
-    @import "./mixin";
-    @import "./header";
-    @import "items";
-    @import "./app_banner";
-    @import "./footer";
-    @import "./exhibit_btn";
-    @import "form/form_common";
-    @import "form/user_form";
-    @import "items/index";
-    @import "items/show";
-    @import "mypage/mypage";
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+}
+
+
+$form_header_height: 128px;
+$form_footer_height: 220px;
+$main_color: #3CCACC;
+
+@import "./reset";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "./mixin";
+@import "./header";
+@import "items";
+@import "./app_banner";
+@import "./footer";
+@import "./exhibit_btn";
+@import "form/form_common";
+@import "form/user_form";
+@import "items/index";
+@import "items/show";
+@import "mypage/mypage";
