@@ -10,6 +10,16 @@ class Item < ApplicationRecord
   CONDITION = {"0"=> "新品", "5"=> "未使用に近い", "10"=> "目立った傷や汚れなし", "15"=> "やや傷や汚れあり", "20"=> "傷や汚れあり", "25"=> "状態悪い"}
   DELIVARY = {"0"=> "出品者負担", "5"=> "購入者負担"}
 
+  validates :name, presence: true, length: { maximum: 40 }
+  validates :discription, presence: true, length: { maximum: 1000 }
+  validates :condition, presence: true
+  validates :delivary, presence: true
+  validates :area, presence: true
+  validates :preparation_day, presence: true
+  validates :area, presence: true
+  validates :price, numericality: { only_integer: true }
+  validates :status, presence: true
+  validates :image, presence: true
 
   def size
       return get_selector(Item::SIZE, super)
