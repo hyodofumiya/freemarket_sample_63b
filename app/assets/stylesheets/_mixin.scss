@@ -51,6 +51,13 @@
   border: 1px solid $color;
 }
 
+/*商品出品　タイトル装飾*/
+@mixin title_decoration {
+  margin-bottom: 24px;
+  color: rgb(136, 136, 136);
+  font-weight: 600;
+  line-height: 1.4em;
+}
 /*商品購入ページのクレジットカードと配送先表示の設定*/
 @mixin orders_new_table_setting{
   &__head{
