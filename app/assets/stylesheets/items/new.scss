@@ -4,8 +4,6 @@
   background-color: rgb(245, 245, 245);
   font-size: 14px;
 
-@import "form_header";
-
   & .main{
     margin: 0 auto;
     max-width: 700px;
@@ -271,5 +269,4 @@
       }
      }
   }
-@import "form_footer";
 }
