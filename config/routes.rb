@@ -4,13 +4,12 @@ Rails.application.routes.draw do
     resources :favorites, only: [:index]
     resources :credit_cards, only: [:index]
     resources :shopping_addresses, only: [:index]
-    resources :items, only: [:index, :show]
+    resources :items, only: [:index, :new, :create]
     resources :orders, only: [:index, :new, :create]
 
   end
   get 'items/new'
   resources :items, only: [:index, :show]
-  resources :orders, only: [:new]
   get 'categories/index'
   get 'categories/new'
   get 'categories/create'
@@ -26,6 +25,7 @@ Rails.application.routes.draw do
   get 'items/edit'
   get 'items/update'
   get 'items/destroy'
+  get 'orders/create'
   get 'orders/edit'
   get 'orders/update'
   get 'orders/destroy'
