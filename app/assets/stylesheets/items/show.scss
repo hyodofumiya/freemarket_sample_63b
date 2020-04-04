@@ -231,6 +231,8 @@ $link_text_color: #3CCACE;
           .comment_form{
             &__input_area{
               width: 100%;
+              min-width: 100%;
+              max-width: 100%;
               min-height: 104px;
               padding: 10px;
             }

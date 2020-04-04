@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  mount_uploader :photo_filepath, UserPhotoUploader
   include FullnameAndPhoneAction
 
   has_many :shopping_addresses
@@ -18,7 +19,7 @@ class User < ApplicationRecord
   validates :birthday, presence: true
   
 
-  def favorited?(item)
+  def favorited?(item)#受け取ったアイテムをこのユーザーがお気に入り登録しているか
     self.favorites.find_by(item_id: item.id) ? true : false
   end
 
