@@ -1,0 +1,14 @@
+$form_header_height: 128px;
+.form_header {
+  display: flex;
+  height: $form_header_height;
+  justify-content: center;
+  .header_logo{
+    height: 50px;
+    padding: 15px 0 0;
+    .image_tag{
+      width: 140px;
+      margin-bottom: 8px;
+    }  
+  }
+}

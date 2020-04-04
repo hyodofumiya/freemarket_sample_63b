@@ -1,0 +1,20 @@
+$form_footer_height: 220px;
+.form_footer{
+  height: $form_footer_height;
+  text-align: center;
+  padding: 40px 0px 11px;
+  &__link{
+    font-size: 12px;
+    margin: -16px 0px 40px -16px;
+  }
+  &__form_logo{ 
+    .form_logo{
+      height: 40px;
+      width: 140px;
+      margin-bottom: 8px;
+    }
+  }
+  &__copy{
+    font-size: 12px;
+  }
+}
