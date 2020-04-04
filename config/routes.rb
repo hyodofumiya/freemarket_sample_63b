@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   end
   get 'items/new'
-  resources :items, only: [:index, :show]
+  resources :items, only: [:index, :show, :new, :create]
   resources :orders, only: [:new]
   get 'categories/index'
   get 'categories/new'
@@ -31,5 +31,6 @@ Rails.application.routes.draw do
   get 'orders/update'
   get 'orders/destroy'
   root 'items#index'
+  root 'items#new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
