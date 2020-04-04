@@ -1,5 +1,4 @@
--# =render partial: "/form_header"
-  フォームのヘッダが完成し次第コメントアウトをとる
+=render partial: "share/form_header"
 %main.content_area.content_area--form
   .form_area.form_area--login
     %h2.form_area__title#form_area_title ログイン
@@ -18,4 +17,4 @@
 
       %span.promote_login<> アカウントをお持ちでない方は
       =link_to "こちら", new_user_registration_path, class: "promote_registration"
--# =render partial: "/form_footer"
+=render partial: "share/form_footer"
