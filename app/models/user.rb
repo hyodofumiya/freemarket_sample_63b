@@ -7,9 +7,9 @@ class User < ApplicationRecord
   mount_uploader :photo_filepath, UserPhotoUploader
   include FullnameAndPhoneAction
 
-  has_many :shopping_addresses
-  has_many :favorites
-  has_many :comments
+  has_many :shopping_addresses, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :comments, dependent: :destroy
   before_validation :create_birthday, if: :birthday_year && :birthday_month && :birthday_day
 
   validates :nickname, presence: true

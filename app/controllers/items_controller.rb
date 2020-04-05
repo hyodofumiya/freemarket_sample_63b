@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
 
   def show
     @images = @item.images
+    @comments = @item.comments
   end
 
   def new
@@ -29,7 +30,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  def admin_user?
+  def admin_user?#出品者以外は詳細ページへリダイレクト
     set_item
     redirect_to item_path(@item) unless @item.user == current_user
   end

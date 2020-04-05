@@ -1,7 +1,7 @@
 .item_comment
     .item_comment__profile
-        - p comment.user.photo_filepath
-        = image_tag comment.user.photo_filepath.url, class: "item_comment__profile__photo"
+        .item_comment__profile__photo_circle
+            = image_tag comment.user.photo_filepath.url, class: "item_comment__profile__photo_circle__photo"
         %p.item_comment__profile__name
             =comment.user.nickname
     %p.item_comment__comment

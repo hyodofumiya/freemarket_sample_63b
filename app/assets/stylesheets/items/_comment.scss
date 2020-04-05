@@ -9,12 +9,27 @@ $comment_color: #EEF0F4;
     &__profile
     {
         width: $comment_profile_width;
-        &__photo
+        &__photo_circle
         {
-            width: 100%;
+            position: relative;
+            height: $comment_profile_width;
+            width: $comment_profile_width;
+            border-radius: 50%;
+            overflow: hidden;
+            &__photo
+            {
+                position: absolute;
+                height: 100%;
+                margin: auto;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+            }
         }
         &__name
         {
+            font-size: 0.5em;
             height: 10px;
             line-height: 10px;
         }

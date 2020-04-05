@@ -104,14 +104,10 @@ $link_text_color: #3CCACE;
               margin: 0 10px 0 0;
               display: flex;
               justify-content: center;
-              &--yen_mark{}
-              &--price_numrical{}
             }
             .sub_price_zone{
               display: flex;
               justify-content: center;
-              &__tax_included{}
-              &__delivary_fee_expression{}
             }
           }
 
@@ -202,7 +198,6 @@ $link_text_color: #3CCACE;
                     color: white;
                     background-color: $link_text_color;
                   }
-                  & i{}
                   &--count_num{
                     margin-left: 5px;
                   }
@@ -259,8 +254,11 @@ $link_text_color: #3CCACE;
               margin-top: 18px;
               margin: auto;
               cursor: pointer;
-              .submit_icon{
-
+              &:disabled
+              {
+                background-color: #808080;
+                border-color: #808080;
+                cursor: not-allowed;
               }
             }
           }
@@ -273,9 +271,6 @@ $link_text_color: #3CCACE;
         &__btn{
           &__link{
             color: $link_text_color;
-            & i{
-
-            }
           }
         }
       }
