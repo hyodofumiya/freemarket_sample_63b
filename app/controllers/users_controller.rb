@@ -21,6 +21,9 @@ class UsersController < ApplicationController
   end
 
   def profile_photo_update
+    unless @user.id == current_user.id
+      redirect_to user_path(@user)
+    end
     @user.update(user_photo_params)
     redirect_to user_path(current_user)
   end
