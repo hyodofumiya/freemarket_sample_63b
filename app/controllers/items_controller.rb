@@ -23,6 +23,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    Item.find_by(id: params[:id], user_id: current_user.id).destroy
+    redirect_to root_path
   end
 
   private

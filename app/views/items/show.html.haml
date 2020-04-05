@@ -49,7 +49,7 @@
           - if @item.user == current_user
             = link_to edit_item_path(@item), class: "product_zone__item__order_btn" do
               商品の編集
-            = link_to item_path(@item), method: :delete, class: "product_zone__item__order_btn product_zone__item__order_btn--delete" do
+            = link_to item_path(@item), method: :delete, data: {confirm: "削除するともとに戻せません。よろしいですか？"}, class: "product_zone__item__order_btn product_zone__item__order_btn--delete" do
               商品の削除
           - else
             = link_to new_item_order_path(@item), class: "product_zone__item__order_btn" do

@@ -6,7 +6,7 @@ FactoryBot.define do
     size {0}
     condition {0}
     delivary {0}
-    area { "東海" }
+    area { Gimei.prefecture.kanji }
     preparation_day {6}
     price { 5000 }
     status { true }
