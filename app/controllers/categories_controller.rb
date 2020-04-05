@@ -15,7 +15,7 @@ before_action :set_category ,only: [:index, :show]
   def new
   end
 
-  def creat
+  def create
   end
 
   def edit
