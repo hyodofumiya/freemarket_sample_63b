@@ -21,7 +21,7 @@ $form_field_area_padding_vertical: 40px;
 .content_area--form
 {
     background-color: $content_area_form_backcolor;
-    margin: $form_header_height auto $form_footer_height;//このマージンは仮。実際は0 auto
+    margin: 0 auto;
 }
 
 .form_area
