@@ -5,5 +5,5 @@
     .categories_index_sidebar__inner__parent_index_zone
       %ul.categories_parentname_index
         - @parent.each do |parent| 
-          = link_to categories_path(anchor: "parentcategory_index_zone_#{parent.id}"), class: 'categories_parentname_index__list', id: "categories_sidebar_#{parent.id}" do
+          = link_to "#{categories_path}#parentcategory_index_zone_#{parent.id}", class: 'categories_parentname_index__list', id: "categories_sidebar_#{parent.id}" do
             = parent.name

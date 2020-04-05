@@ -42,6 +42,5 @@ def item
   end
 end
 
-binding.pry
 item
 image
