@@ -15,7 +15,7 @@
         %li.category_show_body__main__items__list
           = link_to item_path(item.id), class: "an_item" do
             .an_item__image_zone
-              = image_tag @images.where(item_id: item.id)[0]['photo'], alt: "商品画像", class: "an_item__image_zone--image" 
+              = image_tag item.images.first.photo, alt: "商品画像", class: "an_item__image_zone--image" 
             .an_item__body
               .an_item__body--item_name
                 = item.name
@@ -24,7 +24,8 @@
                   .an_item__body__detail__main--price
                     = item.price
                   .an_item__body__detail__main--favorite
-                    ★0
+                    ★
+                    item.favorites.length
                 .an_item__body__detail__sub
                   (税込)
     .category_show_body__main__pagination
