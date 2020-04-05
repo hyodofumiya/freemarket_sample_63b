@@ -1,9 +1,7 @@
--# =render partial: "/form_header"
+=render partial: "share/form_header"
 %main.content_area.content_area--form
   .form_area
-    %h2.form_area__title 新規会員登録
-    = form_with(model:resource, as: resource_name, class: "form_fields form_fields--user", url: registration_path(resource_name), local: true) do |f|
-      = render "devise/shared/error_messages", resource: resource
-      = render partial: "users/user_form", locals: {f: f, user: resource, isrequest_new: true}
-    -# = render "devise/shared/links"
--# =render partial: "/form_footer"
+    %h2.form_area__title#form_area_title 新規会員登録
+    = form_with(model:resource, as: resource_name, id: "user_form", class: "form_fields form_fields--user", url: registration_path(resource_name), local: true) do |f|
+      = render partial: "form/user_form", locals: {form: f, user: resource, isrequest_new: true}
+=render partial: "share/form_footer"

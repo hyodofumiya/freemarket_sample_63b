@@ -1,19 +1,16 @@
 *{
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 body{
-  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+    font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
 }
 
-
-$form_header_height: 128px;
-$form_footer_height: 220px;
+$main_color: #3CCACC;
 
 @import "./reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "./mixin";
-@import "./font-awesome";
 @import "./header";
 @import "form_header";
 @import "form_footer";
@@ -23,8 +20,6 @@ $form_footer_height: 220px;
 @import "./exhibit_btn";
 @import "form/form_common";
 @import "form/user_form";
-@import "orders/new";
-@import "orders/create";
 @import "items/index";
 @import "items/show";
 @import "mypage/mypage";

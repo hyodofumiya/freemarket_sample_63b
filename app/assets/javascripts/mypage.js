@@ -1,4 +1,4 @@
-window.addEventListener('load', addEventMypageTabs);
+window.addEventListener('turbolinks:load', addEventMypageTabs);
 
 function addEventMypageTabs()
 {
