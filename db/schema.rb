@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_31_085536) do
+ActiveRecord::Schema.define(version: 2020_04_05_151754) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 2020_03_31_085536) do
     t.string "ancestry"
     t.index ["ancestry"], name: "index_categories_on_ancestry"
     t.index ["name"], name: "index_categories_on_name"
+  end
+
+  create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_favorites_on_item_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -40,10 +49,13 @@ ActiveRecord::Schema.define(version: 2020_03_31_085536) do
     t.integer "preparation_day", null: false
     t.integer "price", null: false
     t.boolean "status", null: false
-    t.integer "category_id", null: false
-    t.integer "user_id", null: false
+    t.integer "category_id"
+    t.bigint "user_id"
+    t.bigint "brand_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_items_on_brand_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "shopping_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
