@@ -21,6 +21,23 @@ ActiveRecord::Schema.define(version: 2020_04_06_035421) do
     t.index ["user_id"], name: "index_credit_cards_on_user_id"
   end
 
+  create_table "shopping_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "family_name", null: false
+    t.string "first_name", null: false
+    t.string "family_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.string "post_cord", null: false
+    t.integer "prefecture", null: false
+    t.string "cities", null: false
+    t.string "address", null: false
+    t.string "building_name", default: "", null: false
+    t.string "phone_number"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_shopping_addresses_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "family_name", null: false
@@ -42,4 +59,5 @@ ActiveRecord::Schema.define(version: 2020_04_06_035421) do
   end
 
   add_foreign_key "credit_cards", "users"
+  add_foreign_key "shopping_addresses", "users"
 end

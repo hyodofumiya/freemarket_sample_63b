@@ -3,10 +3,19 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  include FullnameAndPhoneAction
+
   has_many :credit_cards
   has_many :items
-  
-  before_validation :create_birthday if @year && @month && @day
+  has_many :shopping_addresses
+  before_validation :create_birthday, if: :birthday_year && :birthday_month && :birthday_day
+
+  validates :nickname, presence: true
+  validates :email, presence: true, uniqueness: true, format: {with: /\w+@\w+/, message: I18n.t('errors.messages.invalid')}
+  validates :password, presence: true, confirmation: true, on: :create
+  validates :password_confirmation, presence: true, on: :create
+  validates :birthday, presence: true
   
   def birthday_year=(year)
     @year = year

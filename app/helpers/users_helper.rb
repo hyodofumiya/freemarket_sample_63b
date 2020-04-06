@@ -6,4 +6,13 @@ module UsersHelper
             yield( i + current_year )
         end
     end
+
+    def birthday_selector_of_year(user, year)
+        if user.persisted?
+            return "selected" if user.birthday_year == year
+        else
+            return "selected" if (Date.today.year - 30) == year
+        end
+    end
+        
 end
