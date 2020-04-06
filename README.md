@@ -84,7 +84,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, primary_key|
-|user_id|integer|null: false|
+|user|references|null: false|
 |customer_id|string|null: false, foreign_key|
 |card_id|string|null: false|
 
