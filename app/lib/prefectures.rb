@@ -29,6 +29,14 @@ class Prefectures
         id_from_list(list, serch_hash.first[1])
     end
 
+    def self.array(value_kind: "default")
+        result_array = []
+        self.each_prefectures(value_kind: value_kind) do |prefecture|
+            result_array << prefecture
+        end
+        return result_array
+    end
+
     private
     def self.list#クラス変数用のアクセサ。最初に呼び出されたときだけcsvを読みだす。
         @@list = self.create_list if @@list.length == 0

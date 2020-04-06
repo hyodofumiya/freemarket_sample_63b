@@ -14,12 +14,12 @@ class Item < ApplicationRecord
 #==========バリデーション==============
     validates :name, presence: true
     validates :discription, presence: true
-    validates :condition, presence: true
-    validates :delivary, presence: true
-    validates :area, presence: true, inclusion: {in: 0..47}
+    validates :condition, presence: true, inclusion: {in: CONDITION.values}
+    validates :delivary, presence: true, inclusion: {in: DELIVARY.values}
+    validates :size, inclusion: {in: (SIZE.values | [nil])}
+    validates :area, presence: true, inclusion: {in: Prefectures.array}
     validates :preparation_day, presence: true
     validates :price, presence: true, length: { minimum: 0 }
-    validate :much_selector?#オーバーライドしているカラムが存在している定数であるかのチェック
 #====================================
     
 #==========DBには数値が入るカラムのゲッターとセッター==================
@@ -52,15 +52,9 @@ class Item < ApplicationRecord
         return Prefectures.find(super)
     end
 
-    def area=(prefecture)
-        super(Prefectures.find_by(default: prefecture))
-    end
-
     #=============================================================
 
 #=================================================================
-
-
 
     private
     def get_selector(selector, value)
@@ -82,16 +76,16 @@ class Item < ApplicationRecord
         raise ArgumentError.new, "存在しないセレクターです。"
     end
 
-    def much_selector?
-        errors.add(:size, "が不正です。") unless const_exist?(size, SIZE)
-        errors.add(:condition, "が不正です。") unless const_exist?(condition, CONDITION)
-        errors.add(:delivary, "が不正です。") unless const_exist?(delivary, DELIVARY)
-    end
+    # def much_selector?
+    #     errors.add(:size, "が不正です。") unless const_exist?(size, SIZE)
+    #     errors.add(:condition, "が不正です。") unless const_exist?(condition, CONDITION)
+    #     errors.add(:delivary, "が不正です。") unless const_exist?(delivary, DELIVARY)
+    # end
 
-    def const_exist?(target, const)
-        const.each do |key, value|
-            return true if target.to_i == key.to_i
-        end
-        return false
-    end
+    # def const_exist?(target, const)
+    #     const.each do |key, value|
+    #         return true if target.to_i == key.to_i
+    #     end
+    #     return false
+    # end
 end
