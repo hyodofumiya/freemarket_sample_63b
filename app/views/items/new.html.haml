@@ -21,18 +21,8 @@
       .main__showmain__detail
         .main__showmain__detail__detail-top
           商品の詳細
-        .main__showmain__detail__category_id
-          .form_field
-            = form.label :category, "カテゴリー", class: "form_field__label form_field__label--essential"
-        .main__showmain__detail__categoryarea
-          = select_tag 'category', options_for_select(["選択してください", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"]), id: "category_area"
-        .main__showmain__detail__bland_id
-          .main__showmain__detail__bland_id__title
-            ブランド
-            %span.marker_gray  任意
-          .main__showmain__detail__bland_id__input-form
-            .form_area
-              = form.text_field :brandname, class: "form_area__input", placeholder: '例）シャネル'
+        = render partial: "categories/category_form", locals: {form: form}
+        = render partial: "brands/brand_form", locals: {form: form}
         .main__showmain__detail__condition
           .form_field
             = form.label :condition, "商品の状態", class: "form_field__label form_field__label--essential"
