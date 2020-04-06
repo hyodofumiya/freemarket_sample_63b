@@ -20,6 +20,7 @@ class Item < ApplicationRecord
     validates :area, presence: true, inclusion: {in: Prefectures.array}
     validates :preparation_day, presence: true
     validates :price, presence: true, length: { minimum: 0 }
+    validates :images, presence: true
 #====================================
     
 #==========DBには数値が入るカラムのゲッターとセッター==================
