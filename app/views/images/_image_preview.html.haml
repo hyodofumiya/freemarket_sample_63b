@@ -1,0 +1,4 @@
+- form.fields_for :images do |image_form|
+    = image_form.label :photo do
+        -# = image_tag image.url
+    = image_form.file_field :photo, value: image, class: "display_none"

@@ -1,0 +1,11 @@
+.main__showmain__main-image
+    .form_field
+        = form.label :image, "出品画像", class: "form_field__label form_field__label--essential"
+    .main__showmain__main-image__main-text
+    最大10枚までアップロードできます
+    .main__showmain__main-image__main-form
+        = form.fields_for :images do |image_form|
+            = image_form.label :photo, class: "main__showmain__main-image__main-form__upload" do
+                ドラックアンドドロップ
+                %br またはクリックしてファイルをアップロード
+            = image_form.file_field :photo, class: "display_none"

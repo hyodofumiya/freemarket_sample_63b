@@ -4,6 +4,16 @@
     body{
         font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
     }
+
+    .main
+    {
+        position: relative;
+    }
+
+    .display_none
+    {
+        display: none;
+    }
     
     
     $form_header_height: 128px;

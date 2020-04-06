@@ -19,6 +19,7 @@ class Prefectures
     end
 
     def self.find(num, value_kind: "default")#引数で受け取った数値に該当する都道府県を返す。
+        return nil unless num
         return self.list[num][option_kind(value_kind)]
     end
 
@@ -59,7 +60,7 @@ class Prefectures
     def self.id_from_list(list, value)
         list.each_with_index do |list_value, id|
             if list_value == value
-                return id
+                return id.to_i
             end
         end
         return nil

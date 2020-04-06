@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show]
+  before_action :must_logined, only: [:new, :create, :edit, :update, :destroy]
   before_action :admin_user?, only: [:edit, :update, :destroy]
 
   def index
@@ -11,9 +12,18 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
+    @item.images.build
   end
 
   def create
+    @item = Item.new(item_params.merge(user_id: current_user.id))
+    if @item.save
+      redirect_to item_path(@item)
+    else
+      @item.images.build if @item.images.length == 0
+      render :new
+    end
   end
 
   def edit
@@ -28,6 +38,11 @@ class ItemsController < ApplicationController
   end
 
   private
+
+  def item_params
+    params.require(:item).permit(:name, :discription, :size, :condition, :delivary, :area, :preparation_day, :price, images_attributes: [:photo])
+  end
+
   def set_item
     @item = Item.find(params[:id])
   end
