@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-before_action :set_category ,only: [:index, :show]
+before_action :set_categories ,only: [:index, :show]
 
   def index
     @parent = @category.roots #大カテゴリーを代入
@@ -28,7 +28,7 @@ before_action :set_category ,only: [:index, :show]
 
   private
 
-  def set_category
+  def set_categories
     @category = Category.all
   end
 end
