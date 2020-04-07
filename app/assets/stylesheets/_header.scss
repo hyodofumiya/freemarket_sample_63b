@@ -74,8 +74,10 @@
         display: flex;
         padding: 0;
         margin: 0;
-        &__btn
-        {
+        &__login{
+          @include lower_right;
+        }
+        &__signup{
           @include lower_right;
         }
       }
