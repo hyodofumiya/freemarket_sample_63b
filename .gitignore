@@ -29,6 +29,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-secrets.yml
-/config/credentials.yml.enc
 db/schema.rb
+config/secrets.yml
+config/credentials.yml.enc
+

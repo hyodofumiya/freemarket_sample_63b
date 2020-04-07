@@ -104,14 +104,10 @@ $link_text_color: #3CCACE;
               margin: 0 10px 0 0;
               display: flex;
               justify-content: center;
-              &--yen_mark{}
-              &--price_numrical{}
             }
             .sub_price_zone{
               display: flex;
               justify-content: center;
-              &__tax_included{}
-              &__delivary_fee_expression{}
             }
           }
 
@@ -131,6 +127,18 @@ $link_text_color: #3CCACE;
             &:active{
               background-color: #dd6552;
             }
+            &--delete
+            {
+              background-color: #808080;
+              &:hover
+              {
+                background-color: #666666;
+              }
+              &:active
+              {
+                background-color: #A0A0A0;
+              }
+            }
           }
 
           &__detail{
@@ -139,6 +147,7 @@ $link_text_color: #3CCACE;
               line-height: 1.5;
               font-size: 18px;
               margin-bottom: 30px;
+              word-break: break-word;
             }
             .table{
               margin-bottom: 20px;
@@ -185,7 +194,11 @@ $link_text_color: #3CCACE;
                   border: 1px solid #ffb340;
                   display: flex;
                   align-items: center;
-                  & i{}
+                  &--favorited
+                  {
+                    color: white;
+                    background-color: $link_text_color;
+                  }
                   &--count_num{
                     margin-left: 5px;
                   }
@@ -214,6 +227,8 @@ $link_text_color: #3CCACE;
           .comment_form{
             &__input_area{
               width: 100%;
+              min-width: 100%;
+              max-width: 100%;
               min-height: 104px;
               padding: 10px;
             }
@@ -240,8 +255,11 @@ $link_text_color: #3CCACE;
               margin-top: 18px;
               margin: auto;
               cursor: pointer;
-              .submit_icon{
-
+              &:disabled
+              {
+                background-color: #808080;
+                border-color: #808080;
+                cursor: not-allowed;
               }
             }
           }
@@ -254,9 +272,6 @@ $link_text_color: #3CCACE;
         &__btn{
           &__link{
             color: $link_text_color;
-            & i{
-
-            }
           }
         }
       }

@@ -4,9 +4,26 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  mount_uploader :photo_filepath, UserPhotoUploader
+  include FullnameAndPhoneAction
+
+  has_many :shopping_addresses, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  before_validation :create_birthday, if: :birthday_year && :birthday_month && :birthday_day
+
+  validates :nickname, presence: true
+  validates :email, presence: true, uniqueness: true, format: {with: /\w+@\w+/, message: I18n.t('errors.messages.invalid')}
+  validates :password, presence: true, confirmation: true, on: :create
+  validates :password_confirmation, presence: true, on: :create
+  validates :birthday, presence: true
   
-  before_validation :create_birthday if @year && @month && @day
-  
+
+  def favorited?(item)#受け取ったアイテムをこのユーザーがお気に入り登録しているか
+    self.favorites.find_by(item_id: item.id) ? true : false
+  end
+
+  #======birthdayアクセサ=========
   def birthday_year=(year)
     @year = year
   end
@@ -33,7 +50,7 @@ class User < ApplicationRecord
     return @day if @day
     self.birthday&.day
   end
-
+#==============================
 
   private
 

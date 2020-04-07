@@ -1,0 +1,60 @@
+.user_photo_area
+{
+  position: relative;
+  text-align: center;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+
+  .user_profile__image
+  {
+    &--detail
+    {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  @media screen and (orientation: landscape)
+  {
+    .user_profile__image
+    {
+      &--detail
+      {
+        height: 100vh;
+      }
+    }
+  }
+  
+  @media screen and (orientation: portrait)
+  {
+    .user_profile__image
+    {
+      &--detail
+      {
+        width: 100vw;
+      }
+    }
+  }
+  
+  .profile_photo_form
+  {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100px;
+    &__label
+    {
+      cursor: pointer;
+      font-size: 5vmax;
+    }
+    &__file
+    {
+      display: none;
+    }
+  }
+}

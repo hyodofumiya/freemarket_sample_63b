@@ -27,52 +27,43 @@
       .product_zone
         .product_zone__item
           .product_zone__item--head
-            product3
+            = @item.name
           .product_zone__item__image_zone
             .dynamic_image_zone
-              = image_tag "/material/pict/猫画像１.jpeg", class: "dynamic_image_zone--selected_image"
+              = image_tag @images.first.photo.url, class: "dynamic_image_zone--selected_image"
             %ul.static_images
-              %li.static_images__an_item_image_zone
-                = image_tag "/material/pict/猫画像１.jpeg", class: "static_images__an_item_image_zone--image"
-              %li.static_images__an_item_image_zone
-                = image_tag "/material/pict/猫画像２.jpg", class: "static_images__an_item_image_zone--image"
-              %li.static_images__an_item_image_zone
-                = image_tag "/material/pict/猫画像１.jpeg", class: "static_images__an_item_image_zone--image"
-              %li.static_images__an_item_image_zone
-                = image_tag "/material/pict/猫画像２.jpg", class: "static_images__an_item_image_zone--image"
-              %li.static_images__an_item_image_zone
-                = image_tag "/material/pict/猫画像１.jpeg", class: "static_images__an_item_image_zone--image"
-              %li.static_images__an_item_image_zone
-                = image_tag "/material/pict/猫画像２.jpg", class: "static_images__an_item_image_zone--image"
-              %li.static_images__an_item_image_zone
-                = image_tag "/material/pict/猫画像１.jpeg", class: "static_images__an_item_image_zone--image"
-              %li.static_images__an_item_image_zone
-                = image_tag "/material/pict/猫画像２.jpg", class: "static_images__an_item_image_zone--image"
-              %li.static_images__an_item_image_zone
-                = image_tag "/material/pict/猫画像１.jpeg", class: "static_images__an_item_image_zone--image"
+              - @images.each do |image|
+                %li.static_images__an_item_image_zone
+                  = image_tag image.photo.url, class: "static_images__an_item_image_zone--image"
           .product_zone__item__price_zone
             .main_price_zone
               .main_price_zone--yen_mark
                 ¥
               .main_price_zone--price_numerical
-                30000
+                =@item.price
             .sub_price_zone
               .sub_price_zone__tax_included
                 (税込)
               .sub_price_zone__delivary_fee_expression
                 送料込み
-          = link_to new_order_path, class: "product_zone__item__order_btn" do
-            購入画面に進む
+          - if @item.user == current_user
+            = link_to edit_item_path(@item), class: "product_zone__item__order_btn" do
+              商品の編集
+            = link_to item_path(@item), method: :delete, data: {confirm: "削除するともとに戻せません。よろしいですか？"}, class: "product_zone__item__order_btn product_zone__item__order_btn--delete" do
+              商品の削除
+          - else
+            = link_to new_item_order_path(@item), class: "product_zone__item__order_btn" do
+              購入画面に進む
           .product_zone__item__detail
             .product_zone__item__detail--discription
-              商品の説明文がここに入る予定です。
+              =@item.discription
             %table.table
               %tbody.table__body
                 %tr.table__body__seller.tabel_row
                   %th.table__body__seller--head.tabel_row--head
                     出品者
                   %td.table__body__seller--data.table_row--data
-                    hoge
+                    =@item.user.nickname
               %tbody.table__body
                 %tr.table__body__category.tabel_row
                   %th.table__body__category--head.tabel_row--head
@@ -91,59 +82,55 @@
                   %th.table__body__brand--head.tabel_row--head
                     ブランド
                   %td.table__body__brand--data.table_row--data
-
+                    =@item.brand
               %tbody.table__body
                 %tr.table__body__size.tabel_row
                   %th.table__body__size--head.tabel_row--head
                     商品のサイズ
                   %td.table__body__size--data.table_row--data
-
+                    =@item.size
               %tbody.table__body
                 %tr.table__body__condition.tabel_row
                   %th.table__body__condition--head.tabel_row--head
                     商品の状態
                   %td.table__body__condition--data.table_row--data
-                    未使用に近い
+                    =@item.condition
               %tbody.table__body
                 %tr.table__body__delivary_fee.tabel_row
                   %th.table__body__delivary_fee--head.tabel_row--head
                     配送料の負担
                   %td.table__body__delivary_fee--data.table_row--data
-                    送料込み（出品者負担）
+                    =@item.delivary
               %tbody.table__body
                 %tr.table__body__area.tabel_row
                   %th.table__body__area--head.tabel_row--head
                     発送元の地域
                   %td.table__body__area--data.table_row--data
-                    = link_to root_path do
-                      青森県
+                    = @item.area
               %tbody.table__body
                 %tr.table__body__preparation_day.tabel_row
                   %th.table__body__preparation_day--head.tabel_row--head
                     発送日の目安
                   %td.table__body__preparation_day--data.table_row--data
-                    1-2日で発送
+                    ="約#{@item.preparation_day}日で発送"
             %ul.btns
-              %li.btns__favorite
-                = link_to root_path, class: "btns__favorite__link" do
-                  = icon "fa", "star", class: "btns__favorite__link--icon"
-                  お気に入り 
-                  .btns__favorite__link--count_num
-                    0
+              %li.btns__favorite#favorite_button_for_js
+                = render partial: "favorite_button", locals: {item: @item}
               %li.btns__fraud_report
                 = link_to root_path, class: "btns__fraud_report__link" do 
                   = icon "fa", "flag", class: "btns__fraud_report__link--icon"
                   不適切な商品の報告
         .product_zone__comment
-          = form_with url: root_path, scope: :post, local: true, class: "comment_form" do |f|
-            = f.text_area :message, class: "comment_form__input_area"
+          - @comments.each do |comment|
+            = render partial: "comment", locals: {comment: comment}
+          = form_with url: item_comments_path(@item), scope: :post, local: true, class: "comment_form" do |f|
+            = f.text_area :comment, class: "comment_form__input_area", id: "comment_field_for_js"
             %p.comment_form__notice_area
               相手のことを考え丁寧なコメントを心がけましょう。
               %br
               不快な言葉遣いなどは利用制限や退会処分となることがあります。
               %br
-            = f.submit id: "post_submit_btn", class: "comment_form__submit_form"
-            = f.label :submit_btn, class: "comment_form__submit_label" do
+            %button.comment_form__submit_label#comment_send_button_for_js{type: "submit", disabled: true}
               = icon "fa","comment", class: "submit_icon"
               コメントする
       %ul.item_link_prev_next
@@ -162,4 +149,4 @@
 
 = render "share/app_banner"
 = render "share/footer"
-= render "share/exhibit_btn"
+-# = render "share/exhibit_btn"

@@ -1,0 +1,84 @@
+$comment_profile_width: 40px;
+$comment_color: #EEF0F4;
+
+.item_comment
+{
+    display: flex;
+    min-height: 80px;
+    padding-left: 20px;
+    &__profile
+    {
+        width: $comment_profile_width;
+        &__photo_circle
+        {
+            position: relative;
+            height: $comment_profile_width;
+            width: $comment_profile_width;
+            border-radius: 50%;
+            overflow: hidden;
+            &__photo
+            {
+                position: absolute;
+                height: 100%;
+                margin: auto;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+            }
+        }
+        &__name
+        {
+            font-size: 0.5em;
+            height: 10px;
+            line-height: 10px;
+        }
+    }
+    &__comment
+    {
+        position: relative;
+        width: calc(100% - #{$comment_profile_width});
+        margin: 10px 30px;
+        padding: 10px;
+        background-color: $comment_color;
+        border-radius: 10px;
+        text-align: left;
+        &::before
+        {
+            content: "";
+            position: absolute;
+            display: block;
+            top: 0;
+            left: -10px;
+            transform: rotate(45deg);
+            border-radius: 50%;
+            border-bottom: 20px solid $comment_color;
+            border-right: 20px solid transparent;
+            border-top: 20px solid transparent;
+            border-left: 20px solid transparent;
+        }
+        &::after
+        {
+            
+            content: "";
+            position: absolute;
+            display: block;
+            top: 5px;
+            left: -10px;
+            transform: rotate(45deg);
+            border-radius: 50%;
+            border-bottom: 10px solid white;
+            border-right: 10px solid transparent;
+            border-top: 10px solid transparent;
+            border-left: 10px solid transparent;
+        }
+        &__time
+        {
+            position: absolute;
+            font-size: 10px;
+            color: gray;
+            right: 5px;
+            bottom: 5px;
+        }
+    }
+}
