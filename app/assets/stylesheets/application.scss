@@ -9,12 +9,21 @@
     {
         position: relative;
     }
+    
+    .main__error_message
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        color: red;
+    }
 
     .display_none
     {
         display: none;
     }
-    
     
     $form_header_height: 128px;
     $form_footer_height: 220px;
