@@ -17,6 +17,5 @@ Rails.application.routes.draw do
   resources :comments, only: [:create]
   resources :orders, only: [:new, :create]#orderはuserにも関係するがcurrent_userでとるのでitemにネストする。
   root 'items#index'
-    resources :items, only: [:index, :new, :create, :show]
 
 end
