@@ -26,6 +26,7 @@ class ItemsController < ApplicationController
     if @item.destroy
       redirect_to root_path
     else
+      flash[:notice] = "エラーが発生しました。削除できません。"
       @images = @item.images
       redirect_to item_path(@item)
     end
