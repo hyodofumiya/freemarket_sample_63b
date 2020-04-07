@@ -31,7 +31,8 @@
                 プロフィール編集
                 = icon "fa", "chevron-right", class: "mypage_icon mypage_icon--right_arrow"
         %li.mypage_navigation__list
-            =link_to user_credit_cards_path(@user), class: "mypage_link mypage_navigation__list__link" do
+            - if 
+            =link_to  new_user_credit_card_path(user_id: current_user.id), class: "mypage_link mypage_navigation__list__link" do
                 クレジットカード
                 = icon "fa", "chevron-right", class: "mypage_icon mypage_icon--right_arrow"
         %li.mypage_navigation__list
