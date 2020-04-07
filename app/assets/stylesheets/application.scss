@@ -4,7 +4,20 @@
     body{
         font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
     }
+
+    .main
+    {
+        position: relative;
+    }
     
+    .main__error_message
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+    }
     
     $form_header_height: 128px;
     $form_footer_height: 220px;
