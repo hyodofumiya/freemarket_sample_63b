@@ -1,5 +1,5 @@
 .main__showmain__detail__category_id
   .form_field
-    = form.label :category, "カテゴリー", class: "form_field__label form_field__label--essential"
+    = form.label :category_id, "カテゴリー", class: "form_field__label form_field__label--essential"
 .main__showmain__detail__categoryarea
-  = select_tag 'category', options_for_select(["選択してください", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"]), id: "category_area"
+  = select_tag 'category_id', options_from_collection_for_select(@category.root, :id, :name, ), id: "category_area"
