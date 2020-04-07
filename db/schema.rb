@@ -22,13 +22,14 @@ ActiveRecord::Schema.define(version: 2020_03_28_030133) do
     t.index ["name"], name: "index_categories_on_name"
   end
 
-  create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.string "customer_id", null: false
-    t.string "card_id", null: false
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "item_id"
+    t.text "comment", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_credit_cards_on_user_id"
+    t.index ["item_id"], name: "index_comments_on_item_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -53,7 +54,7 @@ ActiveRecord::Schema.define(version: 2020_03_28_030133) do
     t.text "discription"
     t.integer "size"
     t.integer "condition", null: false
-    t.integer "delivary_fee", null: false
+    t.integer "delivary", null: false
     t.integer "area", null: false
     t.integer "preparation_day", null: false
     t.integer "price", null: false
@@ -65,23 +66,6 @@ ActiveRecord::Schema.define(version: 2020_03_28_030133) do
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["user_id"], name: "index_items_on_user_id"
-  end
-
-  create_table "shopping_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "family_name", null: false
-    t.string "first_name", null: false
-    t.string "family_name_kana", null: false
-    t.string "first_name_kana", null: false
-    t.string "post_cord", null: false
-    t.integer "prefecture", null: false
-    t.string "cities", null: false
-    t.string "address", null: false
-    t.string "building_name", default: "", null: false
-    t.string "phone_number"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_shopping_addresses_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -104,7 +88,5 @@ ActiveRecord::Schema.define(version: 2020_03_28_030133) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "credit_cards", "users"
   add_foreign_key "images", "items"
-  add_foreign_key "shopping_addresses", "users"
 end
