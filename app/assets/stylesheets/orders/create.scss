@@ -1,0 +1,103 @@
+$border_top: 2px solid #f5f5f5b9;
+$form_header_height: 56px;
+$form_footer_height: 10px;
+
+body{
+  min-height: 100vh;
+  .orders_create_header{
+    height: $form_header_height;
+  }
+  .order_create_main{
+    padding-top: 20px;
+    min-height: calc(100% - #{$form_header_height + $form_footer_height});
+    padding-bottom: 30px;
+    margin-bottom: $form_footer_height;
+    .order_finish_info{
+      background-color: #fff;
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+      font-size: 14px;
+      padding: 20px;
+      &__message{
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        padding: 10px 0;
+        &--main{
+          font-size: 24px;
+          font-weight: bold;
+        }
+        &--sub{}
+      }
+      &__item_info{
+        &__image_and_name{
+          width: 500px;
+          margin: 0 auto;
+          &__item_image{
+            max-width: 300%;
+            width: 100%;
+            min-width: 80px;
+            margin: 0 auto;
+            padding: 30px 0 20px;
+            & img{
+              width: 100%;
+              height: auto;
+            }
+          }
+          &__item_name{
+            width: 80%;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0 auto;
+            padding: 10px 0 30px;
+            line-height: 1.5;
+            text-align: center;
+          }
+        }
+      }
+      &__pay_info{
+        max-width: 500px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: right;
+        font-size: 16px;
+        &__item_price{
+          @include orders_create_info_table;
+        }
+        &__pay_amount{
+          @include orders_create_info_table;
+        }
+        &__payment_method{
+          @include orders_create_info_table;
+          &--head{
+            display: flex;
+            align-items: center;
+          }
+        }
+        &__order_date{
+          @include orders_create_info_table;
+          padding-bottom: 30px;
+        }
+      }
+    }
+    .back_items_top_link{
+      width: 100%;
+      max-width: 300px;
+      line-height: 48px;
+      background-color: #EA352D;
+      border: none;
+      margin: 20px auto;
+      text-align: center;
+      margin-bottom: 30px;
+      &--link{
+        text-align: center;
+        color: #fff;
+      }
+    }
+  }
+
+  .orders_create_footer{
+    height: $form_footer_height;
+  }
+}
