@@ -20,8 +20,8 @@
           %p ブランド
       %ul.header_zone_right_btns
         %li.header_zone_right_btns__login
-          = link_to root_path, class: "header_zone_right_btns__login--btn, header_right_btn" do
+          = link_to new_user_session_path, class: "header_zone_right_btns__login--btn, header_right_btn" do
             ログイン
         %li.header_zone_right_btns__signup
-          = link_to root_path, class: "header_zone_right_btns__signup--btn, header_right_btn" do
+          = link_to new_user_registration_path, class: "header_zone_right_btns__signup--btn, header_right_btn" do
             新規会員登録
