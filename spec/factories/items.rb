@@ -1,6 +1,8 @@
 FactoryBot.define do
   factory :item do
     association :user
+    association :category
+    association :brand
     name { "testItem" }
     discription { "created for test" }
     size {0}
