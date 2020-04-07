@@ -1,8 +1,8 @@
 .user_content_area
     .mypage_profile_area
         .mypage_user_profile
-            -# = image_tag , user.photo-filepass, {class: mypage_user_profile__image, alt: "あなたのプロフィール画像です"}
-            = image_tag "/material/icon/member_photo_noimage_thumb.png", {class: "mypage_user_profile__image", alt: "あなたのプロフィール画像です"}
+            = link_to user_profile_photo_path(@user) do
+                = image_tag user.photo_filepath.url, {class: "mypage_user_profile__image", alt: "あなたのプロフィール画像です"}
             %p.mypage_user_profile__name #{user.nickname}
             -# %span.mypage_user_profile__review 評価　#{user.evaluation}
             %span.mypage_user_profile__small_content 評価　2
