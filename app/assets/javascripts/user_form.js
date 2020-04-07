@@ -1,35 +1,23 @@
-const ID_JUDGE_FOR_DO_APPLAY = "user_form";//このファイルに記載のあるイベントを適用するかの判断を行うためのID
+window.addEventListener('load', addEventBirthday);
 
-//=============誕生日入力欄用ID==================
-    const ID_INPUT_YEAR = "user_birthday_year";
-    const ID_INPUT_MONTH = "user_birthday_month";
-    const ID_INPUT_DAY = "user_birthday_day";
-
-window.addEventListener('turbolinks:load', addEventUserForm);
-
-function addEventUserForm()
+function addEventBirthday()
 {
-    if(document.getElementById(ID_JUDGE_FOR_DO_APPLAY))
+    const days= document.getElementById("user_birthday_day");
+    if(days)
     {
-        addEventToBirthday();
+        const years = document.getElementById("user_birthday_year");
+        const months = document.getElementById("user_birthday_month");
+        years.addEventListener("change",user_birthday_selector);
+        months.addEventListener("change",user_birthday_selector);
+        user_birthday_selector(null);
     }
 }
 
-function addEventToBirthday()
+function user_birthday_selector(event)
 {
-        //誕生日ボタンのイベント設定
-        const years = document.getElementById(ID_INPUT_YEAR);
-        const months = document.getElementById(ID_INPUT_MONTH);
-        years.addEventListener("change",userBirthdaySelector);
-        months.addEventListener("change",userBirthdaySelector);
-        userBirthdaySelector(null);
-}
-
-function userBirthdaySelector(event)
-{
-    const years = document.getElementById(ID_INPUT_YEAR);
-    const months = document.getElementById(ID_INPUT_MONTH);
-    const days= document.getElementById(ID_INPUT_DAY);
+    const days= document.getElementById("user_birthday_day");
+    const years = document.getElementById("user_birthday_year");
+    const months = document.getElementById("user_birthday_month");
 
     const user_birthday = Number(days.getAttribute('data-birthday'));
     let last_day = new Date(years.value, months.value, 0);

@@ -1,0 +1,9 @@
+.categories_index_sidebar
+  .categories_index_sidebar__inner
+    %h2.categories_index_sidebar__inner__title_zone
+      カテゴリー一覧
+    .categories_index_sidebar__inner__parent_index_zone
+      %ul.categories_parentname_index
+        - @parent.each do |parent| 
+          = link_to "#{categories_path}#parentcategory_index_zone_#{parent.id}", class: 'categories_parentname_index__list', id: "categories_sidebar_#{parent.id}" do
+            = parent.name
