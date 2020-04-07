@@ -10,6 +10,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :preparation_day, null: false
       t.integer :price, null: false
       t.boolean :status, null: false
+      t.integer :category_id
       t.references :user
       t.references :brand
 

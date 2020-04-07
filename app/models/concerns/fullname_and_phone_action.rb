@@ -21,3 +21,4 @@ module FullnameAndPhoneAction
     self.send(method)&.delete!("-")
   end
 end
+
