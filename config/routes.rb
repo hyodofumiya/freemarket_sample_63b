@@ -8,17 +8,15 @@ Rails.application.routes.draw do
     resources :orders, only: [:index, :new, :create]
 
   end
-  resources :items, only: [:index, :show]
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get "profile_photo", to: "users#profile_photo"
+  patch "update_profile_photo", to: "users#profile_photo_update"
+  resources :items, only: [:index, :new, :create, :show]
   resources :categories, only: [:index, :show]
   resource :favorite, only: [:create, :destroy]
   resources :comments, only: [:create]
   resources :orders, only: [:new, :create]#orderはuserにも関係するがcurrent_userでとるのでitemにネストする。
   root 'items#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     resources :items, only: [:index, :new, :create, :show]
-    get "profile_photo", to: "users#profile_photo"
-    patch "update_profile_photo", to: "users#profile_photo_update"
- 
-  root 'items#index'
 
 end
