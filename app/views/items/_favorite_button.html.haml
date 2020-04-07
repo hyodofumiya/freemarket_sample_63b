@@ -1,0 +1,12 @@
+- if current_user&.favorited?(item)
+    = link_to item_favorite_path(item), method: :delete, remote: true, class: "btns__favorite__link btns__favorite__link--favorited" do
+        = icon "fa", "star", class: "btns__favorite__link--icon"
+        お気に入り 
+        .btns__favorite__link--count_num#favorite_count
+        =item.favorites.length
+- else
+    = link_to item_favorite_path(item), method: :post, remote: true, class: "btns__favorite__link" do
+        = icon "fa", "star", class: "btns__favorite__link--icon"
+        お気に入り 
+        .btns__favorite__link--count_num#favorite_count
+        =item.favorites.length
