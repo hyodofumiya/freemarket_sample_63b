@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  family_name: MyString
+  first_name: MyString
+  family_name_kana: MyString
+  first_name_kana: MyString
+  post_cord: MyString
+  prefecture: MyString
+  cities: MyString
+  address: MyString
+  building_name: MyString
+  user_id: one
+
+two:
+  family_name: MyString
+  first_name: MyString
+  family_name_kana: MyString
+  first_name_kana: MyString
+  post_cord: MyString
+  prefecture: MyString
+  cities: MyString
+  address: MyString
+  building_name: MyString
+  user_id: two
