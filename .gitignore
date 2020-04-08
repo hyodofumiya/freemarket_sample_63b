@@ -31,5 +31,4 @@
 /config/master.key
 db/schema.rb
 config/secrets.yml
-config/credentials.yml.enc
 
