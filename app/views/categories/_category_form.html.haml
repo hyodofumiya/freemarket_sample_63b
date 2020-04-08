@@ -2,4 +2,8 @@
   .form_field
     = form.label :category_id, "カテゴリー", class: "form_field__label form_field__label--essential"
 .main__showmain__detail__categoryarea
-  = select_tag 'category_id', options_from_collection_for_select(@category.root, :id, :name, ), id: "category_area"
+  .main_showmain__detail__categoryarea__parent
+    = select_tag 'category_id', options_from_collection_for_select(@category.root, :id, :name), id: "category_parent_area", options: { data_subgroup: "parent#{:id}" }
+  .main__showmain__detail__categoryarea__child
+    = select_tag 'category_id', options_from_conllection_for_select(@category_children, :id, :name), id: "cateogry_children_area", options: {data_subgroup: "child#{:id}"}
+  .main__showmain__detail__categoryarea__grandchild
