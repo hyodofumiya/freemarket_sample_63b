@@ -16,7 +16,6 @@ Rails.application.routes.draw do
         post 'purchase'
       end
     end
-  end
     get "profile_photo", to: "users#profile_photo"
     patch "update_profile_photo", to: "users#profile_photo_update"
   end

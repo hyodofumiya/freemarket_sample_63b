@@ -12,8 +12,6 @@ class CreditCardsController < ApplicationController
   end
 
   def create
-    binding.pry
-
     require 'payjp'
     Payjp.api_key = 'sk_test_496e60aafad5d32afacf318d'
     if params['payjp-token'].blank?
@@ -55,8 +53,6 @@ class CreditCardsController < ApplicationController
     end
       redirect_to user_path(current_user.id)
   end
-
-
 
   private
 
