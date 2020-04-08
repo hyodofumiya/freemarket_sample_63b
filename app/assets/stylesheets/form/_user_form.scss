@@ -1,8 +1,46 @@
+$user_form_height: 950px;
+$user_form_upper_height: $user_form_height - $form_button_height - $form_margin_top_height * 2;
+$form_header_height: 128px;
+$form_footer_height: 220px;
+
 .form_field__label--birthday,
 .form_field__input--birthday,
-.form_field__input--name
+.form_field__input--name,
+.form_fields--user,
+.form_upper,
+.form_lower
 {
     box-sizing: content-box;
+}
+
+.form_area--login
+{
+    min-height: calc(100vh - #{$form_header_height} - #{$form_footer_height});
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar
+    {
+        display:none;
+    }
+}
+
+.scroll_form_area
+{ 
+    &--up,
+    &--down
+    {
+        transition-property: transform;
+        transition-duration: 0.5s;
+    }
+    &--up
+    {
+        transform: translate(0, 0);
+    }
+    &--down
+    {
+        transform: translate(0, -$user_form_upper_height - $form_field_area_padding_vertical * 2);
+    }    
 }
 
 .form_field__label
@@ -23,16 +61,21 @@
 {
     &--birthday
     {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none; 
-        box-sizing: content-box;
         height: 28px;
-        width: calc(#{$form_input_paddingLR} * 2);
-        background-color: white;
+        width: 40px;
     }
     &--name
     {
         width: 39.65%;
     }
+}
+
+.form_button--user
+{
+    margin-bottom: $form_margin_top_height;
+}
+
+.promote_registration
+{
+    color: $main_color;
 }

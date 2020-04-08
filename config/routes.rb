@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "users/registrations"}
+  devise_scope :user do
+    get 'shopping_addresses', to: 'users/registrations#new_address'
+    post 'shopping_addresses', to: 'users/registrations#create_address'
+  end
+
   resources :users, only: [:show, :edit, :update] do
     resources :favorites, only: [:index]
     resources :credit_cards, only: [:index]
@@ -18,4 +23,9 @@ Rails.application.routes.draw do
   resources :orders, only: [:new, :create]#orderはuserにも関係するがcurrent_userでとるのでitemにネストする。
   root 'items#index'
 
+  resources :items, only: [:index, :show]
+  resources :categories, only: [:index, :show]
+ 
+  root 'items#index'
+ 
 end
