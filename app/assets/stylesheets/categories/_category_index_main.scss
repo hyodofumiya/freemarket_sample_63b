@@ -1,0 +1,99 @@
+$category_link_color: #0099e8;
+
+.category_index_main{
+  width: 700px;
+  margin-right: 260px;
+  &__parent_index_zone{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    margin: 20px auto;
+    padding: 8px;
+    &__title{
+      height: 46px;
+      padding: 8px 0;
+      font-size: 25px;
+      font-weight: bold;
+      padding-left: 30px;
+    }
+    &__parent_name_list{
+      margin-top: 20px;
+      .category_parentname_index{
+        text-align: center;
+        display: flex;
+        flex-flow: row wrap;
+        &__list{
+          line-height: 2.3;
+          min-width: 80px;
+          box-shadow: 1px 1px 1px 1px rgba(14,14,14,0.0580392);
+          background-color: #fff;
+          border-radius: 4px;
+          padding: 0 30px;
+          font-size: 18px;
+          display: block;
+          margin: 5px;
+          color: black;
+        }
+      }
+    }
+  }
+  &__child_and_grandchild_index_zone{
+    margin: 30px auto;
+    .parentcategory_index_zone{
+      border-radius: 4px;
+      margin-bottom: 40px;
+      &__a_parentcategory{
+        margin-bottom: 40px;
+        border-radius: 4px;
+        &--name{
+          padding: 0 30px;
+          height: 40px;
+          font-size: 22px;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+          background-color: #66ccff;
+          color: #fff;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+        }
+        .childcategory_index_zone{
+          padding: 24px 30px 10px 30px;
+          background-color: #fff;
+
+
+          &__link_all{
+            margin-top: 8px;
+            margin-bottom: 8px;
+            font-size: 16px;
+            & a{
+              color: $category_link_color;
+            }
+          }
+          &__a_childcategory_zone{
+            padding-bottom: 10px;
+            &--childcategory_name{
+              font-weight: bold;
+              padding-top: 15px;
+            }
+            .grandchildcategory_index_zone{
+              padding: 0 20px 10px 20px;
+              display: flex;
+              flex-flow: row wrap;
+              &__a_grandchildcategory_zone{
+                padding: 0 20px 0 0;
+                width: calc(50%);
+                font-weight: normal;
+                font-size: 16px;
+                margin-top: 8px;
+                margin-bottom: 8px;
+                & a{
+                  color: $category_link_color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

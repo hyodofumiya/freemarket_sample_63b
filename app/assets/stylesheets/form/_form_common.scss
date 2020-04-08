@@ -1,9 +1,5 @@
-$form_width: 700px;
 $content_area_form_backcolor: #F5F5F5;
 $form_input_paddingLR: 16px;
-$form_button_height: 48px;
-$form_margin_top_height: 32px;
-$form_field_area_padding_vertical: 40px;
 
 .content_area--form,
 .form_area,
@@ -21,13 +17,13 @@ $form_field_area_padding_vertical: 40px;
 .content_area--form
 {
     background-color: $content_area_form_backcolor;
-    margin: 0 auto;
+    margin: $form_header_height auto $form_footer_height;//このマージンは仮。実際は0 auto
 }
 
 .form_area
 {
     background-color: #FFFFFF;
-    width: $form_width;
+    width: 700px;
     box-sizing: content-box;
     margin: 0 auto;
     &__title
@@ -43,28 +39,12 @@ $form_field_area_padding_vertical: 40px;
     }
 }
 
-.field_with_errors
-{
-    display: inline;
-}
-
 .form_fields
 {
     width: 350px;
     margin: 0 auto;
-    padding: $form_field_area_padding_vertical 100px;
-    position: relative;
-    &__error_message
-    {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        text-align: center;
-        color: red;
-        background-color: #FFFFFF;
-        white-space: nowrap;
-    }
+    padding: 40px;
+
 }
 
 .form_field
@@ -104,27 +84,17 @@ $form_field_area_padding_vertical: 40px;
         padding: 10px $form_input_paddingLR 8px;
         border-radius: 4px;
         border: 1px solid #CCC;
-        &--selector
-        {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none; 
-            box-sizing: content-box;
-            background-color: white;            
-        }
     }
 }
 
 .form_button
 {
-    height: $form_button_height;
+    height: 48px;
     width: 100%;
-    line-height: $form_button_height;
+    line-height: 48px;
     text-align: center;
-    margin-top: $form_margin_top_height;
-    padding: 0;
-    font-size: 16px;
+    margin-top: 32px;
     color: white;
-    background-color: $main_color;
+    background-color: #EA352D;
     border: none;
 }

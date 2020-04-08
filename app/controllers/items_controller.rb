@@ -4,9 +4,11 @@ class ItemsController < ApplicationController
   before_action :admin_user?, only: [:edit, :update, :destroy]
 
   def index
+    @category = Category.all
   end
 
   def show
+    @category = Category.all
     @images = @item.images
     @comments = @item.comments
   end

@@ -1,13 +1,18 @@
 class UsersController < ApplicationController
   before_action :must_logined, only: [:edit]
   before_action :set_current_user, only: [:edit]
-  before_action :set_user, only: [:show, :profile_photo, :profile_photo_update]
+  before_action :set_user, only: [:show, :profile_photo, :edit, :profile_photo_update]
   def show
   end
 
   def edit
   end
 
+  private
+
+  def set_user
+    @user = User.find(params[:id])
+  end
   def update
     if current_user.update(user_params)
       redirect_to user_path(current_user)
@@ -15,9 +20,6 @@ class UsersController < ApplicationController
       @user = current_user
       render :edit
     end
-  end
-
-  def profile_photo
   end
 
   def profile_photo_update

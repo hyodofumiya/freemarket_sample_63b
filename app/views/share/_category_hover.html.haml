@@ -1,0 +1,17 @@
+.header_category_list
+  %ul.parent_category_list
+    - @category.roots.each do |parent|
+      %li.parent_category_name{id: "parent_category_name#{parent.id}"}
+        = link_to "/categories/#{parent.id}", id: "parent_category_#{parent.id}", class: "parent_category_name__label" do
+          = parent.name
+        %ul.child_category_list
+          - parent.children.each do |child| 
+            %li.child_category_name{id: "child_categroy_#{child.id}"}
+              = link_to "/categories/#{child.id}" do
+                = child.name
+              %ul.grandchild_category_list
+                - child.children.each do |grandchild|
+                  %li.grandchild_category_name
+                    = link_to "/categories/#{grandchild.id}" do
+                      = grandchild.name
+                          
