@@ -33,6 +33,8 @@ $main_color: #3CCACC;
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "./mixin";
+@import "./pagenate";
+@import "share/category_hover";
 @import "./header";
 @import "form_header";
 @import "form_footer";
@@ -42,17 +44,13 @@ $main_color: #3CCACC;
 @import "./exhibit_btn";
 @import "form/form_common";
 @import "form/user_form";
-
 @import "items/index";
 @import "items/show";
 @import "mypage/mypage";
 @import "items/new";
 @import "items/comment";
 @import "mypage/profile_photo";
-@import "share/category_hover";
 @import "categories/index";
 @import "categories/_sidebar";
 @import "categories/category_index_main";
 @import "categories/show";
-@import "./pagenate";
-
