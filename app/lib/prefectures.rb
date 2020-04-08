@@ -19,8 +19,12 @@ class Prefectures
     end
 
     def self.find(num, value_kind: "default")#引数で受け取った数値に該当する都道府県を返す。
-        return nil unless num
-        return self.list[num][option_kind(value_kind)]
+        return nil if num.to_i < 0
+        begin
+            return self.list[num][option_kind(value_kind)]
+        rescue NoMethodError, TypeError
+            return nil
+        end
     end
 
     def self.find_by(serch_hash)#受け取った引数に対するidを返す

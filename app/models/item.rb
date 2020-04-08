@@ -59,13 +59,12 @@ class Item < ApplicationRecord
 
     private
     def get_selector(selector, value)
-        return nil unless value
         selector.each do |selector_num, text|
             if(selector_num.to_i == value)
                 return text
             end
         end
-        raise ArgumentError.new, "存在しないセレクターです。"
+        nil
     end
 
     def set_selector(selector, value)
@@ -74,19 +73,6 @@ class Item < ApplicationRecord
                 return yield
             end
         end
-        raise ArgumentError.new, "存在しないセレクターです。"
+        nil
     end
-
-    # def much_selector?
-    #     errors.add(:size, "が不正です。") unless const_exist?(size, SIZE)
-    #     errors.add(:condition, "が不正です。") unless const_exist?(condition, CONDITION)
-    #     errors.add(:delivary, "が不正です。") unless const_exist?(delivary, DELIVARY)
-    # end
-
-    # def const_exist?(target, const)
-    #     const.each do |key, value|
-    #         return true if target.to_i == key.to_i
-    #     end
-    #     return false
-    # end
 end
