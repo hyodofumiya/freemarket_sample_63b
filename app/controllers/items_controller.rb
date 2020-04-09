@@ -1,8 +1,11 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :destroy]
   before_action :admin_user?, only: [:edit, :update, :destroy]
+  INDEX_ROW_COUNT = 5
 
   def index
+    @items = Item.all.order(created_at: :DESC)
+    @row_count = INDEX_ROW_COUNT < @items.length ? INDEX_ROW_COUNT : @items.length
   end
 
   def show
