@@ -27,6 +27,7 @@ class UsersController < ApplicationController
   def set_current_user
     @user = current_user
   end
+  
   def update
     if current_user.update(user_params)
       redirect_to user_path(current_user)
@@ -54,15 +55,13 @@ class UsersController < ApplicationController
     params.require(:user).permit(:photo_filepath)
   end
 
-  def set_current_user
-    @user = current_user
-  end
-
   def set_user
     if params[:user_id]
       @user = User.find(params[:user_id])
     else
       @user = User.find(params[:id])
     end
+  def set_current_user
+    @user = current_user
   end
 end
