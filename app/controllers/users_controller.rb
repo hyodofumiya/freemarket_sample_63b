@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   before_action :set_current_user, only: [:edit, :show]
   before_action :must_logined, only: [:edit, :show]
   def show
+    @category = Category.all
   end
 
   def edit
@@ -18,16 +19,6 @@ class UsersController < ApplicationController
     end
   end
 
-  private
-
-  def user_params
-    params.require(:user).permit(:nickname, :family_name, :first_name, :family_name_kana, :first_name_kana, :email, :birthday_year, :birthday_month, :birthday_day, :phone_number)
-  end
-
-  def set_current_user
-    @user = current_user
-  end
-
   def profile_photo
   end
 
@@ -39,6 +30,17 @@ class UsersController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  private
+
+  def user_params
+    params.require(:user).permit(:nickname, :family_name, :first_name, :family_name_kana, :first_name_kana, :email, :birthday_year, :birthday_month, :birthday_day, :phone_number)
+  end
+
+  def set_current_user
+    @user = current_user
+  end
+
+
   def user_photo_params
     params.require(:user).permit(:photo_filepath)
   end
@@ -49,5 +51,5 @@ class UsersController < ApplicationController
     else
       @user = User.find(params[:id])
     end
-
+  end
 end
