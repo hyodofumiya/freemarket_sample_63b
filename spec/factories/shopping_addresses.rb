@@ -11,7 +11,7 @@ FactoryBot.define do
 
     new_address = Gimei.address
     post_cord {Faker::Number.leading_zero_number(digits: 7)}
-    prefecture {new_address.prefecture.kanji}
+    prefecture {Faker::Number.between(from: 0, to: 46)}
     cities {new_address.city.kanji}
     address {new_address.town.kanji}
     building_name {"コーポ山谷102"}
