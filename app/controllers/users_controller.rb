@@ -18,22 +18,7 @@ class UsersController < ApplicationController
     end
   end
 
-  private
-
-  def user_params
-    params.require(:user).permit(:nickname, :family_name, :first_name, :family_name_kana, :first_name_kana, :email, :birthday_year, :birthday_month, :birthday_day, :phone_number)
-  end
-
-  def set_current_user
-    @user = current_user
-  end
-  def update
-    if current_user.update(user_params)
-      redirect_to user_path(current_user)
-    else
-      @user = current_user
-      render :edit
-    end
+  def profile_photo
   end
 
   def profile_photo_update
@@ -50,12 +35,12 @@ class UsersController < ApplicationController
     params.require(:user).permit(:nickname, :family_name, :first_name, :family_name_kana, :first_name_kana, :email, :birthday_year, :birthday_month, :birthday_day, :phone_number)
   end
 
-  def user_photo_params
-    params.require(:user).permit(:photo_filepath)
-  end
-
   def set_current_user
     @user = current_user
+  end
+  
+  def user_photo_params
+    params.require(:user).permit(:photo_filepath)
   end
 
   def set_user
