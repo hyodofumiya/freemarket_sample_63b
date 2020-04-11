@@ -32,31 +32,37 @@
               .payment_zone__credit_card_select__head--title
                 支払い方法
             .payment_zone__credit_card_select--btn_to_select
-              = link_to user_credit_cards_path, class: "select_credit_card_link" do
+              = link_to new_user_credit_card_path(user_id: current_user.id), class: "select_credit_card_link" do
                 = icon "fa", "plus-circle"
-                クレジットカードを登録してください。
-                = form_with url: user_credit_cards_path do
-                  :plain
-                    <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-text="カードの登録" data-key="pk_test_abb432a115546eb97a276ff0" data-submit-text='カードを登録して閉じる'></script>
+                クレジットカードを登録
           - else
             .payment_zone__credit_card_select__head
               .payment_zone__credit_card_select__head--title
                 支払い方法
-              = link_to user_credit_cards_path, class:"payment_zone__credit_card_select__head--change_link" do
-                変更する
-            %p.payment_zone__credit_card_select__credit_card_info
-              クレジットカード
-              %br
-              ********0000
-              %br
-              有効期限22/31
-            .payment_zone__credit_card_select__credit_card_logo
+            %p.credit_card_info
+              %h2.credit_card_info__title
+                登録クレジットカード情報
+              %ul.credit_card_info__main
+                %li.credit_card_info__main__detail
+                  .credit_card_info__main__detail--title
+                    カード番号
+                  .credit_card_info__main__detail--value
+                    = "**** **** **** " + @default_card_information.last4
+                %li.credit_card_info__main__detail
+                  .credit_card_info__main__detail--title
+                    有効期限
+                  .credit_card_info__main__detail--value
+                    = @exp_month + " 月 " + @exp_year + " 年 "
+            = link_to user_credit_cards_path(user_id: current_user.id), class:"payment_zone__credit_card_select__change_link" do
+              変更する
 
         .payment_zone__shopping_address
           .payment_zone__shopping_address__head
             .payment_zone__shopping_address__head--title
               配送先
-            = link_to user_shopping_addresses_path, class: "payment_zone__shopping_address__head--change_link" do
+            .payment_zone__shopping_adress__head--value
+
+            = link_to user_shopping_addresses_path(user_id: current_user.id), class: "payment_zone__shopping_address__head--change_link" do
               変更する
           %p.payment_zone__shopping_address__shopping_address_info
             〒000-0000

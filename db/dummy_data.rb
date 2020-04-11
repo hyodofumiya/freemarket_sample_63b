@@ -7,9 +7,10 @@ def item_create(i, c_id)
       size: 0,
       preparation_day: 0,
       status: 0,
-      area: 2,
-      delivary_fee: 0,
+      area: 1,
+      delivary: 0,
       user_id: 1,
+      bland_id: 1,
       category_id: c_id,
   )
 end
