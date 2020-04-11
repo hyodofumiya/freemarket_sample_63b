@@ -1,6 +1,4 @@
-/ヘッダー部分/
-.orders_new_header
-  headerが入る
+= render 'share/header'
 .main
   .order_main
     %h2.header
@@ -68,5 +66,4 @@
             姓 名
         = f.submit "購入する", class: "order_submit_btn"
 
-.orders_new_footer
-  footerが入る
+= render 'share/footer'
