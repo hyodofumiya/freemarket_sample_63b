@@ -1,0 +1,42 @@
+.credit_new{
+  background-color: $content_area_form_backcolor;
+  min-height: calc(100vh - #{$header_height} - #{$footer_height});
+  margin: auto;
+  display: flex;
+  align-items: center;
+  &__body{
+    &__title{
+      & h2{}
+    }
+    &__credit_card{
+      &__inner{
+        .credit_label{}
+        & span{
+          display: inline;
+          color: white;
+          background-color: red;
+          box-sizing: content-box;
+          margin: 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          font-size: 75%;
+        }
+        .credit_input-number{}
+        .card-expire{
+          .credit_label{}
+          & span{}
+          &__wrap{
+            .credit_input_expire{}
+            .expire_text{}
+          }
+          .credit_input-number{}
+        }
+        .content-bottom{
+          &--add-btn{
+            
+          }
+        }
+      }
+    }
+  }
+}

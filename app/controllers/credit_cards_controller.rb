@@ -7,8 +7,8 @@ class CreditCardsController < ApplicationController
 
   def new
     @category = Category.all
-    card = CreditCard.where(user_id: current_user.id).first
-    redirect_to action: "show" if card.present?
+    #card = CreditCard.where(user_id: current_user.id).first
+    redirect_to action: "show" if @card.present?
   end
 
   def create
@@ -77,6 +77,10 @@ class CreditCardsController < ApplicationController
   private
 
   def set_card
-    @card = CreditCard.where(user_id: current_user.id).first if CreditCard.where(user_id: current_user.id).present?
+    if user_signed_in?
+      @card = CreditCard.where(user_id: current_user.id).first if CreditCard.where(user_id: current_user.id).present?
+    else
+    redirect_to new_user_session_path unless user_signed_in?
+    end
   end
 end
