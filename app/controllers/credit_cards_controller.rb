@@ -7,14 +7,12 @@ class CreditCardsController < ApplicationController
 
   def new
     @category = Category.all
-    #card = CreditCard.where(user_id: current_user.id).first
     redirect_to action: "show" if @card.present?
   end
 
   def create
     require 'payjp'
     Payjp.api_key = 'sk_test_496e60aafad5d32afacf318d'
-    binding.pry
     if params['payjp-token'].blank?
       redirect_to action: "new"
     else
@@ -33,6 +31,7 @@ class CreditCardsController < ApplicationController
   end
 
   def show
+    @category = Category.all
     @card = CreditCard.where(user_id: current_user.id).first
     if @card.blank?
       redirect_to action: "new" 
@@ -40,6 +39,8 @@ class CreditCardsController < ApplicationController
       Payjp.api_key = 'sk_test_496e60aafad5d32afacf318d'
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = customer.cards.retrieve(@card.card_id)
+      @exp_month = @default_card_information.exp_month.to_s
+      @exp_year = @default_card_information.exp_year.to_s.slice(2,3)
     end
   end
 
