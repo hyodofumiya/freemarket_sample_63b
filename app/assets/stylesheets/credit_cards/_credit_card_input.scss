@@ -6,34 +6,58 @@
   align-items: center;
   &__body{
     &__title{
-      & h2{}
+      text-align: center;
+      & h2{
+        font-size: 137.5%;
+        font-weight: bold;
+        height: 33px;
+        line-height: 33px;
+        margin: 0 auto;
+        padding: 32px;
+        border-bottom: 1px solid $content_area_form_backcolor;
+        width: 500px;
+      }
     }
-    &__credit_card{
+    &__credit-card{
+      margin: 40px auto;
       &__inner{
-        .credit_label{}
-        & span{
-          display: inline;
-          color: white;
-          background-color: red;
-          box-sizing: content-box;
-          margin: 0 8px;
-          padding: 2px 4px;
-          border-radius: 2px;
-          font-size: 75%;
-        }
-        .credit_input-number{}
-        .card-expire{
-          .credit_label{}
-          & span{}
-          &__wrap{
-            .credit_input_expire{}
-            .expire_text{}
+        width: 500px !important;
+        margin: auto;
+        .credit_card_form{
+          line-height: 2;
+          .credit_label{
+            width: 300px;
+            display: inline-block;
+            & span{
+            }
           }
           .credit_input-number{}
-        }
-        .content-bottom{
-          &--add-btn{
-            
+          .cards-expire{
+            display: flex;
+            &__wrap{
+              .credit_input_expire{}
+              .expire_text{}
+            }
+            .credit_input-number{}
+          }
+          .cvc{
+            &__main{
+              display: flex;
+              align-items: center;
+              .cvc_input{
+                height: 22px;
+              }
+            }
+            &__sub{
+              font-size: 12px;
+              margin-top: -8px;
+            }
+          }
+          .content-bottom{
+            margin-bottom: 30px;
+            &--add-btn{
+              
+            }
           }
         }
       }
