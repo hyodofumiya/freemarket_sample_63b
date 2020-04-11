@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_28_030133) do
+ActiveRecord::Schema.define(version: 2020_04_07_115159) do
+
+  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.boolean "size", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
+    t.index ["name"], name: "index_categories_on_name"
+  end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -48,7 +64,7 @@ ActiveRecord::Schema.define(version: 2020_03_28_030133) do
     t.integer "area", null: false
     t.integer "preparation_day", null: false
     t.integer "price", null: false
-    t.boolean "status", null: false
+    t.boolean "status", default: true, null: false
     t.bigint "user_id"
     t.bigint "brand_id"
     t.datetime "created_at", null: false
