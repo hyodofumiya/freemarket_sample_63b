@@ -11,6 +11,8 @@ class Item < ApplicationRecord
     CONDITION = {"0"=> "新品", "5"=> "未使用に近い", "10"=> "目立った傷や汚れなし", "15"=> "やや傷や汚れあり", "20"=> "傷や汚れあり", "25"=> "状態悪い"}
     DELIVARY = {"0"=> "出品者負担", "5"=> "購入者負担"}
 
+    before_validation :delete_empty_image
+
 #==========バリデーション==============
     validates :name, presence: true
     validates :discription, presence: true
@@ -57,6 +59,11 @@ class Item < ApplicationRecord
 
 #=================================================================
 
+#===================フォーム用のゲッター============================
+    def brand_name
+        return self.brand&.name
+    end
+#=================================================================
     private
     def get_selector(selector, value)
         selector.each do |selector_num, text|
@@ -74,5 +81,15 @@ class Item < ApplicationRecord
             end
         end
         nil
+    end
+
+    def delete_empty_image
+        temp_images = []
+        self.images.each do |image|
+            unless image.photo.file.nil?
+                temp_images << image
+            end
+        end
+        self.images.replace(temp_images)
     end
 end

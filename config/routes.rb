@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     get "profile_photo", to: "users#profile_photo"
     patch "update_profile_photo", to: "users#profile_photo_update"
   end
-  resources :items, only: [:index, :new, :create, :edit, :show, :destroy] do
+  resources :items, only: [:index, :new, :create, :edit, :update, :show, :destroy] do
     resource :favorite, only: [:create, :destroy]
     resources :comments, only: [:create]
     resources :orders, only: [:new, :create]#orderはuserにも関係するがcurrent_userでとるのでitemにネストする。

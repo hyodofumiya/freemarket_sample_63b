@@ -7,6 +7,7 @@ class User < ApplicationRecord
   mount_uploader :photo_filepath, UserPhotoUploader
   include FullnameAndPhoneAction
 
+  has_many :items, dependent: :destroy
   has_many :shopping_addresses, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :comments, dependent: :destroy

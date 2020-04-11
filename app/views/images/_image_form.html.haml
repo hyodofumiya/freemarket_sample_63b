@@ -5,7 +5,11 @@
     最大10枚までアップロードできます
     .main__showmain__main-image__main-form
         = form.fields_for :images do |image_form|
-            = image_form.label :photo, class: "main__showmain__main-image__main-form__upload" do
-                ドラックアンドドロップ
-                %br またはクリックしてファイルをアップロード
+            - if image_form.object.persisted?
+                = image_form.label :photo do
+                    = image_tag image_form.object.photo&.url
+            - else
+                = image_form.label :photo, class: "main__showmain__main-image__main-form__upload" do
+                    ドラックアンドドロップ
+                    %br またはクリックしてファイルをアップロード
             = image_form.file_field :photo, class: "display_none"
