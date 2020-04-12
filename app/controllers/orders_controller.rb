@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
       :customer => @credit_card.customer_id,
       :currency => 'jpy',
     ) 
-    @order = Order.new(user_id: current_user.id, item_id: @item.id, )
+    #@order = Order.new(user_id: current_user.id, item_id: @item.id, )
   end
 
   def edit

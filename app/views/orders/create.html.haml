@@ -21,12 +21,15 @@
         .order_finish_info__pay_info__item_price--head
           商品代金
         .order_finish_info__pay_info__item_price--data
-          = "¥" + @item.price + "(税込)" + @item.delivary
+          %p 
+            = "税込　¥ " + @item.price.to_s
+          %p 
+            = "配送料　" + @item.delivary
       .order_finish_info__pay_info__pay_amount
         .order_finish_info__pay_info__pay_amount--head
           お支払い金額
         .order_finish_info__pay_info__pay_amount--data
-          = @item.price
+          = "￥ " + @item.price.to_s
       .order_finish_info__pay_info__payment_method
         .order_finish_info__pay_info__payment_method--head
           お支払い方法
@@ -39,7 +42,7 @@
         .order_finish_info__pay_info__order_date--head
           購入日時
         .order_finish_info__pay_info__order_date--data
-          = @order.created_at
+          @order.created_at
       
   .back_items_top_link
     = link_to root_path, class: "back_items_top_link--link" do
