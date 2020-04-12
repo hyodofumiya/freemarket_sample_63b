@@ -42,7 +42,7 @@
         .order_finish_info__pay_info__order_date--head
           購入日時
         .order_finish_info__pay_info__order_date--data
-          @order.created_at
+          = @order.created_at.strftime('%y/%m/%d %H:%M')
       
   .back_items_top_link
     = link_to root_path, class: "back_items_top_link--link" do

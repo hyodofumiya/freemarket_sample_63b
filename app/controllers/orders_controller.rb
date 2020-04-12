@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
   before_action :set_categories, only: [:new, :create]
   before_action :set_item, only: [:new, :create]
   before_action :set_card, only: [:new, :create]
+  before_action :set_shopping_address, only: [:new, :create]
 
   def index
   end
@@ -17,7 +18,14 @@ class OrdersController < ApplicationController
       :customer => @credit_card.customer_id,
       :currency => 'jpy',
     ) 
-    #@order = Order.new(user_id: current_user.id, item_id: @item.id, )
+    @order = Order.create(user_id: current_user.id, item_id: @item.id, credit_card_id: @credit_card.id)
+    @item.update(status: 'false')
+    binding.pry
+    if @order.save&&@item.update
+    else
+      redirect_to action: "new", notice: '購入できませんでした'
+    end
+
   end
 
   def edit

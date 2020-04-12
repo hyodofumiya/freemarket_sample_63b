@@ -7,7 +7,7 @@ class User < ApplicationRecord
   mount_uploader :photo_filepath, UserPhotoUploader
   include FullnameAndPhoneAction
 
-  has_many :credit_cards
+  has_many :credit_cards, dependent: :delete_all
   has_many :items
   has_many :shopping_addresses, dependent: :destroy
   has_many :favorites, dependent: :destroy
@@ -15,6 +15,7 @@ class User < ApplicationRecord
   include FullnameAndPhoneAction
 
   has_many :shopping_addresses
+  has_many :orders
   before_validation :create_birthday, if: :birthday_year && :birthday_month && :birthday_day
 
   validates :nickname, presence: true
