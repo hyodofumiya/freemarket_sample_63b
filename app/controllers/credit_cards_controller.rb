@@ -56,25 +56,6 @@ class CreditCardsController < ApplicationController
       redirect_to user_path(current_user.id)
   end
 
-  def pay #payjpとCardのデータベース作成を実施します。
-    Payjp.api_key = 'sk_test_496e60aafad5d32afacf318d'
-    if params['payjp-token'].blank?
-      redirect_to action: "new"
-    else
-      customer = Payjp::Customer.create(
-      description: '登録テスト', #なくてもOK
-      card: params['payjp-token'],
-      metadata: {user_id: current_user.id}
-      ) #念の為metadataにuser_idを入れましたがなくてもOK
-      @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
-      if @card.save
-        redirect_to action: "show"
-      else
-        redirect_to action: "pay"
-      end
-    end
-  end
-
   private
 
   def set_card
