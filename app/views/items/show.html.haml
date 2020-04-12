@@ -7,20 +7,20 @@
         FURIMA
     %li.bread_crumb_navigation_bar__link_list__second.bread_crumb_content
       = icon "fa", "angle-right", class: "bread_crumb_content__icon"
-      .bread_crumb_content__link_text
-        ベビー・キッズ
+      = link_to category_path(@item.category.root), class: "bread_crumb_content__link_text" do
+        = @item.category.root.name
     %li.bread_crumb_navigation_bar__link_list__third.bread_crumb_content
       = icon "fa", "angle-right", class: "bread_crumb_content__icon"
-      = link_to root_path, class: "bread_crumb_content__link_text" do
-        ベビー服（男女兼用）~95cm
+      = link_to category_path(@item.category.parent), class: "bread_crumb_content__link_text" do
+        = @item.category.parent.name
     %li.bread_crumb_navigation_bar__link_list__fourth.bread_crumb_content
       = icon "fa", "angle-right", class: "bread_crumb_content__icon"
-      = link_to root_path, class: "bread_crumb_content__link_text" do
-        アウター
+      = link_to category_path(@item.category), class: "bread_crumb_content__link_text" do
+        = @item.category.name
     %li.bread_crumb_navigation_bar__link_list__fifth.bread_crumb_content
       = icon "fa", "angle-right", class: "bread_crumb_content__icon"
       %p.bread_crumb_content__link_text
-        product3
+        = @item.name
 .main
   .main__body
     .main__body__content
@@ -69,14 +69,14 @@
                   %th.table__body__category--head.tabel_row--head
                     カテゴリー
                   %td.table__body__category--data.table_row--data
-                    = link_to root_path do
-                      ベビー・キッズ
+                    = link_to category_path(@item.category.root) do
+                      = @item.category.root.name
                     %br
-                    = link_to root_path do
-                      ベビー服（男女兼用）~95cm
+                    = link_to category_path(@item.category.parent) do
+                      = @item.category.parent.name
                     %br
-                    = link_to root_path do
-                      アウター
+                    = link_to category_path(@item.category) do
+                      = @item.category.name
               %tbody.table__body
                 %tr.table__body__brand.tabel_row
                   %th.table__body__brand--head.tabel_row--head

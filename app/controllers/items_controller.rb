@@ -4,9 +4,9 @@ class ItemsController < ApplicationController
   INDEX_ROW_COUNT = 5
 
   def index
-    @items = Item.all.order(created_at: :DESC)
-    @row_count = INDEX_ROW_COUNT < @items.length ? INDEX_ROW_COUNT : @items.length
+    @items = Item.all.order(created_at: :DESC).includes(:comments, :favorites, :images)
     @category = Category.all
+    @category_items = array_items_by_category
   end
 
   def show
@@ -45,5 +45,13 @@ class ItemsController < ApplicationController
   def admin_user?#出品者以外は詳細ページへリダイレクト
     set_item
     redirect_to item_path(@item) unless @item.user == current_user
+  end
+
+  def array_items_by_category
+    item_array = []
+    Category::DISPLAY_TOP_PAGE.each do |num|
+      item_array << { id: num.to_s, items: Item.category_items(num)}
+    end
+    return item_array
   end
 end
