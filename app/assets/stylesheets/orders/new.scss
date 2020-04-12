@@ -78,13 +78,15 @@ body{
                   margin-right: 15px;
                   display: flex;
                   align-items: center;
-    
-                }
-                &__postage_info{
-                  font-weight: $font_weight;
-                  margin-right: 0;
                 }
               }
+            }
+            &__delivaryfee_info{
+              display: flex;
+              &--title{
+                margin-right: 10px;
+              }
+              &--value{}
             }
           }
         }
