@@ -7,7 +7,7 @@ class CreditCardsController < ApplicationController
 
   def new
     @category = Category.all
-    redirect_to action: "show" if @card.present?
+    redirect_to action: "show", id: @card.id if @card.present?
   end
 
   def create

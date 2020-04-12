@@ -20,8 +20,7 @@ class OrdersController < ApplicationController
     ) 
     @order = Order.create(user_id: current_user.id, item_id: @item.id, credit_card_id: @credit_card.id)
     @item.update(status: 'false')
-    binding.pry
-    if @order.save&&@item.update
+    if @order.save && @item.save
     else
       redirect_to action: "new", notice: '購入できませんでした'
     end
