@@ -24,52 +24,36 @@
             margin: -8px -4px 0px;
             margin-top: 8px;
             padding: 0px 4px;
-            .item-num-0{
-              width: 100%;
-            }
-            .item-num-1{
-              width: 491px;
-            }
-            .item-num-2{
-              width: 363px;
-            }
-            .item-num-3{
-              width: 234px;
-            }
-            .item-num-4{
-              width: 106px;
-            }
-            //下段のfile_field
-            .item-num-5{
-              width: 100%;
-            }
-            .item-num-6{
-              width: 491px;
-            }
-            .item-num-7{
-              width: 363px;
-            }
-            .item-num-8{
-              width: 234px;
-            }
-            .item-num-9{
-              width: 106px;
-            }
-          
-            &__upload{
-              display: block;
-              align-content: center;
-              text-align: center;
-              background-color: rgb(245, 245, 245);
-              cursor: pointer;
-              display: flex;
-              height: 100%;
-              flex-wrap: wrap;
-              justify-content: center;
-              border-width: 1px;
-              border-style: dashed;
-              border-color: rgb(204, 204, 204);
-            }
+            #image-box-1{
+                display: block;
+                align-content: center;
+                text-align: center;
+                background-color: rgb(245, 245, 245);
+                cursor: pointer;
+                display: flex;
+                height: 100%;
+                flex-wrap: wrap;
+                justify-content: center;
+                border-width: 1px;
+                border-style: dashed;
+                border-color: rgb(204, 204, 204);
+                .item-num-0{
+                  width: 100%;
+                }
+                .item-num-1{
+                  width: 491px;
+                }
+                .item-num-2{
+                  width: 363px;
+                }
+                .item-num-3{
+                  width: 234px;
+                }
+                .item-num-4{
+                  width: 106px;
+                }
+              
+              }
           }
         }
         &__main-item{
