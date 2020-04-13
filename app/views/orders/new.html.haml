@@ -56,8 +56,8 @@
                     有効期限
                   .credit_card_info__main__detail--value
                     = @exp_month + " 月 " + @exp_year + " 年 "
-            /= link_to user_credit_cards_path(user_id: current_user.id), class:"payment_zone__credit_card_select__change_link" do
-            //  変更する
+            = link_to user_credit_cards_path(user_id: current_user.id, item_id: @item.id), class:"payment_zone__credit_card_select__change_link" do
+              変更する
 
         .payment_zone__shopping_address
           .payment_zone__shopping_address__head
