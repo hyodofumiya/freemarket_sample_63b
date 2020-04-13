@@ -9,9 +9,11 @@ class OrdersController < ApplicationController
   end
 
   def new
+    binding.pry
   end
 
   def create
+
     Payjp.api_key = 'sk_test_496e60aafad5d32afacf318d'
     pay = Payjp::Charge.create(
       :amount => @item.price,

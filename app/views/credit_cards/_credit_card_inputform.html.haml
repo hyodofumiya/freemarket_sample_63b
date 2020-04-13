@@ -4,7 +4,8 @@
       %h2 クレジットカード情報入力
     .credit_new__body__credit-card
       .form_field.credit_new__body__credit-card__inner
-        = form_with url: user_credit_cards_path, method: :post, html: { name: "inputForm" }, class: "credit_card_form" do |f| # createアクションのパスを指定
+        = form_with url: user_credit_cards_path, method: :post, html: { name: "inputForm"}, class: "credit_card_form" do |f| # createアクションのパスを指定
+          = f.hidden_field :item_id, value: @item
           = f.label :card_number, class: "credit_label form_field__label" do
             %span.form_field__label--essential カード番号
           = f.text_field :card_number, type: 'text', class: 'credit_input-number', placeholder: '半角数字のみ', maxlength: "16" 

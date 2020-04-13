@@ -35,7 +35,7 @@
               .payment_zone__credit_card_select__head--title
                 支払い方法
             .payment_zone__credit_card_select--btn_to_select
-              = link_to new_user_credit_card_path(user_id: current_user.id), class: "select_credit_card_link" do
+              = link_to new_user_credit_card_path(user_id: current_user.id, item_id: @item.id), class: "select_credit_card_link" do
                 = icon "fa", "plus-circle"
                 クレジットカードを登録
           - else

@@ -8,6 +8,7 @@ class CreditCardsController < ApplicationController
   def new
     @category = Category.all
     redirect_to action: "show", id: @card.id if @card.present?
+    @item = params[:item_id] if params[:item_id].present?
   end
 
   def create
@@ -21,9 +22,10 @@ class CreditCardsController < ApplicationController
         card: params['payjp-token'], # 直前のnewアクションで発行され、送られてくるトークンをここで顧客に紐付けてpayjpに永久保存します。
         metadata: {user_id: current_user.id} # 無くてもOK。
       )
+      @item = params[:item_id] if params[:item_id].present?
       @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to user_credit_card_path(user_id:current_user.id, id:@card.id)
+        redirect_to user_credit_card_path(user_id:current_user.id, id:@card.id, item_id: @item.to_i)
       else
         redirect_to action: "create"
       end
@@ -31,6 +33,7 @@ class CreditCardsController < ApplicationController
   end
 
   def show
+    @item = params[:item_id] if present?
     @category = Category.all
     @card = CreditCard.where(user_id: current_user.id).first
     if @card.blank?
