@@ -12,7 +12,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-    binding.pry
     if  @item.status == false #もし購入済みの商品であれば購入処理の前にrootに遷移させる
       redirect_to root_path, notice: '選択された商品は現在販売されていません'
     else
