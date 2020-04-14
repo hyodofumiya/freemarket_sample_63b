@@ -12,19 +12,23 @@ class OrdersController < ApplicationController
   end
 
   def create
-    Payjp.api_key = 'sk_test_496e60aafad5d32afacf318d'
-    pay = Payjp::Charge.create(
-      :amount => @item.price,
-      :customer => @credit_card.customer_id,
-      :currency => 'jpy',
-    ) 
-    @order = Order.create(user_id: current_user.id, item_id: @item.id, credit_card_id: @credit_card.id)
-    @item.update(status: 'false')
-    if @order.save && @item.save
+    binding.pry
+    if  @item.status == false #もし購入済みの商品であれば購入処理の前にrootに遷移させる
+      redirect_to root_path, notice: '選択された商品は現在販売されていません'
     else
-      redirect_to action: "new", notice: '購入できませんでした'
+      Payjp.api_key = 'sk_test_496e60aafad5d32afacf318d'
+      pay = Payjp::Charge.create(
+        :amount => @item.price,
+        :customer => @credit_card.customer_id,
+        :currency => 'jpy',
+      ) 
+      @order = Order.create(user_id: current_user.id, item_id: @item.id, credit_card_id: @credit_card.id)
+      @item.update(status: 'false')
+      if @order.save && @item.save
+      else
+        redirect_to action: "new", notice: '購入に失敗しました'
+      end
     end
-
   end
 
   def edit

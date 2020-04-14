@@ -33,7 +33,7 @@ class CreditCardsController < ApplicationController
   end
 
   def show
-    @item = params[:item_id] if present?
+    @item = params[:item_id].to_i if present?
     @category = Category.all
     @card = CreditCard.where(user_id: current_user.id).first
     if @card.blank?

@@ -19,10 +19,10 @@
         %input{ type: "hidden", name: "card_id", value: "" }
         %button 削除する
     .credit_show__body__page_link
-      - if @item.present?
+      - if @item==0
+        = link_to user_path(current_user.id) do
+          マイページに戻る
+      - else
         = link_to new_item_order_path(item_id: params[:item_id].to_i) do
           購入画面に戻る
-      - else
-        = link_to user_path(current_user.id) do
-          マイページに戻る 
 = render 'share/footer'

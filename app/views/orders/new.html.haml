@@ -56,15 +56,13 @@
                     有効期限
                   .credit_card_info__main__detail--value
                     = @exp_month + " 月 " + @exp_year + " 年 "
-            = link_to user_credit_cards_path(user_id: current_user.id, item_id: @item.id), class:"payment_zone__credit_card_select__change_link" do
+            = link_to user_credit_card_path(user_id: current_user.id, id:@credit_card.id, item_id: @item.id), class:"payment_zone__credit_card_select__change_link" do
               変更する
 
         .payment_zone__shopping_address
           .payment_zone__shopping_address__head
             .payment_zone__shopping_address__head--title
               配送先
-            = link_to user_shopping_addresses_path(user_id: current_user.id), class: "payment_zone__shopping_address__head--change_link" do
-              変更する
           %p.payment_zone__shopping_address__shopping_address_info
             = "〒" + @shopping_address.post_cord.insert(3, "-")
             %br
