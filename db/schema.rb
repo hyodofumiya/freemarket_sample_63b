@@ -53,7 +53,9 @@ ActiveRecord::Schema.define(version: 2020_04_05_135419) do
     t.bigint "brand_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id"
     t.index ["brand_id"], name: "index_items_on_brand_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
@@ -95,5 +97,6 @@ ActiveRecord::Schema.define(version: 2020_04_05_135419) do
   end
 
   add_foreign_key "images", "items"
+  add_foreign_key "items", "categories"
   add_foreign_key "shopping_addresses", "users"
 end

@@ -13,9 +13,11 @@
     .header__inner__lower
       %ul.header_zone_left_btns
         %li.header_zone_left_btns__category
-          カテゴリー
+          = link_to categories_path,class: "header_categories_link" do
+            カテゴリー
+          = render 'share/category_hover'
         %li.header_zone_left_btns__brand
-          ブランド
+          %p ブランド
       %ul.header_zone_right_btns
         - if user_signed_in?
           %li.header_zone_right_btns__btn
