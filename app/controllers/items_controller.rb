@@ -16,8 +16,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @category = Category.all
-    @children = @category[0].children #仮
-    @groundchild = @category[1].children
+    gon.roots = Category.all.roots
   end
 
   def create
