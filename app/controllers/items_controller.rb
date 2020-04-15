@@ -15,6 +15,9 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @category = Category.all
+    @children = @category[0].children #仮
+    @groundchild = @category[1].children
   end
 
   def create

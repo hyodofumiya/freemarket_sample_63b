@@ -1,5 +1,10 @@
 .main__showmain__detail__category_id
   .form_field
-    = form.label :category, "カテゴリー", class: "form_field__label form_field__label--essential"
+    = form.label :category_id, "カテゴリー", class: "form_field__label form_field__label--essential"
 .main__showmain__detail__categoryarea
-  = select_tag 'category', options_for_select(["選択してください", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"]), id: "category_area"
+  .main_showmain__detail__categoryarea__parent
+    = select_tag 'category_id', options_for_select(@category.roots.collect{ |p| [p.name, p.id] } ), id: "category_parent_area", options: { data_subgroup: "parent#{:id}" }
+  .main__showmain__detail__categoryarea__child
+    = select_tag 'category_id', options_for_select(@children.collect{ |c| [c.name, c.id] }), id: "category_child_area", options: {data_subgroup: "child#{:id}"}
+  .main__showmain__detail__categoryarea__grandchild
+    = select_tag 'category_id', options_for_select(@groundchild.collect{ |g| [g.name, g.id] }), id: "category_groundchild_area", options: {data_subgroup: "groundchild#{:id}"}
