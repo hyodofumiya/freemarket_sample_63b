@@ -3,8 +3,8 @@
     = form.label :category_id, "カテゴリー", class: "form_field__label form_field__label--essential"
 .main__showmain__detail__categoryarea
   .main_showmain__detail__categoryarea__parent
-    = select_tag 'category_id', options_for_select(@category.roots.collect{ |p| [p.name, p.id] } ), id: "category_parent_area", options: { data_subgroup: "parent#{:id}" }
+    = select_tag 'category_id', options_for_select(@category.roots.collect{ |p| [p.name, p.id] }), id: "category_parent_area"
   .main__showmain__detail__categoryarea__child
-    = select_tag 'category_id', options_for_select(@children.collect{ |c| [c.name, c.id] }), id: "category_child_area", options: {data_subgroup: "child#{:id}"}
+    = select_tag 'category_id', options_for_select([['---選択してください---', '']]), id: "category_child_area"
   .main__showmain__detail__categoryarea__grandchild
-    = select_tag 'category_id', options_for_select(@groundchild.collect{ |g| [g.name, g.id] }), id: "category_groundchild_area", options: {data_subgroup: "groundchild#{:id}"}
+    = select_tag 'category_id', options_for_select([['---選択してください---', '']]), id: "category_groundchild_area"
