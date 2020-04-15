@@ -2,9 +2,9 @@ class Item < ApplicationRecord
     has_one :order
     belongs_to :user
     belongs_to :brand, optional: true
-    belongs_to :category
     has_many :favorites, dependent: :destroy
     has_many :comments, dependent: :destroy
+    has_many :categories
     has_many :images, dependent: :destroy
     accepts_nested_attributes_for :images, allow_destroy: true
     SIZE = {"0"=> "XS", "5"=> "S", "10"=> "M", "15"=> "L", "20"=> "XL"}#DBの値とサイズの割付定数

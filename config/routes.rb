@@ -21,9 +21,4 @@ Rails.application.routes.draw do
   end
   root 'items#index'
 
-  resources :items, only: [:index, :show]
-  resources :categories, only: [:index, :show]
- 
-  root 'items#index'
- 
 end

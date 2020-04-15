@@ -61,9 +61,7 @@
       .header_zone_left_btns{
         display: flex;
         &__category{
-          .header_categories_link{
-            @include lower_left;
-          }
+          @include lower_left;
         }
         &__brand{
           @include lower_left;
