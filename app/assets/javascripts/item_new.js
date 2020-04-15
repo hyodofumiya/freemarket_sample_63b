@@ -62,5 +62,5 @@ $(document).on ('turbolinks:load',function(){
   });
 
   //小カテゴリーが選択された時の動作
-
+  
 });
