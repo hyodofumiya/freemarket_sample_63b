@@ -98,99 +98,15 @@
       ピックアップ全ての商品
     .products
       = link_to root_path, class: "products__header" do
-        新規投稿商品      
+        新規投稿商品
       .products__list
-        = link_to root_path, class: "product" do
-          .product__image_zone
-            = image_tag "/material/pict/猫画像１.jpeg", alt: "商品画像", class: "product__image_zone--image" 
-          .product__body
-            .product__body--product_name
-              product3
-            .product__body__detail
-              .product__body__detail__main
-                .product__body__detail__main--price
-                  30000円
-                .product__body__detail__main--favorite
-                  ★0
-              .product__body__detail__sub
-                (税込)
-        = link_to root_path, class: "product" do
-          .product__image_zone
-            = image_tag "/material/pict/猫画像１.jpeg", alt: "商品画像", class: "product__image_zone--image" 
-          .product__body
-            .product__body--product_name
-              product2
-            .product__body__detail
-              .product__body__detail__main
-                .product__body__detail__main--price
-                  20000円
-                .product__body__detail__main--favorite
-                  ★0
-              .product__body__detail__sub
-                (税込)
-        = link_to root_path, class: "product" do
-          .product__image_zone
-            = image_tag "/material/pict/猫画像１.jpeg", alt: "商品画像", class: "product__image_zone--image" 
-          .product__body
-            .product__body--product_name
-              product1
-            .product__body__detail
-              .product__body__detail__main
-                .product__body__detail__main--price
-                  10000円
-                .product__body__detail__main--favorite
-                  ★0
-              .product__body__detail__sub
-                (税込)
+        - item_iterator(@items).times do |i|
+          = render partial: "items/item_preview", locals: { item: @items[i]}
   %section.pickup_products
     %h2.title
       ピックアップ新商品
-    .products
-      = link_to root_path, class: "products__header" do
-        アーカイバ
-      .products__list
-        = link_to root_path, class: "product" do
-          .product__image_zone
-            = image_tag "/material/pict/猫画像１.jpeg", alt: "商品画像", class: "product__image_zone--image" 
-          .product__body
-            .product__body--product_name
-              product3
-            .product__body__detail
-              .product__body__detail__main
-                .product__body__detail__main--price
-                  30000円
-                .product__body__detail__main--favorite
-                  ★0
-              .product__body__detail__sub
-                (税込)
-        = link_to root_path, class: "product" do
-          .product__image_zone
-            = image_tag "/material/pict/猫画像１.jpeg", alt: "商品画像", class: "product__image_zone--image" 
-          .product__body
-            .product__body--product_name
-              product2
-            .product__body__detail
-              .product__body__detail__main
-                .product__body__detail__main--price
-                  20000円
-                .product__body__detail__main--favorite
-                  ★0
-              .product__body__detail__sub
-                (税込)
-        = link_to root_path, class: "product" do
-          .product__image_zone
-            = image_tag "/material/pict/猫画像１.jpeg", alt: "商品画像", class: "product__image_zone--image" 
-          .product__body
-            .product__body--product_name
-              product1
-            .product__body__detail
-              .product__body__detail__main
-                .product__body__detail__main--price
-                  10000円
-                .product__body__detail__main--favorite
-                  ★0
-              .product__body__detail__sub
-                (税込)
+    - @category_items.each do |category_items|
+      = render partial: "items/category_items", locals: {category: @category.find(category_items[:id]), items: category_items[:items]} if category_items[:items].length > 0
 = render "share/app_banner"
 = render "share/footer"
 = render "share/exhibit_btn"

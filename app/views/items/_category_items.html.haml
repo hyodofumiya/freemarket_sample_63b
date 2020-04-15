@@ -1,0 +1,6 @@
+.products
+    = link_to category_path(category), class: "products__header" do
+        = category.name
+    .products__list
+        - item_iterator(items).times do |i|
+            = render partial: "items/item_preview", locals: { item: items[i]}

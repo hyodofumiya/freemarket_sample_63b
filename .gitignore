@@ -31,4 +31,3 @@
 /config/master.key
 db/schema.rb
 config/secrets.yml
-
