@@ -37,22 +37,28 @@
                 border-width: 1px;
                 border-style: dashed;
                 border-color: rgb(204, 204, 204);
-                .item-num-0{
-                  width: 100%;
+                // display: flex;
+                flex-wrap: wrap;
+                // justify-content: space-between;
+                .item-image{
+                  margin: 1.5px;
                 }
-                .item-num-1{
-                  width: 491px;
-                }
-                .item-num-2{
-                  width: 363px;
-                }
-                .item-num-3{
-                  width: 234px;
-                }
-                .item-num-4{
-                  width: 106px;
-                }
-              
+                  .item-num-1{
+                    width: 100%;
+                  }
+                  .item-num-2{
+                    width: 491px;
+                  }
+                  .item-num-3{
+                    width: 363px;
+                  }
+                  .item-num-4{
+                    width: 234px;
+                  }
+                  .item-num-5{
+                    width: 106px;
+                  }
+                
               }
           }
         }
