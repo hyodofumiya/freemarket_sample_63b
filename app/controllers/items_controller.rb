@@ -23,7 +23,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    binding.pry
     @item = Item.new(item_params.merge(user_id: current_user.id))
     @item.brand_id = get_brand_id
     if @item.save
@@ -34,14 +33,16 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    
+    @category = Category.all
+    item = Item.find(params[:id])
+    @select_category = Category.find(item.category_id)
+
   end
 
   def update
     if @item.update(item_params.merge(brand_id: get_brand_id))
       redirect_to item_path(@item)
     else
-      binding.pry
       render :edit
     end
   end
