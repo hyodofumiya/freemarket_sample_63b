@@ -122,6 +122,13 @@
           &__sizearea{
             display: none;
             margin-top: 16px;
+            .size_area_select_form{
+              border: 1px solid #ccc;
+              height: 48px;
+              outline: none;
+              width: 100%;
+              margin-top: 16px;
+            }
           }
           
           &__bland_id{

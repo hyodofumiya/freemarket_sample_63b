@@ -13,4 +13,4 @@
   .form_field
     = form.label :size, "SIZE", class: "form_field__label form_field__label--essential"
 .main__showmain__detail__sizearea
-  = select_tag 'size', options_for_select([['---選択してください---', ''], ['XS', '0'], ['S', '5'], ['M', '10'], ['L', '15'], ['XL', '20']], ""), id: "form_size_area", disabled: true
+  = select_tag 'size', options_for_select([['---選択してください---', ''], ['XS', '0'], ['S', '5'], ['M', '10'], ['L', '15'], ['XL', '20']], ""), id: "form_size_area", disabled: true, class: "size_area_select_form"
