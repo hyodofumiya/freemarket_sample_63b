@@ -1,8 +1,23 @@
 $(function(){
+  const buildFileField = (file)=> {
+    const html = `<div data-index="${file}" class="input-area">
+                    <input id:"img-file" type: 'file'
+                    name="item[images_attributes][${file}][photo]"
+                    id="item_images_attributes_${file}_photo"><br>
+                    <div class="js-remove">削除</div>
+                  </div>`;
+    return html;
+  }
+  $('#image-box-1').on('change', '.js-file', function(e) {
+    // fileIndexの先頭の数字を使ってinputを作る
+    $('#image-box-1').append(buildFileField(fileIndex[0]));
+    fileIndex.shift();
+     // 末尾の数に1足した数を追加する
+     fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
+    });
+    
   //DataTransferオブジェクトで、データを格納する箱を作る
   var dataBox = new DataTransfer();
-  
-
   //querySelectorでfile_fieldを取得
   var file_field = document.querySelector('input[type=file]')
   //fileが選択された時に発火するイベント
