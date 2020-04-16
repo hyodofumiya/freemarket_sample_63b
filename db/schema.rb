@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_07_115159) do
+ActiveRecord::Schema.define(version: 2020_04_11_161016) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -65,13 +65,31 @@ ActiveRecord::Schema.define(version: 2020_04_07_115159) do
     t.integer "preparation_day", null: false
     t.integer "price", null: false
     t.boolean "status", default: true, null: false
-    t.integer "category_id"
     t.bigint "user_id"
     t.bigint "brand_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id"
     t.index ["brand_id"], name: "index_items_on_brand_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
+  create_table "shopping_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "family_name", null: false
+    t.string "first_name", null: false
+    t.string "family_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.string "post_cord", null: false
+    t.integer "prefecture", null: false
+    t.string "cities", null: false
+    t.string "address", null: false
+    t.string "building_name", default: "", null: false
+    t.string "phone_number"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_shopping_addresses_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -95,4 +113,6 @@ ActiveRecord::Schema.define(version: 2020_04_07_115159) do
   end
 
   add_foreign_key "images", "items"
+  add_foreign_key "items", "categories"
+  add_foreign_key "shopping_addresses", "users"
 end
