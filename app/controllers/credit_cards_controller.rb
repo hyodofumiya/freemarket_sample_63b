@@ -6,7 +6,6 @@ class CreditCardsController < ApplicationController
   end
 
   def new
-    @category = Category.all
     redirect_to action: "show", id: @card.id if @card.present?
     @item = params[:item_id] if params[:item_id].present?
   end
@@ -27,14 +26,13 @@ class CreditCardsController < ApplicationController
       if @card.save
         redirect_to user_credit_card_path(user_id:current_user.id, id:@card.id, item_id: @item.to_i)
       else
-        redirect_to action: "create"
+        redirect_to action: "new"
       end
     end
   end
 
   def show
     @item = params[:item_id].to_i if present?
-    @category = Category.all
     @card = CreditCard.where(user_id: current_user.id).first
     if @card.blank?
       redirect_to action: "new" 
@@ -63,9 +61,9 @@ class CreditCardsController < ApplicationController
 
   def set_card
     if user_signed_in?
-      @card = CreditCard.where(user_id: current_user.id).first if CreditCard.where(user_id: current_user.id).present?
+      @card = CreditCard.where(user_id: current_user.id)&.first
     else
-    redirect_to new_user_session_path unless user_signed_in?
+    redirect_to new_user_session_path
     end
   end
 end

@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     before_action :basic_auth, if: :production?
-
+    before_action :set_categoryall, only: [:index, :new, :show, :create]
 
     private
 
@@ -16,5 +16,9 @@ class ApplicationController < ActionController::Base
 
     def must_logined
         redirect_to user_session_path unless user_signed_in?
+    end
+
+    def set_categoryall
+        @category = Category.all
     end
 end

@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   before_action :must_logined, only: [:edit, :show]
   def show
     @card = CreditCard.where(user_id: current_user.id)
-    @category = Category.all
   end
 
   def edit

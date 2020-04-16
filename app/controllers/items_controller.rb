@@ -5,12 +5,10 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all.order(created_at: :DESC).includes(:comments, :favorites, :images)
-    @category = Category.all
     @category_items = array_items_by_category
   end
 
   def show
-    @category = Category.all
     @images = @item.images
     @comments = @item.comments
   end

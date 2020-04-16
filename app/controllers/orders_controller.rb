@@ -1,6 +1,5 @@
 class OrdersController < ApplicationController
   require 'payjp'
-  before_action :set_categories, only: [:new, :create]
   before_action :set_item, only: [:new, :create]
   before_action :set_card, only: [:new, :create]
   before_action :set_shopping_address, only: [:new, :create]
@@ -22,8 +21,7 @@ class OrdersController < ApplicationController
         :currency => 'jpy',
       ) 
       @order = Order.create(user_id: current_user.id, item_id: @item.id, credit_card_id: @credit_card.id)
-      @item.update(status: 'false')
-      if @order.save && @item.save
+      if @order.save && @item.update(status: 'false')
       else
         redirect_to action: "new", notice: '購入に失敗しました'
       end
@@ -40,10 +38,6 @@ class OrdersController < ApplicationController
   end
 
   private
-
-  def set_categories
-    @category = Category.all
-  end
 
   def set_item
     @item = Item.find(params[:item_id])
