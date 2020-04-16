@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params.merge(user_id: current_user.id))
-    # @item.brand_id = get_brand_id
+    @item.brand_id = get_brand_id
     if @item.save
       redirect_to item_path(@item)
     else
@@ -44,9 +44,9 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :discription, :size, :condition, :delivary, :area, :preparation_day, :price, images_attributes: [:photo])
   end
 
-  # def brand_params
-  #   params.require(:item).permit(:brand).values.first
-  # end
+  def brand_params
+    params.require(:item).permit(:brand).values.first
+  end
 
   def set_item
     @item = Item.find(params[:id])
@@ -57,12 +57,12 @@ class ItemsController < ApplicationController
     redirect_to item_path(@item) unless @item.user == current_user
   end
 
-  # def get_brand_id
-  #   return nil unless brand_params
-  #   if brand = Brand.find_by(name: brand_params)
-  #     return brand.id
-  #   else
-  #     return Brand.create(name: brand_params).id
-  #   end
-  # end
+  def get_brand_id
+    return nil unless brand_params
+    if brand = Brand.find_by(name: brand_params)
+      return brand.id
+    else
+      return Brand.create(name: brand_params).id
+    end
+  end
 end
