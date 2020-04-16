@@ -8,22 +8,21 @@ function buildCategoryForm(select, form_id){                                  //
 function hideSizeForm(){                                                      //サイズ選択のフォームを非表示にして選択不可能にする
   $('.main__showmain__detail__size').hide();
   $('.main__showmain__detail__sizearea').hide();
-  document.getElementById('form_size_area').setAttribute("disabled", "true");
 }
 
 $(document).on ('turbolinks:load',function(){
   //大カテゴリーが選択された時の動作
   $(function(){ 
     $("#category_parent_area").click(function() {                             //大カテゴリーの選択ボックスをクリックすると選択肢が追加される
-      hideSizeForm();
       $.each(gon.roots, function(index, val){
         var html = `<option value="${val.id}">${val.name}</option>`
         $("#category_parent_area").append(html);
       });
     });
     $("#category_parent_area").change(function(){                           //大カテゴリーの内容が変更された時、中カテゴリーの中身を削除する
+      hideSizeForm();
       $("#category_child_area").empty();                                    //中カテゴリーフォームの中身を削除
-      $(".main__showmain__detail__categoryarea__grandchild").hide();        //小カテゴリーを非表示にする
+      $("#category_grandchild_area").hide();        //小カテゴリーを非表示にする
       $("#category_grandchild_area").empty();                               //小カテゴリーフォームの中身を削除
       var parentId = $(this).val();                                         //選択された大カテゴリーのidを”parentID”として宣言
       var url = location.href;                                              //ajaxで戻る時に必要なurlを”url”として宣言
@@ -60,7 +59,7 @@ $(document).on ('turbolinks:load',function(){
       })
       .done(function(c){
         $('#category_grandchild_area').append(`<option value="">---選択してください---</option>`)
-        $('.main__showmain__detail__categoryarea__grandchild').show();
+        $('#category_grandchild_area').show();
         var html = buildCategoryForm(c.child, "#category_grandchild_area");
       })
       .fail(function(){
@@ -85,7 +84,6 @@ $(document).on ('turbolinks:load',function(){
         if (selfcategory.size){                                                 //小カテゴリーで選択したカテゴリーがsize:trueだった場合、サイズ入力フォームを表示させる
           $('.main__showmain__detail__size').show();
           $('.main__showmain__detail__sizearea').show();
-          document.getElementById('form_size_area').removeAttribute("disabled");
         };
       })
       .fail(function(){
