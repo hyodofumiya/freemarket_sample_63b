@@ -17,7 +17,7 @@ $(document).on ('turbolinks:load',function(){
       // $('#category_parent_area').empty();
       $.each(gon.roots, function(index, val){
         var html = `<option value="${val.id}">${val.name}</option>`
-        $("#category_parent_area").append(html);
+        $('#category_parent_area').append(html);
       });
     });
     $("#category_parent_area").change(function(){                           //大カテゴリーの内容が変更された時、中カテゴリーの中身を削除する
@@ -32,6 +32,7 @@ $(document).on ('turbolinks:load',function(){
         type: "GET",
         data: {category_id: parentId},
         dataType: 'json',
+
       })
       .done(function(p){
         $('#category_child_area').append(`<option value="">---選択してください---</option>`)
@@ -40,7 +41,7 @@ $(document).on ('turbolinks:load',function(){
         var html = buildCategoryForm(p.child, "#category_child_area");        //ajaxで送られてきた値を元に中カテゴリーフォームの選択肢を作成
       })
       .fail(function(){
-        alart("エラー");
+        console.log('エラー');
       })
     });
   });
