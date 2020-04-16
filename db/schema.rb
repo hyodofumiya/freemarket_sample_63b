@@ -12,12 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_04_12_093747) do
 
-  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.boolean "size", default: false, null: false
@@ -73,8 +67,7 @@ ActiveRecord::Schema.define(version: 2020_04_12_093747) do
     t.integer "area", null: false
     t.integer "preparation_day", null: false
     t.integer "price", null: false
-    t.boolean "status", default: true, null: false
-    t.integer "category_id"
+    t.boolean "status", null: false
     t.bigint "user_id"
     t.bigint "brand_id"
     t.datetime "created_at", null: false
@@ -86,9 +79,9 @@ ActiveRecord::Schema.define(version: 2020_04_12_093747) do
   end
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "item_id"
-    t.bigint "credit_card_id"
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
+    t.bigint "credit_card_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["credit_card_id"], name: "index_orders_on_credit_card_id"
