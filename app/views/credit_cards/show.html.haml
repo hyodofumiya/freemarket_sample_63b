@@ -8,12 +8,12 @@
         .credit_detail_info--title
           カード番号
         .credit_detail_info--value
-          = "**** **** **** " + @default_card_information.last4
+          = "**** **** **** #{@default_card_information.last4}"
       %li.credit_detail_info
         .credit_detail_info--title
           有効期限
         .credit_detail_info--value
-          = @exp_month + " / " + @exp_year
+          = "#{@exp_month}/#{@exp_year}"
     .credit_show__body__delete
       = form_tag( user_credit_card_path(current_user.id, @card.card_id), method: :delete, id: 'charge-form', class: "credit_show__body__delete__form", name: "inputForm") do
         %input{ type: "hidden", name: "card_id", value: "" }
