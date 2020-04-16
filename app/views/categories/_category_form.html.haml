@@ -3,10 +3,15 @@
     = form.label :category_id, "カテゴリー", class: "form_field__label form_field__label--essential"
 .main__showmain__detail__categoryarea
   .main_showmain__detail__categoryarea__parent
-    = select_tag 'category_id', options_for_select([['---選択してください---', '']]), id: "category_parent_area", class: "category_area_select_form"
+    - if @select_category.present?
+      = select_tag 'category_id', options_for_select([[@select_category.roots.name, @select_category.roots.id]]), id: "category_parent_area", class: "category_area_select_form"
+    -else
+      = select_tag 'category_id', options_for_select([['---選択してください---', '']]), id: "category_parent_area", class: "category_area_select_form"
   .main__showmain__detail__categoryarea__child
-    = select_tag 'category_id', options_for_select([['---選択してください---', '']]), id: "category_child_area", class: "category_area_select_form"
-    
+    - if @select_category.present?
+      = select_tag 'category_id', options_for_select([[@select_category.parent.name, @select_category.parent.id]]), id: "category_child_area", class: "category_area_select_form"
+    -else
+      = select_tag 'category_id', options_for_select([['---選択してください---', '']]), id: "category_child_area", class: "category_area_select_form display_none"
   .main__showmain__detail__categoryarea__grandchild
     = form.select :category_id, nil, {}, {id: "category_grandchild_area", class: "category_area_select_form #{('display_none' unless form.object.category_id)}"} do
       - if @select_category.present?
@@ -16,6 +21,9 @@
         %option{value: ""} ---選択してください--- 
 .main__showmain__detail__size
   .form_field
-    = form.label :size, "SIZE", class: "form_field__label form_field__label--essential"
+    = form.label :size, "SIZE", class: "form_field__label form_field__label--essential #{'display_none' unless @select_category.present?}", id: "size_form_label"
 .main__showmain__detail__sizearea
-  = form.select :size, [['---選択してください---', ''], ['XS', '0'], ['S', '5'], ['M', '10'], ['L', '15'], ['XL', '20']], {},{id: "form_size_area", class: "size_area_select_form"}
+  - if @select_category.present?
+    = form.select :size, [ @select_category.name, @select_category.id], {},{id: "form_size_area", class: "size_area_select_form"}
+  -else
+    = form.select :size, [['---選択してください---', ''], ['XS', '0'], ['S', '5'], ['M', '10'], ['L', '15'], ['XL', '20']], {},{id: "form_size_area", class: "size_area_select_form display_none"}

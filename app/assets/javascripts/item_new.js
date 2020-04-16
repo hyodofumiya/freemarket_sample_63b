@@ -5,9 +5,9 @@ function buildCategoryForm(select, form_id){                                  //
   });
 };
 
-function hideSizeForm(){                                                      //サイズ選択のフォームを非表示にして選択不可能にする
-  $('.main__showmain__detail__size').hide();
-  $('.main__showmain__detail__sizearea').hide();
+function hideSizeForm(){                                                      //サイズ選択のフォームを非表示
+  $('#size_form_label').hide();
+  $('#form_size_area').hide();
 }
 
 $(document).on ('turbolinks:load',function(){
@@ -34,7 +34,7 @@ $(document).on ('turbolinks:load',function(){
       })
       .done(function(p){
         $('#category_child_area').append(`<option value="">---選択してください---</option>`)
-        $('.main__showmain__detail__categoryarea__child').show();
+        $('#category_child_area').show();
         $('#category_grandchild_area').append(`<option value="">---選択してください---</option>`)
         var html = buildCategoryForm(p.child, "#category_child_area");        //ajaxで送られてきた値を元に中カテゴリーフォームの選択肢を作成
       })
@@ -82,8 +82,8 @@ $(document).on ('turbolinks:load',function(){
       .done(function(g){                                                        //ajaxで小カテゴリーで選択されたカテゴリー情報を受け取る
         var selfcategory = g.selfcategory                                       //小カテゴリーで選択したカテゴリーの情報を"selfcategory"として宣言
         if (selfcategory.size){                                                 //小カテゴリーで選択したカテゴリーがsize:trueだった場合、サイズ入力フォームを表示させる
-          $('.main__showmain__detail__size').show();
-          $('.main__showmain__detail__sizearea').show();
+          $('#size_form_label').show();
+          $('#form_size_area').show();
         };
       })
       .fail(function(){

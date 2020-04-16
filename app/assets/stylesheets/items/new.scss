@@ -102,7 +102,6 @@
           &__categoryarea{
             &__parent{}
             &__child{
-              display: none;
             }
             &__grandchild{
             }
@@ -116,10 +115,8 @@
           }
           &__size{
             margin-top: 32px;
-            display: none;
           }
           &__sizearea{
-            display: none;
             margin-top: 16px;
             .size_area_select_form{
               border: 1px solid #ccc;
