@@ -156,7 +156,6 @@
 - has_many :brands, through: brand_categories
 - has_many :brand_categories
 - has_many :children (自身の子カテゴリを所持。モデルは自身を参照する。)
-- belongs_to :parrent(モデルは自身を参照する。)
 
 ## Brand_categoriesテーブル
 
