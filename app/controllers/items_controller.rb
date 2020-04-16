@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :must_logined, only: [:new, :create, :edit, :update, :destroy]
   before_action :admin_user?, only: [:edit, :update, :destroy]
+  before_action :set_size, only: [:new, :edit]
   INDEX_ROW_COUNT = 5
 
   def index
@@ -34,8 +35,7 @@ class ItemsController < ApplicationController
 
   def edit
     @category = Category.all
-    item = Item.find(params[:id])
-    @select_category = Category.find(item.category_id)
+    @select_category = Category.find(@item.category_id)
 
   end
 
@@ -93,4 +93,9 @@ class ItemsController < ApplicationController
     return item_array
   end
   
+  def set_size
+    @size = [['---選択してください---', ''], ['XS', '0'], ['S', '5'], ['M', '10'], ['L', '15'], ['XL', '20']]
+  end
+
+
 end
