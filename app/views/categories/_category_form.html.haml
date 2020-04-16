@@ -7,7 +7,7 @@
   .main__showmain__detail__categoryarea__child
     = select_tag 'category_id', options_for_select([['---選択してください---', '']]), id: "category_child_area", class: "category_area_select_form"
   .main__showmain__detail__categoryarea__grandchild
-    = select_tag 'category_id', options_for_select([['---選択してください---', '']]), id: "category_grandchild_area", class: "category_area_select_form"
+    = form.select :category_id, ['---選択してください---', ''], id: "category_grandchild_area", class: "category_area_select_form"
 
 .main__showmain__detail__size
   .form_field
