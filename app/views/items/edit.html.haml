@@ -1,2 +1,6 @@
-%h1 Items#edit
-%p Find me in app/views/items/edit.html.haml
+.sell-page
+  = render "share/form_header"
+
+  .main
+    = render partial: "items/item_form", locals: {item: @item}
+  = render "share/form_footer"

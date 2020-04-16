@@ -11,6 +11,8 @@ class Item < ApplicationRecord
     CONDITION = {"0"=> "新品", "5"=> "未使用に近い", "10"=> "目立った傷や汚れなし", "15"=> "やや傷や汚れあり", "20"=> "傷や汚れあり", "25"=> "状態悪い"}
     DELIVARY = {"0"=> "出品者負担", "5"=> "購入者負担"}
 
+    before_validation :delete_empty_image
+
 #==========バリデーション==============
     validates :name, presence: true
     validates :discription, presence: true
@@ -57,15 +59,19 @@ class Item < ApplicationRecord
 
 #=================================================================
 
+#===================フォーム用のゲッター============================
+    def brand_name
+        return self.brand&.name
+    end
+#=================================================================
     private
     def get_selector(selector, value)
-        return nil unless value
         selector.each do |selector_num, text|
             if(selector_num.to_i == value)
                 return text
             end
         end
-        raise ArgumentError.new, "存在しないセレクターです。"
+        nil
     end
 
     def set_selector(selector, value)
@@ -74,19 +80,16 @@ class Item < ApplicationRecord
                 return yield
             end
         end
-        raise ArgumentError.new, "存在しないセレクターです。"
+        nil
     end
 
-    # def much_selector?
-    #     errors.add(:size, "が不正です。") unless const_exist?(size, SIZE)
-    #     errors.add(:condition, "が不正です。") unless const_exist?(condition, CONDITION)
-    #     errors.add(:delivary, "が不正です。") unless const_exist?(delivary, DELIVARY)
-    # end
-
-    # def const_exist?(target, const)
-    #     const.each do |key, value|
-    #         return true if target.to_i == key.to_i
-    #     end
-    #     return false
-    # end
+    def delete_empty_image
+        temp_images = []
+        self.images.each do |image|
+            unless image.photo.file.nil?
+                temp_images << image
+            end
+        end
+        self.images.replace(temp_images)
+    end
 end

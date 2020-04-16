@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :must_logined, only: [:new, :create, :edit, :update, :destroy]
   before_action :admin_user?, only: [:edit, :update, :destroy]
 
@@ -13,7 +13,6 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.images.build
   end
 
   def create
@@ -22,7 +21,6 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to item_path(@item)
     else
-      @item.images.build if @item.images.length == 0
       render :new
     end
   end
@@ -31,6 +29,12 @@ class ItemsController < ApplicationController
   end
 
   def update
+    if @item.update(item_params.merge(brand_id: get_brand_id))
+      redirect_to item_path(@item)
+    else
+      binding.pry
+      render :edit
+    end
   end
 
   def destroy

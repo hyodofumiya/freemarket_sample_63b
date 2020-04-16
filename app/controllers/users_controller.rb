@@ -34,6 +34,15 @@ class UsersController < ApplicationController
     params.require(:user).permit(:nickname, :family_name, :first_name, :family_name_kana, :first_name_kana, :email, :birthday_year, :birthday_month, :birthday_day, :phone_number)
   end
 
+  def set_current_user
+    @user = current_user
+  end
+  
+  def user_photo_params
+    params.require(:user).permit(:photo_filepath)
+  end
+
+
   def user_photo_params
     params.require(:user).permit(:photo_filepath)
   end

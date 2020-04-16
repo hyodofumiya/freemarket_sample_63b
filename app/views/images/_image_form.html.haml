@@ -6,38 +6,12 @@
     .main__showmain__main-image__main-form
         #image-box-1
             .item-num-0#image-box__container
-                = form.fields_for :images do |i|
+                = form.fields_for :images do |image_form|
                     .input-area
-                        = i.file_field :image, type: 'file', name: "item[images_attributes][0][photo]", value:"", style: "display:none", id:"img-file", class:"js-file"
-                        %label.img-label{for: "img-file"}
-                            %i.fas.fa-camera
-                            -# %br クリックしてファイルをアップロード
-                    
-
-
-        -# .item-image{"data-image" => "${file.name}"}>
-        -# .item-image__content
-        -#     .item-image__content--icon
-        -#     %img{:height => "80", :src => "${src}", :width => "114"}/
-        -# .item-image__operetion
-        -#     .item-image__operetion--delete 削除
-
-                        
-
-        -# #image-box
-        -#     #previews
-        -#         - if @item.persisted?
-        -#             - @item.images.each_with_index do |image_form, i|
-        -#                 = image_tag image_form.src.url, data: { index: i }, width: "100", height: '100'
-        -#     = form.fields_for :images do |image_form|
-        -#         .js-file_group{"data-index": "#{image_form.index}"}
-        -#             = image_form.file_field :src, class: 'js-file'
-        -#         = image_form.label :photo, class: "main__showmain__main-image__main-form__upload" do
-        -#             クリックしてファイルをアップロード
-        -#         = image_form.file_field :photo, class: "display_none"
-        -#         .span.js-remove 削除
-        
-        -# = form.fields_for :images do |image_form|
-        -#     = image_form.label :photo, class: "main__showmain__main-image__main-form__upload" do
-        -#         クリックしてファイルをアップロード
-        -#     = image_form.file_field :photo, class: "display_none"
+                        = image_form.file_field :photo, style: "display:none", id:"img-file", class:"js-file"
+                        - if image_form.object.persisted?
+                            = image_form.label :photo do
+                                = image_tag image_form.object.photo&.url
+                        - else
+                            = image_form.label :photo, class: "main__showmain__main-image__main-form__upload" do
+                                %i.fas.fa-camera
