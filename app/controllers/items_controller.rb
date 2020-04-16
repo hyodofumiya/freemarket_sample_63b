@@ -4,9 +4,12 @@ class ItemsController < ApplicationController
   before_action :admin_user?, only: [:edit, :update, :destroy]
 
   def index
+    @category = Category.all
+    @category_items = array_items_by_category
   end
 
   def show
+    @category = Category.all
     @images = @item.images
     @comments = @item.comments
   end
@@ -38,8 +41,13 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    Item.find_by(id: params[:id], user_id: current_user.id).destroy
-    redirect_to root_path
+    if @item.destroy
+      redirect_to root_path
+    else
+      flash[:notice] = "エラーが発生しました。削除できません。"
+      @images = @item.images
+      redirect_to item_path(@item)
+    end
   end
 
   private
