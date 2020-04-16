@@ -10,7 +10,18 @@ function hideSizeForm(){                                                      //
   $('#form_size_area').hide();
 }
 
+function setCategoryForEdit(select_categories){
+  $.each(select_categories, function(index, val){
+    var child_html = `<option value="${val.id}">${val.name}</option>`;
+    $("#category_child_area").append(child_html);
+  });
+}
+
 $(document).on ('turbolinks:load',function(){
+  if (gon.select_category){
+    setCategoryForEdit(gon.child_category);
+  };
+
   //大カテゴリーが選択された時の動作
   $(function(){ 
     $("#category_parent_area").click(function() {                             //大カテゴリーの選択ボックスをクリックすると選択肢が追加される
@@ -25,8 +36,9 @@ $(document).on ('turbolinks:load',function(){
       $("#category_child_area").empty();                                    //中カテゴリーフォームの中身を削除
       $("#category_grandchild_area").hide();        //小カテゴリーを非表示にする
       $("#category_grandchild_area").empty();                               //小カテゴリーフォームの中身を削除
-      var parentId = $(this).val();                                         //選択された大カテゴリーのidを”parentID”として宣言
-      var url = location.href;                                              //ajaxで戻る時に必要なurlを”url”として宣言
+      var parentId = $(this).val();                                      //選択された大カテゴリーのidを”parentID”として宣言
+      var url = location.href;
+      console.log(url);                                            //ajaxで戻る時に必要なurlを”url”として宣言
       $.ajax({                                                              //ajaxで交信
         url: url,
         type: "GET",
@@ -34,19 +46,26 @@ $(document).on ('turbolinks:load',function(){
         dataType: 'json',
       })
       .done(function(p){
+        console.log("success");
         $('#category_child_area').append(`<option value="">---選択してください---</option>`)
         $('#category_child_area').show();
         $('#category_grandchild_area').append(`<option value="">---選択してください---</option>`)
         var html = buildCategoryForm(p.child, "#category_child_area");        //ajaxで送られてきた値を元に中カテゴリーフォームの選択肢を作成
       })
       .fail(function(){
-        alart("エラー");
+        console.log("XMLHttpRequest : " + XMLHttpRequest.status);
+        console.log("textStatus     : " + textStatus);
+        console.log("errorThrown    : " + errorThrown.message);
       })
     });
   });
 
   //中カテゴリーが選択された時の動作
   $(function(){
+    $("#category_child_area").click(function(){
+      console.log("a");
+    });
+
     $("#category_child_area").change(function(){
       hideSizeForm();
       $("#category_grandchild_area").empty();

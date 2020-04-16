@@ -21,6 +21,7 @@ class ItemsController < ApplicationController
     @item = Item.new
     @category = Category.all
     gon.roots = Category.all.roots
+    binding.pry
   end
 
   def create
@@ -36,6 +37,9 @@ class ItemsController < ApplicationController
   def edit
     @category = Category.all
     @select_category = Category.find(@item.category_id)
+    gon.roots = Category.all.roots
+    gon.select_category = Category.find(@item.category_id)
+    gon.child_category = @select_category.parent.siblings
     binding.pry
   end
 
