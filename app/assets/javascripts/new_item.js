@@ -1,16 +1,17 @@
 $(function(){
-  const buildFileField = (file)=> {
-    const html = `<div data-index="${file}" class="input-area">
-                    <input id:"img-file" type: 'file'
-                    name="item[images_attributes][${file}][photo]"
-                    id="item_images_attributes_${file}_photo"><br>
-                    <div class="js-remove">削除</div>
+  const buildFileField = (index)=> {
+    const html = `<div data-index="${index}" class="input-area">
+                    <input id="img-file-${index}" type= 'file' class="js-file"
+                    name="item[images_attributes][${index}][photo]"style="display:none">
                   </div>`;
     return html;
   }
+  var fileIndex = [1,2,3,4,5,6,7,8,9]
+  
   $('#image-box-1').on('change', '.js-file', function(e) {
     // fileIndexの先頭の数字を使ってinputを作る
     $('#image-box-1').append(buildFileField(fileIndex[0]));
+    $('.img-label').prop('for', `img-file-${fileIndex[0]}`)
     fileIndex.shift();
      // 末尾の数に1足した数を追加する
      fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
@@ -21,7 +22,7 @@ $(function(){
   //querySelectorでfile_fieldを取得
   var file_field = document.querySelector('input[type=file]')
   //fileが選択された時に発火するイベント
-  $('#img-file').change(function(){
+  $('#image-box-1').on('change', '.js-file', function(e) {
   
     //選択したfileのオブジェクトをpropで取得
     var file = $('input[type="file"]').prop('files')[0];
