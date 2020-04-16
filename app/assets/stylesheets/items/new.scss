@@ -10,7 +10,7 @@
     margin: 0 auto;
     max-width: 700px;
     background-color: #fff;
-    padding: 24px 40px 40px;  
+    padding: 24px 40px 40px;
       .main__showmain{
         &__main-image{
           padding: 16px;
@@ -100,13 +100,28 @@
             font-weight: bold;
           }
           &__categoryarea{
-            margin-top: 16px;
-            #category_area{
+            &__parent{}
+            &__child{
+              display: none;
+            }
+            &__grandchild{
+              display: none;
+            }
+            .category_area_select_form{
               border: 1px solid #ccc;
               height: 48px;
               outline: none;
               width: 100%;
+              margin-top: 16px;
             }
+          }
+          &__size{
+            margin-top: 32px;
+            display: none;
+          }
+          &__sizearea{
+            display: none;
+            margin-top: 16px;
           }
           
           &__bland_id{

@@ -19,7 +19,8 @@ $(document).on ('turbolinks:load',function(){
     });
     $("#category_parent_area").change(function(){
       $("#category_child_area").empty();
-      $("#category_groundchild_area").empty();
+      $(".main__showmain__detail__categoryarea__grandchild").hide();
+      $("#category_grandchild_area").empty();
       var parentId = $(this).val();
       var url = location.href;
       $.ajax({
@@ -30,7 +31,8 @@ $(document).on ('turbolinks:load',function(){
       })
       .done(function(p){
         $('#category_child_area').append(`<option value="">---選択してください---</option>`)
-        $('#category_groundchild_area').append(`<option value="">---選択してください---</option>`)
+        $('.main__showmain__detail__categoryarea__child').show();
+        $('#category_grandchild_area').append(`<option value="">---選択してください---</option>`)
         var html = buildCategoryForm(p.child, "#category_child_area");
       })
       .fail(function(){
@@ -42,7 +44,7 @@ $(document).on ('turbolinks:load',function(){
   //中カテゴリーが選択された時の動作
   $(function(){
     $("#category_child_area").change(function(){
-      $("#category_groundchild_area").empty();
+      $("#category_grandchild_area").empty();
       var childId = $(this).val();
       var url = location.href;
       $.ajax({
@@ -52,11 +54,12 @@ $(document).on ('turbolinks:load',function(){
         dataType: 'json',
       })
       .done(function(c){
-        $('#category_groundchild_area').append(`<option value="">---選択してください---</option>`)
-        var html = buildCategoryForm(c.child, "#category_groundchild_area");
+        $('#category_grandchild_area').append(`<option value="">---選択してください---</option>`)
+        $('.main__showmain__detail__categoryarea__grandchild').show();
+        var html = buildCategoryForm(c.child, "#category_grandchild_area");
       })
       .fail(function(){
-        console.log("カテゴリーの取得に失敗");
+        alart("エラー");
       })
     });
   });

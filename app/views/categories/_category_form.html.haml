@@ -3,11 +3,11 @@
     = form.label :category_id, "カテゴリー", class: "form_field__label form_field__label--essential"
 .main__showmain__detail__categoryarea
   .main_showmain__detail__categoryarea__parent
-    = select_tag 'category_id', options_for_select([['---選択してください---', '']]), id: "category_parent_area"
+    = select_tag 'category_id', options_for_select([['---選択してください---', '']]), id: "category_parent_area", class: "category_area_select_form"
   .main__showmain__detail__categoryarea__child
-    = select_tag 'category_id', options_for_select([['---選択してください---', '']]), id: "category_child_area"
+    = select_tag 'category_id', options_for_select([['---選択してください---', '']]), id: "category_child_area", class: "category_area_select_form"
   .main__showmain__detail__categoryarea__grandchild
-    = select_tag 'category_id', options_for_select([['---選択してください---', '']]), id: "category_groundchild_area"
+    = select_tag 'category_id', options_for_select([['---選択してください---', '']]), id: "category_grandchild_area", class: "category_area_select_form"
 
 .main__showmain__detail__size
   .form_field
