@@ -2,9 +2,9 @@ class Item < ApplicationRecord
     has_one :order
     belongs_to :user
     belongs_to :brand, optional: true
+    belongs_to :category
     has_many :favorites, dependent: :destroy
     has_many :comments, dependent: :destroy
-    has_many :categories
     has_many :images, dependent: :destroy
     accepts_nested_attributes_for :images
     SIZE = {"0"=> "XS", "5"=> "S", "10"=> "M", "15"=> "L", "20"=> "XL"}#DBの値とサイズの割付定数
@@ -24,6 +24,7 @@ class Item < ApplicationRecord
     validates :price, presence: true, length: { minimum: 0 }
     validates :images, presence: true
 #====================================
+    scope :category_items, ->(num) { where(category_id: Category.find(num).subtree_ids, status: true).order(created_at: :DESC).includes(:images, :comments, :favorites) }
     
 #==========DBには数値が入るカラムのゲッターとセッター==================
     def size
