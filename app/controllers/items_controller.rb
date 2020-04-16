@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
   def edit
     @category = Category.all
     @select_category = Category.find(@item.category_id)
-
+    binding.pry
   end
 
   def update
