@@ -23,8 +23,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    binding.pry
-    @item = Item.new(item_params.merge(user_id: current_user.id))
+    @item = Item.new(item_params.merge(user_id: current_user.id, category_id: category_params))
     @item.brand_id = get_brand_id
     if @item.save
       redirect_to item_path(@item)
@@ -42,7 +41,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if @item.update(item_params.merge(brand_id: get_brand_id))
+    if @item.update(item_params.merge(brand_id: get_brand_id, category_id: category_params))
       redirect_to item_path(@item)
     else
       render :edit
@@ -65,8 +64,12 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :discription, :size, :condition, :delivary, :area, :preparation_day, :price, images_attributes: [:photo])
   end
 
+  def category_params
+    params.require(:item).permit(:category_id)[:category_id].to_i
+  end
+
   def brand_params
-    params.require(:item).permit(:brand).values.first
+    params.require(:item).permit(:brand_name).values.first
   end
 
   def set_item
