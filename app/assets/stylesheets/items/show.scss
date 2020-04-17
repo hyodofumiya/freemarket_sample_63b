@@ -25,6 +25,7 @@ $link_text_color: #3CCACE;
       }
       &:last-child{
         font-weight: bold;
+        word-break: break-all;
       }
     }
     &:after{
@@ -52,6 +53,7 @@ $link_text_color: #3CCACE;
             text-align: center;
             font-weight: bold;
             font-size: 24px;
+            overflow-wrap: break-word;
           }
           &__image_zone{
             margin: 16px auto;
