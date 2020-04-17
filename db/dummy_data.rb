@@ -1,3 +1,4 @@
+
 require "factory_bot"
 
 include FactoryBot::Syntax::Methods

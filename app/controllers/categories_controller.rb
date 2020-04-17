@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-  before_action :set_categories, only: [:index, :show]
 
   def index
     @parent = @category.roots
@@ -26,9 +25,4 @@ class CategoriesController < ApplicationController
   def destroy
   end
 
-  private
-
-  def set_categories
-    @category = Category.all
-  end
 end
