@@ -1,4 +1,4 @@
-$(function(){
+$(document).on ('turbolinks:load',function(){
   const buildFileField = (index)=> {
     const html = `<div data-index="${index}" class="input-area">
                     <input id="img-file-${index}" type= 'file' class="js-file"
