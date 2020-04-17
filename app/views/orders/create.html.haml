@@ -1,6 +1,5 @@
-//header
-.orders_create_header
-  ヘッダーの部分テンプレを貼る
+= render 'share/header'
+
 .order_create_main.main
   .order_finish_info
     .order_finish_info__message
@@ -14,37 +13,39 @@
     .order_finish_info__item_info
       .order_finish_info__item_info__image_and_name
         .order_finish_info__item_info__image_and_name__item_image
-          = image_tag "/material/pict/猫画像１.jpeg"
+          = image_tag "#{@item.images.first[:photo].url}"
         .order_finish_info__item_info__image_and_name__item_name
-          ここに商品名が入ります
+          = @item.name
     .order_finish_info__pay_info
       .order_finish_info__pay_info__item_price
         .order_finish_info__pay_info__item_price--head
           商品代金
         .order_finish_info__pay_info__item_price--data
-          ¥1300　(税込)　送料込み
+          %p 
+            = "税込　¥ " + @item.price.to_s
+          %p 
+            = "配送料　" + @item.delivary
       .order_finish_info__pay_info__pay_amount
         .order_finish_info__pay_info__pay_amount--head
           お支払い金額
         .order_finish_info__pay_info__pay_amount--data
-          1,000
+          = "￥ " + @item.price.to_s
       .order_finish_info__pay_info__payment_method
         .order_finish_info__pay_info__payment_method--head
           お支払い方法
         %p.order_finish_info__pay_info__payment_method--data
           クレジットカード
           %br
-          ********0000
+          = "**** **** **** " + @default_card_information.last4
 
       .order_finish_info__pay_info__order_date
         .order_finish_info__pay_info__order_date--head
           購入日時
         .order_finish_info__pay_info__order_date--data
-          @order.created_at
+          = @order.created_at.strftime('%y/%m/%d %H:%M')
       
   .back_items_top_link
     = link_to root_path, class: "back_items_top_link--link" do
       トップ画面に戻る
 
-.ordes_create_footer
-  フッターの部分テンプレを貼る
+= render 'share/footer'

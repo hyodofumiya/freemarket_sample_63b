@@ -59,6 +59,7 @@ body{
               padding: 0 0 8px;
               line-height: 1.5;
               text-align: left;
+              overflow-wrap: break-word;
             }
             &--item_price{
               text-align: left;
@@ -78,13 +79,15 @@ body{
                   margin-right: 15px;
                   display: flex;
                   align-items: center;
-    
-                }
-                &__postage_info{
-                  font-weight: $font_weight;
-                  margin-right: 0;
                 }
               }
+            }
+            &__delivaryfee_info{
+              display: flex;
+              &--title{
+                margin-right: 10px;
+              }
+              &--value{}
             }
           }
         }
@@ -126,6 +129,17 @@ body{
             //クレジットカード選択済みの場合
             &__credit_card_info{
               line-height: 1.5;
+            }
+            &__change_link{
+              line-height: 20px;
+              margin-top: 10px;
+              padding: 0 15px;
+              color: white;
+              background-color: $main_color;
+              border: none;
+              border-radius: 3px;
+              display: inline-block;
+
             }
           }
 

@@ -1,16 +1,3 @@
-
-//= render "header"
-.header
-
-.main
-  = form_with(model: @credit_card, class: "new_credit_card", local: true) do |f|
-    %h2.new_credit_card__header
-      支払い方法
-    .new_credit_card__body
-      = f.label :credit_card_form, class: "new_credit_card__body__card_number" do
-        .number_zone_head
-          .number_zone_head--title
-            カード番号
-          .number_zone_head--must_appeal
-            必須
-        = f.text_field "number", class: "credit_card__body--form", id: "credit_card_form", placeholder: "半角数字のみ", maxlength: "16", type: "text"
+= render 'share/header'
+= render 'credit_card_inputform'
+= render 'share/footer'

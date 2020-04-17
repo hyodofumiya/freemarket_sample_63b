@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update] do
     resources :favorites, only: [:index]
-    resources :credit_cards, only: [:index]
+    resources :credit_cards, only: [:index, :show, :new, :create, :destroy]
     resources :shopping_addresses, only: [:index]
     resources :items, only: [:index, :new, :create, :edit, :update, :show]
     resources :orders, only: [:index, :new, :create]

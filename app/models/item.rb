@@ -7,6 +7,7 @@ class Item < ApplicationRecord
     has_many :comments, dependent: :destroy
     has_many :images, dependent: :destroy
     accepts_nested_attributes_for :images, allow_destroy: true
+    has_many :orders
     SIZE = {"0"=> "XS", "5"=> "S", "10"=> "M", "15"=> "L", "20"=> "XL"}#DBの値とサイズの割付定数
     CONDITION = {"0"=> "新品", "5"=> "未使用に近い", "10"=> "目立った傷や汚れなし", "15"=> "やや傷や汚れあり", "20"=> "傷や汚れあり", "25"=> "状態悪い"}
     DELIVARY = {"0"=> "出品者負担", "5"=> "購入者負担"}

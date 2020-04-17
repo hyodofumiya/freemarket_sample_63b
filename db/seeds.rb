@@ -1004,3 +1004,4 @@ end
 #item = create(:item, user_id: user.id)
 #create(:image, item_id: item.id)
 #create(:comment, user_id: user.id, item_id: item.id)
+

@@ -1,0 +1,28 @@
+= render 'share/header'
+.credit_show
+  .credit_show__body
+    .credit_show__body__title
+      %h2 登録クレジットカード情報
+    %ul.credit_show__body__main
+      %li.credit_detail_info
+        .credit_detail_info--title
+          カード番号
+        .credit_detail_info--value
+          = "**** **** **** #{@default_card_information.last4}"
+      %li.credit_detail_info
+        .credit_detail_info--title
+          有効期限
+        .credit_detail_info--value
+          = "#{@exp_month}/#{@exp_year}"
+    .credit_show__body__delete
+      = form_tag( user_credit_card_path(current_user.id, @card.card_id), method: :delete, id: 'charge-form', class: "credit_show__body__delete__form", name: "inputForm") do
+        %input{ type: "hidden", name: "card_id", value: "" }
+        %button 削除する
+    .credit_show__body__page_link
+      - if @item==0
+        = link_to user_path(current_user.id) do
+          マイページに戻る
+      - else
+        = link_to new_item_order_path(item_id: params[:item_id].to_i) do
+          購入画面に戻る
+= render 'share/footer'
