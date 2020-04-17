@@ -12,7 +12,7 @@ class CreditCardsController < ApplicationController
 
   def create
     require 'payjp'
-    Payjp.api_key = 'sk_test_496e60aafad5d32afacf318d'
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     if params['payjp-token'].blank?
       redirect_to action: "new"
     else
@@ -37,7 +37,7 @@ class CreditCardsController < ApplicationController
     if @card.blank?
       redirect_to action: "new" 
     else
-      Payjp.api_key = 'sk_test_496e60aafad5d32afacf318d'
+      Payjp.api_key = ENV['PAYJP_SECRET_KEY']
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = customer.cards.retrieve(@card.card_id)
       @exp_month = @default_card_information.exp_month.to_s
@@ -49,7 +49,7 @@ class CreditCardsController < ApplicationController
     card = CreditCard.where(user_id: current_user.id).first
     if card.blank?
     else
-      Payjp.api_key = 'sk_test_496e60aafad5d32afacf318d'
+      Payjp.api_key = ENV['PAYJP_SECRET_KEY']
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
       card.delete
