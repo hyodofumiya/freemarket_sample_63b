@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :favorites, only: [:index]
     resources :credit_cards, only: [:index]
     resources :shopping_addresses, only: [:index]
-    resources :items, only: [:index, :new, :create, :show]
+    resources :items, only: [:index, :new, :create, :edit, :update, :show]
     resources :orders, only: [:index, :new, :create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     get "profile_photo", to: "users#profile_photo"

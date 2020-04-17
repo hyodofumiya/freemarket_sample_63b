@@ -1,5 +1,28 @@
 .main__showmain__detail__category_id
   .form_field
-    = form.label :category, "カテゴリー", class: "form_field__label form_field__label--essential"
+    = form.label :category_id, "カテゴリー", class: "form_field__label form_field__label--essential"
 .main__showmain__detail__categoryarea
-  = select_tag 'category', options_for_select(["選択してください", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"]), id: "category_area"
+  .main_showmain__detail__categoryarea__parent
+    - if @select_category.present?
+      = select_tag 'category_id', options_for_select([[@select_category.root.name, @select_category.root.id]]), id: "category_parent_area", class: "category_area_select_form"
+    -else
+      = select_tag 'category_id', options_for_select([['---選択してください---', '']]), id: "category_parent_area", class: "category_area_select_form"
+  .main__showmain__detail__categoryarea__child
+    - if @select_category.present?
+      = select_tag 'category_id', options_for_select([[@select_category.parent.name, @select_category.parent.id]]), id: "category_child_area", class: "category_area_select_form"
+    -else
+      = select_tag 'category_id', options_for_select([['---選択してください---', '']]), id: "category_child_area", class: "category_area_select_form display_none"
+  .main__showmain__detail__categoryarea__grandchild
+    = form.select :category_id, nil, {}, {id: "category_grandchild_area", class: "category_area_select_form #{('display_none' unless form.object.category_id)}"} do
+      - if @select_category.present?
+        - @select_category.siblings.each do |category|
+          %option{value: category.id, selected: ("selected" if category.id == @select_category.id)} #{category.name}
+      - else
+        %option{value: ""} ---選択してください--- 
+.main__showmain__detail__size
+  .form_field
+    = form.label :size, "SIZE", class: "form_field__label form_field__label--essential #{'display_none' unless @select_category.present?}", id: "size_form_label"
+.main__showmain__detail__sizearea
+  = form.select :size, nil, {}, {id: "form_size_area", class: "size_area_select_form #{('display_none' unless form.object.size)}"} do
+    - @size.each do |size|
+      %option{value: size[1], selected: ("selected" if size[0] == @item.size)} #{size[0]}

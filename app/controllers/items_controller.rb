@@ -2,6 +2,8 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :must_logined, only: [:new, :create, :edit, :update, :destroy]
   before_action :admin_user?, only: [:edit, :update, :destroy]
+  before_action :set_size, only: [:new, :edit]
+  INDEX_ROW_COUNT = 5
 
   def index
     @category = Category.all
@@ -16,6 +18,8 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @category = Category.all
+    gon.roots = Category.all.roots
   end
 
   def create
@@ -29,13 +33,17 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @category = Category.all
+    @select_category = Category.find(@item.category_id)
+    select_category = @select_category
+    gon.roots = Category.all.roots
+    gon.p_category = select_category.parent.siblings
   end
 
   def update
     if @item.update(item_params.merge(brand_id: get_brand_id))
       redirect_to item_path(@item)
     else
-      binding.pry
       render :edit
     end
   end
@@ -77,4 +85,18 @@ class ItemsController < ApplicationController
       return Brand.create(name: brand_params).id
     end
   end
+
+  def array_items_by_category
+    item_array = []
+    Category::DISPLAY_TOP_PAGE.each do |num|
+      item_array << { id: num.to_s, items: Item.category_items(num)}
+    end
+    return item_array
+  end
+  
+  def set_size
+    @size = [['---選択してください---', ''], ['XS', '0'], ['S', '5'], ['M', '10'], ['L', '15'], ['XL', '20']]
+  end
+
+
 end

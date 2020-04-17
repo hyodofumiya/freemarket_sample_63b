@@ -24,6 +24,7 @@ class Item < ApplicationRecord
     validates :price, presence: true, length: { minimum: 0 }
     validates :images, presence: true
 #====================================
+    scope :category_items, ->(num) { where(category_id: Category.find(num).subtree_ids, status: true).order(created_at: :DESC).includes(:images, :comments, :favorites) }
     
 #==========DBには数値が入るカラムのゲッターとセッター==================
     def size
