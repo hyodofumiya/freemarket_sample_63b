@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
     if  @item.status == false #もし購入済みの商品であれば購入処理の前にrootに遷移させる
       redirect_to root_path, notice: '選択された商品は現在販売されていません'
     else
-      Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+      Payjp.api_key = Rails.application.credentials[:payjp][:payjp_secret_key]
       pay = Payjp::Charge.create(
         amount: @item.price,
         customer: @credit_card.customer_id,
@@ -44,7 +44,7 @@ class OrdersController < ApplicationController
   def set_card
     @credit_card = CreditCard.where(user_id: current_user.id).first
     unless @credit_card.nil?
-      Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+      Payjp.api_key = Rails.application.credentials[:payjp][:payjp_secret_key]
       customer = Payjp::Customer.retrieve(@credit_card.customer_id)
       @default_card_information = customer.cards.retrieve(@credit_card.card_id)
       @exp_month = @default_card_information.exp_month.to_s
