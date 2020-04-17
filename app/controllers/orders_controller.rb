@@ -1,8 +1,9 @@
 class OrdersController < ApplicationController
-
+  before_action :must_logined, only: [:new, :create]
   before_action :set_item, only: [:new, :create]
   before_action :set_card, only: [:new, :create]
   before_action :set_shopping_address, only: [:new, :create]
+  
 
   def index
   end
@@ -21,7 +22,7 @@ class OrdersController < ApplicationController
         :currency => 'jpy',
       ) 
       @order = Order.create(user_id: current_user.id, item_id: @item.id, credit_card_id: @credit_card.id)
-      redirect_to action: "new", notice: '購入に失敗しました' unless @order.save && @item.update(status: 'false')
+      redirect_to action: new_item_order_path(item_id: @item.id), notice: '購入に失敗しました' unless @order.save && @item.update(status: 'false')
     end
   end
 
