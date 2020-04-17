@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :must_logined, only: [:new, :create, :edit, :update, :destroy]
   before_action :admin_user?, only: [:edit, :update, :destroy]
-  before_action :set_size, only: [:new, :edit]
+  before_action :set_size, only: [:new, :create, :edit, :update, :destroy]
   INDEX_ROW_COUNT = 5
 
   def index
@@ -23,6 +23,7 @@ class ItemsController < ApplicationController
   end
 
   def create
+    binding.pry
     @item = Item.new(item_params.merge(user_id: current_user.id))
     @item.brand_id = get_brand_id
     if @item.save
