@@ -143,8 +143,8 @@
             後ろの商品
             = icon "fa", "angle-right", class: "item_link_prev_next__btn__link--icon"
       .related_items
-        = link_to root_path, class: "related_items__show_more_link" do
-          ベビー・キッズをもっと見る
+        = link_to category_path(@item.category.id), class: "related_items__show_more_link" do
+          = "#{@item.category.name}をもっと見る"
         .related_items__products_list
 
 = render "share/app_banner"
