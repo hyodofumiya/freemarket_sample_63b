@@ -2,7 +2,7 @@
     .input-area
         = image_form.file_field :photo, style: "display:none", class:"js-file"
         - if image_form.object.photo.file.nil?
-            = image_form.label :photo, class: "main__showmain__main-image__main-form__upload" do
+            = image_form.label :photo, class: "main__showmain__main-image__main-form__upload img-label" do
                 %i.fas.fa-camera
         - else
             .item-image__content
