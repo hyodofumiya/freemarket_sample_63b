@@ -1,4 +1,6 @@
 function buildCategoryForm(select, form_id){                                  //jsonで受け取ったparamsをselectとして中身を順にセレクトボックスに追加していく
+  var normalMessage = `<option value="">---選択してください---</option>`
+  $(form_id).append(normalMessage);
   $.each(select, function(index, val){
     var html = `<option value="${val.id}">${val.name}</option>`
     $(form_id).append(html);
