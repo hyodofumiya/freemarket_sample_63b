@@ -1,6 +1,9 @@
 function buildCategoryForm(select, form_id){                                  //jsonで受け取ったparamsをselectとして中身を順にセレクトボックスに追加していく
+  $(form_id).empty();
+  var normalMessage = `<option value="">---選択してください---</option>`;
+  $(form_id).append(normalMessage);
   $.each(select, function(index, val){
-    var html = `<option value="${val.id}">${val.name}</option>`
+    var html = `<option value="${val.id}">${val.name}</option>`;
     $(form_id).append(html);
   });
 };
@@ -22,7 +25,6 @@ $(document).on ('turbolinks:load',function(){
     });
     $("#category_parent_area").change(function(){                           //大カテゴリーの内容が変更された時、中カテゴリーの中身を削除する
       hideSizeForm();
-      $("#category_child_area").empty();                                    //中カテゴリーフォームの中身を削除
       $("#category_grandchild_area").hide();        //小カテゴリーを非表示にする
       $("#category_grandchild_area").empty();                               //小カテゴリーフォームの中身を削除
       var parentId = $(this).val();                                         //選択された大カテゴリーのidを”parentID”として宣言
@@ -35,7 +37,6 @@ $(document).on ('turbolinks:load',function(){
 
       })
       .done(function(p){
-        $('#category_child_area').append(`<option value="">---選択してください---</option>`)
         $('#category_child_area').show();
         $('#category_grandchild_area').append(`<option value="">---選択してください---</option>`)
         var html = buildCategoryForm(p.child, "#category_child_area");        //ajaxで送られてきた値を元に中カテゴリーフォームの選択肢を作成
@@ -60,7 +61,6 @@ $(document).on ('turbolinks:load',function(){
 
     $("#category_child_area").change(function(){
       hideSizeForm();
-      $("#category_grandchild_area").empty();
       var childId = $(this).val();
       var url = location.href;
       $.ajax({
@@ -70,7 +70,6 @@ $(document).on ('turbolinks:load',function(){
         dataType: 'json',
       })
       .done(function(c){
-        $('#category_grandchild_area').append(`<option value="">---選択してください---</option>`)
         $('#category_grandchild_area').show();
         var html = buildCategoryForm(c.child, "#category_grandchild_area");
       })
