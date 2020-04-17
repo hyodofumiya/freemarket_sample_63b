@@ -21,9 +21,7 @@ class OrdersController < ApplicationController
         :currency => 'jpy',
       ) 
       @order = Order.create(user_id: current_user.id, item_id: @item.id, credit_card_id: @credit_card.id)
-      if @order.save && @item.update(status: 'false')
-      else
-        redirect_to action: "new", notice: '購入に失敗しました'
+      redirect_to action: "new", notice: '購入に失敗しました' unless @order.save && @item.update(status: 'false')
       end
     end
   end
