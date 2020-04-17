@@ -17,9 +17,9 @@ class OrdersController < ApplicationController
     else
       Payjp.api_key = ENV['PAYJP_SECRET_KEY']
       pay = Payjp::Charge.create(
-        :amount => @item.price,
-        :customer => @credit_card.customer_id,
-        :currency => 'jpy',
+        amount: @item.price,
+        customer: @credit_card.customer_id,
+        currency: 'jpy',
       ) 
       @order = Order.create(user_id: current_user.id, item_id: @item.id, credit_card_id: @credit_card.id)
       redirect_to new_item_order_path(item_id: @item.id), notice: '購入に失敗しました' unless @order.save && @item.update(status: 'false')
