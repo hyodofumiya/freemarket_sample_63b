@@ -27,8 +27,6 @@ $(document).on ('turbolinks:load',function(){
       $("#category_grandchild_area").empty();                               //小カテゴリーフォームの中身を削除
       var parentId = $(this).val();                                         //選択された大カテゴリーのidを”parentID”として宣言
       var url = location.href;                                              //ajaxで戻る時に必要なurlを”url”として宣言
-      console.log(parentId);
-      console.log(url);
       $.ajax({                                                              //ajaxで交信
         url: url,
         type: "GET",
@@ -48,13 +46,18 @@ $(document).on ('turbolinks:load',function(){
         console.log("textStatus     : " + textStatus);    // タイムアウト、パースエラー
         console.log("errorThrown    : " + errorThrown.message); // 例外情報
         console.log("URL            : " + url);
-        console.log('エラー');
       })
     });
   });
 
   //中カテゴリーが選択された時の動作
   $(function(){
+    $("#category_child_area").click(function(){
+      if (gon.p_category != null){
+        var html = buildCategoryForm(gon.p_category, "#category_child_area");        //editアクションで中カテゴリーフォームの選択肢を作成
+      }
+    });
+
     $("#category_child_area").change(function(){
       hideSizeForm();
       $("#category_grandchild_area").empty();
