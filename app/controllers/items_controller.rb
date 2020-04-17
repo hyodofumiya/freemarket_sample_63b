@@ -24,7 +24,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    binding.pry
     @item = Item.new(item_params.merge(user_id: current_user.id, category_id: category_params))
     @item.brand_id = get_brand_id
     if @item.save

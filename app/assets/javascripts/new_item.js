@@ -1,41 +1,41 @@
 $(document).on ('turbolinks:load',function(){
   const buildFileField = (index)=> {
     const html = `<div data-index="${index}" class="input-area">
-                    <input id="item_images_attributes_${index}_photo" type= 'file' class="js-file"
+                    <input id="img-file-${index}" type= 'file' class="js-file"
                     name="item[images_attributes][${index}][photo]"style="display:none">
                   </div>`;
     return html;
   }
-  var fileIndex = [1,2,3,4,5,6,7,8,9];
+  var fileIndex = [1,2,3,4,5,6,7,8,9]
   
   $('#image-box-1').on('change', '.js-file', function(e) {
     // fileIndexの先頭の数字を使ってinputを作る
     $('#image-box-1').append(buildFileField(fileIndex[0]));
-    $('.img-label').prop('for', `item_images_attributes_${fileIndex[0]}_photo`);
+    $('.img-label').prop('for', `img-file-${fileIndex[0]}`)
     fileIndex.shift();
      // 末尾の数に1足した数を追加する
-    fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
+     fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
     });
     
   //DataTransferオブジェクトで、データを格納する箱を作る
   var dataBox = new DataTransfer();
   //querySelectorでfile_fieldを取得
-  var file_field = document.querySelector('input[type=file]');
+  var file_field = document.querySelector('input[type=file]')
   //fileが選択された時に発火するイベント
   $('#image-box-1').on('change', '.js-file', function(e) {
   
     //選択したfileのオブジェクトをpropで取得
-    var files = $('input[type="file"]').prop('files');
-    $.each(files, function(i, file){
+    var file = $('input[type="file"]').prop('files')[0];
+    $.each(this.files, function(i, file){
       //FileReaderのreadAsDataURLで指定したFileオブジェクトを読み込む
       var fileReader = new FileReader();
 
       //DataTransferオブジェクトに対して、fileを追加
-      dataBox.items.add(file);
+      dataBox.items.add(file)
       //DataTransferオブジェクトに入ったfile一覧をfile_fieldの中に代入
-      file_field.files = dataBox.files;
+      file_field.files = dataBox.files
 
-      var num = $('.item-image').length + 1 + i;
+      var num = $('.item-image').length + 1 + i
       fileReader.readAsDataURL(file);
      //画像が5枚になったら超えたらドロップボックスを削除する
       if (num == 5){
