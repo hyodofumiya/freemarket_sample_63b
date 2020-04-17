@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
     @category = Category.all
     @items = Item.all.order(created_at: :DESC).includes(:comments, :favorites, :images)
     @category_items = array_items_by_category
+    @category = Category.all
   end
 
   def show
@@ -28,6 +29,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to item_path(@item)
     else
+      gon.roots = Category.all.roots
       render :new
     end
   end
@@ -44,6 +46,7 @@ class ItemsController < ApplicationController
     if @item.update(item_params.merge(brand_id: get_brand_id, category_id: category_params))
       redirect_to item_path(@item)
     else
+      gon.roots = Category.all.roots
       render :edit
     end
   end
@@ -65,7 +68,8 @@ class ItemsController < ApplicationController
   end
 
   def category_params
-    params.require(:item).permit(:category_id)[:category_id].to_i
+    category_id = params.require(:item).permit(:category_id)[:category_id].to_i
+    category_id == 0 ? nil : category_id
   end
 
   def brand_params

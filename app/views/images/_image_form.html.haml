@@ -6,12 +6,4 @@
     .main__showmain__main-image__main-form
         #image-box-1
             .item-num-0#image-box__container
-                = form.fields_for :images do |image_form|
-                    .input-area
-                        = image_form.file_field :photo, style: "display:none", class:"js-file"
-                        - if image_form.object.persisted?
-                            = image_form.label :photo do
-                                = image_tag image_form.object.photo&.url
-                        - else
-                            = image_form.label :photo, class: "main__showmain__main-image__main-form__upload" do
-                                %i.fas.fa-camera
+                = render partial: "images/image_preview", locals: { form: form}
