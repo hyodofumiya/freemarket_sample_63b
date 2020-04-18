@@ -225,6 +225,22 @@
               width: 100%;
             }  
           }
+          &__preparationday{
+            margin-top: 16px;
+            #preparation_day{
+              margin-top: 16px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              color: #222;
+              height: 48px;
+              line-height: 1;
+              margin: 0;
+              outline: none;
+              padding: 0 56px 0 16px;
+              width: 100%;
+            }  
+          }
         }
         &__lower{
           padding: 16px 16px 48px;
