@@ -4,5 +4,8 @@
     .main__showmain__main-image__main-text
         最大5枚までアップロードできます
     .main__showmain__main-image__main-form
-        #image-box-1
-            = render partial: "images/image_preview", locals: { form: form}
+        .image-box-1#image_area_for_js
+            - i = 0
+            = form.fields_for :images do |image_form|
+                = render partial: "images/image_preview", locals: { image_form: image_form, i: i}
+                - i+=1

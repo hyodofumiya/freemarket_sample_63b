@@ -1,16 +1,13 @@
-= form.fields_for :images do |image_form|
-    .item-num-0#image-box__container
-        .input-area
-            = image_form.file_field :photo, value: image_form.object.photo, style: "display:none", class:"js-file"
-            = image_form.hidden_field :photo_cache
-            - if image_form.object.photo.file.nil?
-                = image_form.label :photo, class: "main__showmain__main-image__main-form__upload img-label" do
-                    %i.fas.fa-camera
-            - else
-                .item-image
-                    .item-image__content
-                        .item-image__content--icon
-                            = image_tag image_form.object.photo&.url, {width: "114", height: "80"}
-                        .item-image__operetion
-                            .item-image__operetion--delete
-                                削除
+.image_input_fields#image_input_fields_for_js{class: "file_field#{i}"}
+    = image_form.file_field :photo, value: image_form.object.photo, style: "display:none", class:"image_field_for_js"
+    = image_form.hidden_field :photo_cache
+    - unless image_form.object.photo.file.nil?
+        .item-image__content
+            = image_tag image_form.object.photo&.url, {width: "114", height: "80"}
+            .item-image__operetion--delete{data: {field_number: "#{i}"}}
+                削除
+
+- if image_form.object.photo.file.nil?
+    - if i < 5
+        = image_form.label :photo, class: "main__showmain__main-image__main-form__upload img-label", id: "image_field_label_for_js" do
+            %i.fas.fa-camera

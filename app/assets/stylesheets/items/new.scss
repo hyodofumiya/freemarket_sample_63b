@@ -30,8 +30,7 @@
             {
               cursor: pointer;
             }
-            #image-box-1{
-                display: block;
+            .image-box-1{
                 align-content: center;
                 text-align: center;
                 background-color: rgb(245, 245, 245);
@@ -42,7 +41,6 @@
                 border-width: 1px;
                 border-style: dashed;
                 border-color: rgb(204, 204, 204);
-                flex-wrap: wrap;
                 .item-image{
                   margin: 1.5px;
                 }
