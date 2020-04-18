@@ -45,7 +45,7 @@ $(document).on ('turbolinks:load',function(){
       fileReader.onloadend = function() {
         var src = fileReader.result
         var html= `
-                  <div class="item-image">
+                  <div class="item-image" data-image="${file.name}">
                     <div class="item-image__content">
                       <div class="item-image__content--icon">
                         <img src=${src} width="114" height="80" >
@@ -73,21 +73,24 @@ $(document).on("click", '.item-image__operetion--delete', function(){
   //削除を押されたプレビューimageのfile名を取得
   var target_name = $(target_image).data('image')
   //プレビューがひとつだけの場合、file_fieldをクリア
-  if(file_field.files.length==1){
+  var preview_images = document.getElementsByClassName("item-image").lenght
+  if(preview_images==1){
     //inputタグに入ったファイルを削除
     $('input[type=file]').val(null)
     dataBox.clearData();
     console.log(dataBox)
   }else{
     //プレビューが複数の場合
-    $.each(file_field.files, function(i,input){
+    $.each( preview_images, function(i,input){
       //削除を押された要素と一致した時、index番号に基づいてdataBoxに格納された要素を削除する
       if(input.name==target_name){
         dataBox.items.remove(i) 
       }
     })
     //DataTransferオブジェクトに入ったfile一覧をfile_fieldの中に再度代入
+    if(dataBox.files.length > 0){
     file_field.files = dataBox.files
+    }
   }
   //プレビューを削除
   target_image.remove()
