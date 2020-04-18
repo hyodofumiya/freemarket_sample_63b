@@ -63,7 +63,10 @@
           .form_area
             = form.number_field :price, class: "form_area__input", placeholder: '0'
     .main__showmain__lower__btn
-      = form.submit "出品する", class: 'main__showmain__lower__btn__put-btn'
+      - if @item.id.present?
+        = form.submit "変更する", class: 'main__showmain__lower__btn__put-btn'
+      - else
+        = form.submit "出品する", class: 'main__showmain__lower__btn__put-btn'
       = link_to "もどる", :back, class: 'main__showmain__lower__btn__return-btn'
     .main__showmain__lower__attention
       禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
