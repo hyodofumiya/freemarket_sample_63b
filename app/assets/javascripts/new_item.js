@@ -44,16 +44,20 @@ $(document).on ('turbolinks:load',function(){
 
       fileReader.onloadend = function() {
         var src = fileReader.result
-        var html= `<div class='item-image' data-image="${file.name}">
-                    <div class=' item-image__content'>
-                      <div class='item-image__content--icon'>
+        var html= `
+                  <div class="item-image">
+                    <div class="item-image__content">
+                      <div class="item-image__content--icon">
                         <img src=${src} width="114" height="80" >
                       </div>
+                      <div class="item-image__operetion">
+                        <div class="item-image__operetion--delete">
+                        削除
+                        </div>
+                      </div>
                     </div>
-                    <div class='item-image__operetion'>
-                      <div class='item-image__operetion--delete'>削除</div>
-                    </div>
-                  </div>`
+                  </div>
+                  `
         //image_box__container要素の前にhtmlを差し込む
         $('#image-box__container').before(html);
       };
@@ -65,7 +69,7 @@ $(document).on ('turbolinks:load',function(){
 //削除ボタンをクリックすると発火するイベント
 $(document).on("click", '.item-image__operetion--delete', function(){
   //削除を押されたプレビュー要素を取得
-  var target_image = $(this).parent().parent()
+  var target_image = $(this).parent().parent().parent()
   //削除を押されたプレビューimageのfile名を取得
   var target_name = $(target_image).data('image')
   //プレビューがひとつだけの場合、file_fieldをクリア
