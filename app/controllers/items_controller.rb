@@ -22,6 +22,7 @@ class ItemsController < ApplicationController
   end
 
   def create
+    binding.pry
     @item = Item.new(item_params.merge(user_id: current_user.id, category_id: category_params))
     @item.brand_id = get_brand_id
     if @item.save
@@ -36,6 +37,7 @@ class ItemsController < ApplicationController
   def edit
     gon.roots = @category.roots
     gon.p_category = @item.category.parent.siblings
+    @item.images.build
   end
 
   def update
@@ -43,6 +45,7 @@ class ItemsController < ApplicationController
       redirect_to item_path(@item)
     else
       gon.roots = @category.roots
+      @item.images.build
       render :edit
     end
   end
