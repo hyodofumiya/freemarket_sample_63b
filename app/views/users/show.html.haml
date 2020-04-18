@@ -1,5 +1,5 @@
 = render "share/header"
 %main.content_area--mypage
   =render partial: "/mypage/navi"
-  =render partial: "/mypage/content", locals: {user: @user}
+  =render partial: "/mypage/content", locals: {user: current_user}
 = render "share/footer"
