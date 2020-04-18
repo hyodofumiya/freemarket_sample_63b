@@ -6,10 +6,8 @@ class ItemsController < ApplicationController
   INDEX_ROW_COUNT = 5
 
   def index
-    @category = Category.all
     @items = Item.all.order(created_at: :DESC).includes(:comments, :favorites, :images)
     @category_items = array_items_by_category
-    @category = Category.all
   end
 
   def show
@@ -20,7 +18,6 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.build
-    @category = Category.all
     gon.roots = Category.all.roots
   end
 
