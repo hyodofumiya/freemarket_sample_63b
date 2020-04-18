@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     before_action :basic_auth, if: :production?
-    before_action :set_categoryall, only: [:index, :new, :show, :create]
+    before_action :set_categoryall
 
     private
 
