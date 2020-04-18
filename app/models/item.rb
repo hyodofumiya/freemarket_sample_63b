@@ -86,12 +86,6 @@ class Item < ApplicationRecord
     end
 
     def delete_empty_image
-        temp_images = []
-        self.images.each do |image|
-            unless image.photo.file.nil?
-                temp_images << image
-            end
-        end
-        self.images.replace(temp_images)
+        self.images.replace(self.images.select {|image| image.photo.file.nil?})
     end
 end
