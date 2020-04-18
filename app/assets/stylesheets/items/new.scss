@@ -227,6 +227,12 @@
           }
           &__preparationday{
             margin-top: 16px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            .about{
+              margin-right: 5px;
+            }
             #preparation_day{
               margin-top: 16px;
               border: 1px solid #ccc;
@@ -237,9 +243,13 @@
               line-height: 1;
               margin: 0;
               outline: none;
-              padding: 0 56px 0 16px;
-              width: 100%;
-            }  
+              padding: 0 5px 0 16px;
+              width: 120px;
+              text-align: right;
+            }
+            .day{
+              margin-left: 5px;
+            }
           }
         }
         &__lower{
