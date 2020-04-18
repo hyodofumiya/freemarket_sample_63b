@@ -19,6 +19,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @item.images.build
     @category = Category.all
     gon.roots = Category.all.roots
   end
@@ -30,6 +31,7 @@ class ItemsController < ApplicationController
       redirect_to user_item_path(user_id: current_user.id, id: @item.id)
     else
       gon.roots = Category.all.roots
+      @item.images.build
       render :new
     end
   end
@@ -64,7 +66,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :discription, :size, :condition, :delivary, :area, :preparation_day, :price, images_attributes: [:photo])
+    params.require(:item).permit(:name, :discription, :size, :condition, :delivary, :area, :preparation_day, :price, images_attributes: [:photo, :photo_cache])
   end
 
   def category_params
