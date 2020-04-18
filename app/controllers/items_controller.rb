@@ -35,9 +35,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @category = Category.all
-    @select_category = Category.find(@item.category_id)
-    select_category = @select_category
+    select_category = @item.category
     gon.roots = Category.all.roots
     gon.p_category = select_category.parent.siblings
   end
