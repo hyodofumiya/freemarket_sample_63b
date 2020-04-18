@@ -1,8 +1,6 @@
 = render "devise/shared/error_messages", resource: item
 = form_with model: item, class: :itemform, local: true do |form|
-  -# - item.images.each do |image|
-  -#   = render partial: "images/image_preview", locals: {form: form, image: image}
-  = render partial: "images/image_form", locals: {form: form, image: item.images.build}
+  = render partial: "images/image_form", locals: {form: form}
   .main__showmain__main-item
     .main__showmain__main-item__upper
       .form_field

@@ -6,10 +6,8 @@ class ItemsController < ApplicationController
   INDEX_ROW_COUNT = 5
 
   def index
-    @category = Category.all
     @items = Item.all.order(created_at: :DESC).includes(:comments, :favorites, :images)
     @category_items = array_items_by_category
-    @category = Category.all
   end
 
   def show
@@ -19,8 +17,8 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @category = Category.all
-    gon.roots = Category.all.roots
+    gon.roots = @category.roots
+    @item.images.build
   end
 
   def create
@@ -29,24 +27,22 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to user_item_path(user_id: current_user.id, id: @item.id)
     else
-      gon.roots = Category.all.roots
+      gon.roots = @category.roots
+      @item.images.build
       render :new
     end
   end
 
   def edit
-    @category = Category.all
-    @select_category = Category.find(@item.category_id)
-    select_category = @select_category
-    gon.roots = Category.all.roots
-    gon.p_category = select_category.parent.siblings
+    gon.roots = @category.roots
+    gon.p_category = @item.category.parent.siblings
   end
 
   def update
     if @item.update(item_params.merge(brand_id: get_brand_id, category_id: category_params))
       redirect_to item_path(@item)
     else
-      gon.roots = Category.all.roots
+      gon.roots = @category.roots
       render :edit
     end
   end
@@ -64,7 +60,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :discription, :size, :condition, :delivary, :area, :preparation_day, :price, images_attributes: [:photo])
+    params.require(:item).permit(:name, :discription, :size, :condition, :delivary, :area, :preparation_day, :price, images_attributes: [:photo, :photo_cache])
   end
 
   def category_params
