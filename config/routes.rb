@@ -21,7 +21,6 @@ Rails.application.routes.draw do
     resources :orders, only: [:new, :create]#orderはuserにも関係するがcurrent_userでとるので購入に関わることはitemにネストする。
   end
   resources :categories, only: [:index, :show]
-  resources :items, only: [:index, :show]
 
   root 'items#index'
 
