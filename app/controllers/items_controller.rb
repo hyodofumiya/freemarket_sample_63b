@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    gon.roots = Category.all.roots
+    gon.roots = @category.roots
   end
 
   def create
@@ -26,22 +26,21 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to user_item_path(user_id: current_user.id, id: @item.id)
     else
-      gon.roots = Category.all.roots
+      gon.roots = @category.roots
       render :new
     end
   end
 
   def edit
-    select_category = @item.category
-    gon.roots = Category.all.roots
-    gon.p_category = select_category.parent.siblings
+    gon.roots = @category.roots
+    gon.p_category = @item.category.parent.siblings
   end
 
   def update
     if @item.update(item_params.merge(brand_id: get_brand_id, category_id: category_params))
       redirect_to item_path(@item)
     else
-      gon.roots = Category.all.roots
+      gon.roots = @category.roots
       render :edit
     end
   end
