@@ -86,6 +86,6 @@ class Item < ApplicationRecord
     end
 
     def delete_empty_image
-        self.images.replace(self.images.select {|image| image.photo.file.nil?})
+        self.images.replace(self.images.select {|image| !image.photo.file.nil?})
     end
 end
