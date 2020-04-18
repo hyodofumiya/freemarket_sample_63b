@@ -232,6 +232,7 @@
             align-items: center;
             .about{
               margin-right: 5px;
+              font-weight: bold;
             }
             #preparation_day{
               margin-top: 16px;
@@ -249,6 +250,7 @@
             }
             .day{
               margin-left: 5px;
+              font-weight: bold;
             }
           }
         }
@@ -259,44 +261,33 @@
             @include title_decoration;
           }       
           &__price-main{
+            font-weight: bold;
+          }  
+          &__price-form{
+            margin-top: 16px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
             margin-bottom: 48px;
-            &__form{
-              padding: 4px 0px;
-              align-items: center;
-              box-sizing: content-box;
-              display: flex;
-              justify-content: space-between;
-              width: 100%;        
-              &__price-text{
-                display: flex;
-                justify-content: space-between;
-                width: 100%;
-                .text{
-                  margin-right: auto;
-                  font-weight: bold;
-                }
-                .yen{
-                  margin-right: 8px;
-                }
-              }
-              &__input-form{
-                width: 100%;
-                max-width: 153px;     
-                .form_area{
-                  width: inherit;
-                  &__input{
-                    text-align: right;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    height: 48px;
-                    outline: none;
-                    padding: 0 16px;
-                    width: 100%;
-                  }
-                }
-              }
+            .yen{
+              margin-right: 5px;
+              font-weight: bold;
             }
-          }       
+            #item_price{
+              margin-top: 16px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              color: #222;
+              height: 48px;
+              line-height: 1;
+              margin: 0;
+              outline: none;
+              padding: 0 5px 0 16px;
+              width: 140px;
+              text-align: right;
+            }
+          }     
         &__btn{
           margin: 0px auto 24px;
           margin-bottom: 32px;
