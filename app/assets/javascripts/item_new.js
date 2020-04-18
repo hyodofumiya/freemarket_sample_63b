@@ -17,11 +17,7 @@ $(document).on ('turbolinks:load',function(){
   //大カテゴリーが選択された時の動作
   $(function(){ 
     $("#category_parent_area").click(function() {                             //大カテゴリーの選択ボックスをクリックすると選択肢が追加される
-      $('#category_parent_area').empty();
-      $.each(gon.roots, function(index, val){
-        var html = `<option value="${val.id}">${val.name}</option>`
-        $('#category_parent_area').append(html);
-      });
+      var html = buildCategoryForm(gon.roots, "#category_parent_area");        //ajaxで送られてきた値を元に中カテゴリーフォームの選択肢を作成
     });
     $("#category_parent_area").change(function(){                           //大カテゴリーの内容が変更された時、中カテゴリーの中身を削除する
       hideSizeForm();
