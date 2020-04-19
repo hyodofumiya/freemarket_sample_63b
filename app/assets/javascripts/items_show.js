@@ -1,6 +1,6 @@
 
 //ページが読み込まれた時、画像リストの最初の要素に"selected_image"クラスを追加
-$(document).ready(function(){
+$(document).on ('turbolinks:load',function(){
   $(".static_images__an_item_image_zone--image:first").addClass("selected_image");
 });
 
