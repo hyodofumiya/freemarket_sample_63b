@@ -53,22 +53,9 @@ function changedImageUploader(e)//input要素が変更されたときに呼び�
     if (e.target.classList.contains(CLASS_IMAGE_FILE_FIELD))//クリックされた要素の中にFILE_FIELDのクラスが含まれていたら
     {
         let i = addImageFileField();//inputフィールドの追加。追加したフィールドのインデックスを返す       
-        displayImageOfField(i-1);//画像フィールドの追加。インデックスがマイナス1なのは追加するイベントを起こした要素を指したいため
+        displayImageOfField(readLastFieldNumber());//画像フィールドの追加。インデックスがマイナス1なのは追加するイベントを起こした要素を指したいため
     }
-    console.log(field_numbers)
 }
-
-function updateFieldNumber()
-{
-    let image_fields = document.getElementsByClassName(CLASS_IMAGE_FIELDS);
-    field_numbers = [];
-    for(const image_field of image_fields)
-    {
-        field_numbers.push(Number(image_field.getAttribute(ATTR_FIELD_NUMBER)));
-    }
-    field_numbers.sort();
-}
-
 //===============================画像追加ボタン押下時==============================================
 
 function addImageFileField()//画像のinput要素を追加する関数
@@ -79,7 +66,7 @@ function addImageFileField()//画像のinput要素を追加する関数
 
     if (image_fields_counter < IMAGE_FIELDS_COUNT)//イメージフィールドの個数が指定内なら
     {//指定の数-1までは追加動作。指定の数以上は追加しない&ラベル削除
-        let html = create_image_input_fields(image_fields.length);//追加する要素を取得。引数では現在の個数をわたしている(inputのidは0から始まっているので丁度いい)
+        let html = create_image_input_fields(createFieldNumber());//追加する要素を取得。引数では現在の個数をわたしている(inputのidは0から始まっているので丁度いい)
         image_label.before(html);
         document.getElementById(IMAGE_FIELD_LABEL).classList.remove("display_none");
         image_label.setAttribute("for", html.firstElementChild.getAttribute("id"));//ラベルの指すフィールドの変更。追加した要素の最初のオブジェクトを指しているのでimage_input_fields関数の変更時注意
@@ -104,9 +91,8 @@ function displayImageOfField(num)//受け取った数値に対応する画像を
     current_file_area = image_area.firstElementChild;//イメージタグをグローバル変数に入れる。
     //このグローバル変数は画像読み込み完了時に画像を設定する要素
 
-
-    let file_fields = document.getElementsByClassName(CLASS_IMAGE_FILE_FIELD);//ファイルフィールドをすべて取得
-    reader.readAsDataURL(file_fields[num].files[0]);//読み込み
+    let file_field = document.getElementById(IMAGE_FILE_FIELD.replace(/@/, num - 1));//ファイルフィールドを取得
+    reader.readAsDataURL(file_field.files[0]);//読み込み
     //(上の引数について)ファイルを取得。返り値が配列で返ってくるため最初の要素を選択   
 }
 
@@ -130,6 +116,36 @@ function clickedDeleteButton(e)//削除ボタンが押されたときに呼ば�
         }
         addImageFileField();
     }
+}
+
+//================================その他関数==============================================
+
+function updateFieldNumber()
+{
+    let image_fields = document.getElementsByClassName(CLASS_IMAGE_FIELDS);
+    field_numbers = [];
+    for(const image_field of image_fields)
+    {
+        field_numbers.push(Number(image_field.getAttribute(ATTR_FIELD_NUMBER)));
+    }
+    field_numbers.sort();
+}
+
+function createFieldNumber()//グローバル変数から判断して、追加すべき番号を返す
+{
+    result_number = readLastFieldNumber() + 1;//グローバル変数の配列の最後の値 + 1を返す
+    field_numbers.push(result_number);
+    return result_number;
+}
+
+function readLastFieldNumber()
+{
+    return field_numbers[field_numbers.length - 1]
+}
+
+function deleteFieldNumber(num)
+{
+
 }
 
 

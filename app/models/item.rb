@@ -71,7 +71,6 @@ class Item < ApplicationRecord
         self.images.each do |image|
             delete_flg = true
             image_params.values.each do |image_hash|
-                p "=======#{image_hash} : #{image.id}"
                 if image_hash[:id]&.to_i == image.id
                     delete_flg = false
                     break
@@ -101,6 +100,10 @@ class Item < ApplicationRecord
     end
 
     def delete_empty_image
-        self.images.replace(self.images.select {|image| !image.photo.file.nil?})
+        self.images.each do |image|
+            if image.photo&.file.nil?
+                self.images.delete(image)
+            end
+        end
     end
 end
