@@ -13,7 +13,7 @@ else
 end
 create(:shopping_address, user_id: user.id)
 
-100.times do |i|
+10.times do |i|
   item = create(:item, user_id: User.take.id, category_id: Category.find(Category.pluck(:id).sample).id)
   create(:image, item_id: item.id)
   create(:comment, user_id: user.id, item_id: item.id)
