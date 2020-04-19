@@ -6,7 +6,7 @@
     %secton.item_info
       .item_info__inner
         .item_info__inner__item_image
-          = image_tag @item.images.first.photo.url
+          = image_tag "#{@item.images.first[:photo].url}"
         .item_info__inner__item_name_and_price
           .item_info__inner__item_name_and_price--item_name
             = @item.name
