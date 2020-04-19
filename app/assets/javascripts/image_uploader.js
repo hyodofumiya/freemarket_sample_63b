@@ -110,12 +110,21 @@ function clickedDeleteButton(e)//削除ボタンが押されたときに呼ば�
     {//クリックされた要素が削除ボタンなら
         let field_number = Number(e.target.getAttribute(ATTR_FIELD_NUMBER));//削除ボタンについているカスタム属性を数値にキャストして取得
         document.getElementsByClassName(CLASS_FILE_FIELDS.replace(/@/, field_number))[0].remove();
+        
         let hidden_field = document.getElementById(HIDDEN_IMAGE_FIELD.replace(/@/, field_number));
         if(hidden_field)
         {
             hidden_field.remove();
         }
-        addImageFileField();
+
+        //フォームを増やすかの判断
+        let image_fields = document.getElementsByClassName(CLASS_IMAGE_FIELDS);//現状ページ内に存在している画像ファイルフィールドをクラス名からすべて取得
+        let image_fields_counter = image_fields.length;
+
+        if(image_fields_counter == IMAGE_FIELDS_COUNT - 1)
+        {
+            addImageFileField();
+        }
     }
 }
 

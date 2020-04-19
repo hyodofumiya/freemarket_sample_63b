@@ -12,7 +12,6 @@ class Item < ApplicationRecord
     CONDITION = {"0"=> "新品", "5"=> "未使用に近い", "10"=> "目立った傷や汚れなし", "15"=> "やや傷や汚れあり", "20"=> "傷や汚れあり", "25"=> "状態悪い"}
     DELIVARY = {"0"=> "出品者負担", "5"=> "購入者負担"}
 
-    before_validation :delete_empty_image
 
 #==========バリデーション==============
     validates :name, presence: true
@@ -70,14 +69,39 @@ class Item < ApplicationRecord
     def delete_images(image_params)
         self.images.each do |image|
             delete_flg = true
+            unless(image.persisted?)#画像が新規投稿ならこの周はチェックしない
+                next
+            end
             image_params.values.each do |image_hash|
                 if image_hash[:id]&.to_i == image.id
                     delete_flg = false
                     break
                 end
             end
-            image.destroy if delete_flg
+            self.images.delete(image) if delete_flg
         end
+    end
+
+    def replace_image(image_params)
+        new_images = []
+        image_params.each do |key, hash|
+            if(hash[:photo])
+                new_images << self.images.create(hash)
+            elsif(hash[:id])
+                new_images << Image.find(hash[:id].to_i)
+            end
+        end
+        self.images.replace(new_images)
+    end
+
+    def delete_empty_image
+        new_images = self.images
+        new_images.each do |image|
+            if image.photo&.file.nil?
+                new_images.delete(image)
+            end
+        end
+        self.images.replace(new_images)
     end
 
     private
@@ -97,13 +121,5 @@ class Item < ApplicationRecord
             end
         end
         nil
-    end
-
-    def delete_empty_image
-        self.images.each do |image|
-            if image.photo&.file.nil?
-                self.images.delete(image)
-            end
-        end
     end
 end
