@@ -44,26 +44,30 @@
     .main__showmain__delivery__delivery-area
       .form_field
         = form.label :prefecturesarea, "発送までの日数", class: "form_field__label form_field__label--essential"
-    .main__showmain__delivery__prefecturesarea
-      = form.number_field :preparation_day, id: "prefectures_area"
-      -# 上のフォームがprefectures_areaになっているので修正をお願いします。
+    .main__showmain__delivery__preparationday
+      .about
+        約
+      .number_field
+        = form.number_field :preparation_day, id: "preparation_day"
+      .day
+        日
       -# numberフィールドに変更し、"約"と"日"を前と後ろにつけてください。
   .main__showmain__lower    
     .main__showmain__lower__price-top
       価格（¥300〜9,999,999)
     .main__showmain__lower__price-main
-      .main__showmain__lower__price-main__form
-        .main__showmain__lower__price-main__form__price-text
-          .text
-            .form_field
-              = form.label :price, "販売価格", class: "form_field__label form_field__label--essential"
-          .yen
-            ¥
-        .main__showmain__lower__price-main__form__input-form
-          .form_area
-            = form.number_field :price, class: "form_area__input", placeholder: '0'
+      .form_field
+        = form.label :price, "販売価格", class: "form_field__label form_field__label--essential"
+    .main__showmain__lower__price-form
+      .yen
+        ¥  
+      .number_field
+        = form.number_field :price, class: "form_area__input", placeholder: '0'
     .main__showmain__lower__btn
-      = form.submit "出品する", class: 'main__showmain__lower__btn__put-btn'
+      - if @item.id.present?
+        = form.submit "変更する", class: 'main__showmain__lower__btn__put-btn'
+      - else
+        = form.submit "出品する", class: 'main__showmain__lower__btn__put-btn'
       = link_to "もどる", :back, class: 'main__showmain__lower__btn__return-btn'
     .main__showmain__lower__attention
       禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
