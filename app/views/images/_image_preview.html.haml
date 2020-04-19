@@ -1,4 +1,4 @@
-.image_input_fields#image_input_fields_for_js{class: "file_field#{i}"}
+.image_input_fields#image_input_fields_for_js{class: "file_field#{i}", data: {field:{number: "#{i}"}}}
     = image_form.file_field :photo, value: image_form.object.photo, style: "display:none", class:"image_field_for_js"
     = image_form.hidden_field :photo_cache
     - unless image_form.object.photo.file.nil?
@@ -8,6 +8,5 @@
                 削除
 
 - if image_form.object.photo.file.nil?
-    - if i < 5
-        = image_form.label :photo, class: "main__showmain__main-image__main-form__upload img-label", id: "image_field_label_for_js" do
-            %i.fas.fa-camera
+    = image_form.label :photo, class: "main__showmain__main-image__main-form__upload img-label #{("display_none" if i >= 5)}", id: "image_field_label_for_js" do
+        %i.fas.fa-camera

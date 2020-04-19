@@ -25,6 +25,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params.merge(user_id: current_user.id, category_id: category_params))
     @item.brand_id = get_brand_id
     if @item.save
+      @item.delete_images(item_params[:images_attributes])
       redirect_to user_item_path(user_id: current_user.id, id: @item.id)
     else
       gon.roots = @category.roots
@@ -41,6 +42,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params.merge(brand_id: get_brand_id, category_id: category_params))
+      @item.delete_images(item_params[:images_attributes])
       redirect_to item_path(@item)
     else
       gon.roots = @category.roots
@@ -62,7 +64,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :discription, :size, :condition, :delivary, :area, :preparation_day, :price, images_attributes: [:photo, :photo_cache])
+    params.require(:item).permit(:name, :discription, :size, :condition, :delivary, :area, :preparation_day, :price, images_attributes: [:photo, :photo_cache, :id])
   end
 
   def category_params

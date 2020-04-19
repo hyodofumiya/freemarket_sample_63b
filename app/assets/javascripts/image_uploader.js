@@ -5,6 +5,7 @@ const IMAGE_UPLOADER = "image_area_for_js";//画像とインプット要素が�
     const IMAGE_FIELDS = "image_input_field_for_js"//一つの画像のインプット要素と隠しフィールドが入っている単位。画像追加時にこのクラスが追加される
     const CLASS_IMAGE_FIELDS = "image_input_fields";//上記のクラス名
     const CLASS_FILE_FIELDS = "file_field@"//上記のクラス名。置き換えよう
+    const FILE_FIELDS_NUMBER = "data-field-number"//上記フィールド番号。
 
         const FILE_AND_IMAGE_AREA = "image_input_fields_for_js@";
             //==============image_input_fields===========
@@ -29,6 +30,10 @@ const IMAGE_FIELDS_COUNT = 5;
 
 
 
+var current_file_area = "";//画像の読み込み完了時にここの要素の子要素として画像を挿入する。グローバル変数
+var field_numbers = [];
+
+
 //onloadイベント
 window.addEventListener('turbolinks:load', addEventImageUploader);
 
@@ -39,7 +44,7 @@ function addEventImageUploader()//イベントの定義をしているメソッ�
     {
         image_uploader.addEventListener("change", changedImageUploader);
         image_uploader.addEventListener("click", clickedDeleteButton);
-        var current_file_area = "";//画像の読み込み完了時にここの要素の子要素として画像を挿入する。グローバル変数
+        updateFieldNumber();
     }
 }
 
@@ -50,6 +55,18 @@ function changedImageUploader(e)//input要素が変更されたときに呼び�
         let i = addImageFileField();//inputフィールドの追加。追加したフィールドのインデックスを返す       
         displayImageOfField(i-1);//画像フィールドの追加。インデックスがマイナス1なのは追加するイベントを起こした要素を指したいため
     }
+    console.log(field_numbers)
+}
+
+function updateFieldNumber()
+{
+    let image_fields = document.getElementsByClassName(CLASS_IMAGE_FIELDS);
+    field_numbers = [];
+    for(const image_field of image_fields)
+    {
+        field_numbers.push(Number(image_field.getAttribute(ATTR_FIELD_NUMBER)));
+    }
+    field_numbers.sort();
 }
 
 //===============================画像追加ボタン押下時==============================================
@@ -106,6 +123,11 @@ function clickedDeleteButton(e)//削除ボタンが押されたときに呼ば�
     {//クリックされた要素が削除ボタンなら
         let field_number = Number(e.target.getAttribute(ATTR_FIELD_NUMBER));//削除ボタンについているカスタム属性を数値にキャストして取得
         document.getElementsByClassName(CLASS_FILE_FIELDS.replace(/@/, field_number))[0].remove();
+        let hidden_field = document.getElementById(HIDDEN_IMAGE_FIELD.replace(/@/, field_number));
+        if(hidden_field)
+        {
+            hidden_field.remove();
+        }
         addImageFileField();
     }
 }

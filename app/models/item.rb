@@ -66,6 +66,21 @@ class Item < ApplicationRecord
         return self.brand&.name
     end
 #=================================================================
+
+    def delete_images(image_params)
+        self.images.each do |image|
+            delete_flg = true
+            image_params.values.each do |image_hash|
+                p "=======#{image_hash} : #{image.id}"
+                if image_hash[:id]&.to_i == image.id
+                    delete_flg = false
+                    break
+                end
+            end
+            image.destroy if delete_flg
+        end
+    end
+
     private
     def get_selector(selector, value)
         selector.each do |selector_num, text|
