@@ -46,6 +46,8 @@ ja:
         preparation_day: 発送までの期間
         price: 値段
         status: 出品状態
+        category: カテゴリー
+        images: 1枚以上の画像
       image:
         photo: 商品画像
   date:

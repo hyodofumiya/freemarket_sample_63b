@@ -1,5 +1,7 @@
 - if resource.errors.any?
   %p.form_fields__error_message
-    = resource.errors.full_messages.first
+    - resource.errors.full_messages.each do |message|
+      ・#{message}
+      %br/
 %p.form_fields__error_message
   =flash[:alert]

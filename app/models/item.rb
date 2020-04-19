@@ -14,14 +14,14 @@ class Item < ApplicationRecord
 
 
 #==========バリデーション==============
-    validates :name, presence: true
-    validates :discription, presence: true
+    validates :name, presence: true, length: {maximum: 40}
+    validates :discription, presence: true, length: {maximum: 1000}
     validates :condition, presence: true, inclusion: {in: CONDITION.values}
     validates :delivary, presence: true, inclusion: {in: DELIVARY.values}
     validates :size, inclusion: {in: (SIZE.values | [nil])}
     validates :area, presence: true, inclusion: {in: Prefectures.array}
     validates :preparation_day, presence: true
-    validates :price, presence: true, length: { minimum: 0 }
+    validates :price, presence: true, numericality: { greater_than: 300 }
     validates :images, presence: true
 #====================================
     scope :category_items, ->(num) { where(category_id: Category.find(num).subtree_ids, status: true).order(created_at: :DESC).includes(:images, :comments, :favorites) }

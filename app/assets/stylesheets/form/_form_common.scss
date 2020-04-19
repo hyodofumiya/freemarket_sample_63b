@@ -56,14 +56,12 @@ $form_field_area_padding_vertical: 40px;
     position: relative;
     &__error_message
     {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        text-align: center;
+        margin: 0 auto;
+        text-align: left;
         color: red;
         background-color: #FFFFFF;
         white-space: nowrap;
+        width: 50%;
     }
 }
 

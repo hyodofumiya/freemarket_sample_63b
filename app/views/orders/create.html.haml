@@ -13,7 +13,7 @@
     .order_finish_info__item_info
       .order_finish_info__item_info__image_and_name
         .order_finish_info__item_info__image_and_name__item_image
-          = image_tag "#{@item.images.first[:photo].url}"
+          = image_tag "#{@item.images.first.photo.url}"
         .order_finish_info__item_info__image_and_name__item_name
           = @item.name
     .order_finish_info__pay_info
@@ -21,9 +21,9 @@
         .order_finish_info__pay_info__item_price--head
           商品代金
         .order_finish_info__pay_info__item_price--data
-          %p 
+          %p
             = "税込　¥ " + @item.price.to_s
-          %p 
+          %p
             = "配送料　" + @item.delivary
       .order_finish_info__pay_info__pay_amount
         .order_finish_info__pay_info__pay_amount--head
