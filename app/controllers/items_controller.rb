@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :must_logined, only: [:new, :create, :edit, :update, :destroy]
   before_action :admin_user?, only: [:edit, :update, :destroy]
+  before_action :set_size, only: [:new, :create, :edit, :update, :destroy]
   INDEX_ROW_COUNT = 5
 
   def index
@@ -14,15 +16,38 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
+    gon.roots = @category.roots
+    @item.images.build
   end
 
   def create
+    # binding.pry
+    @item = Item.new(item_params.merge(user_id: current_user.id, category_id: category_params))
+    @item.brand_id = get_brand_id
+    if @item.save
+      redirect_to user_item_path(user_id: current_user.id, id: @item.id)
+    else
+      gon.roots = @category.roots
+      @item.images.build
+      render :new
+    end
   end
 
   def edit
+    gon.roots = @category.roots
+    gon.p_category = @item.category.parent.siblings
+    @item.images.build
   end
 
   def update
+    if @item.update(item_params.merge(brand_id: get_brand_id, category_id: category_params))
+      redirect_to item_path(@item)
+    else
+      gon.roots = @category.roots
+      @item.images.build
+      render :edit
+    end
   end
 
   def destroy
@@ -36,6 +61,20 @@ class ItemsController < ApplicationController
   end
 
   private
+
+  def item_params
+    params.require(:item).permit(:name, :discription, :size, :condition, :delivary, :area, :preparation_day, :price, images_attributes: [:photo, :photo_cache])
+  end
+
+  def category_params
+    category_id = params.require(:item).permit(:category_id)[:category_id].to_i
+    category_id == 0 ? nil : category_id
+  end
+
+  def brand_params
+    params.require(:item).permit(:brand_name).values.first
+  end
+
   def set_item
     @item = Item.find(params[:id])
   end
@@ -45,6 +84,15 @@ class ItemsController < ApplicationController
     redirect_to item_path(@item) unless @item.user == current_user
   end
 
+  def get_brand_id
+    return nil unless brand_params
+    if brand = Brand.find_by(name: brand_params)
+      return brand.id
+    else
+      return Brand.create(name: brand_params).id
+    end
+  end
+
   def array_items_by_category
     item_array = []
     Category::DISPLAY_TOP_PAGE.each do |num|
@@ -52,4 +100,10 @@ class ItemsController < ApplicationController
     end
     return item_array
   end
+  
+  def set_size
+    @size = [['---選択してください---', ''], ['XS', '0'], ['S', '5'], ['M', '10'], ['L', '15'], ['XL', '20']]
+  end
+
+
 end

@@ -1,0 +1,8 @@
+.main__showmain__main-image
+    .form_field
+        = form.label :image, "出品画像", class: "form_field__label form_field__label--essential"
+    .main__showmain__main-image__main-text
+        最大5枚までアップロードできます
+    .main__showmain__main-image__main-form
+        #image-box-1
+            = render partial: "images/image_preview", locals: { form: form}

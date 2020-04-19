@@ -14,6 +14,7 @@ ja:
       brand: ブランド
       favorite: お気に入り
       comment: コメント
+      image: 商品画像
     attributes:
       user:
         nickname: ニックネーム
@@ -35,6 +36,18 @@ ja:
         cities: 市町村区
         address: 番地
         building_name: 建物名
+      item:
+        name: 商品名
+        discription: 商品の説明
+        size: サイズ
+        condition: 商品の状態
+        delivary: 発送料の負担
+        area: 発送地域
+        preparation_day: 発送までの期間
+        price: 値段
+        status: 出品状態
+      image:
+        photo: 商品画像
   date:
     abbr_day_names:
     - 日

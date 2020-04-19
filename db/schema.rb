@@ -12,6 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2020_04_12_093747) do
 
+  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.boolean "size", default: false, null: false
@@ -67,7 +73,7 @@ ActiveRecord::Schema.define(version: 2020_04_12_093747) do
     t.integer "area", null: false
     t.integer "preparation_day", null: false
     t.integer "price", null: false
-    t.boolean "status", null: false
+    t.boolean "status", default: true, null: false
     t.bigint "user_id"
     t.bigint "brand_id"
     t.datetime "created_at", null: false

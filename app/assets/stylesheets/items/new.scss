@@ -10,7 +10,7 @@
     margin: 0 auto;
     max-width: 700px;
     background-color: #fff;
-    padding: 24px 40px 40px;  
+    padding: 24px 40px 40px;
       .main__showmain{
         &__main-image{
           padding: 16px;
@@ -26,19 +26,43 @@
             margin: -8px -4px 0px;
             margin-top: 8px;
             padding: 0px 4px;
-            &__upload{
-              align-content: center;
-              text-align: center;
-              background-color: rgb(245, 245, 245);
+            &__upload
+            {
               cursor: pointer;
-              display: flex;
-              height: 100%;
-              flex-wrap: wrap;
-              justify-content: center;
-              border-width: 1px;
-              border-style: dashed;
-              border-color: rgb(204, 204, 204);
             }
+            #image-box-1{
+                display: block;
+                align-content: center;
+                text-align: center;
+                background-color: rgb(245, 245, 245);
+                display: flex;
+                height: 100%;
+                flex-wrap: wrap;
+                justify-content: center;
+                border-width: 1px;
+                border-style: dashed;
+                border-color: rgb(204, 204, 204);
+                flex-wrap: wrap;
+                .item-image{
+                  margin: 1.5px;
+                }
+                  .item-num-1{
+                    width: 100%;
+                  }
+                  .item-num-2{
+                    width: 491px;
+                  }
+                  .item-num-3{
+                    width: 363px;
+                  }
+                  .item-num-4{
+                    width: 234px;
+                  }
+                  .item-num-5{
+                    width: 106px;
+                  }
+                
+              }
           }
         }
         &__main-item{
@@ -63,7 +87,7 @@
                   margin: 0;
                   outline: none;
                   padding: 0 16px;
-                  width: inherit;
+                  width: 100%;
                 }
               }
             }
@@ -99,12 +123,25 @@
             font-weight: bold;
           }
           &__categoryarea{
-            margin-top: 16px;
-            #category_area{
+            .category_area_select_form{
               border: 1px solid #ccc;
               height: 48px;
               outline: none;
               width: 100%;
+              margin-top: 16px;
+            }
+          }
+          &__size{
+            margin-top: 32px;
+          }
+          &__sizearea{
+            margin-top: 16px;
+            .size_area_select_form{
+              border: 1px solid #ccc;
+              height: 48px;
+              outline: none;
+              width: 100%;
+              margin-top: 16px;
             }
           }
           
@@ -131,7 +168,7 @@
                   height: 48px;
                   outline: none;
                   padding: 0 16px;
-                  width: inherit;
+                  width: 100%;
                 }
               }
             }
@@ -188,6 +225,34 @@
               width: 100%;
             }  
           }
+          &__preparationday{
+            margin-top: 16px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            .about{
+              margin-right: 5px;
+              font-weight: bold;
+            }
+            #preparation_day{
+              margin-top: 16px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              color: #222;
+              height: 48px;
+              line-height: 1;
+              margin: 0;
+              outline: none;
+              padding: 0 5px 0 16px;
+              width: 120px;
+              text-align: right;
+            }
+            .day{
+              margin-left: 5px;
+              font-weight: bold;
+            }
+          }
         }
         &__lower{
           padding: 16px 16px 48px;
@@ -196,44 +261,33 @@
             @include title_decoration;
           }       
           &__price-main{
+            font-weight: bold;
+          }  
+          &__price-form{
+            margin-top: 16px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
             margin-bottom: 48px;
-            &__form{
-              padding: 4px 0px;
-              align-items: center;
-              box-sizing: content-box;
-              display: flex;
-              justify-content: space-between;
-              width: 100%;        
-              &__price-text{
-                display: flex;
-                justify-content: space-between;
-                width: 100%;
-                .text{
-                  margin-right: auto;
-                  font-weight: bold;
-                }
-                .yen{
-                  margin-right: 8px;
-                }
-              }
-              &__input-form{
-                width: 100%;
-                max-width: 153px;     
-                .form_area{
-                  width: inherit;
-                  &__input{
-                    text-align: right;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    height: 48px;
-                    outline: none;
-                    padding: 0 16px;
-                    width: 100%;
-                  }
-                }
-              }
+            .yen{
+              margin-right: 5px;
+              font-weight: bold;
             }
-          }       
+            #item_price{
+              margin-top: 16px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              color: #222;
+              height: 48px;
+              line-height: 1;
+              margin: 0;
+              outline: none;
+              padding: 0 5px 0 16px;
+              width: 140px;
+              text-align: right;
+            }
+          }     
         &__btn{
           margin: 0px auto 24px;
           margin-bottom: 32px;

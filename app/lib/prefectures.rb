@@ -19,13 +19,26 @@ class Prefectures
     end
 
     def self.find(num, value_kind: "default")#引数で受け取った数値に該当する都道府県を返す。
-        return self.list[num][option_kind(value_kind)]
+        return nil if num.to_i < 0
+        begin
+            return self.list[num][option_kind(value_kind)]
+        rescue NoMethodError, TypeError
+            return nil
+        end
     end
 
     def self.find_by(serch_hash)#受け取った引数に対するidを返す
         #kana: "ぐんま"のような形で呼び出す。引数はハッシュの一つ目以外は無視するので注意
         list = serch_list(serch_hash.first[0])
         id_from_list(list, serch_hash.first[1])
+    end
+
+    def self.array(value_kind: "default")
+        result_array = []
+        self.each_prefectures(value_kind: value_kind) do |prefecture|
+            result_array << prefecture
+        end
+        return result_array
     end
 
     private
@@ -59,7 +72,7 @@ class Prefectures
     def self.id_from_list(list, value)
         list.each_with_index do |list_value, id|
             if list_value == value
-                return id
+                return id.to_i
             end
         end
         return nil
