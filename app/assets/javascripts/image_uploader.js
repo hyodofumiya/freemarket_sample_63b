@@ -53,7 +53,7 @@ function changedImageUploader(e)//input要素が変更されたときに呼び�
     if (e.target.classList.contains(CLASS_IMAGE_FILE_FIELD))//クリックされた要素の中にFILE_FIELDのクラスが含まれていたら
     {
         let i = addImageFileField();//inputフィールドの追加。追加したフィールドのインデックスを返す       
-        displayImageOfField(readLastFieldNumber());//画像フィールドの追加。インデックスがマイナス1なのは追加するイベントを起こした要素を指したいため
+        displayImageOfField(readLastFieldNumber(1));//画像フィールドの追加。インデックスがマイナス1なのは追加するイベントを起こした要素を指したいため
     }
 }
 //===============================画像追加ボタン押下時==============================================
@@ -63,10 +63,11 @@ function addImageFileField()//画像のinput要素を追加する関数
     let image_label = document.getElementById(IMAGE_FIELD_LABEL);//画像フィールドのラベルを取得
     let image_fields = document.getElementsByClassName(CLASS_IMAGE_FIELDS);//現状ページ内に存在している画像ファイルフィールドをクラス名からすべて取得
     let image_fields_counter = image_fields.length;
+    let field_number = createFieldNumber();
 
     if (image_fields_counter < IMAGE_FIELDS_COUNT)//イメージフィールドの個数が指定内なら
     {//指定の数-1までは追加動作。指定の数以上は追加しない&ラベル削除
-        let html = create_image_input_fields(createFieldNumber());//追加する要素を取得。引数では現在の個数をわたしている(inputのidは0から始まっているので丁度いい)
+        let html = create_image_input_fields(field_number);//追加する要素を取得。引数では現在の個数をわたしている(inputのidは0から始まっているので丁度いい)
         image_label.before(html);
         document.getElementById(IMAGE_FIELD_LABEL).classList.remove("display_none");
         image_label.setAttribute("for", html.firstElementChild.getAttribute("id"));//ラベルの指すフィールドの変更。追加した要素の最初のオブジェクトを指しているのでimage_input_fields関数の変更時注意
@@ -91,7 +92,7 @@ function displayImageOfField(num)//受け取った数値に対応する画像を
     current_file_area = image_area.firstElementChild;//イメージタグをグローバル変数に入れる。
     //このグローバル変数は画像読み込み完了時に画像を設定する要素
 
-    let file_field = document.getElementById(IMAGE_FILE_FIELD.replace(/@/, num - 1));//ファイルフィールドを取得
+    let file_field = document.getElementById(IMAGE_FILE_FIELD.replace(/@/, num));//ファイルフィールドを取得
     reader.readAsDataURL(file_field.files[0]);//読み込み
     //(上の引数について)ファイルを取得。返り値が配列で返ってくるため最初の要素を選択   
 }
@@ -138,9 +139,9 @@ function createFieldNumber()//グローバル変数から判断して、追加�
     return result_number;
 }
 
-function readLastFieldNumber()
+function readLastFieldNumber(last_offset = 0)
 {
-    return field_numbers[field_numbers.length - 1]
+    return field_numbers[field_numbers.length - 1 - last_offset]
 }
 
 function deleteFieldNumber(num)
