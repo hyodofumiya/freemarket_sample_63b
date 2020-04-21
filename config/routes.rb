@@ -8,10 +8,12 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update] do
     resources :favorites, only: [:index]
     resources :credit_cards, only: [:index, :show, :new, :create, :destroy]
-    resources :shopping_addresses, only: [:index]
+    resources :shopping_addresses, only: [:edit, :update]
     resources :items
     resources :orders, only: [:index, :show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+    get "sale_items", to: "items#sale_items"
+    get "exhibit_items", to: "items#exhibit_items"
     get "profile_photo", to: "users#profile_photo"
     patch "update_profile_photo", to: "users#profile_photo_update"
   end

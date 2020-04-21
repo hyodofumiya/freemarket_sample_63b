@@ -1,0 +1,10 @@
+.users_item_area
+    %ul.mypage_tabs#mypage_tabs_for_js
+        %li.mypage_tabs__tab.mypage_tabs__tab--exhibition
+            %h3.mypage_tabs__tab__title
+                %button.mypage_tabs__tab__button.mypage_tabs__tab__button--alone{type: "button"}
+                    = title
+
+.mypage_users_items.mypage_users_items--scroll
+    - items.each do |item|
+        = render partial: "mypage/contents/mypage_item", locals: {user: user, item: item}

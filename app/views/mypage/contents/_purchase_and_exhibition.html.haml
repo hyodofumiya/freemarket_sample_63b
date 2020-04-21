@@ -1,0 +1,18 @@
+.users_item_area
+    %ul.mypage_tabs#mypage_tabs_for_js
+        %li.mypage_tabs__tab.mypage_tabs__tab--exhibition
+            %h3.mypage_tabs__tab__title
+                %button.mypage_tabs__tab__button{type: "button"}
+                    出品した商品
+        %li.mypage_tabs__tab.mypage_tabs__tab--purchase
+            %h3.mypage_tabs__tab__title
+                %button.mypage_tabs__tab__button.mypage_tabs__tab__button--inactive{type: "button"}
+                    購入した商品
+
+.mypage_users_items
+    - user.items.first(5).each do |item|
+        = render partial: "mypage/contents/mypage_item", locals: {user: user, item: item}
+
+.mypage_users_items.mypage_users_items--inactive        
+    - user.orders.first(5).each do |order|
+        = render partial: "mypage/contents/mypage_item", locals: {user: user, item: order.item}

@@ -6,6 +6,9 @@ class OrdersController < ApplicationController
   
 
   def index
+    @card = CreditCard.where(user_id: current_user.id)
+    @user = User.find(params[:user_id])
+    @items = Item.where(orders: @user.orders)
   end
 
   def new

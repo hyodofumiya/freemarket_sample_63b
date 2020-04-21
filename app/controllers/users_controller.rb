@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :must_logined, only: [:edit]
   before_action :set_user, only: [:show, :profile_photo, :edit, :profile_photo_update]
-  before_action :must_logined, only: [:edit, :show]
   def show
     @card = CreditCard.where(user_id: current_user.id)
   end

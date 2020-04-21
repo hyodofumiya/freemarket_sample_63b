@@ -1,2 +1,7 @@
-%h1 Favorites#index
-%p Find me in app/views/favorites/index.html.haml
+= render "share/header"
+%main.content_area--mypage
+    =render partial: "/mypage/navi"
+    .user_content_area
+        =render partial: "/mypage/content_header", locals: {user: @user}
+        =render partial: "/mypage/contents/line_items", locals: {user: @user, items: @items, title: "お気に入りした商品"}
+= render "share/footer"

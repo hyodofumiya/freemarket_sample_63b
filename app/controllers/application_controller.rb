@@ -21,4 +21,8 @@ class ApplicationController < ActionController::Base
     def set_categoryall
         @category = Category.all
     end
+
+    def current_user?
+        redirect_to root unless User.find(params[:user_id]) == current_user
+    end
 end

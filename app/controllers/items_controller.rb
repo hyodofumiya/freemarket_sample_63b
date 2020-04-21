@@ -64,6 +64,18 @@ class ItemsController < ApplicationController
     end
   end
 
+  def exhibit_items
+    @card = CreditCard.where(user_id: current_user.id)
+    @user = User.find(params[:user_id])
+    @items = @user.items
+  end
+
+  def sale_items
+    @card = CreditCard.where(user_id: current_user.id)
+    @user = User.find(params[:user_id])
+    @items = @user.items.where(status: true)
+  end
+
   private
 
   def item_params
