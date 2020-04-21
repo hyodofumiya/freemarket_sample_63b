@@ -21,7 +21,7 @@ class Item < ApplicationRecord
     validates :size, inclusion: {in: (SIZE.values | [nil])}
     validates :area, presence: true, inclusion: {in: Prefectures.array}
     validates :preparation_day, presence: true
-    validates :price, presence: true, numericality: { greater_than: 300 }
+    validates :price, presence: true, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
     validates :images, presence: true
 #====================================
     scope :category_items, ->(num) { where(category_id: Category.find(num).subtree_ids, status: true).order(created_at: :DESC).includes(:images, :comments, :favorites) }
