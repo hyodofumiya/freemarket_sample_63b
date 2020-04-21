@@ -11,6 +11,7 @@ class Item < ApplicationRecord
     SIZE = {"0"=> "XS", "5"=> "S", "10"=> "M", "15"=> "L", "20"=> "XL"}#DBの値とサイズの割付定数
     CONDITION = {"0"=> "新品", "5"=> "未使用に近い", "10"=> "目立った傷や汚れなし", "15"=> "やや傷や汚れあり", "20"=> "傷や汚れあり", "25"=> "状態悪い"}
     DELIVARY = {"0"=> "出品者負担", "5"=> "購入者負担"}
+    PREPARATION_DAY= {"0"=> "1~2日で発送", "5"=> "3~4日で発送", "10"=> "5~7日で発送"}
 
 
 #==========バリデーション==============
@@ -20,7 +21,7 @@ class Item < ApplicationRecord
     validates :delivary, presence: true, inclusion: {in: DELIVARY.values}
     validates :size, inclusion: {in: (SIZE.values | [nil])}
     validates :area, presence: true, inclusion: {in: Prefectures.array}
-    validates :preparation_day, presence: true
+    validates :preparation_day, presence: true, inclusion: {in: PREPARATION_DAY.values}
     validates :price, presence: true, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
     validates :images, presence: true
 #====================================
@@ -39,6 +40,10 @@ class Item < ApplicationRecord
         return get_selector(Item::DELIVARY, super&.to_i)
     end
 
+    def preparation_day
+        return get_selector(Item::PREPARATION_DAY, super&.to_i)
+    end
+
     def size=(value)
         return set_selector(Item::SIZE, value.to_i){super(value)}
     end
@@ -49,6 +54,10 @@ class Item < ApplicationRecord
 
     def delivary=(value)
         return set_selector(Item::DELIVARY, value.to_i){super(value)}
+    end
+
+    def preparation_day=(value)
+        return set_selector(Item::PREPARATION_DAY, value.to_i){super(value)}
     end
 
     #=============都道府県を入れるカラムのゲッターとセッター==========
