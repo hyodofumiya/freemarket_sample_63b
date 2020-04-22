@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
   before_action :must_logined, only: [:edit]
   before_action :set_user, only: [:show, :profile_photo, :edit, :profile_photo_update]
-  before_action :must_logined, only: [:edit, :show]
   def show
-    @card = CreditCard.where(user_id: current_user.id)
   end
 
   def edit
@@ -39,10 +37,6 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    if params[:user_id]
-      @user = User.find(params[:user_id])
-    else
-      @user = User.find(params[:id])
-    end
+    @user = User.find(params[:id])
   end
 end

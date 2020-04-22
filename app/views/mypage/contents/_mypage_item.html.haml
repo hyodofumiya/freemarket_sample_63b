@@ -1,0 +1,15 @@
+= link_to user_item_path(user, item.id), class: "mypage_link mypage_item #{("mypage_item--sold" unless item.status)}" do
+    = image_tag item.images.first.photo.url, {class: "mypage_item__photo", alt: "商品のイメージ画像です"}
+    .mypage_item__info
+        %span.mypage_item__name #{item.name}
+        - if user.favorited?(item)
+            = icon "fa", "heart", class: "mypage_item__button mypage_item__button--favorite mypage_item__button--favorite--favorited"
+        - else
+            = icon "far", "heart", class: "mypage_item__button mypage_item__button--favorite"
+        %span.mypage_item__buttons_count #{item.favorites.length}
+        - if user.commented?(item)
+            = icon "fa", "comment", class: "mypage_item__button mypage_item__button--comment mypage_item__button--comment--commented"
+        -else
+            = icon "far", "comment", class: "mypage_item__button mypage_item__button--comment"
+        %span.mypage_item__buttons_count #{item.comments.length}
+    = icon "fa", "chevron-right", class: "mypage_icon mypage_icon--item mypage_icon--right_arrow"

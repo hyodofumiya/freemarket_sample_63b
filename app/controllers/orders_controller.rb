@@ -3,9 +3,10 @@ class OrdersController < ApplicationController
   before_action :set_item, only: [:new, :create]
   before_action :set_card, only: [:new, :create]
   before_action :set_shopping_address, only: [:new, :create]
-  
+  before_action :set_user, only: [:index]
 
   def index
+    @items = Item.where(orders: @user.orders)
   end
 
   def new
@@ -54,6 +55,10 @@ class OrdersController < ApplicationController
 
   def set_shopping_address
     @shopping_address = ShoppingAddress.find_by(user_id: current_user.id)
+  end
+    
+  def set_user
+      @user = User.find(params[:user_id])
   end
 
 end

@@ -29,6 +29,18 @@ class User < ApplicationRecord
     self.favorites.find_by(item_id: item.id) ? true : false
   end
 
+  def commented?(item)
+    self.comments.find_by(item_id: item.id) ? true : false
+  end
+
+  def evaluation#ユーザーが出品している商品のお気に入りの合計を出力する
+    favorite_count = 0
+    self.items.each do |item|
+      favorite_count += item.favorites.length
+    end
+    return favorite_count
+  end
+
   #======birthdayアクセサ=========
   def birthday_year=(year)
     @year = year

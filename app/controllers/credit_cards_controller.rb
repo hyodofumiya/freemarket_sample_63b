@@ -33,7 +33,6 @@ class CreditCardsController < ApplicationController
 
   def show
     @item = params[:item_id].to_i if present?
-    @card = CreditCard.where(user_id: current_user.id).first
     if @card.blank?
       redirect_to new_user_credit_card_path(user_id:current_user.id) 
     else
@@ -46,7 +45,6 @@ class CreditCardsController < ApplicationController
   end
 
   def destroy #PayjpとCardデータベースを削除します
-    card = CreditCard.where(user_id: current_user.id).first
     if card.present?
       Payjp.api_key = Rails.application.credentials[:payjp][:payjp_secret_key]
       customer = Payjp::Customer.retrieve(card.customer_id)
