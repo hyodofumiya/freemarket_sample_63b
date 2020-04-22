@@ -95,6 +95,10 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
+    
+  def set_user
+      @user = User.find(params[:user_id])
+  end
 
   def admin_user?#出品者以外は詳細ページへリダイレクト
     set_item

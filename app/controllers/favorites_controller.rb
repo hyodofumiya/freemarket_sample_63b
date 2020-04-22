@@ -1,9 +1,9 @@
 class FavoritesController < ApplicationController
   before_action :must_logined
   before_action :set_item, only: [:create, :destroy]
+  before_action :set_user, only: [:index]
 
   def index
-    @user = User.find(params[:user_id])
     @items = Item.where(favorites: @user.favorites)
   end
 
@@ -19,5 +19,9 @@ class FavoritesController < ApplicationController
 
   def set_item
     @item = Item.find(params[:item_id])
+  end
+    
+  def set_user
+      @user = User.find(params[:user_id])
   end
 end

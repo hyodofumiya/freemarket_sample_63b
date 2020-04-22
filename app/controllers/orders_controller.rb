@@ -56,5 +56,9 @@ class OrdersController < ApplicationController
   def set_shopping_address
     @shopping_address = ShoppingAddress.find_by(user_id: current_user.id)
   end
+    
+  def set_user
+      @user = User.find(params[:user_id])
+  end
 
 end

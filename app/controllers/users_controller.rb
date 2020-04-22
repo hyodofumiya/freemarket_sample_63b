@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :must_logined, only: [:edit]
-  before_action :set_user_by_id, only: [:show, :profile_photo, :edit, :profile_photo_update]
+  before_action :set_user, only: [:show, :profile_photo, :edit, :profile_photo_update]
   def show
   end
 
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(:photo_filepath)
   end
 
-  def set_user_by_id
+  def set_user
     @user = User.find(params[:id])
   end
 end

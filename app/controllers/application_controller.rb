@@ -25,8 +25,4 @@ class ApplicationController < ActionController::Base
     def current_user?
         redirect_to root unless User.find(params[:user_id]) == current_user
     end
-    
-    def set_user
-        @user = User.find(params[:user_id])
-    end
 end
