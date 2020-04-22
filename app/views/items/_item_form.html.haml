@@ -23,7 +23,7 @@
     .main__showmain__detail__conditionarea
       = form.select :condition, nil, {}, { id: "condition_area"} do
         - Item::CONDITION.each do |key, value|
-          %option{value: key.to_i, selected: ("selected" if item.condition == key.to_i)} #{value}
+          %option{value: key.to_i, selected: ("selected" if @item.condition == value)} #{value}
   .main__showmain__delivery
     .main__showmain__delivery__delivery-top
       配送について
@@ -33,7 +33,7 @@
     .main__showmain__delivery__feearea
       = form.select :delivary, nil, {}, { id: "fee_area"} do
         - Item::DELIVARY.each do |key, value|
-          %option{value: key.to_i, selected: ("selected" if item.delivary == key.to_i)} #{value}
+          %option{value: key.to_i, selected: ("selected" if @item.delivary == value)} #{value}
     .main__showmain__delivery__delivery-area
       .form_field
         = form.label :area, "発送元の地域", class: "form_field__label form_field__label--essential"
@@ -43,11 +43,11 @@
           %option{value: i, selected: ("selected" if item.area == prefecture)} #{prefecture}
     .main__showmain__delivery__delivery-area
       .form_field
-        = form.label :prefecturesarea, "発送までの日数", class: "form_field__label form_field__label--essential"
+        = form.label :preparation_day, "発送までの日数", class: "form_field__label form_field__label--essential"
     .main__showmain__delivery__preparationday
-      = form.select :preparationday, nil, {}, {id: "preparation_day"} do
+      = form.select :preparation_day, nil, {}, {id: "preparation_day"} do
         - Item::PREPARATION_DAY.each do |key, value|
-          %option{value: key.to_i, selected: ("selected" if item.preparation_day == key.to_i)} #{value}
+          %option{value: key.to_i, selected: ("selected" if @item.preparation_day == value)} #{value}
   .main__showmain__lower    
     .main__showmain__lower__price-top
       価格（¥300〜9,999,999)

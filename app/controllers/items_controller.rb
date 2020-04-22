@@ -36,6 +36,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    binding.pry
     gon.roots = @category.roots
     gon.p_category = @item.category.parent.siblings
     @item.images.build
