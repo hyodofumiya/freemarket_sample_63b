@@ -87,3 +87,48 @@
   &--data{
   }
 }
+
+
+/*
+高さを入れるとその半分の高さで売り切れマークを出す
+width: 220px;
+height: 150px;
+での値がデフォルトになっている
+*/
+@mixin sold_item($height: 150px)
+{
+  position: relative;
+  &--sold
+  {
+    &::before
+    {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 4;
+      border-top: red ($height / 4) solid;
+      border-left: red ($height / 4) solid;
+      border-right: transparent ($height / 4) solid;
+      border-bottom: transparent ($height / 4) solid;
+    }
+    &::after
+    {
+      content: "SOLD";
+      display: block;
+      position: absolute;
+      text-align: center;
+      margin-top: $height * (1/15);
+      margin-left: $height * (1/15);
+      height: $height / 2;
+      width: $height / 2;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      transform: rotate(-45deg);
+      color: white;
+      font-size: $height * (2/15);
+    }
+  }
+}

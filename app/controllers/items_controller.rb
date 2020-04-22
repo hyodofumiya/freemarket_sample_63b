@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   before_action :must_logined, only: [:new, :create, :edit, :update, :destroy]
   before_action :admin_user?, only: [:edit, :update, :destroy]
   before_action :set_size, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_user, only: [:exhibit_items, :sale_items]
   INDEX_ROW_COUNT = 5
 
   def index
@@ -65,6 +66,14 @@ class ItemsController < ApplicationController
     end
   end
 
+  def exhibit_items
+    @items = @user.items
+  end
+
+  def sale_items
+    @items = @user.items.where(status: true)
+  end
+
   private
 
   def item_params
@@ -86,6 +95,10 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+    
+  def set_user
+      @user = User.find(params[:user_id])
   end
 
   def admin_user?#出品者以外は詳細ページへリダイレクト
