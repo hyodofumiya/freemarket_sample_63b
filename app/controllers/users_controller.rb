@@ -37,6 +37,10 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:id])
+    if params[:user_id]
+      @user = User.find(params[:user_id])
+    else
+      @user = User.find(params[:id])
+    end
   end
 end
