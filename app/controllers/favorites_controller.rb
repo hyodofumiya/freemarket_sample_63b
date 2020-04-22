@@ -3,7 +3,6 @@ class FavoritesController < ApplicationController
   before_action :set_item, only: [:create, :destroy]
 
   def index
-    @card = CreditCard.where(user_id: current_user.id)
     @user = User.find(params[:user_id])
     @items = Item.where(favorites: @user.favorites)
   end

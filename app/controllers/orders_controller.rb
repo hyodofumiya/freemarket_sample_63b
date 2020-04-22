@@ -3,11 +3,9 @@ class OrdersController < ApplicationController
   before_action :set_item, only: [:new, :create]
   before_action :set_card, only: [:new, :create]
   before_action :set_shopping_address, only: [:new, :create]
-  
+  before_action :set_user, only: [:index]
 
   def index
-    @card = CreditCard.where(user_id: current_user.id)
-    @user = User.find(params[:user_id])
     @items = Item.where(orders: @user.orders)
   end
 

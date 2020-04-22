@@ -8,11 +8,11 @@
             =link_to user_favorites_path(@user), class: "mypage_link mypage_navigation__list__link" do
                 いいね！一覧
                 = icon "fa", "chevron-right", class: "mypage_icon mypage_icon--right_arrow"
-        %li.mypage_navigation__list{class: ("mypage_navigation__list--current" if request.path_info == user_items_path(@user, on_sale: true))}
+        %li.mypage_navigation__list{class: ("mypage_navigation__list--current" if request.path_info == user_sale_items_path(@user))}
             =link_to user_sale_items_path(@user), class: "mypage_link mypage_navigation__list__link" do
                 出品中の商品
                 = icon "fa", "chevron-right", class: "mypage_icon mypage_icon--right_arrow"
-        %li.mypage_navigation__list{class: ("mypage_navigation__list--current" if request.path_info == user_items_path(@user, on_sale: false))}
+        %li.mypage_navigation__list{class: ("mypage_navigation__list--current" if request.path_info == user_exhibit_items_path(@user))}
             =link_to user_exhibit_items_path(@user), class: "mypage_link mypage_navigation__list__link" do
                 出品した商品
                 = icon "fa", "chevron-right", class: "mypage_icon mypage_icon--right_arrow"

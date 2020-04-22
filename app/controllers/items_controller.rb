@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   before_action :must_logined, only: [:new, :create, :edit, :update, :destroy]
   before_action :admin_user?, only: [:edit, :update, :destroy]
   before_action :set_size, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_user, only: [:exhibit_items, :sale_items]
   INDEX_ROW_COUNT = 5
 
   def index
@@ -65,14 +66,10 @@ class ItemsController < ApplicationController
   end
 
   def exhibit_items
-    @card = CreditCard.where(user_id: current_user.id)
-    @user = User.find(params[:user_id])
     @items = @user.items
   end
 
   def sale_items
-    @card = CreditCard.where(user_id: current_user.id)
-    @user = User.find(params[:user_id])
     @items = @user.items.where(status: true)
   end
 
