@@ -95,7 +95,7 @@
             お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
   %section.pickup_products
     %h2.title
-      ピックアップ全ての商品
+      全ての商品
     .products
       = link_to root_path, class: "products__header" do
         新規投稿商品
@@ -104,7 +104,7 @@
           = render partial: "items/item_preview", locals: { item: @items[i]}
   %section.pickup_products
     %h2.title
-      ピックアップ新商品
+      ピックアップカテゴリー
     - @category_items.each do |category_items|
       = render partial: "items/category_items", locals: {category: @category.find(category_items[:id]), items: category_items[:items]} if category_items[:items].length > 0
 = render "share/app_banner"
