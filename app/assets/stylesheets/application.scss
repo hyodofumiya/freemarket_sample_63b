@@ -26,6 +26,12 @@ body{
     display: none;
 }
 
+.disabled
+{
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
 $form_header_height: 128px;
 $form_footer_height: 220px;
 $header_height: 97px;

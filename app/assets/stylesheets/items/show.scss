@@ -124,6 +124,10 @@ $link_text_color: #3CCACE;
             font-weight: 600;
             display: block;
             border-radius: 40px;
+            &.disabled
+            {
+              background-color: gray;
+            }
             &:hover{
               background-color: #e20e03;
             }
