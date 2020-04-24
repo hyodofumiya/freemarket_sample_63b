@@ -67,6 +67,7 @@ $link_text_color: #3CCACE;
             }
             .dynamic_image_zone{
               width: 100%;
+              @include sold_item($height: 200px);
               &--selected_image{
                 height: 346px;
                 max-width: 100%;

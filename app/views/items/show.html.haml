@@ -29,7 +29,7 @@
           .product_zone__item--head
             = @item.name
           .product_zone__item__image_zone
-            .dynamic_image_zone
+            .dynamic_image_zone{class: ('dynamic_image_zone--sold' unless @item.status)}
               = image_tag @images.first.photo.url, class: "dynamic_image_zone--selected_image"
             %ul.static_images
               - @images.each do |image|
