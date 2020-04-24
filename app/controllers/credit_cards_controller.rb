@@ -45,11 +45,11 @@ class CreditCardsController < ApplicationController
   end
 
   def destroy #PayjpとCardデータベースを削除します
-    if card.present?
+    if @card.present?
       Payjp.api_key = Rails.application.credentials[:payjp][:payjp_secret_key]
-      customer = Payjp::Customer.retrieve(card.customer_id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
       customer.delete
-      card.delete
+      @card.delete
     end
     redirect_to user_path(current_user.id)
   end
