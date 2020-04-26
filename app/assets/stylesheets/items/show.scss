@@ -62,7 +62,7 @@ $link_text_color: #3CCACE;
             max-width: 560px;
             align-items: center;
             & img{
-              object-fit: cover;
+              object-fit: contain;
               width: 100%;
             }
             .dynamic_image_zone{
