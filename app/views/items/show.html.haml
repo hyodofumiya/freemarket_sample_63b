@@ -112,7 +112,7 @@
                   %th.table__body__preparation_day--head.tabel_row--head
                     発送日の目安
                   %td.table__body__preparation_day--data.table_row--data
-                    ="約#{@item.preparation_day}日で発送"
+                    ="約#{@item.preparation_day}"
             %ul.btns
               %li.btns__favorite#favorite_button_for_js
                 = render partial: "favorite_button", locals: {item: @item}
