@@ -80,8 +80,7 @@ $link_text_color: #3CCACE;
               width: 100%;
               overflow: scroll;
               &__an_item_image_zone{
-                width: 25%;
-                min-width: 25%;
+                max-width: 25%;
                 height: 87px;
                 margin: 0 10px 0 0;
                 .selected_image{
