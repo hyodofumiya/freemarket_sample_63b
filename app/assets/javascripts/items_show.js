@@ -5,7 +5,7 @@ $(document).on ('turbolinks:load',function(){
 });
 
 //dynamic_image_zoneの表示画像切り替え機能
-$(function(){
+$(document).on ('turbolinks:load',function(){
   $(".static_images__an_item_image_zone--image").click(function(){
     //選択された画像の要素を取得
     var selectedImage = $(this);
