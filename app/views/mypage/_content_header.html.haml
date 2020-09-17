@@ -1,8 +1,0 @@
-.mypage_profile_area
-    .mypage_user_profile
-        = link_to user_profile_photo_path(@user) do
-            = image_tag user.photo_filepath.url, {class: "mypage_user_profile__image", alt: "あなたのプロフィール画像です"}
-        %p.mypage_user_profile__name #{user.nickname}
-        %span.mypage_user_profile__review 評価　#{user.evaluation}
-        %span.mypage_user_profile__item_count 出品数　#{user.items.length}
-

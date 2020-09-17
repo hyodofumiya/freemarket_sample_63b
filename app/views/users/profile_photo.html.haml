@@ -1,6 +1,0 @@
-.user_photo_area
-    = image_tag @user.photo_filepath.url, {class: "user_profile__image--detail", alt: "あなたのプロフィール画像です"}
-    - if current_user.id == @user.id
-        = form_with model: @user, url: user_update_profile_photo_path(@user), local: true, class: "profile_photo_form" do |f|
-            = f.label :photo_filepath, "編集", class: "profile_photo_form__label"
-            = f.file_field :photo_filepath, onchange: "this.form.submit()", class: "profile_photo_form__file"

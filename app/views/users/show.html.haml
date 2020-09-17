@@ -1,7 +1,0 @@
-= render "share/header"
-%main.content_area--mypage
-  =render partial: "/mypage/navi"
-  .user_content_area
-    =render partial: "/mypage/content_header", locals: {user: @user}
-    =render partial: "/mypage/contents/purchase_and_exhibition", locals: {user: @user}
-= render "share/footer"
