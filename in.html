@@ -10,219 +10,223 @@
   </header>
   <main>
     <section id="page_detail">
-      <h3>概要</h3>
-      <div>プログラミングスクールの最終課題にて作成したアプリケーションを紹介します。また、自身で実装した箇所、および開発を通じて得られた経験についても紹介します。
+      <div class="section_title">
+        <h2>概要</h2>
+      </div>
+      <div class="section_body">プログラミングスクールの最終課題にて作成したアプリケーションを紹介します。また、自身で実装した箇所、および開発を通じて得られた経験についても紹介します。
       </div>
     </section>
     <section id="app_info">
-      <h3>アプリケーション情報</h3>
-      <div id="app_detail">
-        <h4>アプリケーション概要</h4>
-        <ul>
-          <li>フリーマーケットのアプリケーションを制作しました。</li>
-          <li>接続先情報
-            <p><a href="http://18.177.227.239/">フリーマーケットアプリケーション</a></p>
-            <ul>
-              <li>
-                ID/Pass
-                <ul>
-                  <li>ID: admin</li>
-                  <li>Pass: 0425</li>
-                </ul>
-              </li>
-              <li>
-                テスト用アカウント等
-                <ul>
-                  <li>
-                    購入者用
-                    <ul>
-                      <li>メールアドレス： buy@test</li>
-                      <li>パスワード： aaaaaaa</li>
-                    </ul>
-                  </li>
-                  <li>
-                    購入用カード情報
-                    <ul>
-                      <li>番号： 4012888888881881</li>
-                      <li>期限： 1/25</li>
-                      <li>セキュリティコード： 333</li>
-                    </ul>
-                  </li>
-                  <li>
-                    出品者用
-                    <ul>
-                      <li>メールアドレス: post@test</li>
-                      <li>パスワード： aaaaaaa</li>
-                    </ul>
-                  </li>
-                  <li>
-                    GitHubリポジトリ<br>
-                    <a href="https://github.com/hyodofumiya/freemarket_sample_63b">GitHub</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
+      <div class="section_title">
+        <h2>アプリケーション情報</h2>
       </div>
-      <div id="how_to_use">
-        <h4>動作確認方法</h4>
-        <ul>
-          <li>Chromeの最新版を利用してアクセスしてください。
-            <ul>
-              <li>ただしデプロイ等で接続できないタイミングもございます。その際は少し時間をおいてから接続してください。
-              </li>
-            </ul>
-          </li>
-          <li>接続先およびログイン情報については、上記の通りです。</li>
-          <li>同時に複数の方がログインしている場合に、ログインできない可能性があります。</li>
-          <li>
-            出品方法は以下の手順で確認できます<br>
-            テストアカウントでログイン→トップページから出品ボタン押下→商品情報入力→商品出品
-          </li>
-          <li>
-            購入方法は以下の手順で確認できます<br>
-            テストアカウントでログイン→トップページから商品選択→商品購入
-          </li>
-          <li>確認後、ログアウト処理をお願いします。</li>
-        </ul>
-      </div>
-      <div id="environment">
-        <h4>開発状況</h4>
-        <ul>
-          <li>
-            開発環境
-            <ul>
-              <li>言語： Ruby</li>
-              <li>FW： Ruby on Rails</li>
-              <li>DB： MySQL</li>
-              <li>サーバー： AWS(EC2,S3)</li>
-              <li>バージョン管理： Github</li>
-              <li>エディタ： Visual Studio Code</li>
-            </ul>
-          </li>
-          <li>
-            開発期間と平均作業時間
-            <ul>
-              <li>開発期間： 約10週間</li>
-              <li>1日あたりの平均作業時間： 約４時間</li>
-            </ul>
-          </li>
-          <li>
-            開発体制
-            <ul>
-              <li>人数： 3名</li>
-              <li>アジャイル型開発（スクラム）</li>
-              <li>Trelloによるタスク管理</li>
-              <li>wherebyによるweb会議</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div id="function">
-        <div class="section_title">
-          <h4>機能一覧</h4>
-        </div>
-        <div class="section_body">
+      <ul>
+        <li>
+          <h4>アプリケーション概要</h4>
           <ul>
-            <li id="fuction">
-              <p>商品関連</p>
+            <li>フリーマーケットのアプリケーションを制作しました。</li>
+            <li>接続先情報
+              <p><a href="http://18.177.227.239/">フリーマーケットアプリケーション</a></p>
               <ul>
-                <li>新規登録・一覧表示・詳細表示・編集・削除機能</li>
-                <li>カテゴリー登録機能</li>
-                <li>ブランド登録機能</li>
-              </ul>
-            </li>
-            <li class="function">
-              ユーザー関連
-              <ul>
-                <li>新規登録・詳細表示・編集・削除機能</li>
-                <li>ログイン機能</li>
-                <li>お届け先登録機能</li>
-              </ul>
-            </li>
-            <li class="function">
-              その他
-              <ul>
-                <li>お気に入り機能</li>
-                <li>コメント機能</li>
-                <li>クレジットカード決済機能</li>
-                <li>ページネーション機能</li>
-                <li>basic認証</li>
-                <li>パンくず機能</li>
+                <li>
+                  ID/Pass
+                  <ul>
+                    <li>ID: admin</li>
+                    <li>Pass: 0425</li>
+                  </ul>
+                </li>
+                <li>
+                  テスト用アカウント等
+                  <ul>
+                    <li>
+                      購入者用
+                      <ul>
+                        <li>メールアドレス： buy@test</li>
+                        <li>パスワード： aaaaaaa</li>
+                      </ul>
+                    </li>
+                    <li>
+                      購入用カード情報
+                      <ul>
+                        <li>番号： 4012888888881881</li>
+                        <li>期限： 1/25</li>
+                        <li>セキュリティコード： 333</li>
+                      </ul>
+                    </li>
+                    <li>
+                      出品者用
+                      <ul>
+                        <li>メールアドレス: post@test</li>
+                        <li>パスワード： aaaaaaa</li>
+                      </ul>
+                    </li>
+                    <li>
+                      GitHubリポジトリ<br>
+                      <a href="https://github.com/hyodofumiya/freemarket_sample_63b">GitHub</a>
+                    </li>
+                  </ul>
+                </li>
               </ul>
             </li>
           </ul>
-        </div>
-      </div>
-      <div id="technicals">
-        <div class="section_sub_title">
-          <h4>使用技術</h4>
-        </div>
-        <div class="section_sub_body">
-          <div id="technicals_des">
+        </li>
+        <li>
+          <h4>動作確認方法</h4>
+          <ul>
+            <li>Chromeの最新版を利用してアクセスしてください。
+              <ul>
+                <li>ただしデプロイ等で接続できないタイミングもございます。その際は少し時間をおいてから接続してください。
+                </li>
+              </ul>
+            </li>
+            <li>接続先およびログイン情報については、上記の通りです。</li>
+            <li>同時に複数の方がログインしている場合に、ログインできない可能性があります。</li>
+            <li>
+              出品方法は以下の手順で確認できます<br>
+              テストアカウントでログイン→トップページから出品ボタン押下→商品情報入力→商品出品
+            </li>
+            <li>
+              購入方法は以下の手順で確認できます<br>
+              テストアカウントでログイン→トップページから商品選択→商品購入
+            </li>
+            <li>確認後、ログアウト処理をお願いします。</li>
+          </ul>
+        </li>
+        <li>
+          <h4>開発状況</h4>
+          <ul>
+            <li>
+              開発環境
+              <ul>
+                <li>言語： Ruby</li>
+                <li>FW： Ruby on Rails</li>
+                <li>DB： MySQL</li>
+                <li>サーバー： AWS(EC2,S3)</li>
+                <li>バージョン管理： Github</li>
+                <li>エディタ： Visual Studio Code</li>
+              </ul>
+            </li>
+            <li>
+              開発期間と平均作業時間
+              <ul>
+                <li>開発期間： 約10週間</li>
+                <li>1日あたりの平均作業時間： 約４時間</li>
+              </ul>
+            </li>
+            <li>
+              開発体制
+              <ul>
+                <li>人数： 3名</li>
+                <li>アジャイル型開発（スクラム）</li>
+                <li>Trelloによるタスク管理</li>
+                <li>wherebyによるweb会議</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>機能一覧</h4>
             <ul>
-              <li class="technical">devise</li>
-              <li class="technical">jQuery</li>
-              <li class="technical">Haml</li>
-              <li class="technical">SCSS</li>
-              <li class="technical">Ancestry</li>
-              <li class="technical">PAY.JP API</li>
-              <li class="technical">RSpec</li>
-              <li class="technical">Capistrano</li>
-              <li class="technical">AWS（EC2,S3)</li>
-            </ul>
+              <li id="fuction">
+                商品関連
+                <ul>
+                  <li>新規登録・一覧表示・詳細表示・編集・削除機能</li>
+                  <li>カテゴリー登録機能</li>
+                  <li>ブランド登録機能</li>
+                </ul>
+              </li>
+              <li class="function">
+                ユーザー関連
+                <ul>
+                  <li>新規登録・詳細表示・編集・削除機能</li>
+                  <li>ログイン機能</li>
+                  <li>お届け先登録機能</li>
+                </ul>
+              </li>
+              <li class="function">
+                その他
+                <ul>
+                  <li>お気に入り機能</li>
+                  <li>コメント機能</li>
+                  <li>クレジットカード決済機能</li>
+                  <li>ページネーション機能</li>
+                  <li>basic認証</li>
+                  <li>パンくず機能</li>
+                </ul>
+              </li>
+            </ul> 
+        </li>
+        <li>
+          <div class="section_sub_title">
+            <h4>使用技術</h4>
           </div>
-        </div>
-      </div>
+          <div class="section_sub_body">
+            <div id="technicals_des">
+              <ul>
+                <li class="technical">devise</li>
+                <li class="technical">jQuery</li>
+                <li class="technical">Haml</li>
+                <li class="technical">SCSS</li>
+                <li class="technical">Ancestry</li>
+                <li class="technical">PAY.JP API</li>
+                <li class="technical">RSpec</li>
+                <li class="technical">Capistrano</li>
+                <li class="technical">AWS（EC2,S3)</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
     </section>
     <section id="area_of_responsibility">
-      <h3>開発担当箇所</h3>
-      <div>
+      <div class="section_title">
+        <h2>開発担当箇所</h2>
+      </div>
+      <div class="section_body">
         <ul>
           <li>
             <h4>担当箇所一覧と確認方法</h4>
             <ul>
-              <li>DB設計</li>
-              <li>
+              <li class="section_sub_list">DB設計</li>
+              <li class="section_sub_list">ルーティングの設定(バックエンド)</li>
+              <li class="section_sub_list">
                 トップページ(フロントエンド)
                 <ul>
                   <li><a href="http://18.177.227.239/">トップページ</a>にアクセスするとご覧いただけます。</li>
                 </ul>
               </li>
-              <li>
+              <li class="section_sub_list">
                 商品詳細ページ(フロントエンド)
                 <ul>
                   <li>購入用アカウントでログイン後、適当な画像で作業を行うとご覧いただけます。
                   </li>
                 </ul>
               </li>
-              <li>
+              <li class="section_sub_list">
                 商品購入ページ(フロントエンド)
                 <ul>
                   <li>購入用アカウントでログイン後、適当な画像で作業を行うとご覧いただけます。</li>
                 </ul>
               </li>
-              <li>
+              <li class="section_sub_list">
                 カテゴリーページ(フロントエンド)
                 <ul>
                   <li><a href="http://18.177.227.239/categories">カテゴリーページ</a>にてご覧いただけます。</li>
                 </ul>
               </li>
-              <li>
+              <li class="section_sub_list">
                 商品出品ページ（フロントエンド）
                 <ul>
                   <li>出品用アカウントでログイン後、トップ画面右下の出品ボタンを押下することでご覧いただけます。</li>
                 </ul>
               </li>
-              <li>ルーティングの設定(バックエンド)</li>
-              <li>
+              <li class="section_sub_list">
                 カテゴリー別表示機能(バックエンド)
                 <ul>
                   <li>トップページ上部カテゴリーボタンからご覧いただけます。</li>
                 </ul>
               </li>
-              <li>
+              <li class="section_sub_list">
                 商品購入機能（バックエンド）
                 <ul>
                   <li>購入用アカウントでログイン後、適当な商品を選択することで商品購入画面へ進めます。クレジットカード情報の入力を求められた際は、上記の購入用カード情報を入力することで購入できます。</li>
@@ -233,7 +237,7 @@
           <li>
             <h4>各担当箇所の詳細</h4>
             <ul>
-              <li>
+              <li class="section_sub_list">
                 DB設計
                 <ul>
                   <li>
@@ -253,7 +257,7 @@
                   </li>
                 </ul>
               </li>
-              <li>
+              <li class="section_sub_list">
                 トップページ（商品新着一覧ページ）
                 <ul>
                   <li>
@@ -271,7 +275,7 @@
                   </li>
                 </ul>
               </li>
-              <li>
+              <li class="section_sub_list">
                 商品出品ページ
                 <ul>
                   <li>
@@ -297,7 +301,7 @@
                   </li>
                 </ul>
               </li>
-              <li>
+              <li class="section_sub_list">
                 商品購入機能
                 <ul>
                   <li>概要
@@ -325,7 +329,7 @@
                   </li>
                 </ul>
               </li>
-              <li>
+              <li class="section_sub_list">
                 カテゴリー別表示機能
                 <ul>
                   <li>
