@@ -24,3 +24,23 @@ section{
 .section_sub_list{
   margin: 1em 0;
 }
+.app_info_list{
+  margin-bottom: 3em;
+}
+.app_info_detail{
+  background-color: antiquewhite;
+  padding: 1em;
+  border-radius: 1em;
+  margin-bottom: 1em;
+}
+.caution{
+  list-style: none;
+  margin-top: 2em;
+}
+.back_color{
+  background-color: antiquewhite;
+  margin-bottom: 1em;
+  padding: 1em;
+  border-radius: 1em;
+  list-style: inside;
+}
