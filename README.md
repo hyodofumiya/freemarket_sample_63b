@@ -1,183 +1,59 @@
-# フリマアプリ　データベース仕様
+# フリーマーケットアプリケーション
+スクールの最終課題として作成したフリーマーケットアプリケーションです。
 
-## orderテーブル
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|primary_key|
-|user_id|integer|null: false, foreign_key|
-|item_id|integer|null: false, foreign_key|
-|credit_id|integer|null: false, foreign_key|
-### Asociation
-- belong_to :user
-- belong_to :credit_card
-- belong_to :item
+* * * 
+<br>
 
-## favoriteテーブル
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|primary_key|
-|user_id|integer|null: false, foreign_key|
-|item_id|integer|null: false, foreign_key|
-### Asociation
-- belong_to :user
-- belong_to :item
+# 概要
+スクールの最終課題として作成したアプリケーションです。このアプリはユーザー間で商品の売買ができます。
+<br>
 
-## commentテーブル
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|primary_key|
-|item_id|integer|null: false, foreign_key|
-|user_id|integer|null: false, foreign_key|
-|comment|text|null: false|
-### Asociation
-- belong_to :user
-- belong_to :item
+# 実装機能
+## 商品関連
+- 新規登録・一覧表示・詳細表示・編集・削除機能
+- カテゴリー登録機能
+- ブランド登録機能
+## ユーザー関連
+- 新規登録・詳細表示・編集・削除機能
+- ログイン機能
+- お届け先登録機能
+## その他
+- お気に入り機能
+- コメント機能
+- クレジットカード決済機能
+- ページネーション機能
+- basic認証
+- パンくず機能
+<br>
 
+# 使用言語、環境
+- 言語  
+  Ruby version 2.5.1
+- フレームワーク  
+  Ruby on Rails version 5.2.4
+<br>
 
+# 使い方
 
-## shopping_addressテーブル
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|primary_key|
-|family_name|string|null: false|
-|first_name|string|null: false|
-|family_name_kana|string|null: false|
-|first_name_kana|string|null: false|
-|post_cord|string|null: false|
-|prefecture|integer|null: false|
-|cities|integer|null: false|
-|address|string|null: false|
-|building_name|string|null: false|
-|phone_number|string||
-|user_id|integer|null: false, foreign_key|
-
-### Association
-- belongs_to :user
-
-## usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|primary_key|
-|nickname|string|null: false|
-|email|string|null: false, unique|
-|password|string|null: false|
-|family_name|string|null: false|
-|first_name|string|null: false|
-|family_name_kana|string|null: false|
-|first_name_kana|string|null: false|
-|birthday|date|null: false|
-|phone_number|string||
-|photo_filepass|text||
-
-### Association
-- has_many :shopping_addresses
-- has_many :credit_cards
-- has_many :orders
-- has_many :favotites
-- has_many :comments
-- has_many :items
-
-
-## credit_cardテーブル
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|null: false, primary_key|
-|user|references|null: false|
-|customer_id|string|null: false, foreign_key|
-|card_id|string|null: false|
-
-### Association
-- belongs_to :user
-- has_many :orders
-
-
-## Itemテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|primary_key|
-|name|string|null: false|
-|discription|text||
-|price|integer|null: false|
-|condition|integer|null: false|
-|size|integer||
-|preparation_day|integer|null: false| 
-|status|boolean|null: false|
-|area|int|null: false|
-|delivary_fee|int|null: false|
-|user_id|integer|foreign_key|
-|category_id|integer|null: false, foreign_key|
-|brand_id|integer|foreign_key,dependent:nullify|
-
-#### AddIndex
-- add_index :name, discription, category_id, size, bland_id, condition, delivary_fee, price, status
-
-
-### Asociation
-
-- has_one :order(orderキャンセル時はレコードを削除する。)
-- has_many :favorites
-- has_many :comments
-- has_many :images
-- belongs_to :user
-- belongs_to :category
-- belongs_to :brand
-
-## Brandテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|primary_key|
-|name|string|null: false, Unique|
-
-
-
-### Association
-
-- has_many :categories, through: brand_categories
-- has_many :brand_categories
-
-## Categoryテーブル
-
-
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|primary_key|
-|name|string|null: false, Unique|
-|size|bool|null: false|
-|parrent_id|integer|foreign_key,dependent:nullify|
-
-
-
-### Association
-- has_many :items
-- has_many :brands, through: brand_categories
-- has_many :brand_categories
-- has_many :children (自身の子カテゴリを所持。モデルは自身を参照する。)
-
-## Brand_categoriesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|primary_key|
-|brand_id|integer|null: false, foreign_key|
-|category_id|integer|null: false, foreign_key|
-
-### Association
-
-- belongs_to :brand
-- belongs_to :category
-
-## Imageテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|primary_key|
-|path|text|null: false|
-|item_id|integer|null: false, foreign_key|
-
-
-### Association
-
-- belongs_to :item
-
+# 接続先情報
+- 接続先：[フリーマーケットアプリケーション](http://18.177.227.239/)
+- ID/Pass
+  - ID: admin
+  - Pass: 0425
+- テスト用アカウント等
+  - 購入者用
+    - メールアドレス： buy@test
+    - パスワード： aaaaaaa
+    - 購入用カード
+      - 番号： 4012888888881881
+      - 期限： 1/25
+      - セキュリティコード： 333
+  - 出品者用
+    - メールアドレス： post@test
+    - パスワード： aaaaaaa
+# 動作確認方法
+- 出品機能は以下の手順で確認できます
+  - テストアカウントでログイン→トップページから出品ボタン押下→商品情報入力→商品出品
+- 購入機能は以下の手順で確認できます
+  - テストアカウントでログイン→トップページから商品選択→商品購入
+- 確認後、ログアウト処理をお願いします。
